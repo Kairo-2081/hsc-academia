@@ -28,8 +28,11 @@
 \usepackage{tikz}
 \usetikzlibrary{shadows, arrows.meta, positioning, decorations.pathmorphing, calc, intersections, angles, quotes}
 \usepackage{enumitem}
+\pagecolor{black}
+\color{white}
 \setlist[itemize,1]{label=\textendash}
 
+\definecolor{myboxcolor}{HTML}{2B8EAD} % Bright teal/cyan shade matching your image
 % Define custom beautiful colors
 \definecolor{primary}{HTML}{0056b3}
 \definecolor{secondary}{HTML}{e7f1ff}
@@ -41,22 +44,25 @@
 % Custom Tcolorbox Styles
 \tcbset{
     questionbox/.style={
-        enhanced, colback=secondary, colframe=primary, arc=2mm, boxrule=1pt,
-        fonttitle=\bfseries\Large, title=#1,
-        drop fuzzy shadow=black!10,
+        enhanced, colback=black, colframe=myboxcolor, arc=2mm, boxrule=1pt,
+        fonttitle=\bfseries\Large, title=#1, coltitle=white,
+        colupper=white,
+        drop fuzzy shadow=white!10,
         attach boxed title to top left={xshift=5mm, yshift=-3mm},
-        boxed title style={colback=primary, arc=1mm}
+        boxed title style={colback=myboxcolor, arc=1mm}
     },
     answerbox/.style={
-        enhanced, colback=successbg, colframe=success, arc=1.5mm, boxrule=1pt,
+        enhanced, colback=success!20!black, colframe=success, arc=1.5mm, boxrule=1pt,
         left=2mm, right=2mm, top=2mm, bottom=2mm,
-        drop fuzzy shadow=black!10
+        colupper=white,
+        drop fuzzy shadow=white!10
     },
     solutionbox/.style={
-        enhanced, colback=white, colframe=darkgray, arc=2mm, boxrule=1pt,
+        enhanced, colback=black, colframe=gray!60, arc=2mm, boxrule=1pt,
         fonttitle=\bfseries\large, title=#1, breakable,
-        coltitle=white, colbacktitle=darkgray,
-        drop fuzzy shadow=black!10,
+        coltitle=white, colbacktitle=gray!40!black,
+        colupper=white,
+        drop fuzzy shadow=white!10,
         attach boxed title to top center={yshift=-3mm},
         boxed title style={arc=1mm}
     }

@@ -1,0 +1,999 @@
+\documentclass[12pt, a4paper]{article}
+
+% ==========================================
+% 1. COMPILER, LANGUAGE & FONT SETUP
+% ==========================================
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{bengali}
+\setotherlanguage{english}
+\newfontfamily\bengalifont[Script=Bengali, AutoFakeBold=2.5, AutoFakeSlant=0.2]{Kalpurush}
+
+% ==========================================
+% 2. MATHEMATICS, UNITS & FORMATTING
+% ==========================================
+\usepackage{amsmath, amssymb, siunitx}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{microtype} % For better typography
+\onehalfspacing % Better line spacing for readability
+
+% ==========================================
+% 3. COLORS & BEAUTIFICATION PACKAGES
+% ==========================================
+\usepackage[dvipsnames, table]{xcolor}
+\usepackage[skins, breakable, theorems]{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{shadows, arrows.meta, positioning, decorations.pathmorphing, calc}
+\renewcommand{\labelitemi}{$\bullet$}
+
+% Define custom beautiful colors
+\definecolor{primary}{HTML}{0056b3}
+\definecolor{secondary}{HTML}{e7f1ff}
+\definecolor{success}{HTML}{198754}
+\definecolor{successbg}{HTML}{d1e7dd}
+\definecolor{accent}{HTML}{fd7e14}
+\definecolor{darkgray}{HTML}{343a40}
+
+% Custom Tcolorbox Styles
+\tcbset{
+    questionbox/.style={
+        enhanced, colback=secondary, colframe=primary, arc=2mm, boxrule=1pt,
+        fonttitle=\bfseries\Large, title=#1,
+        drop fuzzy shadow=black!10,
+        attach boxed title to top left={xshift=5mm, yshift=-3mm},
+        boxed title style={colback=primary, arc=1mm}
+    },
+    answerbox/.style={
+        enhanced, colback=successbg, colframe=success, arc=1.5mm, boxrule=1pt,
+        left=2mm, right=2mm, top=2mm, bottom=2mm,
+        drop fuzzy shadow=black!10
+    },
+    solutionbox/.style={
+        enhanced, colback=white, colframe=darkgray, arc=2mm, boxrule=1pt,
+        fonttitle=\bfseries\large, title=#1, breakable,
+        coltitle=white, colbacktitle=darkgray,
+        drop fuzzy shadow=black!10,
+        attach boxed title to top center={yshift=-3mm},
+        boxed title style={arc=1mm}
+    }
+}
+
+\begin{document}
+
+\newpage
+% ------------------------------------------
+% QUESTION 16 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 1}]
+    \noindent
+    $30\text{ m/s}$ বেগে চলমান একটি ট্রেন পাহাড়ের দিকে অগ্রসর হওয়ার সময় $600\text{ Hz}$ কম্পাঙ্কের বাঁশি বাজাল। পাহাড়ের দিক থেকে ট্রেনের দিকে $30\text{ m/s}$ বেগে বাতাস প্রবাহিত হচ্ছে। স্থির বায়ুতে শব্দের বেগ $330\text{ m/s}$ হলে, ট্রেনের চালক পাহাড় থেকে প্রতিফলিত যে প্রতিধ্বনি শুনবেন তার কম্পাঙ্ক কত?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    A train moving at $30\text{ m/s}$ towards a vertical cliff sounds a whistle of frequency $600\text{ Hz}$. Wind is blowing from the cliff towards the train at $30\text{ m/s}$. If the speed of sound in still air is $330\text{ m/s}$, what is the frequency of the echo heard by the driver of the train?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $720\text{ Hz}$
+    \item[\textbf{B)}] $660\text{ Hz}$
+    \item[\textbf{C)}] $700\text{ Hz}$
+    \item[\textbf{D)}] $750\text{ Hz}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $720\text{ Hz}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    বাতাস উৎস থেকে পাহাড়ের দিকে প্রবাহিত হওয়ায় কার্যকরী শব্দবেগ $v_1 = v + v_w = 330 + 30 = 360\text{ m/s}$। পাহাড়ে আপতিত কম্পাঙ্ক:
+    \[ f_{cliff} = f \left(\frac{v_1}{v_1 - v_s}\right) = 600 \left(\frac{360}{360 - 30}\right) = 600 \left(\frac{360}{330}\right) = 654.55\text{ Hz} \]
+    প্রতিধ্বনি ফেরার সময় বাতাস ট্রেনের দিকে বায়ুর বেগের বিপরীতে চলায় কার্যকরী শব্দবেগ $v_2 = v - v_w = 330 - 30 = 300\text{ m/s}$। চালক কর্তৃক অনুভূত কম্পাঙ্ক:
+    \[ f_{echo} = f_{cliff} \left(\frac{v_2 + v_o}{v_2}\right) = 600 \left(\frac{360}{330}\right) \left(\frac{300 + 30}{300}\right) = 600 \times \frac{360}{300} = \mathbf{720\text{ Hz}} \]
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 17 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 2}]
+    \noindent
+    অনুনাদ নল পরীক্ষায় $500\text{ Hz}$ কম্পাঙ্কের সুরশলাকা ব্যবহার করে বায়ুনলের ১ম ও ২য় অনুনাদের জন্য পানির উপরিভাগের অবস্থান যথাক্রমে $0.16\text{ m}$ এবং $0.50\text{ m}$ পাওয়া গেল। বায়ুতে শব্দের বেগ এবং নলের প্রান্ত ত্রুটি (end correction) কত?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    In a resonance tube experiment using a tuning fork of frequency $500\text{ Hz}$, the first and second resonances are observed at tube lengths of $0.16\text{ m}$ and $0.50\text{ m}$ respectively. What are the speed of sound in air and the end correction of the tube?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $340\text{ m/s}, 0.01\text{ m}$
+    \item[\textbf{B)}] $330\text{ m/s}, 0.02\text{ m}$
+    \item[\textbf{C)}] $340\text{ m/s}, 0.02\text{ m}$
+    \item[\textbf{D)}] $350\text{ m/s}, 0.01\text{ m}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $340\text{ m/s}, 0.01\text{ m}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    তরঙ্গদৈর্ঘ্য নির্ণয়:
+    \[ L_2 - L_1 = \frac{\lambda}{2} \implies 0.50 - 0.16 = \frac{\lambda}{2} \implies \lambda = 0.68\text{ m} \]
+    শব্দের বেগ:
+    \[ v = f \lambda = 500 \times 0.68 = \mathbf{340\text{ m/s}} \]
+    প্রান্ত ত্রুটি:
+    \[ e = \frac{\lambda}{4} - L_1 = \frac{0.68}{4} - 0.16 = 0.17 - 0.16 = \mathbf{0.01\text{ m}} \]
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 18 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 3}]
+    \noindent
+    $0^\circ\text{C}$ তাপমাত্রায় বায়ুতে শব্দের বেগ $332\text{ m/s}$। বায়ুতে $400\text{ Hz}$ এবং $408\text{ Hz}$ কম্পাঙ্কের দুটি শব্দের তরঙ্গদৈর্ঘ্যের পার্থক্য $0.0175\text{ m}$ হলে বায়ুর তাপমাত্রা কত?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    The speed of sound in air at $0^\circ\text{C}$ is $332\text{ m/s}$. At what temperature of air will the difference in wavelengths of two sound waves of frequencies $400\text{ Hz}$ and $408\text{ Hz}$ be $0.0175\text{ m}$?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $42.67^\circ\text{C}$
+    \item[\textbf{B)}] $35.50^\circ\text{C}$
+    \item[\textbf{C)}] $50.00^\circ\text{C}$
+    \item[\textbf{D)}] $27.00^\circ\text{C}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $42.67^\circ\text{C}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    তরঙ্গদৈর্ঘ্যের পার্থক্য থেকে নতুন বেগ নির্ণয়:
+    \[ \Delta \lambda = \lambda_1 - \lambda_2 = v_T \left(\frac{1}{f_1} - \frac{1}{f_2}\right) \]
+    \[ \implies 0.0175 = v_T \left(\frac{1}{400} - \frac{1}{408}\right) = \frac{v_T}{20400} \implies v_T = 357\text{ m/s} \]
+    তাপমাত্রা নির্ণয়:
+    \[ \frac{v_T}{v_0} = \sqrt{\frac{T}{273}} \implies \frac{357}{332} = \sqrt{\frac{T}{273}} \]
+    \[ \implies T = 273 \times (1.0753)^2 = 315.67\text{ K} = \mathbf{42.67^\circ\text{C}} \]
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 19 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 4}]
+    \noindent
+    $d = 5\text{ m}$ ব্যবধানে অবস্থিত দুটি সুসংগত বিন্দু উৎস $S_1$ ও $S_2$ হতে $\lambda = 2\text{ m}$ তরঙ্গদৈর্ঘ্যের একই দশায় শব্দ নিঃসৃত হচ্ছে। একজন পর্যবেক্ষক $S_1$ এর ওপর অঙ্কিত লম্ব রেখা বরাবর হাঁটছেন। $S_1$ হতে কত ন্যূনতম দূরত্বে পর্যবেক্ষক ধ্বংসাত্মক ব্যতিচার (সর্বনিম্ন তীব্রতা) অনুভব করবেন?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    Two coherent point sources $S_1$ and $S_2$ separated by $d = 5\text{ m}$ emit sound waves of wavelength $\lambda = 2\text{ m}$ in phase. An observer moves along a line perpendicular to $S_1 S_2$ passing through $S_1$. At what minimum distance from $S_1$ will the observer experience destructive interference?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $2.67\text{ m}$
+    \item[\textbf{B)}] $12.00\text{ m}$
+    \item[\textbf{C)}] $1.50\text{ m}$
+    \item[\textbf{D)}] $4.00\text{ m}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $2.67\text{ m}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    পথ পার্থক্য $\Delta r = \sqrt{y^2 + 5^2} - y$। ধ্বংসাত্মক ব্যতিচারের শর্ত: $\Delta r = (2n - 1) \frac{\lambda}{2} = 1, 3, 5\text{ m}$। সর্বনিম্ন দূরত্বের জন্য সর্বোচ্চ সম্ভব পথ পার্থক্য $\Delta r = 3\text{ m}$ বিবেচনা করতে হবে:
+    \[ \sqrt{y^2 + 25} - y = 3 \implies y^2 + 25 = y^2 + 6y + 9 \]
+    \[ \implies 6y = 16 \implies y = \mathbf{2.67\text{ m}} \]
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 20 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 5}]
+    \noindent
+    $L = 2\text{ m}$ দৈর্ঘ্য এবং $M = 0.02\text{ kg}$ ভরের একটি টানা তার $T = 100\text{ N}$ টানে দুই প্রান্তে আবদ্ধ। তারটি ৪র্থ হারমোনিকে (৩য় উপসুর) কম্পিত হলে, কম্পাঙ্ক, সুস্পন্দ-নিস্পন্দ বিন্দুর মধ্যবর্তী দূরত্ব এবং সুস্পন্দ বিন্দুতে কণার সর্বোচ্চ বেগ কত (সুস্পন্দ বিন্দুতে বিস্তার $0.01\text{ m}$)?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    A wire of length $L = 2\text{ m}$ and mass $M = 0.02\text{ kg}$ is fixed at both ends under a tension $T = 100\text{ N}$. If it vibrates in its 4th harmonic, what are the frequency, distance between a node and adjacent antinode, and maximum particle velocity at an antinode (amplitude at antinode = $0.01\text{ m}$)?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $100\text{ Hz}, 0.25\text{ m}, 6.28\text{ m/s}$
+    \item[\textbf{B)}] $50\text{ Hz}, 0.50\text{ m}, 3.14\text{ m/s}$
+    \item[\textbf{C)}] $100\text{ Hz}, 0.50\text{ m}, 12.57\text{ m/s}$
+    \item[\textbf{D)}] $200\text{ Hz}, 0.25\text{ m}, 6.28\text{ m/s}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $100\text{ Hz}, 0.25\text{ m}, 6.28\text{ m/s}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    একক দৈর্ঘ্যের ভর $m = \frac{0.02}{2} = 0.01\text{ kg/m}$ এবং তরঙ্গবেগ $v = \sqrt{\frac{100}{0.01}} = 100\text{ m/s}$। ৪র্থ হারমোনিকে তরঙ্গদৈর্ঘ্য $\lambda_4 = \frac{2L}{4} = 1\text{ m}$ হওয়ায় কম্পাঙ্ক $f_4 = \frac{100}{1} = \mathbf{100\text{ Hz}}$। সুস্পন্দ ও নিস্পন্দ বিন্দুর দূরত্ব $= \frac{\lambda_4}{4} = \mathbf{0.25\text{ m}}$। সর্বোচ্চ বেগ $v_{p,max} = A \omega = 0.01 \times (2\pi \times 100) = 2\pi = \mathbf{6.28\text{ m/s}}$।
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 21 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 6}]
+    \noindent
+    একটি স্থানে দুটি তরঙ্গ $y_1 = 0.04 \sin(500\pi t)$ এবং $y_2 = 0.03 \sin(506\pi t)$ (SI একক) উপরিপাতিত হলো। উৎপন্ন বীট কম্পাঙ্ক এবং সর্বোচ্চ ও সর্বনিম্ন তীব্রতার অনুপাত ($I_{max}/I_{min}$) কত?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    Two waves $y_1 = 0.04 \sin(500\pi t)$ and $y_2 = 0.03 \sin(506\pi t)$ (SI units) superimpose at a point. What are the beat frequency and the ratio of maximum to minimum intensity ($I_{max}/I_{min}$)?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $3\text{ Hz}, 49$
+    \item[\textbf{B)}] $6\text{ Hz}, 49$
+    \item[\textbf{C)}] $3\text{ Hz}, 7$
+    \item[\textbf{D)}] $6\text{ Hz}, 14$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $3\text{ Hz}, 49$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    কম্পাঙ্কদ্বয় যথাক্রমে $f_1 = 250\text{ Hz}$ ও $f_2 = 253\text{ Hz}$। বীট কম্পাঙ্ক $N = 253 - 250 = \mathbf{3\text{ Hz}}$। সর্বোচ্চ ও সর্বনিম্ন বিস্তার যথাক্রমে $A_{max} = 0.07\text{ m}$ এবং $A_{min} = 0.01\text{ m}$। তীব্রতার অনুপাত:
+    \[ \frac{I_{max}}{I_{min}} = \left(\frac{A_{max}}{A_{min}}\right)^2 = \left(\frac{0.07}{0.01}\right)^2 = \mathbf{49} \]
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 22 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 7}]
+    \noindent
+    $L = 0.85\text{ m}$ দৈর্ঘ্যের একটি একমুখ খোলা নল $27^\circ\text{C}$ তাপমাত্রায় একটি সুরশলাকার সাথে মূল সুরের অনুনাদ সৃষ্টি করে। নলের প্রান্ত ত্রুটি $e = 0.02\text{ m}$ এবং $0^\circ\text{C}$ তে শব্দের বেগ $332\text{ m/s}$ হলে সুরশলাকার কম্পাঙ্ক কত?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    A closed organ pipe of length $L = 0.85\text{ m}$ resonates in its fundamental mode with a tuning fork at $27^\circ\text{C}$. If the end correction is $e = 0.02\text{ m}$ and speed of sound at $0^\circ\text{C}$ is $332\text{ m/s}$, what is the frequency of the tuning fork?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $100\text{ Hz}$
+    \item[\textbf{B)}] $105\text{ Hz}$
+    \item[\textbf{C)}] $95\text{ Hz}$
+    \item[\textbf{D)}] $110\text{ Hz}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $100\text{ Hz}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    কার্যকর দৈর্ঘ্য $L_{eff} = 0.85 + 0.02 = 0.87\text{ m} \implies \lambda = 4 \times 0.87 = 3.48\text{ m}$। $27^\circ\text{C}$ তাপমাত্রায় শব্দের বেগ $v_{27} = 332 \sqrt{\frac{300}{273}} = 348\text{ m/s}$। সুরশলাকার কম্পাঙ্ক:
+    \[ f = \frac{v_{27}}{\lambda} = \frac{348}{3.48} = \mathbf{100\text{ Hz}} \]
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 23 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 8}]
+    \noindent
+    একটি স্থানে তিনটি ভিন্ন শব্দ উৎস থেকে নির্গত শব্দের তীব্রতা লেভেল যথাক্রমে $80\text{ dB}$, $83\text{ dB}$ এবং $85\text{ dB}$। তিনটি উৎস একসাথে চালু থাকলে ওই স্থানে মোট শব্দের তীব্রতা লেভেল কত হবে?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    At a specific location, the sound intensity levels from three independent sound sources are $80\text{ dB}$, $83\text{ dB}$, and $85\text{ dB}$ respectively. What will be the total sound intensity level when all three sources operate simultaneously?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $87.89\text{ dB}$
+    \item[\textbf{B)}] $84.00\text{ dB}$
+    \item[\textbf{C)}] $248.00\text{ dB}$
+    \item[\textbf{D)}] $89.50\text{ dB}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $87.89\text{ dB}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    পৃথক তীব্রতাসমূহ: $I_1 = 10^{-4}\text{ W/m}^2$, $I_2 = 1.995 \times 10^{-4}\text{ W/m}^2$, $I_3 = 3.162 \times 10^{-4}\text{ W/m}^2$। মোট তীব্রতা $I_{total} = (1 + 1.995 + 3.162) \times 10^{-4} = 6.157 \times 10^{-4}\text{ W/m}^2$। মোট তীব্রতা লেভেল:
+    \[ \beta_{total} = 10 \log_{10} \left(\frac{6.157 \times 10^{-4}}{10^{-12}}\right) = \mathbf{87.89\text{ dB}} \]
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 24 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 9}]
+    \noindent
+    $\mu_1 = 0.01\text{ kg/m}$ এবং $\mu_2 = 0.09\text{ kg/m}$ একক দৈর্ঘ্যের ভরের দুটি তারকে যুক্ত করা হলো। ১ম তারের মধ্য দিয়ে $A_i = 0.10\text{ m}$ বিস্তারের একটি তরঙ্গ সংযোগস্থলে আপতিত হলে, প্রতিফলিত তরঙ্গের বিস্তার, সঞ্চালিত তরঙ্গের বিস্তার এবং প্রতিফলিত তরঙ্গের দশা পরিবর্তন কত হবে?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    Two strings with linear mass densities $\mu_1 = 0.01\text{ kg/m}$ and $\mu_2 = 0.09\text{ kg/m}$ are joined together. If a wave of amplitude $A_i = 0.10\text{ m}$ travels along the first string towards the junction, what will be the amplitude of the reflected wave, transmitted wave, and the phase change of the reflected wave?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $0.05\text{ m}, 0.05\text{ m}, 180^\circ$
+    \item[\textbf{B)}] $0.05\text{ m}, 0.15\text{ m}, 0^\circ$
+    \item[\textbf{C)}] $0.02\text{ m}, 0.08\text{ m}, 180^\circ$
+    \item[\textbf{D)}] $0.10\text{ m}, 0.05\text{ m}, 90^\circ$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $0.05\text{ m}, 0.05\text{ m}, 180^\circ$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    প্রতিফলিত তরঙ্গের বিস্তার $A_r = \left|\frac{\sqrt{\mu_1} - \sqrt{\mu_2}}{\sqrt{\mu_1} + \sqrt{\mu_2}}\right| A_i = \left|\frac{0.1 - 0.3}{0.1 + 0.3}\right| \times 0.10 = \mathbf{0.05\text{ m}}$। সঞ্চালিত তরঙ্গের বিস্তার $A_t = \frac{2\sqrt{\mu_1}}{\sqrt{\mu_1} + \sqrt{\mu_2}} A_i = \frac{2(0.1)}{0.4} \times 0.10 = \mathbf{0.05\text{ m}}$। ভারী মাধ্যমে প্রতিফলনের কারণে দশা পরিবর্তন = $\mathbf{180^\circ}$ (বা $\pi\text{ rad}$)।
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 25 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 10}]
+    \noindent
+    সমুদ্রের পানির নিচে $10\text{ m/s}$ বেগে চলমান একটি সাবমেরিন স্থির খাড়া পাহাড়ের দিকে $100\text{ kHz}$ কম্পাঙ্কের আল্ট্রাসনিক সিগন্যাল পাঠায়। পানিতে শব্দের বেগ $1500\text{ m/s}$ হলে, সাবমেরিনের সোনার গ্রাহক যন্ত্রে ধরা পড়া প্রতিধ্বনির কম্পাঙ্ক এবং বিট কম্পাঙ্ক কত?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    A submarine moving underwater at $10\text{ m/s}$ towards a vertical cliff emits an ultrasonic signal of frequency $100\text{ kHz}$. If the speed of sound in water is $1500\text{ m/s}$, what are the frequency of the echo received by the submarine's sonar and the beat frequency?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $101.342\text{ kHz}, 1342\text{ Hz}$
+    \item[\textbf{B)}] $100.671\text{ kHz}, 671\text{ Hz}$
+    \item[\textbf{C)}] $102.000\text{ kHz}, 2000\text{ Hz}$
+    \item[\textbf{D)}] $101.000\text{ kHz}, 1000\text{ Hz}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $101.342\text{ kHz}, 1342\text{ Hz}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    প্রতিধ্বনির অনুভূত কম্পাঙ্ক:
+    \[ f_{echo} = f \left(\frac{v + v_s}{v - v_s}\right) = 100 \left(\frac{1500 + 10}{1500 - 10}\right) = 100 \times \frac{1510}{1490} = \mathbf{101.342\text{ kHz}} \]
+    বিট কম্পাঙ্ক:
+    \[ \Delta f = f_{echo} - f = 101.342 - 100 = 1.342\text{ kHz} = \mathbf{1342\text{ Hz}} \]
+\end{tcolorbox}
+% ------------------------------------------
+% QUESTION 5 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 11}]
+    \noindent
+    একই কম্পাঙ্কের দুটি সরল ছন্দিত স্পন্দন $y_1 = 6 \sin (100\pi t)$ এবং $y_2 = 8 \cos (100\pi t)$ একই সাথে একটি কণার উপর উপরিপাতিত হলো (সরণ $\text{cm}$ এককে)। লব্ধি স্পন্দনের বিস্তার এবং আদি দশাকোণ কত?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    Two simple harmonic oscillations of the same frequency $y_1 = 6 \sin (100\pi t)$ and $y_2 = 8 \cos (100\pi t)$ are superimposed simultaneously on a particle (displacement in $\text{cm}$). What are the amplitude and initial phase angle of the resultant oscillation?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $14\text{ cm}, 0^\circ$
+    \item[\textbf{B)}] $10\text{ cm}, 53.13^\circ$
+    \item[\textbf{C)}] $10\text{ cm}, 36.87^\circ$
+    \item[\textbf{D)}] $2\text{ cm}, 90^\circ$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} B) $10\text{ cm}, 53.13^\circ$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    $y_2 = 8 \cos(100\pi t) = 8 \sin(100\pi t + \frac{\pi}{2})$। এখানে দশা পার্থক্য $\phi = \frac{\pi}{2}\text{ rad} = 90^\circ$। লব্ধি বিস্তার $A = \sqrt{A_1^2 + A_2^2 + 2 A_1 A_2 \cos \phi} = \sqrt{6^2 + 8^2} = \mathbf{10\text{ cm}}$। আদি দশা $\theta = \tan^{-1} \left( \frac{A_2 \sin \phi}{A_1 + A_2 \cos \phi} \right) = \tan^{-1} \left( \frac{8}{6} \right) = \tan^{-1}(1.333) \approx \mathbf{53.13^\circ}$।
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 6 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 12}]
+    \noindent
+    একটি স্থির তরঙ্গের সমীকরণ $y = 10 \sin \left(\frac{\pi x}{3}\right) \cos (40\pi t)$ (যেখানে $x, y$ এককে $\text{cm}$ এবং $t$ এককে $\text{s}$)। দুটি পর পর নিস্পন্দ বিন্দুর মধ্যবর্তী দূরত্ব এবং $x = 1.5\text{ cm}$ অবস্থানে অবস্থিত কণার বিস্তার কত?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    The equation of a stationary wave is $y = 10 \sin \left(\frac{\pi x}{3}\right) \cos (40\pi t)$ (where $x, y$ are in $\text{cm}$ and $t$ in $\text{s}$). What is the distance between two consecutive nodes, and what is the amplitude of the particle at position $x = 1.5\text{ cm}$?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $3\text{ cm}, 10\text{ cm}$
+    \item[\textbf{B)}] $6\text{ cm}, 5\text{ cm}$
+    \item[\textbf{C)}] $1.5\text{ cm}, 0\text{ cm}$
+    \item[\textbf{D)}] $3\text{ cm}, 5\sqrt{2}\text{ cm}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $3\text{ cm}, 10\text{ cm}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    প্রদত্ত সমীকরণ থেকে, $k = \frac{\pi}{3} \implies \frac{2\pi}{\lambda} = \frac{\pi}{3} \implies \lambda = 6\text{ cm}$। পর পর দুটি নিস্পন্দ বিন্দুর মধ্যবর্তী দূরত্ব $d = \frac{\lambda}{2} = \frac{6}{2} = \mathbf{3\text{ cm}}$। স্থানভিত্তিক বিস্তার $A(x) = 10 \sin \left(\frac{\pi x}{3}\right)$। $x = 1.5\text{ cm}$ বসিয়ে পাই: $A(1.5) = 10 \sin \left(\frac{1.5\pi}{3}\right) = 10 \sin \left(\frac{\pi}{2}\right) = \mathbf{10\text{ cm}}$।
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 7 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 13}]
+    \noindent
+    $A$ ও $B$ দুটি সুরশলাকা একত্রে শব্দায়িত করলে প্রতি সেকেন্ডে $5$ টি বীট উৎপন্ন হয়। $B$ সুরশলাকার কম্পাঙ্ক $256\text{ Hz}$। $A$ এর বাহুতে কিছুটা মোম লাগিয়ে ওজন বাড়ালে বীট সংখ্যা কমে প্রতি সেকেন্ডে $3$ টি হয়। $A$ এর মূল কম্পাঙ্ক কত ছিল?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    Two tuning forks $A$ and $B$ sounded together produce $5$ beats per second. The frequency of $B$ is $256\text{ Hz}$. When some wax is attached to the prong of $A$ to increase its mass, the beat frequency decreases to $3$ beats per second. What was the original frequency of $A$?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $251\text{ Hz}$
+    \item[\textbf{B)}] $261\text{ Hz}$
+    \item[\textbf{C)}] $265\text{ Hz}$
+    \item[\textbf{D)}] $246\text{ Hz}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} B) $261\text{ Hz}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    $B$ এর কম্পাঙ্ক $f_B = 256\text{ Hz}$। $A$ এর সম্ভাব্য কম্পাঙ্ক $f_A = 256 \pm 5 = 261\text{ Hz}$ অথবা $251\text{ Hz}$। মোম লাগালে $A$ এর ভর বৃদ্ধি পাওয়ায় কম্পাঙ্ক হ্রাস পায়। যেহেতু বীট সংখ্যা ৫ থেকে কমে ৩ হয়েছে, তাই $f_A > f_B$ হবে। অতএব, $A$ এর মূল কম্পাঙ্ক ছিল $\mathbf{261\text{ Hz}}$।
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 8 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 14}]
+    \noindent
+    $1.0\text{ m}$ এবং $1.02\text{ m}$ দৈর্ঘ্যবিশিষ্ট দুটি দুইমুখ খোলা নল তাদের মূল সুরের কম্পাঙ্কে একসাথে শব্দায়িত হয়ে প্রতি সেকেন্ডে $4$ টি বীট সৃষ্টি করে। ওই মাধ্যমে শব্দের বেগ কত?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    Two open organ pipes of lengths $1.0\text{ m}$ and $1.02\text{ m}$ sounded together in their fundamental mode produce $4$ beats per second. What is the speed of sound in that medium?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $332\text{ m/s}$
+    \item[\textbf{B)}] $340\text{ m/s}$
+    \item[\textbf{C)}] $408\text{ m/s}$
+    \item[\textbf{D)}] $416\text{ m/s}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} C) $408\text{ m/s}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    দুইমুখ খোলা নলের মূল সুরের কম্পাঙ্ক $f = \frac{v}{2L}$। প্রশ্নমতে, $f_1 - f_2 = 4$
+    \begin{align*}
+        \implies \frac{v}{2(1.0)} - \frac{v}{2(1.02)} &= 4 \\
+        \implies v \left( \frac{0.04}{4.08} \right) &= 4 \\
+        \implies v &= \mathbf{408\text{ m/s}}
+    \end{align*}
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 9 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 15}]
+    \noindent
+    একটি বিন্দু শব্দ উৎস থেকে গোলকীয় তরঙ্গ নিঃসৃত হচ্ছে। উৎস হতে $r_1 = 4\text{ m}$ দূরত্বে শব্দের তীব্রতা $I_1 = 10^{-4}\text{ W/m}^2$। উৎস হতে $r_2 = 20\text{ m}$ দূরত্বে শব্দের তীব্রতা লেভেল ($\text{dB}$ এককে) এবং তরঙ্গের বিস্তারের অনুপাত ($A_2 / A_1$) কত হবে? ($I_0 = 10^{-12}\text{ W/m}^2$)
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    A point sound source emits spherical waves. At a distance $r_1 = 4\text{ m}$ from the source, the sound intensity is $I_1 = 10^{-4}\text{ W/m}^2$. At a distance $r_2 = 20\text{ m}$, what will be the sound intensity level (in $\text{dB}$) and the ratio of wave amplitudes ($A_2 / A_1$)? ($I_0 = 10^{-12}\text{ W/m}^2$)
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $66.02\text{ dB}, 0.20$
+    \item[\textbf{B)}] $70.00\text{ dB}, 0.25$
+    \item[\textbf{C)}] $60.00\text{ dB}, 0.16$
+    \item[\textbf{D)}] $80.00\text{ dB}, 0.04$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $66.02\text{ dB}, 0.20$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    শব্দ তীব্রতা ব্যস্তবর্গীয় সূত্র মেনে চলে: $I_2 = I_1 \times \left(\frac{r_1}{r_2}\right)^2 = 10^{-4} \times \left(\frac{4}{20}\right)^2 = 4 \times 10^{-6}\text{ W/m}^2$। তীব্রতা লেভেল $\beta_2 = 10 \log_{10} \left(\frac{I_2}{I_0}\right) = 10 \log_{10} \left(\frac{4 \times 10^{-6}}{10^{-12}}\right) = \mathbf{66.02\text{ dB}}$। বিস্তারের অনুপাত $\frac{A_2}{A_1} = \frac{r_1}{r_2} = \frac{4}{20} = \mathbf{0.20}$।
+\end{tcolorbox}
+
+\vspace{2em}
+% ------------------------------------------
+% QUESTION 41 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 16}]
+    \noindent
+    $L = 0.5\text{ m}$ দীর্ঘ এবং $m = 0.01\text{ kg/m}$ একক দৈর্ঘ্যের ভরের একটি টানা তার $T_1 = 100\text{ N}$ টানে মূল সুরের কম্পনে থেকে একটি সুরশলাকা $A$ এর সাথে প্রতি সেকেন্ডে $4$ টি বীট উৎপন্ন করে। তারের টান $16.64\%$ বৃদ্ধি করা হলে এটি পুনরায় সুরশলাকা $A$ এর সাথে প্রতি সেকেন্ডে $4$ টি বীট উৎপন্ন করে। সুরশলাকা $A$ এর কম্পাঙ্ক কত? এবং একই কম্পাঙ্কের $P = 12.566\text{ W}$ ক্ষমতার একটি শব্দ উৎস থেকে $10\text{ m}$ দূরত্বে শব্দের তীব্রতা লেভেল ($\beta$) কত? ($I_0 = 10^{-12}\text{ W/m}^2$)
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    A stretched wire of length $L = 0.5\text{ m}$ and linear mass density $m = 0.01\text{ kg/m}$ vibrating in its fundamental mode under tension $T_1 = 100\text{ N}$ produces $4$ beats per second with a tuning fork $A$. When the tension is increased by $16.64\%$, it again produces $4$ beats per second with fork $A$. What is the frequency of tuning fork $A$? And what is the sound intensity level ($\beta$) at a distance of $10\text{ m}$ from a source of power $P = 12.566\text{ W}$ emitting sound at the same frequency? ($I_0 = 10^{-12}\text{ W/m}^2$)
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $104\text{ Hz}, 100\text{ dB}$
+    \item[\textbf{B)}] $96\text{ Hz}, 100\text{ dB}$
+    \item[\textbf{C)}] $104\text{ Hz}, 120\text{ dB}$
+    \item[\textbf{D)}] $96\text{ Hz}, 80\text{ dB}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $104\text{ Hz}, 100\text{ dB}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    তারের প্রাথমিক বেগ ও কম্পাঙ্ক:
+    \[ v_1 = \sqrt{\frac{T_1}{m}} = \sqrt{\frac{100}{0.01}} = 100\text{ m/s} \implies f_{wire,1} = \frac{v_1}{2L} = \frac{100}{2(0.5)} = 100\text{ Hz} \]
+    বীট সংখ্যা $N_1 = 4$ হওয়ায় সুরশলাকার কম্পাঙ্ক $f_A = 100 \pm 4 = 104\text{ Hz}$ বা $96\text{ Hz}$। নতুন টান $T_2 = 1.1664 T_1 = 116.64\text{ N}$ হলে নতুন কম্পাঙ্ক:
+    \[ f_{wire,2} = f_{wire,1}\sqrt{1.1664} = 100 \times 1.08 = 108\text{ Hz} \]
+    নতুন শর্তে বীট $|108 - f_A| = 4 \implies f_A = \mathbf{104\text{ Hz}}$। শব্দ তীব্রতা ও তীব্রতা লেভেল:
+    \[ I = \frac{P}{4\pi r^2} = \frac{12.566}{4\pi(10)^2} = \frac{4\pi}{4\pi(100)} = 10^{-2}\text{ W/m}^2 \]
+    \[ \beta = 10 \log_{10}\left(\frac{10^{-2}}{10^{-12}}\right) = \mathbf{100\text{ dB}} \]
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 42 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 17}]
+    \noindent
+    একটি টানা তারে সঞ্চালিত অগ্রগামী তরঙ্গের সমীকরণ $y = 0.08 \sin(120\pi t - 4\pi x)$ (SI এককে)। তারটির একক দৈর্ঘ্যের ভর $m = 0.02\text{ kg/m}$ হলে, কণার সর্বোচ্চ বেগ ($v_{p,max}$), কণার সর্বোচ্চ ত্বরণ ($a_{p,max}$), তরঙ্গবেগ ($v$) এবং তরঙ্গ দ্বারা সঞ্চালিত গড় ক্ষমতা ($P_{avg}$) কত?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    The equation of a progressive wave on a stretched string is $y = 0.08 \sin(120\pi t - 4\pi x)$ (in SI units). If the linear mass density of the string is $m = 0.02\text{ kg/m}$, what are the maximum particle speed ($v_{p,max}$), maximum particle acceleration ($a_{p,max}$), wave velocity ($v$), and average power transmitted by the wave ($P_{avg}$)?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $9.6\pi\text{ m/s}, 1152\pi^2\text{ m/s}^2, 30\text{ m/s}, 27.648\pi^2\text{ W}$
+    \item[\textbf{B)}] $4.8\pi\text{ m/s}, 576\pi^2\text{ m/s}^2, 30\text{ m/s}, 13.824\pi^2\text{ W}$
+    \item[\textbf{C)}] $9.6\pi\text{ m/s}, 1152\pi^2\text{ m/s}^2, 60\text{ m/s}, 55.296\pi^2\text{ W}$
+    \item[\textbf{D)}] $12\pi\text{ m/s}, 1440\pi^2\text{ m/s}^2, 15\text{ m/s}, 27.648\pi^2\text{ W}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $9.6\pi\text{ m/s}, 1152\pi^2\text{ m/s}^2, 30\text{ m/s}, 27.648\pi^2\text{ W}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    সমীকরণ থেকে বিস্তার $A = 0.08\text{ m}$, $\omega = 120\pi\text{ rad/s}$ এবং $k = 4\pi\text{ rad/m}$।
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item কণার সর্বোচ্চ বেগ, $v_{p,max} = A\omega = 0.08 \times 120\pi = \mathbf{9.6\pi\text{ m/s}}$
+        \item কণার সর্বোচ্চ ত্বরণ, $a_{p,max} = A\omega^2 = 0.08 \times (120\pi)^2 = \mathbf{1152\pi^2\text{ m/s}^2}$
+        \item তরঙ্গবেগ, $v = \frac{\omega}{k} = \frac{120\pi}{4\pi} = \mathbf{30\text{ m/s}}$
+        \item গড় ক্ষমতা, $P_{avg} = \frac{1}{2} m v \omega^2 A^2 = \frac{1}{2} (0.02) (30) (120\pi)^2 (0.08)^2 = \mathbf{27.648\pi^2\text{ W}}$
+    \end{itemize}
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 43 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 18}]
+    \noindent
+    $L_o = 0.80\text{ m}$ দৈর্ঘ্যের একটি দুইমুখ খোলা নল এবং $L_c = 0.42\text{ m}$ দৈর্ঘ্যের একটি একমুখ খোলা নল বায়ুতে শব্দ সৃষ্টি করছে যেখানে শব্দের বেগ $v = 336\text{ m/s}$। নল দুটির মূল সুরের মধ্যে বীট কম্পাঙ্ক ($N$) কত? এবং বন্ধ নলটির মূল সুরকে খোলা নলের মূল সুরের সাথে অনুনাদে আনতে বন্ধ নলের দৈর্ঘ্য কতটুকু পরিবর্তন ($\Delta L_c$) করতে হবে?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    An open organ pipe of length $L_o = 0.80\text{ m}$ and a closed organ pipe of length $L_c = 0.42\text{ m}$ operate in air where the speed of sound is $v = 336\text{ m/s}$. What is the beat frequency ($N$) between their fundamental modes? And by how much must the length of the closed pipe be changed ($\Delta L_c$) so that its fundamental frequency equals that of the open pipe?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $10\text{ Hz}, -2.0\text{ cm}$
+    \item[\textbf{B)}] $10\text{ Hz}, +2.0\text{ cm}$
+    \item[\textbf{C)}] $5\text{ Hz}, -1.0\text{ cm}$
+    \item[\textbf{D)}] $20\text{ Hz}, -4.0\text{ cm}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $10\text{ Hz}, -2.0\text{ cm}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    খোলা নলের কম্পাঙ্ক $f_{o,1} = \frac{v}{2L_o} = \frac{336}{2(0.80)} = 210\text{ Hz}$। বন্ধ নলের কম্পাঙ্ক $f_{c,1} = \frac{v}{4L_c} = \frac{336}{4(0.42)} = 200\text{ Hz}$। বীট কম্পাঙ্ক $N = |210 - 200| = \mathbf{10\text{ Hz}}$। অনুনাদের জন্য বন্ধ নলের নতুন দৈর্ঘ্য $L_c'$:
+    \[ \frac{336}{4L_c'} = 210 \implies L_c' = 0.40\text{ m} = 40.0\text{ cm} \]
+    দৈর্ঘ্যের পরিবর্তন $\Delta L_c = 40.0 - 42.0 = \mathbf{-2.0\text{ cm}}$ (হ্রাস করতে হবে)।
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 44 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 19}]
+    \noindent
+    একটি টানা তারে সৃষ্ট স্থির তরঙ্গের সমীকরণ $y = 0.10 \sin(\pi x) \cos(50\pi t)$ (SI এককে)। দুটি পর পর নিস্পন্দ বিন্দুর দূরত্ব ($d$), একটি নিস্পন্দ ও নিকটবর্তী সুস্পন্দ বিন্দুর দূরত্ব ($b$), $x = 0.5\text{ m}$ অবস্থানে কণার সর্বোচ্চ বেগ ($v_{p,max}$) এবং সমাকলনের মাধ্যমে $L = 2\text{ m}$ দৈর্ঘ্যের অংশের মোট যান্ত্রিক শক্তি ($E$) কত? (একক দৈর্ঘ্যের ভর $m = 0.04\text{ kg/m}$)
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    The equation of a stationary wave on a stretched string is $y = 0.10 \sin(\pi x) \cos(50\pi t)$ (in SI units). What are the distance between two consecutive nodes ($d$), distance between a node and adjacent antinode ($b$), maximum particle speed at $x = 0.5\text{ m}$ ($v_{p,max}$), and total mechanical energy in a segment of length $L = 2\text{ m}$ using integration? (Linear mass density $m = 0.04\text{ kg/m}$)
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $1.0\text{ m}, 0.5\text{ m}, 5\pi\text{ m/s}, 0.5\pi^2\text{ J}$
+    \item[\textbf{B)}] $2.0\text{ m}, 1.0\text{ m}, 10\pi\text{ m/s}, \pi^2\text{ J}$
+    \item[\textbf{C)}] $1.0\text{ m}, 0.5\text{ m}, 2.5\pi\text{ m/s}, 0.25\pi^2\text{ J}$
+    \item[\textbf{D)}] $0.5\text{ m}, 0.25\text{ m}, 5\pi\text{ m/s}, 0.5\pi^2\text{ J}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $1.0\text{ m}, 0.5\text{ m}, 5\pi\text{ m/s}, 0.5\pi^2\text{ J}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    এখানে $k = \pi \implies \lambda = 2.0\text{ m}$।
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item নিস্পন্দ বিন্দুর দূরত্ব, $d = \frac{\lambda}{2} = \mathbf{1.0\text{ m}}$
+        \item নিস্পন্দ ও সুস্পন্দ বিন্দুর দূরত্ব, $b = \frac{\lambda}{4} = \mathbf{0.5\text{ m}}$
+    \end{itemize}
+    কণার বেগের সমীকরণ $v_p = \frac{\partial y}{\partial t} = -5\pi \sin(\pi x) \sin(50\pi t)$ হওয়ায় $x = 0.5\text{ m}$ অবস্থানে সর্বোচ্চ বেগ $v_{p,max} = 5\pi \sin(0.5\pi) = \mathbf{5\pi\text{ m/s}}$। মোট যান্ত্রিক শক্তি সমাকলন করে পাই:
+    \[ E = \int_0^2 \frac{1}{2} m v_{p,max}^2 dx = \frac{1}{2}(0.04)(25\pi^2) \int_0^2 \sin^2(\pi x) dx = 0.5\pi^2 (1) = \mathbf{0.5\pi^2\text{ J}} \]
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 45 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 20}]
+    \noindent
+    তিনটি স্বাধীন শব্দ উৎস হতে $r_1 = 10\text{ m}$ দূরত্বে উৎপন্ন শব্দের তীব্রতা লেভেল যথাক্রমে $80\text{ dB}$, $80\text{ dB}$ এবং $86\text{ dB}$। উৎসত্রয় একসাথে চালু থাকলে ওই স্থানে লব্ধি তীব্রতা লেভেল ($\beta_{total}$), পর্যবেক্ষক $r_2 = 20\text{ m}$ দূরত্বে পিছিয়ে গেলে নতুন তীব্রতা লেভেল ($\beta_{new}$) এবং নতুন স্থানে শব্দের চাপ বিস্তার ($P_{max}$) কত? ($\rho = 1.2\text{ kg/m}^3, v = 340\text{ m/s}, I_0 = 10^{-12}\text{ W/m}^2$)
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    Three independent sound sources produce intensity levels of $80\text{ dB}$, $80\text{ dB}$, and $86\text{ dB}$ respectively at a distance $r_1 = 10\text{ m}$. What are the combined sound intensity level ($\beta_{total}$) at that spot, the new intensity level ($\beta_{new}$) if the observer moves to $r_2 = 20\text{ m}$, and the sound pressure amplitude ($P_{max}$) at the new position? ($\rho = 1.2\text{ kg/m}^3, v = 340\text{ m/s}, I_0 = 10^{-12}\text{ W/m}^2$)
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $87.77\text{ dB}, 81.75\text{ dB}, 0.247\text{ N/m}^2$
+    \item[\textbf{B)}] $84.00\text{ dB}, 78.00\text{ dB}, 0.123\text{ N/m}^2$
+    \item[\textbf{C)}] $87.77\text{ dB}, 84.76\text{ dB}, 0.494\text{ N/m}^2$
+    \item[\textbf{D)}] $90.00\text{ dB}, 83.98\text{ dB}, 0.247\text{ N/m}^2$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $87.77\text{ dB}, 81.75\text{ dB}, 0.247\text{ N/m}^2$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    স্বতন্ত্র তীব্রতাসমূহ: $I_1 = 10^{-4}$, $I_2 = 10^{-4}$, $I_3 = 10^{-12} \times 10^{8.6} = 3.981 \times 10^{-4}\text{ W/m}^2$। মোট তীব্রতা $I_{total} = 5.981 \times 10^{-4}\text{ W/m}^2$। লব্ধি তীব্রতা লেভেল:
+    \[ \beta_{total} = 10 \log_{10}\left(\frac{5.981 \times 10^{-4}}{10^{-12}}\right) = \mathbf{87.77\text{ dB}} \]
+    দূরত্ব দ্বিগুণ হওয়ায় নতুন তীব্রতা চার ভাগের এক ভাগ হবে $I' = 1.495 \times 10^{-4}\text{ W/m}^2$ এবং নতুন তীব্রতা লেভেল $\beta_{new} = 87.77 - 6.02 = \mathbf{81.75\text{ dB}}$। নতুন অবস্থানে চাপ বিস্তার:
+    \[ P_{max} = \sqrt{I' \rho v} = \sqrt{1.495 \times 10^{-4} \times 1.2 \times 340} = \mathbf{0.247\text{ N/m}^2} \]
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 46 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 21}]
+    \noindent
+    দুটি তার $A$ ও $B$ এর ঘনত্বের অনুপাত $\rho_A / \rho_B = 1 : 2$, ব্যাসার্ধের অনুপাত $r_A / r_B = 2 : 1$ এবং দৈর্ঘ্যের অনুপাত $L_A / L_B = 1 : 2$। তার দুটিকে যথাক্রমে $T_A = 200\text{ N}$ এবং $T_B = 100\text{ N}$ টানে রাখা হলে তাদের মূল সুরের কম্পাঙ্কের অনুপাত ($f_A / f_B$) কত? যদি তার $A$ এর দৈর্ঘ্য $L_A = 0.5\text{ m}$, ব্যাসার্ধ $r_A = 1.0\text{ mm}$ এবং উপাদান ঘনত্ব $\rho_A = 8000\text{ kg/m}^3$ হয়, তবে $f_A$ এর মান কত?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    Two wires $A$ and $B$ have density ratio $\rho_A / \rho_B = 1 : 2$, radius ratio $r_A / r_B = 2 : 1$, and length ratio $L_A / L_B = 1 : 2$. If they are under tensions $T_A = 200\text{ N}$ and $T_B = 100\text{ N}$ respectively, what is the ratio of their fundamental frequencies ($f_A / f_B$)? If wire $A$ has length $L_A = 0.5\text{ m}$, radius $r_A = 1.0\text{ mm}$, and material density $\rho_A = 8000\text{ kg/m}^3$, what is the value of $f_A$?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $2.0, 89.20\text{ Hz}$
+    \item[\textbf{B)}] $1.0, 178.40\text{ Hz}$
+    \item[\textbf{C)}] $4.0, 89.20\text{ Hz}$
+    \item[\textbf{D)}] $2.0, 178.40\text{ Hz}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $2.0, 89.20\text{ Hz}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    কম্পাঙ্কের অনুপাত সূত্রানুসারে:
+    \[ \frac{f_A}{f_B} = \left(\frac{L_B}{L_A}\right) \left(\frac{r_B}{r_A}\right) \sqrt{\left(\frac{T_A}{T_B}\right) \left(\frac{\rho_B}{\rho_A}\right)} = 2 \times \frac{1}{2} \times \sqrt{2 \times 2} = \mathbf{2.0} \]
+    তার $A$ এর একক দৈর্ঘ্যের ভর $m_A = \rho_A \pi r_A^2 = 8000 \times \pi \times (10^{-3})^2 = 0.02513\text{ kg/m}$। বেগ এবং কম্পাঙ্ক:
+    \[ v_A = \sqrt{\frac{200}{0.02513}} = 89.20\text{ m/s} \implies f_A = \frac{89.20}{2(0.5)} = \mathbf{89.20\text{ Hz}} \]
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 47 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 22}]
+    \noindent
+    একই দিকে সঞ্চালিত দুটি সমকম্পাঙ্কের অগ্রগামী তরঙ্গের সমীকরণ $y_1 = 0.06 \sin(100\pi t - 2\pi x)$ এবং $y_2 = 0.08 \sin(100\pi t - 2\pi x + \pi/3)$ (SI এককে)। লব্ধি তরঙ্গের বিস্তার ($A_R$), আদি দশা ($\delta$), কণার সর্বোচ্চ বেগ ($v_{p,max}$) এবং কণার সর্বোচ্চ ত্বরণ ($a_{p,max}$) কত?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    Two progressive waves of the same frequency traveling in the same direction are given by $y_1 = 0.06 \sin(100\pi t - 2\pi x)$ and $y_2 = 0.08 \sin(100\pi t - 2\pi x + \pi/3)$ (in SI units). What are the resultant amplitude ($A_R$), initial phase ($\delta$), maximum particle velocity ($v_{p,max}$), and maximum particle acceleration ($a_{p,max}$)?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $0.122\text{ m}, 34.72^\circ, 38.22\text{ m/s}, 12006\text{ m/s}^2$
+    \item[\textbf{B)}] $0.140\text{ m}, 60.00^\circ, 43.98\text{ m/s}, 13817\text{ m/s}^2$
+    \item[\textbf{C)}] $0.100\text{ m}, 0.00^\circ, 31.42\text{ m/s}, 9870\text{ m/s}^2$
+    \item[\textbf{D)}] $0.122\text{ m}, 45.00^\circ, 38.22\text{ m/s}, 6003\text{ m/s}^2$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $0.122\text{ m}, 34.72^\circ, 38.22\text{ m/s}, 12006\text{ m/s}^2$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    দশা পার্থক্য $\phi = 60^\circ$ হলে লব্ধি বিস্তার:
+    \[ A_R = \sqrt{0.06^2 + 0.08^2 + 2(0.06)(0.08)\cos 60^\circ} = \sqrt{0.0148} \approx \mathbf{0.122\text{ m}} \]
+    আদি দশা $\delta = \tan^{-1}\left(\frac{0.08 \sin 60^\circ}{0.06 + 0.08 \cos 60^\circ}\right) = \mathbf{34.72^\circ}$। সর্বোচ্চ বেগ ও ত্বরণ:
+    \[ v_{p,max} = A_R \omega = 0.122 \times 100\pi = \mathbf{38.22\text{ m/s}} \]
+    \[ a_{p,max} = A_R \omega^2 = 0.122 \times (100\pi)^2 = \mathbf{12006\text{ m/s}^2} \]
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 48 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 23}]
+    \noindent
+    অনুনাদ নল পরীক্ষায় $f = 512\text{ Hz}$ কম্পাঙ্কের সুরশলাকা ব্যবহার করে ১ম ও ২য় অনুনাদের জন্য বায়ুনলের দৈর্ঘ্য যথাক্রমে $L_1 = 0.15\text{ m}$ এবং $L_2 = 0.48\text{ m}$ পাওয়া গেল। বায়ুতে শব্দের বেগ ($v$), নলের প্রান্ত ত্রুটি ($e$), ৩য় অনুনাদের জন্য প্রয়োজনীয় দৈর্ঘ্য ($L_3$) এবং তাপমাত্রা বৃদ্ধিতে শব্দের বেগ $5\%$ বৃদ্ধি পেলে নতুন ১ম অনুনাদ দৈর্ঘ্য ($L_1'$) কত হবে?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    In a resonance tube experiment using a tuning fork of frequency $f = 512\text{ Hz}$, the 1st and 2nd resonances occur at lengths $L_1 = 0.15\text{ m}$ and $L_2 = 0.48\text{ m}$ respectively. What are the speed of sound in air ($v$), end correction ($e$), length required for 3rd resonance ($L_3$), and the new 1st resonance length ($L_1'$) if speed of sound increases by $5\%$?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $337.92\text{ m/s}, 0.015\text{ m}, 0.81\text{ m}, 0.158\text{ m}$
+    \item[\textbf{B)}] $330.00\text{ m/s}, 0.020\text{ m}, 0.80\text{ m}, 0.165\text{ m}$
+    \item[\textbf{C)}] $337.92\text{ m/s}, 0.015\text{ m}, 0.99\text{ m}, 0.173\text{ m}$
+    \item[\textbf{D)}] $340.00\text{ m/s}, 0.010\text{ m}, 0.81\text{ m}, 0.150\text{ m}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $337.92\text{ m/s}, 0.015\text{ m}, 0.81\text{ m}, 0.158\text{ m}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    তরঙ্গদৈর্ঘ্য ও শব্দের বেগ:
+    \[ L_2 - L_1 = \frac{\lambda}{2} \implies 0.48 - 0.15 = 0.33\text{ m} \implies \lambda = 0.66\text{ m} \]
+    \[ v = f \lambda = 512 \times 0.66 = \mathbf{337.92\text{ m/s}} \]
+    প্রান্ত ত্রুটি $e = \frac{\lambda}{4} - L_1 = 0.165 - 0.15 = \mathbf{0.015\text{ m}}$। ৩য় অনুনাদের দৈর্ঘ্য $L_3 = \frac{5\lambda}{4} - e = 5(0.165) - 0.015 = \mathbf{0.81\text{ m}}$। বেগ $5\%$ বৃদ্ধি পেলে নতুন তরঙ্গদৈর্ঘ্য $\lambda' = 1.05(0.66) = 0.693\text{ m}$ হওয়ায় নতুন ১ম অনুনাদ দৈর্ঘ্য:
+    \[ L_1' = \frac{0.693}{4} - 0.015 = \mathbf{0.158\text{ m}} \]
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 49 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 24}]
+    \noindent
+    একটি অজানা কম্পাঙ্কের সুরশলাকা $A$, $320\text{ Hz}$ কম্পাঙ্কের সুরশলাকা $B$ এর সাথে একত্রে শব্দায়িত করলে প্রতি সেকেন্ডে $5$ টি বীট উৎপন্ন হয়। $A$ এর বাহুতে কিছুটা মোম লাগালে বীট সংখ্যা বৃদ্ধি পেয়ে প্রতি সেকেন্ডে $8$ টি হয়। সুরশলাকালাইট $A$ এর মূল কম্পাঙ্ক ($f_A$) কত? উক্ত অপরিবর্তিত সুরশলাকা $A$ যদি $L = 0.8\text{ m}$ দীর্ঘ এবং সচিব $T = 160\text{ N}$ টানে থাকা একটি তারের মূল সুরের সাথে অনুনাদে থাকে, তবে তারের একক দৈর্ঘ্যের ভর ($m$) কত?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    A tuning fork $A$ of unknown frequency produces $5$ beats per second with a tuning fork $B$ of frequency $320\text{ Hz}$. Attaching wax to $A$ increases the beat frequency to $8$ beats per second. What was the original frequency of $A$ ($f_A$)? If the unweighted tuning fork $A$ is in resonance with the fundamental mode of a wire of length $L = 0.8\text{ m}$ under tension $T = 160\text{ N}$, what is the linear mass density ($m$) of the wire?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $315\text{ Hz}, 6.30 \times 10^{-4}\text{ kg/m}$
+    \item[\textbf{B)}] $325\text{ Hz}, 6.30 \times 10^{-4}\text{ kg/m}$
+    \item[\textbf{C)}] $315\text{ Hz}, 1.26 \times 10^{-3}\text{ kg/m}$
+    \item[\textbf{D)}] $325\text{ Hz}, 3.15 \times 10^{-4}\text{ kg/m}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $315\text{ Hz}, 6.30 \times 10^{-4}\text{ kg/m}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    মোম লাগালে কম্পাঙ্ক হ্রাস পায়। যেহেতু বীট সংখ্যা $5$ থেকে বেড়ে $8$ হয়েছে, তাই $f_A < f_B \implies f_A = 320 - 5 = \mathbf{315\text{ Hz}}$। তারের কম্পাঙ্কের সূত্রানুসারে:
+    \[ 315 = \frac{1}{2(0.8)}\sqrt{\frac{160}{m}} \implies 315 \times 1.6 = \sqrt{\frac{160}{m}} \]
+    \[ 504 = \sqrt{\frac{160}{m}} \implies m = \frac{160}{504^2} \approx \mathbf{6.30 \times 10^{-4}\text{ kg/m}} \]
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 50 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 25}]
+    \noindent
+    কারখানার একটি যন্ত্র চারদিকে সুষমভাবে মোট সচিব $P = 8\pi\text{ W}$ ক্ষমতার শব্দ নির্গত করে। শ্রমিকদের নিরাপত্তার জন্য শব্দের সর্বোচ্চ সহনীয় তীব্রতা লেভেল $\beta_{limit} = 90\text{ dB}$। যন্ত্র হতে নিরাপদ ন্যূনতম দূরত্ব ($r_{min}$), ওই স্থানে শব্দের তীব্রতা ($I$) এবং শব্দের চাপ বিস্তার ($P_{max}$) কত? ($\rho = 1.29\text{ kg/m}^3, v = 340\text{ m/s}, I_0 = 10^{-12}\text{ W/m}^2$)
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    A factory machine emits sound uniformly in all directions with total power $P = 8\pi\text{ W}$. The maximum permissible sound intensity level for worker safety is $\beta_{limit} = 90\text{ dB}$. What are the minimum safe distance ($r_{min}$) from the machine, sound intensity ($I$) at that point, and sound pressure amplitude ($P_{max}$)? ($\rho = 1.29\text{ kg/m}^3, v = 340\text{ m/s}, I_0 = 10^{-12}\text{ W/m}^2$)
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $44.72\text{ m}, 10^{-3}\text{ W/m}^2, 0.662\text{ N/m}^2$
+    \item[\textbf{B)}] $20.00\text{ m}, 10^{-3}\text{ W/m}^2, 0.331\text{ N/m}^2$
+    \item[\textbf{C)}] $44.72\text{ m}, 10^{-4}\text{ W/m}^2, 0.209\text{ N/m}^2$
+    \item[\textbf{D)}] $31.62\text{ m}, 10^{-3}\text{ W/m}^2, 0.662\text{ N/m}^2$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $44.72\text{ m}, 10^{-3}\text{ W/m}^2, 0.662\text{ N/m}^2$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    $\beta = 90\text{ dB} \implies I = 10^{-12} \times 10^9 = \mathbf{10^{-3}\text{ W/m}^2}$। নিরাপদ দূরত্ব $r_{min}$ নির্ণয়:
+    \[ I = \frac{P}{4\pi r^2} \implies 10^{-3} = \frac{8\pi}{4\pi r^2} = \frac{2}{r^2} \implies r = \sqrt{2000} \approx \mathbf{44.72\text{ m}} \]
+    শব্দের চাপ বিস্তার:
+    \[ P_{max} = \sqrt{I \rho v} = \sqrt{10^{-3} \times 1.29 \times 340} = \sqrt{0.4386} \approx \mathbf{0.662\text{ N/m}^2} \]
+\end{tcolorbox}
+\end{document}

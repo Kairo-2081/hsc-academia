@@ -1,0 +1,1526 @@
+\documentclass[12pt, a4paper]{article}
+
+% ==========================================
+% 1. COMPILER, LANGUAGE & FONT SETUP
+% ==========================================
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{bengali}
+\setotherlanguage{english}
+\newfontfamily\bengalifont[Script=Bengali, AutoFakeBold=2.5, AutoFakeSlant=0.2]{Kalpurush}
+
+% ==========================================
+% 2. MATHEMATICS, UNITS & FORMATTING
+% ==========================================
+\usepackage{amsmath, amssymb, siunitx}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{microtype} % For better typography
+\onehalfspacing % Better line spacing for readability
+
+% ==========================================
+% 3. COLORS & BEAUTIFICATION PACKAGES
+% ==========================================
+\usepackage[dvipsnames, table]{xcolor}
+\usepackage[skins, breakable, theorems]{tcolorbox}
+\usepackage{tikz}
+\renewcommand{\labelitemi}{$\bullet$}
+
+% Define custom beautiful colors
+\definecolor{primary}{HTML}{0056b3}
+\definecolor{secondary}{HTML}{e7f1ff}
+\definecolor{success}{HTML}{198754}
+\definecolor{successbg}{HTML}{d1e7dd}
+\definecolor{accent}{HTML}{fd7e14}
+\definecolor{darkgray}{HTML}{343a40}
+
+% Custom Tcolorbox Styles
+\tcbset{
+    questionbox/.style={
+        enhanced, colback=secondary, colframe=primary, arc=2mm, boxrule=1pt,
+        fonttitle=\bfseries\Large, title=#1,
+        drop fuzzy shadow=black!10,
+        attach boxed title to top left={xshift=5mm, yshift=-3mm},
+        boxed title style={colback=primary, arc=1mm}
+    },
+    answerbox/.style={
+        enhanced, colback=successbg, colframe=success, arc=1.5mm, boxrule=1pt,
+        left=2mm, right=2mm, top=2mm, bottom=2mm,
+        drop fuzzy shadow=black!10
+    },
+    solutionbox/.style={
+        enhanced, colback=white, colframe=darkgray, arc=2mm, boxrule=1pt,
+        fonttitle=\bfseries\large, title=#1, breakable,
+        coltitle=white, colbacktitle=darkgray,
+        drop fuzzy shadow=black!10,
+        attach boxed title to top center={yshift=-3mm},
+        boxed title style={arc=1mm}
+    }
+}
+
+\begin{document}
+
+\newpage
+% ------------------------------------------
+% QUESTION 1 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 1}]
+    \noindent
+    হ্রদের তলদেশ থেকে পানির উপরিতলে আসায় একটি বায়ুবুদ্বুদ্বের আয়তন $5$ গুণ হয়। হ্রদের তলদেশে পানির তাপমাত্রা $4^\circ\text{C}$ এবং উপরিতলে $20^\circ\text{C}$। বায়ুমণ্ডলের চাপ $1.013 \times 10^5\text{ Pa}$ এবং পানির ঘনত্ব $0.998 \times 10^3\text{ kg m}^{-3}$ হলে হ্রদের গভীরতা কত?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    An air bubble rising from the bottom of a lake to the surface expands to $5$ times its initial volume. The water temperature at the bottom of the lake is $4^\circ\text{C}$ and at the surface is $20^\circ\text{C}$. If the atmospheric pressure is $1.013 \times 10^5\text{ Pa}$ and the density of water is $0.998 \times 10^3\text{ kg m}^{-3}$, what is the depth of the lake?
+    }
+    \end{english}
+\end{tcolorbox}
+
+% ------------------------------------------
+% OPTIONS SECTION 1
+% ------------------------------------------
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $38.03\text{ m}$
+    \item[\textbf{B)}] $40.82\text{ m}$
+    \item[\textbf{C)}] $38.60\text{ m}$
+    \item[\textbf{D)}] $42.15\text{ m}$
+\end{itemize}
+
+% ------------------------------------------
+% ANSWER HIGHLIGHT 1
+% ------------------------------------------
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} C) $38.60\text{ m}$
+\end{tcolorbox}
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 1
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{ধাপ ১: প্রদত্ত উপাত্তসমূহ চিহ্নিতকরণ ও কেলভিন স্কেলে রূপান্তর}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item বায়ুবুদ্বুদ্বের তলদেশের আদি আয়তন, $V_1 = V$
+        \item বায়ুবুদ্বুদ্বের উপরিতলের অন্তিম আয়তন, $V_2 = 5V$
+        \item হ্রদের তলদেশের তাপমাত্রা, $T_1 = 273 + 4 = 277\text{ K}$
+        \item হ্রদের উপরিতলের তাপমাত্রা, $T_2 = 273 + 20 = 293\text{ K}$
+        \item বায়ুমণ্ডলীয় চাপ ($P_2$) = পানির উপরিতলে চাপ = $1.013 \times 10^5\text{ Pa}$
+    \end{itemize}
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ২: হ্রদের তলদেশে মোট চাপ নির্ণয়} \\
+    হ্রদের তলদেশে মোট চাপ বায়ুমণ্ডলীয় চাপ এবং গভীরতার কারণে সৃষ্ট অতিরিক্ত hydrostatic চাপের সমষ্টির সমান। যদি হ্রদের গভীরতা $h$ হয়, তবে তলদেশের চাপ:
+    \[ P_1 = P_a + h \rho g \]
+    যেখানে পানির ঘনত্ব $\rho = 0.998 \times 10^3\text{ kg m}^{-3}$ এবং অভিকর্ষজ ত্বরণ নির্দেশক মান $g = 9.8\text{ m s}^{-2}$।
+    মানগুলো বসিয়ে পাই:
+    \[ P_1 = 1.013 \times 10^5 + h \times (0.998 \times 10^3) \times 9.8 = 1.013 \times 10^5 + 9780.4h\text{ Pa} \]
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ৩: আদর্শ গ্যাসের সমন্বয় সূত্র প্রয়োগ ও সমাধান} \\
+    আদর্শ গ্যাসের সমন্বয় সূত্রানুসারে আমরা পাই:
+    \[ \frac{P_1 V_1}{T_1} = \frac{P_2 V_2}{T_2} \]
+    
+    উপাত্তগুলো সমীকরণে প্রতিস্থাপন করে পাই:
+    \begin{align*}
+        \frac{(1.013 \times 10^5 + 9780.4h) \times V}{277} &= \frac{1.013 \times 10^5 \times 5V}{293} \\
+        \implies 1.013 \times 10^5 + 9780.4h &= \frac{1.013 \times 10^5 \times 5 \times 277}{293} \\
+        \implies 1.013 \times 10^5 + 9780.4h &= \frac{140300500}{293} \approx 478841.30 \\
+        \implies 9780.4h &= 478841.30 - 101300 \\
+        \implies 9780.4h &= 377541.30 \\
+        \implies h &= \frac{377541.30}{9780.4} = \mathbf{38.60\text{ m}}
+    \end{align*}
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 2 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 2}]
+    \noindent
+    $500\text{ cc}$ এবং $100\text{ cc}$ আয়তনের দুটি কাচনল উপেক্ষণীয় আয়তনের একটি সংকীর্ণ নল দ্বারা সংযুক্ত। শুরুতে অভ্যন্তরীণ তাপমাত্রা $20^\circ\text{C}$ এবং চাপ $70\text{ cm Hg}$। যদি $100\text{ cc}$ নলকে $20^\circ\text{C}$ তাপমাত্রায় রেখে $500\text{ cc}$ নলকে $100^\circ\text{C}$ তাপমাত্রায় উত্তপ্ত করা হয়, তবে ব্যবস্থাটির চূড়ান্ত অভ্যন্তরীণ চাপ কত হবে?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    Two glass bulbs of volumes $500\text{ cc}$ and $100\text{ cc}$ are connected by a narrow tube of negligible volume. Initially, the internal temperature is $20^\circ\text{C}$ and the pressure is $70\text{ cm Hg}$. If the $100\text{ cc}$ bulb is kept at $20^\circ\text{C}$ and the $500\text{ cc}$ bulb is heated to $100^\circ\text{C}$, what will be the final internal pressure of the system?
+    }
+    \end{english}
+\end{tcolorbox}
+
+% ------------------------------------------
+% OPTIONS SECTION 2
+% ------------------------------------------
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $72.60\text{ cm Hg}$
+    \item[\textbf{B)}] $85.23\text{ cm Hg}$
+    \item[\textbf{C)}] $80.00\text{ cm Hg}$
+    \item[\textbf{D)}] $90.15\text{ cm Hg}$
+\end{itemize}
+
+% ------------------------------------------
+% ANSWER HIGHLIGHT 2
+% ------------------------------------------
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} B) $85.23\text{ cm Hg}$
+\end{tcolorbox}
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 2
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    এই সমস্যাটি সমাধানের জন্য আদর্শ গ্যাস সমীকরণ ($PV = nRT$) এবং গ্যাসীয় ব্যবস্থার \textbf{মোল সংখ্যা সংরক্ষণ নীতি (Conservation of Moles)} প্রয়োগ করতে হবে। যেহেতু সংযোগকারী নলের আয়তন উপেক্ষণীয়, তাই পুরো ব্যবস্থার মোট গ্যাসের পরিমাণ (মোল সংখ্যা) অপরিবর্তিত থাকবে।
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ১: প্রাথমিক অবস্থার মোট মোল সংখ্যা নির্ণয়}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item প্রাথমিক চাপ, $P_0 = 70\text{ cm Hg}$
+        \item প্রথম পাত্রের আয়তন, $V_1 = 500\text{ cc}$
+        \item দ্বিতীয় পাত্রের আয়তন, $V_2 = 100\text{ cc}$
+        \item প্রাথমিক অভিন্ন তাপমাত্রা, $T_0 = 273 + 20 = 293\text{ K}$
+    \end{itemize}
+    আদর্শ গ্যাস সমীকরণ $n = \frac{PV}{RT}$ অনুসারে, প্রাথমিক মোট মোল সংখ্যা ($n_{\text{total}}$):
+    \[ n_{\text{total}} = \frac{P_0 V_1}{R T_0} + \frac{P_0 V_2}{R T_0} = \frac{P_0 (V_1 + V_2)}{R T_0} = \frac{70 \times (500 + 100)}{R \times 293} = \frac{42000}{293 R} \]
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ২: চূড়ান্ত অবস্থার মোল সংখ্যা নির্ধারণ} \\
+    তাপমাত্রা পরিবর্তন করার পর নতুন তাপমাত্রাগুলো হলো:
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item প্রথম পাত্রের নতুন তাপমাত্রা, $T_1' = 273 + 100 = 373\text{ K}$
+        \item দ্বিতীয় পাত্রের তাপমাত্রা অপরিবর্তিত থাকে, তাই $T_2' = 273 + 20 = 293\text{ K}$
+        \item ধরি, চূড়ান্ত সাম্য চাপ $= P'$
+    \end{itemize}
+    চূড়ান্ত অবস্থায় উভয় পাত্রের পৃথক মোল সংখ্যা যথাক্রমে $n_1'$ ও $n_2'$ হলে:
+    \[ n_1' = \frac{P' \times 500}{R \times 373}, \quad n_2' = \frac{P' \times 100}{R \times 293} \]
+    অতএব, চূড়ান্ত মোট মোল সংখ্যা:
+    \[ n_{\text{final}} = n_1' + n_2' = \frac{P' \times 500}{373 R} + \frac{P' \times 100}{293 R} \]
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ৩: মোল সংখ্যা সংরক্ষণ নীতি প্রয়োগ করে চাপ নির্ণয়} \\
+    গ্যাসের মোল সংখ্যা সংরক্ষিত থাকায় ($n_{\text{total}} = n_{\text{final}}$), লেখা যায়:
+    \begin{align*}
+        \frac{42000}{293 R} &= \frac{P' \times 500}{373 R} + \frac{P' \times 100}{293 R}
+    \end{align*}
+    উভয়পক্ষ থেকে ধ্রুবক $R$ বাদ দিয়ে এবং সমীকরণ সমাধান করে পাই:
+    \begin{align*}
+        \frac{42000}{293} &= P' \left(\frac{500}{373} + \frac{100}{293}\right) \\
+        143.3447 &= P' (1.34048 + 0.34130) \\
+        143.3447 &= 1.68178 P' \\
+        \implies P' &= \frac{143.3447}{1.68178} = \mathbf{85.23\text{ cm Hg}}
+    \end{align*}
+\end{tcolorbox}
+
+% ------------------------------------------
+% QUESTION 3 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 3}]
+    \noindent
+    আংশিকভাবে ফোলানো একটি বেলুনে $27^\circ\text{C}$ তাপমাত্রায় এবং $1\text{ atm}$ চাপে $500\text{ m}^3$ হিলিয়াম গ্যাস রয়েছে। বেলুনটি $3000\text{ m}$ উচ্চতায় উঠলে, যেখানে চাপ $0.5\text{ atm}$ এবং তাপমাত্রা $-3^\circ\text{C}$, সেখানে হিলিয়াম গ্যাসের আয়তন কত হবে?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    A partially inflated balloon contains $500\text{ m}^3$ of Helium gas at $27^\circ\text{C}$ and $1\text{ atm}$ pressure. What will be the volume of Helium gas at an altitude of $3000\text{ m}$, where the pressure is $0.5\text{ atm}$ and the temperature is $-3^\circ\text{C}$?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $900\text{ m}^3$
+    \item[\textbf{B)}] $910\text{ m}^3$
+    \item[\textbf{C)}] $790\text{ m}^3$
+    \item[\textbf{D)}] $850\text{ m}^3$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $900\text{ m}^3$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{ধাপ ১: প্রদত্ত উপাত্তসমূহ চিহ্নিতকরণ ও কেলভিন স্কেলে রূপান্তর}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item আদি চাপ, $P_1 = 1\text{ atm}$
+        \item আদি আয়তন, $V_1 = 500\text{ m}^3$
+        \item আদি তাপমাত্রা, $T_1 = 273 + 27 = 300\text{ K}$
+        \item অন্তিম চাপ, $P_2 = 0.5\text{ atm}$
+        \item অন্তিম তাপমাত্রা, $T_2 = 273 - 3 = 270\text{ K}$
+    \end{itemize}
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ২: আদর্শ গ্যাসের সমন্বয় সূত্র প্রয়োগ} \\
+    আদর্শ গ্যাসের সমন্বয় সূত্রানুসারে আমরা পাই:
+    \[ \frac{P_1 V_1}{T_1} = \frac{P_2 V_2}{T_2} \]
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ৩: অন্তিম আয়তন $V_2$ হিসাব} \\
+    সমীকরণটি পুনর্বিন্যাস করে $V_2$ এর মান বের করি:
+    \begin{align*}
+        V_2 &= \frac{P_1 V_1 T_2}{P_2 T_1} \\
+            &= \frac{1 \times 500 \times 270}{0.5 \times 300} \\
+            &= \frac{135000}{150} \\
+            &= \mathbf{900\text{ m}^3}
+    \end{align*}
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 4 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 4}]
+    \noindent
+    সূর্যালোকের আলোতে একটি $30\text{ m}^3$ আয়তনের খোলা ঘরের তাপমাত্রা $17^\circ\text{C}$ থেকে বৃদ্ধি পেয়ে $27^\circ\text{C}$ হয়। ঘরের বায়ুমণ্ডলীয় চাপ অপরিবর্তিতভাবে $1 \times 10^5\text{ Pa}$ থাকলে, উত্তপ্ত হওয়ার আগে ও পরে ঘরের অণুর সংখ্যার পরিবর্তন ($n_i - n_f$) কত হবে?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    The temperature of an open room of volume $30\text{ m}^3$ increases from $17^\circ\text{C}$ to $27^\circ\text{C}$ due to sunshine. If the atmospheric pressure in the room remains constant at $1 \times 10^5\text{ Pa}$, what will be the change in the number of molecules in the room ($n_i - n_f$) before and after heating?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $-2.5 \times 10^{25}$
+    \item[\textbf{B)}] $-1.61 \times 10^{23}$
+    \item[\textbf{C)}] $1.38 \times 10^{23}$
+    \item[\textbf{D)}] $2.5 \times 10^{25}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} D) $2.5 \times 10^{25}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{ধাপ ১: সূত্র প্রতিপাদন ও প্রাথমিক ধারণা} \\
+    কোনো নির্দিষ্ট আয়তন $V$ ও চাপে $P$ তাপমাত্রায় অণুর সংখ্যা গণনার সূত্র হলো:
+    \[ N = \frac{P V N_A}{R T} \]
+    যেহেতু ঘরটি খোলা, তাই তাপমাত্রা বৃদ্ধির সাথে সাথে কিছু বায়ু বাইরে চলে যায়, ফলে প্রাথমিক ও অন্তিম অণুর সংখ্যার পরিবর্তন ($\Delta N = n_i - n_f$):
+    \[ \Delta N = \frac{P V N_A}{R} \left(\frac{1}{T_i} - \frac{1}{T_f}\right) \]
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ২: উপাত্তসমূহ নির্দিষ্ট এককে রূপান্তর}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item চাপ, $P = 1 \times 10^5\text{ Pa}$
+        \item আয়তন, $V = 30\text{ m}^3$
+        \item অ্যাভোগাড্রো সংখ্যা, $N_A = 6.023 \times 10^{23}\text{ mol}^{-1}$
+        \item মোলার গ্যাস ধ্রুবক, $R = 8.314\text{ J mol}^{-1}\text{ K}^{-1}$
+        \item আদি তাপমাত্রা, $T_i = 273 + 17 = 290\text{ K}$
+        \item অন্তিম তাপমাত্রা, $T_f = 273 + 27 = 300\text{ K}$
+    \end{itemize}
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ৩: মান প্রতিস্থাপন ও গণনা}
+    \begin{align*}
+        \Delta N &= \frac{1 \times 10^5 \times 30 \times 6.023 \times 10^{23}}{8.314} \left(\frac{1}{290} - \frac{1}{300}\right) \\
+        &= (2.1733 \times 10^{29}) \times \left(\frac{300 - 290}{290 \times 300}\right) \\
+        &= (2.1733 \times 10^{29}) \times (1.1494 \times 10^{-4}) \\
+        &= \mathbf{2.5 \times 10^{25}}
+    \end{align*}
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 5 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 5}]
+    \noindent
+    কত তাপমাত্রায় $\text{SO}_2$ এর $C_{\text{rms}}$, $28^\circ\text{C}$ তাপমাত্রার $\text{O}_2$ এর $C_{\text{rms}}$ এর সমান হবে?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    At what temperature will the $C_{\text{rms}}$ of $\text{SO}_2$ be equal to the $C_{\text{rms}}$ of $\text{O}_2$ at $28^\circ\text{C}$?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $602^\circ\text{C}$
+    \item[\textbf{B)}] $329\text{ K}$
+    \item[\textbf{C)}] $329^\circ\text{C}$
+    \item[\textbf{D)}] $301\text{ K}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} C) $329^\circ\text{C}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{ধাপ ১: মূল গড় বর্গবেগের সূত্র প্রয়োগ} \\
+    মূল গড় বর্গবেগের সমীকরণ হলো:
+    \[ c_{\text{rms}} = \sqrt{\frac{3RT}{M}} \]
+    শর্তানুসারে উভয় গ্যাসের মূল গড় বর্গবেগ সমান:
+    \begin{align*}
+        c_{\text{rms}}(\text{SO}_2) &= c_{\text{rms}}(\text{O}_2) \\
+        \implies \sqrt{\frac{3 R T_{\text{SO}_2}}{M_{\text{SO}_2}}} &= \sqrt{\frac{3 R T_{\text{O}_2}}{M_{\text{O}_2}}} \\
+        \implies \frac{T_{\text{SO}_2}}{M_{\text{SO}_2}} &= \frac{T_{\text{O}_2}}{M_{\text{O}_2}}
+    \end{align*}
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ২: মানসমূহ প্রতিস্থাপন ও তাপমাত্রা নির্ণয়}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item $\text{SO}_2$ এর আণবিক ভর, $M_{\text{SO}_2} = 64\text{ g mol}^{-1}$
+        \item $\text{O}_2$ এর আণবিক ভর, $M_{\text{O}_2} = 32\text{ g mol}^{-1}$
+        \item $\text{O}_2$ এর তাপমাত্রা, $T_{\text{O}_2} = 273 + 28 = 301\text{ K}$
+    \end{itemize}
+    সমীকরণ থেকে কেলভিন স্কেলে $\text{SO}_2$ এর তাপমাত্রা:
+    \begin{align*}
+        T_{\text{SO}_2} &= \frac{M_{\text{SO}_2}}{M_{\text{O}_2}} \times T_{\text{O}_2} \\
+        &= \frac{64}{32} \times 301 \\
+        &= 2 \times 301 = 602\text{ K}
+    \end{align*}
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ৩: সেলসিয়াস স্কেলে রূপান্তর} \\
+    সেলসিয়াস স্কেলে তাপমাত্রা:
+    \[ T = 602 - 273 = \mathbf{329^\circ\text{C}} \]
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 6 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 6}]
+    \noindent
+    তিনটি কণার বেগ যথাক্রমে $24\text{ m s}^{-1}$, $104\text{ m s}^{-1}$ এবং $114\text{ m s}^{-1}$। নিচের কোনটি সঠিক?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    The velocities of three particles are $24\text{ m s}^{-1}$, $104\text{ m s}^{-1}$, and $114\text{ m s}^{-1}$ respectively. Which of the following statements is correct?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] মূল গড় বর্গবেগ গড় বেগ চেয়ে $9.5\text{ m s}^{-1}$ বেশি হবে
+    \item[\textbf{B)}] গড় বেগ মূল গড় বর্গবেগ চেয়ে $14\text{ m s}^{-1}$ বেশি হবে
+    \item[\textbf{C)}] মূল গড় বর্গবেগ এবং গড় বেগ সমান হবে
+    \item[\textbf{D)}] মূল গড় বর্গবেগ গড় বেগ চেয়ে $24\text{ m s}^{-1}$ বেশি হবে
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) মূল গড় বর্গবেগ গড় বেগ চেয়ে $9.5\text{ m s}^{-1}$ বেশি হবে
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{ধাপ ১: গড় বেগ ($c_{\text{avg}}$) নির্ণয়} \\
+    গড় বেগ হলো কণাগুলোর বেগের গাণিতিক গড়:
+    \begin{align*}
+        c_{\text{avg}} &= \frac{24 + 104 + 114}{3} \\
+        &= \frac{242}{3} = 80.667\text{ m s}^{-1}
+    \end{align*}
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ২: মূল গড় বর্গবেগ ($c_{\text{rms}}$) নির্ণয়} \\
+    মূল গড় বর্গবেগ হলো বেগের বর্গের গাণিতিক গড়ের বর্গমূল:
+    \begin{align*}
+        c_{\text{rms}} &= \sqrt{\frac{24^2 + 104^2 + 114^2}{3}} \\
+        &= \sqrt{\frac{576 + 10816 + 12996}{3}} \\
+        &= \sqrt{\frac{24388}{3}} \\
+        &= \sqrt{8129.333} = 90.1628\text{ m s}^{-1}
+    \end{align*}
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ৩: পার্থক্য নির্ণয়} \\
+    উভয় বেগের মধ্যকার পার্থক্য:
+    \begin{align*}
+        c_{\text{rms}} - c_{\text{avg}} &= 90.1628 - 80.667 \\
+        &= 9.4958\text{ m s}^{-1} \approx \mathbf{9.5\text{ m s}^{-1}}
+    \end{align*}
+    অর্থাৎ মূল গড় বর্গবেগ গড় বেগ অপেক্ষা $9.5\text{ m s}^{-1}$ বেশি।
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 7 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 7}]
+    \noindent
+    কোন্ উষ্ণতা বা তাপমাত্রায় পৃথিবীর বায়ুমণ্ডলে অবস্থিত নাইট্রোজেন অণুর বর্গমূলীয় গড় বর্গবেগ পৃথিবী পৃষ্ঠ হতে কোনো বস্তুর মুক্তিবেগের সমান হবে? (দেওয়া আছে, $\text{N}_2$ অণুর ভর $= 4.65 \times 10^{-26}\text{ kg}$, পৃথিবীর গড় ব্যাসার্ধ $= 6370\text{ km}$, $g = 980\text{ cm s}^{-2}$ এবং বোল্টজম্যান ধ্রুবক $= 1.37 \times 10^{-16}\text{ erg K}^{-1}$)
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    At what temperature will the root mean square velocity of nitrogen molecules in the Earth's atmosphere be equal to the escape velocity of an object from the Earth's surface? (Given: mass of $\text{N}_2$ molecule $= 4.65 \times 10^{-26}\text{ kg}$, average radius of Earth $= 6370\text{ km}$, $g = 980\text{ cm s}^{-2}$, and Boltzmann constant $= 1.37 \times 10^{-16}\text{ erg K}^{-1}$)
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $141195.16\text{ K}$
+    \item[\textbf{B)}] $105230.15\text{ K}$
+    \item[\textbf{C)}] $98520.40\text{ K}$
+    \item[\textbf{D)}] $250100.20\text{ K}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $141195.16\text{ K}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{ধাপ ১: শর্ত গঠন ও সমীকরণ প্রতিপাদন} \\
+    মুক্তিবেগের সমীকরণ $v_{\text{esc}} = \sqrt{2 g R_e}$ এবং গ্যাসের অণুর মূল গড় বর্গবেগ $c_{\text{rms}} = \sqrt{\frac{3kT}{m}}$। শর্তানুসারে $c_{\text{rms}} = v_{\text{esc}}$:
+    \begin{align*}
+        \sqrt{\frac{3kT}{m}} &= \sqrt{2 g R_e} \\
+        \implies \frac{3kT}{m} &= 2 g R_e \\
+        \implies T &= \frac{2 m g R_e}{3 k}
+    \end{align*}
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ২: SI এককে উপাত্ত রূপান্তর}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item $\text{N}_2$ অণুর ভর, $m = 4.65 \times 10^{-26}\text{ kg}$
+        \item অভিকর্ষজ ত্বরণ, $g = 980\text{ cm s}^{-2} = 9.8\text{ m s}^{-2}$
+        \item পৃথিবীর ব্যাসার্ধ, $R_e = 6370\text{ km} = 6.37 \times 10^6\text{ m}$
+        \item বোল্টজম্যান ধ্রুবক, $k = 1.37 \times 10^{-16}\text{ erg K}^{-1} = 1.37 \times 10^{-23}\text{ J K}^{-1}$
+    \end{itemize}
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ৩: তাপমাত্রা গণনা}
+    \begin{align*}
+        T &= \frac{2 \times (4.65 \times 10^{-26}) \times 9.8 \times (6.37 \times 10^6)}{3 \times (1.37 \times 10^{-23})} \\
+        &= \frac{5.803 \times 10^{-18}}{4.11 \times 10^{-23}} \\
+        &= \mathbf{141195.16\text{ K}}
+    \end{align*}
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 8 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 8}]
+    \noindent
+    একটি পাত্রে $27^\circ\text{C}$ তাপমাত্রায় $1\text{ mol}$ এক-পারমাণবিক হিলিয়াম গ্যাস ($f = 3$) এবং $2\text{ mol}$ দ্বি-পারমাণবিক অক্সিজেন গ্যাস ($f = 5$) মিশ্রিত আছে। গ্যাস মিশ্রণটির মোট গতিশক্তি কত?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    A vessel contains $1\text{ mol}$ of monatomic Helium gas ($f = 3$) and $2\text{ mol}$ of diatomic Oxygen gas ($f = 5$) mixed at $27^\circ\text{C}$. What is the total kinetic energy of the gas mixture?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $1.62 \times 10^4\text{ J}$
+    \item[\textbf{B)}] $1.25 \times 10^4\text{ J}$
+    \item[\textbf{C)}] $3.74 \times 10^3\text{ J}$
+    \item[\textbf{D)}] $2.49 \times 10^4\text{ J}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $1.62 \times 10^4\text{ J}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{ধাপ ১: সূত্র নির্ধারণ} \\
+    $n$ মোল গ্যাসের গতিশক্তি নির্ণয়ের সূত্র:
+    \[ E_k = \frac{f}{2} n R T \]
+    এখানে তাপমাত্রা $T = 273 + 27 = 300\text{ K}$ এবং $R = 8.314\text{ J mol}^{-1}\text{ K}^{-1}$।
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ২: হিলিয়াম গ্যাসের গতিশক্তি নির্ণয়}
+    \begin{align*}
+        E_1 &= \frac{f_1}{2} n_1 R T \\
+        &= \frac{3}{2} \times 1 \times 8.314 \times 300 \\
+        &= 1.5 \times 8.314 \times 300 = 3741.3\text{ J}
+    \end{align*}
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ৩: অক্সিজেন গ্যাসের গতিশক্তি নির্ণয়}
+    \begin{align*}
+        E_2 &= \frac{f_2}{2} n_2 R T \\
+        &= \frac{5}{2} \times 2 \times 8.314 \times 300 \\
+        &= 5 \times 8.314 \times 300 = 12471\text{ J}
+    \end{align*}
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ৪: মোট গতিশক্তি হিসাব}
+    \begin{align*}
+        E_{\text{total}} &= E_1 + E_2 \\
+        &= 3741.3 + 12471 \\
+        &= 16212.3\text{ J} \approx \mathbf{1.62 \times 10^4\text{ J}}
+    \end{align*}
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 9 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 9}]
+    \noindent
+    পরম তাপমাত্রা দ্বিগুণ ($T_2 = 2T_1$) এবং চাপ তিনগুণ ($P_2 = 3P_1$) করা হলে, একটি আদর্শ গ্যাসের গড় মুক্ত পথ ($\lambda$) প্রাথমিক মান $\lambda_1$ এর সাপেক্ষে কত হবে?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    If the absolute temperature is doubled ($T_2 = 2T_1$) and the pressure is tripled ($P_2 = 3P_1$), what will be the mean free path ($\lambda$) of an ideal gas relative to its initial value $\lambda_1$?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $\lambda_2 = \frac{3}{2} \lambda_1$
+    \item[\textbf{B)}] $\lambda_2 = \frac{2}{3} \lambda_1$
+    \item[\textbf{C)}] $\lambda_2 = 6 \lambda_1$
+    \item[\textbf{D)}] $\lambda_2 = \frac{1}{6} \lambda_1$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} B) $\lambda_2 = \frac{2}{3} \lambda_1$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{ধাপ ১: গড় মুক্ত পথের সূত্র প্রতিপাদন} \\
+    ম্যাক্সওয়েলের গড় মুক্ত পথের সমীকরণ অনুযায়ী:
+    \[ \lambda = \frac{1}{\sqrt{2} \pi \sigma^2 n_V} = \frac{k T}{\sqrt{2} \pi \sigma^2 P} \]
+    সুতরাং, তাপমাত্রা ও চাপের সাথে গড় মুক্ত পথের সম্পর্ক হলো:
+    \[ \lambda \propto \frac{T}{P} \]
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ২: অনুপাত নির্ণয় ও সমাধান}
+    \begin{align*}
+        \frac{\lambda_2}{\lambda_1} &= \frac{T_2}{T_1} \times \frac{P_1}{P_2} \\
+        &= 2 \times \frac{1}{3} = \frac{2}{3} \\
+        \implies \boldsymbol{\lambda_2 = \frac{2}{3} \lambda_1}
+    \end{align*}
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 10 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 10}]
+    \noindent
+    কোনো একটি গ্যাসের অণুগুলোর গড় মুক্ত পথ $2.4 \times 10^{-6}\text{ cm}$ এবং আণবিক ব্যাস $2.0 \times 10^{-8}\text{ cm}$ হলে প্রতি ঘন সেন্টিমিটারে অণুর সংখ্যা কত?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    If the mean free path of gas molecules is $2.4 \times 10^{-6}\text{ cm}$ and the molecular diameter is $2.0 \times 10^{-8}\text{ cm}$, what is the number of molecules per cubic centimeter?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $2.345 \times 10^{26}\text{ /cc}$
+    \item[\textbf{B)}] $3.2 \times 10^{22}\text{ /cc}$
+    \item[\textbf{C)}] $2.344 \times 10^{20}\text{ /cc}$
+    \item[\textbf{D)}] $3.5 \times 10^{20}\text{ /cc}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} C) $2.344 \times 10^{20}\text{ /cc}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{ধাপ ১: সূত্র সাজানো} \\
+    ম্যাক্সওয়েলের গড় মুক্ত পথ সমীকরণানুসারে:
+    \[ \lambda = \frac{1}{\sqrt{2} \pi \sigma^2 n_V} \implies n_V = \frac{1}{\sqrt{2} \pi \sigma^2 \lambda} \]
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ২: CGS এককে প্রদত্ত উপাত্তসমূহ}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item গড় মুক্ত পথ, $\lambda = 2.4 \times 10^{-6}\text{ cm}$
+        \item আণবিক ব্যাস, $\sigma = 2.0 \times 10^{-8}\text{ cm}$
+    \end{itemize}
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ৩: মান প্রতিস্থাপন ও গণনা}
+    \begin{align*}
+        n_V &= \frac{1}{\sqrt{2} \times 3.1416 \times (2.0 \times 10^{-8})^2 \times (2.4 \times 10^{-6})} \\
+        &= \frac{1}{1.4142 \times 3.1416 \times (4.0 \times 10^{-16}) \times (2.4 \times 10^{-6})} \\
+        &= \frac{1}{4.2647 \times 10^{-21}} \\
+        &= 2.3448 \times 10^{20}\text{ cm}^{-3} \approx \mathbf{2.344 \times 10^{20}\text{ /cc}}
+    \end{align*}
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 11 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 11}]
+    \noindent
+    কোনো স্থানে বায়ুর তাপমাত্রা $26^\circ\text{C}$ এবং আপেক্ষিক আর্দ্রতা $70\%$। যদি সে স্থানের তাপমাত্রা কমে $18^\circ\text{C}$ হয়, তবে বায়ুমধ্যস্থ জলীয় বাষ্পের কত শতাংশ ঘনীভূত হয়ে তরল পানি হবে? ($26^\circ\text{C}$ এবং $18^\circ\text{C}$ এ সম্পৃক্ত জলীয় বাষ্পের চাপ যথাক্রমে $25.21\text{ mm Hg}$ এবং $15.48\text{ mm Hg}$)
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    The air temperature at a place is $26^\circ\text{C}$ and the relative humidity is $70\%$. If the temperature drops to $18^\circ\text{C}$, what percentage of the water vapour in the air will condense into liquid water? (Saturated vapour pressure at $26^\circ\text{C}$ and $18^\circ\text{C}$ are $25.21\text{ mm Hg}$ and $15.48\text{ mm Hg}$ respectively)
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $23.57\%$
+    \item[\textbf{B)}] $25.57\%$
+    \item[\textbf{C)}] $34.57\%$
+    \item[\textbf{D)}] $12.28\%$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} D) $12.28\%$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{ধাপ ১: প্রাথমিক জলীয় বাষ্পের চাপ নির্ণয়} \\
+    আপেক্ষিক আর্দ্রতার সূত্র $R = \frac{f}{F} \times 100\%$ ব্যবহার করে $26^\circ\text{C}$ তাপমাত্রায় উপস্থিত জলীয় বাষ্পের চাপ ($f_1$) বের করি:
+    \begin{align*}
+        f_1 &= \frac{70}{100} \times 25.21 \\
+        &= 17.647\text{ mm Hg}
+    \end{align*}
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ২: তাপমাত্রা হ্রাসের প্রভাব মূল্যায়ন} \\
+    $18^\circ\text{C}$ তাপমাত্রায় সম্পৃক্ত জলীয় বাষ্পের চাপ $F_2 = 15.48\text{ mm Hg}$। যেহেতু প্রাথমিক চাপ $f_1$ সম্পৃক্ত চাপ $F_2$ এর চেয়ে বেশি ($17.647 > 15.48$), তাই উদ্বৃত্ত বাষ্প ঘনীভূত হবে।
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ৩: ঘনীভূত বাষ্পের শতকরা পরিমাণ হিসাব}
+    \begin{align*}
+        \text{Percentage Condensed} &= \frac{f_1 - F_2}{f_1} \times 100\% \\
+        &= \frac{17.647 - 15.48}{17.647} \times 100\% \\
+        &= \frac{2.167}{17.647} \times 100\% \\
+        &= \mathbf{12.28\%}
+    \end{align*}
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 12 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 12}]
+    \noindent
+    কোনো এক স্থানে হাইগ্রোমিটারের শুষ্ক ও সিক্ত বাল্বের তাপমাত্রা যথাক্রমে $30^\circ\text{C}$ ও $20^\circ\text{C}$। $30^\circ\text{C}$ তাপমাত্রায় গ্লাইশারের উৎপাদক $1.65$ হলে ওই স্থানের শিশিরাঙ্ক কত?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    At a place, the dry and wet bulb temperatures of a hygrometer are $30^\circ\text{C}$ and $20^\circ\text{C}$ respectively. If Glaisher's factor at $30^\circ\text{C}$ is $1.65$, what is the dew point of that place?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $13.5^\circ\text{C}$
+    \item[\textbf{B)}] $20.909^\circ\text{C}$
+    \item[\textbf{C)}] $15.0^\circ\text{C}$
+    \item[\textbf{D)}] $10.5^\circ\text{C}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $13.5^\circ\text{C}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{ধাপ ১: গ্লাইশারের সমীকরণ উপস্থাপন} \\
+    গ্লাইশারের সমীকরণানুসারে শিশিরাঙ্ক $\theta$ নির্ণয়ের সূত্রটি হলো:
+    \[ \theta = \theta_1 - G (\theta_1 - \theta_2) \]
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ২: উপাত্তসমূহ চিহ্নিতকরণ}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item শুষ্ক বাল্বের পাঠ, $\theta_1 = 30^\circ\text{C}$
+        \item সিক্ত বাল্বের পাঠ, $\theta_2 = 20^\circ\text{C}$
+        \item গ্লাইশারের উৎপাদক, $G = 1.65$
+    \end{itemize}
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ৩: মান বসিয়ে গণনা}
+    \begin{align*}
+        \theta &= 30 - 1.65 \times (30 - 20) \\
+        &= 30 - 1.65 \times 10 \\
+        &= 30 - 16.5 \\
+        &= \mathbf{13.5^\circ\text{C}}
+    \end{align*}
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 27 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 13}]
+    \noindent
+    ফেনী শহরে এক ব্যক্তি তার গাড়ির টায়ারের গেজ চাপ মেপে দেখল $1.8 \times 10^5\text{ Pa}$। ওই শহরে তখন তাপমাত্রা $30^\circ\text{C}$ এবং বায়ুর চাপ $1.0 \times 10^5\text{ Pa}$। এরপর ওই ব্যক্তি বান্দরবান শহরে গেল, যেখানে তাপমাত্রা $15^\circ\text{C}$ এবং বায়ুর চাপ $6.0 \times 10^4\text{ Pa}$। উভয়ক্ষেত্রে টায়ারের আয়তন অপরিবর্তিত থাকলে বান্দরবানে গাড়ির টায়ারের গেজ চাপ কত হবে?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    A person in Feni city measured the tire gauge pressure of his car as $1.8 \times 10^5\text{ Pa}$. At that time, the temperature in that city was $30^\circ\text{C}$ and atmospheric pressure was $1.0 \times 10^5\text{ Pa}$. Later, the person drove to Bandarban city, where the temperature was $15^\circ\text{C}$ and atmospheric pressure was $6.0 \times 10^4\text{ Pa}$. Assuming the volume of the tire remains unchanged in both places, what will be the tire gauge pressure in Bandarban?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $2.06 \times 10^5\text{ Pa}$
+    \item[\textbf{B)}] $2.66 \times 10^5\text{ Pa}$
+    \item[\textbf{C)}] $1.80 \times 10^5\text{ Pa}$
+    \item[\textbf{D)}] $1.50 \times 10^5\text{ Pa}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $2.06 \times 10^5\text{ Pa}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{ধাপ ১: ফেনী শহরে টায়ারের পরম চাপ নির্ণয়} \\
+    গেজ চাপ এবং বায়ুমণ্ডলীয় চাপের যোগফল হলো পরম চাপ। ফেনী শহরে টায়ারের পরম চাপ ($P_1$):
+    \begin{align*}
+        P_1 &= P_{gauge,1} + P_{atm,1} \\
+        &= 1.8 \times 10^5 + 1.0 \times 10^5 = 2.8 \times 10^5\text{ Pa}
+    \end{align*}
+    ফেনীর তাপমাত্রা, $T_1 = 273 + 30 = 303\text{ K}$।
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ২: বান্দরবানে পরম চাপ নির্ণয়} \\
+    বান্দরবানের তাপমাত্রা, $T_2 = 273 + 15 = 288\text{ K}$। টায়ারের আয়তন অপরিবর্তিত থাকলে গে-লুসাকের চাপ সূত্রানুসারে বান্দরবানে পরম চাপ ($P_2$):
+    \begin{align*}
+        P_2 &= P_1 \times \frac{T_2}{T_1} \\
+        &= 2.8 \times 10^5 \times \frac{288}{303} = 2.66 \times 10^5\text{ Pa}
+    \end{align*}
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ৩: বান্দরবানে টায়ারের গেজ চাপ হিসাব} \\
+    বান্দরবানে বায়ুমণ্ডলীয় চাপ $P_{atm,2} = 6.0 \times 10^4\text{ Pa} = 0.6 \times 10^5\text{ Pa}$। অতএব, গেজ চাপ:
+    \begin{align*}
+        P_{gauge,2} &= P_2 - P_{atm,2} \\
+        &= 2.66 \times 10^5 - 0.6 \times 10^5 \\
+        &= \mathbf{2.06 \times 10^5\text{ Pa}}
+    \end{align*}
+\end{tcolorbox}
+% ------------------------------------------
+% QUESTION 41 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 14}]
+    \noindent
+    $20^\circ\text{C}$ তাপমাত্রায় একটি ঘরের আপেক্ষিক আর্দ্রতা $50\%$। $20^\circ\text{C}$, $10^\circ\text{C}$ এবং $9^\circ\text{C}$ তাপমাত্রায় সম্পৃক্ত জলীয় বাষ্পের চাপ যথাক্রমে $17.5\text{ mm Hg}$, $9.2\text{ mm Hg}$ এবং $8.6\text{ mm Hg}$ হলে ঘরটির শিশিরাঙ্ক কত?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    At $20^\circ\text{C}$, the relative humidity of a room is $50\%$. If the saturated vapour pressures at $20^\circ\text{C}$, $10^\circ\text{C}$, and $9^\circ\text{C}$ are $17.5\text{ mm Hg}$, $9.2\text{ mm Hg}$, and $8.6\text{ mm Hg}$ respectively, what is the dew point of the room?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $9.25^\circ\text{C}$
+    \item[\textbf{B)}] $10.00^\circ\text{C}$
+    \item[\textbf{C)}] $8.75^\circ\text{C}$
+    \item[\textbf{D)}] $9.50^\circ\text{C}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $9.25^\circ\text{C}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{ধাপ ১: ঘরে উপস্থিত জলীয় বাষ্পের চাপ নির্ণয়} \\
+    $20^\circ\text{C}$ তাপমাত্রায় উপস্থিত জলীয় বাষ্পচাপ ($f$):
+    \[ f = 0.50 \times 17.5\text{ mm Hg} = 8.75\text{ mm Hg} \]
+    শিশিরাঙ্কে সম্পৃক্ত বাষ্পচাপ হবে $8.75\text{ mm Hg}$।
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ২: আন্তঃপাতন (Interpolation) পদ্ধতি প্রয়োগ} \\
+    দেওয়া আছে:
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item $9^\circ\text{C}$ তাপমাত্রায় সম্পৃক্ত বাষ্পচাপ $= 8.6\text{ mm Hg}$
+        \item $10^\circ\text{C}$ তাপমাত্রায় সম্পৃক্ত বাষ্পচাপ $= 9.2\text{ mm Hg}$
+        \item $1^\circ\text{C}$ ব্যবধানে চাপের পরিবর্তন $= 9.2 - 8.6 = 0.6\text{ mm Hg}$
+        \item $8.6\text{ mm Hg}$ অপেক্ষা অতিরিক্ত প্রয়োজনীয় চাপ $= 8.75 - 8.6 = 0.15\text{ mm Hg}$
+    \end{itemize}
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ৩: শিশিরাঙ্ক হিসাব} \\
+    আনুপাতিক আন্তঃপাতন দ্বারা তাপমাত্রার বৃদ্ধি:
+    \[ \Delta T = \frac{0.15}{0.6} = 0.25^\circ\text{C} \]
+    অতএব, নির্ণেয় শিশিরাঙ্ক:
+    \[ \theta = 9 + 0.25 = \mathbf{9.25^\circ\text{C}} \]
+\end{tcolorbox}
+% ------------------------------------------
+% QUESTION 49 SECTION
+% ------------------------------------------
+% ------------------------------------------
+% QUESTION 15 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 15}]
+    \noindent
+    $H = 10\text{ m}$ উচ্চতা এবং $A = 0.1\text{ m}^2$ প্রস্থচ্ছেদের ক্ষেত্রফল বিশিষ্ট একটি উল্লম্ব সিলিন্ডারে স্থির চাপে ($P = 1 \times 10^5\text{ Pa}$) আদর্শ গ্যাস পূর্ণ আছে। সিলিন্ডারের ভেতরে উচ্চতা $z$ এর সাথে তাপমাত্রা $T(z) = T_0 (1 + \alpha z)$ নিয়ম অনুসারে পরিবর্তিত হয়, যেখানে $T_0 = 300\text{ K}$ এবং $\alpha = 0.1\text{ m}^{-1}$। উচ্চতা বরাবর মোলার ঘনত্বের যোগজীকরণ (integration) করে পাত্রে গ্যাসের মোট মোল সংখ্যা $n$ কত হবে নির্ণয় করুন।
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    A vertical cylinder of height $H = 10\text{ m}$ and cross-sectional area $A = 0.1\text{ m}^2$ contains an ideal gas at constant pressure $P = 1 \times 10^5\text{ Pa}$. The temperature inside varies linearly with height $z$ as $T(z) = T_0 (1 + \alpha z)$, where $T_0 = 300\text{ K}$ and $\alpha = 0.1\text{ m}^{-1}$. By integrating the molar density along the height, calculate the total number of moles $n$ of the gas.
+    }
+    \end{english}
+\end{tcolorbox}
+
+% ------------------------------------------
+% TIKZ DIAGRAM FOR THE CYLINDER
+% ------------------------------------------
+\vspace{1em}
+\begin{center}
+\begin{tikzpicture}[scale=1.1, >=Stealth]
+    % Cylinder Body
+    \draw[thick, darkgray] (-1.5, 0) -- (-1.5, 4);
+    \draw[thick, darkgray] (1.5, 0) -- (1.5, 4);
+    
+    % Cylinder Bottom Ellipse
+    \draw[thick, darkgray] (0, 0) ellipse (1.5 and 0.4);
+    
+    % Cylinder Top Ellipse (Open or Closed top)
+    \draw[thick, darkgray] (0, 4) ellipse (1.5 and 0.4);
+    
+    % Gas Fill Shading Inside Cylinder
+    \fill[primary!10, opacity=0.5] (-1.5, 0) rectangle (1.5, 4);
+    \fill[primary!15, opacity=0.4] (0, 0) ellipse (1.5 and 0.4);
+    
+    % Height Indicator Bracket (Left Side)
+    \draw[<->, thick, primary] (-2.2, 0) -- (-2.2, 4) node[midway, left, font=\bfseries] {$H = 10\text{ m}$};
+    \draw[dashed, darkgray!60] (-1.5, 0) -- (-2.2, 0);
+    \draw[dashed, darkgray!60] (-1.5, 4) -- (-2.2, 4);
+    
+    % Elemental Strip (dz) at height z
+    \fill[accent!30] (-1.5, 2.2) rectangle (1.5, 2.5);
+    \draw[<->, thick, accent!80!black] (2.2, 2.2) -- (2.2, 2.5) node[midway, right, font=\bfseries] {$dz$};
+    \draw[->, thick, darkgray] (1.5, 2.35) -- (2.2, 2.35);
+    \node[right, font=\small] at (2.2, 2.35) {উচ্চতা $z$};
+    
+    % Labels inside or outside
+    \node[font=\bfseries, text=primary] at (0, 2) {আদর্শ গ্যাস ($P = 1 \times 10^5\text{ Pa}$)};
+    \node[font=\small, text=darkgray] at (0, 4.7) {প্রস্থচ্ছেদ ক্ষেত্রফল, $A = 0.1\text{ m}^2$};
+    \node[font=\small, text=darkgray] at (0, -0.7) {তাপমাত্রা: $T(z) = T_0 (1 + \alpha z)$};
+
+    % Temperature variation indicator arrows
+    \draw[->, thick, red!70!black] (-1.8, 0.4) -- node[left, font=\footnotesize] {$T_0$ min} (-1.8, 0.8);
+    \draw[->, thick, red!70!black] (-1.8, 3.2) -- node[left, font=\footnotesize] {max} (-1.8, 3.6);
+
+\end{tikzpicture}
+\end{center}
+\vspace{1em}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $27.79\text{ mol}$
+    \item[\textbf{B)}] $40.09\text{ mol}$
+    \item[\textbf{C)}] $15.20\text{ mol}$
+    \item[\textbf{D)}] $50.00\text{ mol}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $27.79\text{ mol}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{ধাপ ১: ক্ষুদ্র ফালিতে মোল সংখ্যা নির্ণয়} \\
+    উচ্চতা $z$ এ $dz$ পুরুত্বের একটি ক্ষুদ্র ফালি বিবেচনা করি। ক্ষুদ্র আয়তন $dV = A \, dz$। এই ক্ষুদ্র ফালিতে গ্যাসের মোল সংখ্যা ($dn$):
+    \[ dn = \frac{P \, dV}{R T(z)} = \frac{P A \, dz}{R T_0 (1 + \alpha z)} \]
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ২: যোগজীকরণ (Integration) প্রয়োগ} \\
+    সমগ্র সিলিন্ডারের মোট মোল সংখ্যা পেতে সমীকরণটি যোগজীকরণ (integration) করি:
+    \begin{align*}
+        n &= \int_0^H dn = \int_0^H \frac{P A}{R T_0 (1 + \alpha z)} \, dz \\
+        &= \frac{P A}{R T_0 \alpha} \int_0^H \frac{\alpha \, dz}{1 + \alpha z} \\
+        &= \frac{P A}{R T_0 \alpha} \ln(1 + \alpha H)
+    \end{align*}
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ৩: মান প্রতিস্থাপন ও গণনা} \\
+    দেওয়া মানসমূহ: $1 + \alpha H = 1 + (0.1 \times 10) = 2 \implies \ln(2) = 0.693147$
+    \begin{align*}
+        n &= \frac{1 \times 10^5 \times 0.1}{8.314 \times 300 \times 0.1} \times 0.693147 \\
+        &= \frac{10000}{249.42} \times 0.693147 \\
+        &= 40.093 \times 0.693147 \\
+        &= \mathbf{27.79\text{ mol}}
+    \end{align*}
+\end{tcolorbox}
+% ------------------------------------------
+% QUESTION 16 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 16}]
+    \noindent
+    প্রমাণ তাপমাত্রা ও চাপে একটি বায়ুর ভরা বেলুন $175\text{ kg}$ ভর বহন করতে পারে। সাম্যাবস্থান থেকে একটি নির্দিষ্ট উচ্চতায় ওঠার পর যেখানে ব্যারোমেট্রিক চাপ $50\text{ cm Hg}$ এবং তাপমাত্রা $-10^\circ\text{C}$, সেখানে বেলুনটি সর্বোচ্চ কত ভর বহন করতে পারবে? (বেলুনের আয়তন অপরিবর্তিত থাকে)
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    At standard temperature and pressure, a balloon filled with air can carry a load of $175\text{ kg}$. After rising to a certain height from equilibrium, where the barometric pressure is $50\text{ cm Hg}$ and the temperature is $-10^\circ\text{C}$, what maximum load can the balloon carry? (Assume the volume of the balloon remains constant)
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $119.5\text{ kg}$
+    \item[\textbf{B)}] $135.2\text{ kg}$
+    \item[\textbf{C)}] $150.0\text{ kg}$
+    \item[\textbf{D)}] $105.8\text{ kg}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $119.5\text{ kg}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{ধাপ ১: সূত্র প্রতিপাদন} \\
+    প্লবতা এবং গ্যাসের ঘনত্ব বায়ুমণ্ডলের চাপ ও তাপমাত্রার ওপর নির্ভর করে। স্থির আয়তনের বেলুনের জন্য বহনযোগ্য ভর $m \propto \rho \propto \frac{P}{T}$। অতএব, অনুপাত থেকে পাই:
+    \[ \frac{m_2}{m_1} = \frac{P_2}{P_1} \times \frac{T_1}{T_2} \]
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ২: প্রদত্ত উপাত্তসমূহ চিহ্নিতকরণ}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item আদি ভর, $m_1 = 175\text{ kg}$
+        \item আদি চাপ ও তাপমাত্রা, $P_1 = 76\text{ cm Hg}$, $T_1 = 273 + 0 = 273\text{ K}$
+        \item অন্তিম চাপ ও তাপমাত্রা, $P_2 = 50\text{ cm Hg}$, $T_2 = 273 - 10 = 263\text{ K}$
+    \end{itemize}
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ৩: মান প্রতিস্থাপন ও হিসাব}
+    \begin{align*}
+        m_2 &= 175 \times \left(\frac{50}{76}\right) \times \left(\frac{273}{263}\right) \\
+        &= 175 \times 0.65789 \times 1.03802 \\
+        &= \mathbf{119.50\text{ kg}}
+    \end{align*}
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 46 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 17}]
+    \noindent
+    $1\text{ mol}$ এক-পারমাণবিক আদর্শ গ্যাস একটি অ-সমতাপীয় প্রক্রিয়ার মধ্য দিয়ে যায় যেখানে চাপের পরিবর্তন আয়তনের সাথে $P = P_0 - \alpha V^2$ সমীকরণ মেনে চলে। এখানে যথাক্রমে $P_0 = 4 \times 10^5\text{ Pa}$ এবং $\alpha = 1 \times 10^5\text{ Pa m}^{-6}$। ওই প্রক্রিয়ায় গ্যাসের অর্জিত সর্বোচ্চ তাপমাত্রা $T_{max}$ কত হবে নির্ণয় করুন।
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    $1\text{ mol}$ of a monatomic ideal gas undergoes a non-isothermal process where pressure varies with volume as $P = P_0 - \alpha V^2$. Here $P_0 = 4 \times 10^5\text{ Pa}$ and $\alpha = 1 \times 10^5\text{ Pa m}^{-6}$. Calculate the maximum temperature $T_{max}$ reached by the gas during this process.
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $37036.34\text{ K}$
+    \item[\textbf{B)}] $25000.00\text{ K}$
+    \item[\textbf{C)}] $48120.15\text{ K}$
+    \item[\textbf{D)}] $18500.50\text{ K}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $37036.34\text{ K}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{ধাপ ১: তাপমাত্রা ও আয়তনের মধ্যকার সম্পর্ক স্থাপন} \\
+    আদর্শ গ্যাস সমীকরণ $PV = nRT$ হতে পাই:
+    \[ T(V) = \frac{P V}{n R} = \frac{(P_0 - \alpha V^2) V}{n R} = \frac{1}{n R} (P_0 V - \alpha V^3) \]
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ২: সর্বোচ্চ তাপমাত্রা নির্ণয়ের শর্ত প্রয়োগ} \\
+    তাপমাত্রা সর্বোচ্চ হওয়ার শর্তানুসারে আয়তনের সাপেক্ষে অন্তরীকরণ (differentiation) করে শূন্যের সমান ধরি:
+    \[ \frac{dT}{dV} = \frac{1}{n R} (P_0 - 3 \alpha V^2) = 0 \]
+    \[ \implies 3 \alpha V^2 = P_0 \implies V = \sqrt{\frac{P_0}{3 \alpha}} \]
+    মান বসিয়ে আয়তন পাই:
+    \[ V = \sqrt{\frac{4 \times 10^5}{3 \times 10^5}} = \sqrt{\frac{4}{3}} = 1.1547\text{ m}^3 \]
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ৩: সর্বোচ্চ তাপমাত্রা $T_{max}$ গণনা} \\
+    এই আয়তনটি তাপমাত্রার সমীকরণে বসিয়ে সর্বোচ্চ তাপমাত্রা নির্ণয় করি:
+    \begin{align*}
+        T_{max} &= \frac{1}{1 \times 8.314} \left[ (4 \times 10^5 \times 1.1547) - (1 \times 10^5 \times (1.1547)^3) \right] \\
+        &= \frac{1}{8.314} \left[ 461880 - 153959.9 \right] \\
+        &= \frac{307920.1}{8.314} = \mathbf{37036.34\text{ K}}
+    \end{align*}
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 56 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 18}]
+    \noindent
+    একটি অক্সিজেন গ্যাসে ($M = 32\text{ g mol}^{-1}$) অণুগুলোর মূল গড় বর্গবেগ ($c_{rms}$), গড় বেগ ($c_{avg}$) এবং সর্বাধিক সম্ভাব্য বেগ ($c_{mp}$) রয়েছে। যদি পাত্রের পরম তাপমাত্রা সময়ের সাথে $T(t) = T_0 (1 + \alpha t)$ নিয়ম মেনে বৃদ্ধি পায়, যেখানে যথাক্রমে $T_0 = 300\text{ K}$ এবং $\alpha = 0.02\text{ s}^{-1}$, তবে $t = 25\text{ s}$ সময়ে এই তিনটি বেগের গুণফলের সময়ভিত্তিক পরিবর্তনের হার $\frac{d}{dt} (c_{rms} \cdot c_{avg} \cdot c_{mp})$ কত হবে? ($R = 8.314\text{ J mol}^{-1}\text{ K}^{-1}$)
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    In an Oxygen gas ($M = 32\text{ g mol}^{-1}$) sample, the molecules have a root mean square speed ($c_{rms}$), average speed ($c_{avg}$), and most probable speed ($c_{mp}$). If the absolute temperature of the container increases with time as $T(t) = T_0 (1 + \alpha t)$, where $T_0 = 300\text{ K}$ and $\alpha = 0.02\text{ s}^{-1}$, what will be the time rate of change of the product of these three speeds $\frac{d}{dt} (c_{rms} \cdot c_{avg} \cdot c_{mp})$ at $t = 25\text{ s}$?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $3.125 \times 10^6\text{ m}^3\text{ s}^{-4}$
+    \item[\textbf{B)}] $1.562 \times 10^8\text{ m}^3\text{ s}^{-4}$
+    \item[\textbf{C)}] $5.208 \times 10^5\text{ m}^3\text{ s}^{-4}$
+    \item[\textbf{D)}] $2.455 \times 10^4\text{ m}^3\text{ s}^{-4}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $3.125 \times 10^6\text{ m}^3\text{ s}^{-4}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{ধাপ ১: বেগের সমীকরণ ও গুণফল রূপান্তর} \\
+    আদর্শ গ্যাসের আণবিক তত্ত্বানুসারে:
+    \[ c_{rms} = \sqrt{\frac{3RT}{M}}, \quad c_{avg} = \sqrt{\frac{8RT}{\pi M}}, \quad c_{mp} = \sqrt{\frac{2RT}{M}} \]
+    তিনটি বেগের গুণফলকে $P(T)$ দিয়ে প্রকাশ করি:
+    \[ P(T) = c_{rms} \cdot c_{avg} \cdot c_{mp} = \sqrt{\frac{3 R T}{M}} \cdot \sqrt{\frac{8 R T}{\pi M}} \cdot \sqrt{\frac{2 R T}{M}} = \sqrt{\frac{48}{\pi}} \left(\frac{R T}{M}\right)^{3/2} \]
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ২: মানসমূহ ও নির্দিষ্ট সময়ে তাপমাত্রা নির্ণয়}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item মোলার ভর, $M = 32 \times 10^{-3}\text{ kg mol}^{-1}$
+        \item গ্যাস ধ্রুবক, $R = 8.314\text{ J mol}^{-1}\text{ K}^{-1}$
+        \item অনুপাত, $\frac{R}{M} = \frac{8.314}{0.032} = 259.8125\text{ J kg}^{-1}\text{ K}^{-1}$
+    \end{itemize}
+    $t = 25\text{ s}$ সময়ে তাপমাত্রা $T(25)$:
+    \[ T(25) = T_0 (1 + \alpha t) = 300 \times (1 + 0.02 \times 25) = 300 \times 1.5 = 450\text{ K} \]
+    তাপমাত্রার পরিবর্তনের হার:
+    \[ \frac{dT}{dt} = \frac{d}{dt} [T_0 (1 + \alpha t)] = T_0 \alpha = 300 \times 0.02 = 6\text{ K s}^{-1} \]
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ৩: চেইন রুল প্রয়োগ করে পরিবর্তনের হার হিসাব} \\
+    চেইন রুল প্রয়োগ করে সময়ের সাপেক্ষে পরিবর্তনের হার নির্ণয় করি:
+    \[ \frac{dP}{dt} = \frac{dP}{dT} \cdot \frac{dT}{dt} \]
+    $T$ এর সাপেক্ষে ব্যবকলন করে পাই:
+    \[ \frac{dP}{dT} = \sqrt{\frac{48}{\pi}} \left(\frac{R}{M}\right)^{3/2} \cdot \frac{3}{2} T^{1/2} = 6 \sqrt{\frac{3}{\pi}} \left(\frac{R}{M}\right)^{3/2} \sqrt{T} \]
+    মানসমূহ বসিয়ে পাই:
+    \begin{align*}
+        \frac{dP}{dT} &= 6 \times \sqrt{\frac{3}{3.14159}} \times (259.8125)^{1.5} \times \sqrt{450} \\
+        &= 6 \times 0.977205 \times 4187.87 \times 21.2132 = 520874.8\text{ m}^3\text{ s}^{-3}\text{ K}^{-1}
+    \end{align*}
+    অতএব, $t = 25\text{ s}$ সময়ে সময়ভিত্তিক পরিবর্তনের হার:
+    \[ \frac{dP}{dt} = 520874.8 \times 6 = 3125248.8\text{ m}^3\text{ s}^{-4} \approx \mathbf{3.125 \times 10^6\text{ m}^3\text{ s}^{-4}} \]
+\end{tcolorbox}
+
+% ------------------------------------------
+% QUESTION 19 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 19}]
+    \noindent
+    $67^\circ\text{C}$ তাপমাত্রার $1\text{ mol}$ এক-পারমাণবিক হিলিয়াম গ্যাসকে $37^\circ\text{C}$ তাপমাত্রার $1\text{ mol}$ এক-পারমাণবিক আর্গন গ্যাসের সাথে মেশানো হলো। বাহ্যিক পরিবেশের সাথে কোনো তাপের আদান-প্রদান না ঘটলে মিশ্রণটির চূড়ান্ত সাম্যাবস্থা তাপমাত্রা কত হবে?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    $1\text{ mol}$ of monatomic Helium gas at $67^\circ\text{C}$ is mixed with $1\text{ mol}$ of monatomic Argon gas at $37^\circ\text{C}$. If no heat exchange occurs with the surroundings, what will be the final equilibrium temperature of the mixture?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $52^\circ\text{C}$
+    \item[\textbf{B)}] $47^\circ\text{C}$
+    \item[\textbf{C)}] $325^\circ\text{C}$
+    \item[\textbf{D)}] $57^\circ\text{C}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $52^\circ\text{C}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{ধাপ ১: তাপীয় শক্তির সংরক্ষণ নীতি প্রয়োগ} \\
+    অর্জিত শক্তি = বর্জিত শক্তি। এক-পারমাণবিক গ্যাসের স্বাধীনতার মাত্রা $f = 3$ এবং অভ্যন্তরীণ শক্তি $U = \frac{3}{2} n R T$। ধরি চূড়ান্ত সাম্যাবস্থা তাপমাত্রা $T_f$:
+    \[ \frac{3}{2} n_1 R (T_1 - T_f) = \frac{3}{2} n_2 R (T_f - T_2) \]
+    যেহেতু $n_1 = n_2 = 1\text{ mol}$, সমীকরণটি দাঁড়ায়:
+    \[ T_1 - T_f = T_f - T_2 \implies 2 T_f = T_1 + T_2 \implies T_f = \frac{T_1 + T_2}{2} \]
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ২: কেলভিন স্কেলে তাপমাত্রা রূপান্তর ও গণনা}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item $T_1 = 273 + 67 = 340\text{ K}$
+        \item $T_2 = 273 + 37 = 310\text{ K}$
+    \end{itemize}
+    \begin{align*}
+        T_f &= \frac{340 + 310}{2} = 325\text{ K}
+    \end{align*}
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ৩: সেলসিয়াস স্কেলে রূপান্তর}
+    \[ t_f = 325 - 273 = \mathbf{52^\circ\text{C}} \]
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 20 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 20}]
+    \noindent
+    প্রমাণ তাপমাত্রা ও চাপে (STP) অক্সিজেন গ্যাসের অণুগুলোর গড় মুক্ত পথ $9.5 \times 10^{-8}\text{ m}$ হলে, দুটি পর পর সংঘাতের মধ্যবর্তী গড় সময়কাল কত? ($M = 32\text{ g mol}^{-1}$, $R = 8.314\text{ J mol}^{-1}\text{ K}^{-1}$)
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    If the mean free path of Oxygen gas molecules at STP is $9.5 \times 10^{-8}\text{ m}$, what is the mean time interval between two consecutive collisions? ($M = 32\text{ g mol}^{-1}$, $R = 8.314\text{ J mol}^{-1}\text{ K}^{-1}$)
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $2.06 \times 10^{-10}\text{ s}$
+    \item[\textbf{B)}] $4.12 \times 10^{-10}\text{ s}$
+    \item[\textbf{C)}] $1.50 \times 10^{-8}\text{ s}$
+    \item[\textbf{D)}] $3.25 \times 10^{-12}\text{ s}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $2.06 \times 10^{-10}\text{ s}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{ধাপ ১: মূল গড় বর্গবেগ ($c_{rms}$) নির্ণয়} \\
+    $c_{rms} = \sqrt{\frac{3 R T}{M}}$। STP-তে $T = 273\text{ K}$ এবং মোলার ভর $M = 32 \times 10^{-3}\text{ kg mol}^{-1}$:
+    \begin{align*}
+        c_{rms} &= \sqrt{\frac{3 \times 8.314 \times 273}{32 \times 10^{-3}}} \\
+        &= \sqrt{\frac{6809.166}{0.032}} = \sqrt{212786.4375} = 461.288\text{ m s}^{-1}
+    \end{align*}
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ২: মধ্যবর্তী গড় সময়কাল ($\tau$) হিসাব}
+    \begin{align*}
+        \tau &= \frac{\lambda}{c_{rms}} \\
+        &= \frac{9.5 \times 10^{-8}\text{ m}}{461.288\text{ m s}^{-1}} \\
+        &= 2.0594 \times 10^{-10}\text{ s} \approx \mathbf{2.06 \times 10^{-10}\text{ s}}
+    \end{align*}
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 21 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 21}]
+    \noindent
+    একটি গ্রহের তাপমাত্রা $527^\circ\text{C}$ এবং গড় ঘনত্ব $5.5 \times 10^3\text{ kg m}^{-3}$। গ্রহটি যদি তার বায়ুমণ্ডলে অক্সিজেন গ্যাস ($M = 32\text{ g mol}^{-1}$) ধরে রাখতে সক্ষম হয়, তবে গ্রহটির সর্বনিম্ন ব্যাসার্ধ কত হতে হবে? ($G = 6.67 \times 10^{-11}\text{ N m}^2\text{ kg}^{-2}$, $R = 8.31\text{ J mol}^{-1}\text{ K}^{-1}$)
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    A planet has a temperature of $527^\circ\text{C}$ and an average density of $5.5 \times 10^3\text{ kg m}^{-3}$. If the planet is capable of retaining Oxygen gas ($M = 32\text{ g mol}^{-1}$) in its atmosphere, what must be the minimum radius of the planet? ($G = 6.67 \times 10^{-11}\text{ N m}^2\text{ kg}^{-2}$, $R = 8.31\text{ J mol}^{-1}\text{ K}^{-1}$)
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $450\text{ km}$
+    \item[\textbf{B)}] $6370\text{ km}$
+    \item[\textbf{C)}] $320\text{ km}$
+    \item[\textbf{D)}] $850\text{ km}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $450\text{ km}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{ধাপ ১: শর্ত ও সমীকরণ গঠন} \\
+    মুক্তিবেগ $v_{esc} = \sqrt{\frac{2 G M_p}{r}}$। গ্রহের ভর $M_p = \frac{4}{3} \pi r^3 \rho$ বসালে পাওয়া যায়:
+    \[ v_{esc} = \sqrt{\frac{2 G \left(\frac{4}{3} \pi r^3 \rho\right)}{r}} = r \sqrt{\frac{8}{3} \pi G \rho \]
+    বায়ুমণ্ডল ধরে রাখার শর্ত হলো মুক্তিবেগ মূল গড় বর্গবেগের সমান বা বেশি হওয়া ($v_{esc} = c_{rms}$):
+    \[ r \sqrt{\frac{8}{3} \pi G \rho} = \sqrt{\frac{3 R T}{M}} \implies r = \sqrt{\frac{9 R T}{8 \pi G \rho M}} \]
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ২: SI এককে উপাত্তসমূহ}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item তাপমাত্রা, $T = 527 + 273 = 800\text{ K}$
+        \item মোলার ভর, $M = 32 \times 10^{-3}\text{ kg mol}^{-1}$
+        \item ঘনত্ব, $\rho = 5.5 \times 10^3\text{ kg m}^{-3}$
+        \item সার্বজনীন গ্যাস ধ্রুবক, $R = 8.31\text{ J mol}^{-1}\text{ K}^{-1}$
+    \end{itemize}
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ৩: ব্যাসার্ধ গণনা}
+    \begin{align*}
+        r &= \sqrt{\frac{9 \times 8.31 \times 800}{8 \times 3.1416 \times (6.67 \times 10^{-11}) \times (5.5 \times 10^3) \times (32 \times 10^{-3})}} \\
+        &= \sqrt{\frac{59832}{2.949 \times 10^{-7}}} = \sqrt{2.0288 \times 10^{11}} \\
+        &= 450422\text{ m} \approx \mathbf{450\text{ km}}
+    \end{align*}
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 22 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 22}]
+    \noindent
+    শীতকালে একটি ঘরের ভিতরের বায়ুর তাপমাত্রা $0^\circ\text{C}$ এবং বাতাসে $250\text{ mol}$ দ্বি-পারমাণবিক বায়ু অণু রয়েছে। ঘরের ভেতরে একটি আবদ্ধ সিলিন্ডারে $60^\circ\text{C}$ তাপমাত্রায় $5\text{ mol}$ এক-পারমাণবিক হিলিয়াম গ্যাস রাখা আছে। সিলিন্ডারটি হঠাৎ ফেটে গিয়ে সমস্ত হিলিয়াম গ্যাস ঘরে ছড়িয়ে পড়লে, পরিবেশের সাথে কোনো তাপ বিনিময় না হলে মিশ্রণটির চূড়ান্ত তাপমাত্রা কত হবে?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    On a winter day, the air temperature inside a room is $0^\circ\text{C}$, and the room contains $250\text{ mol}$ of diatomic air molecules. A closed cylinder inside the room contains $5\text{ mol}$ of monatomic Helium gas at $60^\circ\text{C}$. If the cylinder suddenly bursts and all Helium gas spreads into the room with no heat exchange with the environment, what will be the final temperature of the mixture?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $0.71^\circ\text{C}$
+    \item[\textbf{B)}] $1.20^\circ\text{C}$
+    \item[\textbf{C)}] $2.50^\circ\text{C}$
+    \item[\textbf{D)}] $0.00^\circ\text{C}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $0.71^\circ\text{C}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{ধাপ ১: অভ্যন্তরীণ শক্তির সংরক্ষণ নীতি প্রয়োগ} \\
+    প্রাথমিক মোট অভ্যন্তরীণ শক্তি = চূড়ান্ত অভ্যন্তরীণ শক্তি। দ্বি-পারমাণবিক বায়ুর স্বাধীনতার মাত্রা $f_{air} = 5$ এবং এক-পারমাণবিক হিলিয়ামের $f_{He} = 3$:
+    \[ \frac{5}{2} n_{air} R T_{air} + \frac{3}{2} n_{He} R T_{He} = \left(\frac{5}{2} n_{air} + \frac{3}{2} n_{He}\right) R T_f \]
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ২: উপাত্তসমূহ প্রতিস্থাপন}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item $n_{air} = 250\text{ mol}$, $T_{air} = 273\text{ K}$
+        \item $n_{He} = 5\text{ mol}$, $T_{He} = 273 + 60 = 333\text{ K}$
+    \end{itemize}
+    \begin{align*}
+        \frac{5}{2} (250) (273) + \frac{3}{2} (5) (333) &= \left[\frac{5}{2} (250) + \frac{3}{2} (5)\right] T_f \\
+        \implies 625 \times 273 + 7.5 \times 333 &= (625 + 7.5) T_f \\
+        \implies 170625 + 2497.5 &= 632.5 T_f \\
+        \implies 173122.5 &= 632.5 T_f \\
+        \implies T_f &= \frac{173122.5}{632.5} = 273.711\text{ K}
+    \end{align*}
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ৩: সেলসিয়াস স্কেলে রূপান্তর}
+    \[ t_f = 273.711 - 273 = \mathbf{0.71^\circ\text{C}} \]
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 23 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 23}]
+    \noindent
+    $27^\circ\text{C}$ তাপমাত্রায় একটি রুদ্ধ পাত্রে শুষ্ক বায়ু এবং জলীয় বাষ্পের মিশ্রণের মোট চাপ $1.07 \times 10^5\text{ N m}^{-2}$। ওই তাপমাত্রায় সম্পৃক্ত জলীয় বাষ্পের চাপ $3.7 \times 10^3\text{ N m}^{-2}$। পাত্রটিকে উত্তপ্ত করে তাপমাত্রা $40^\circ\text{C}$ এ উন্নীত করা হলে পাত্রের ভেতরের চূড়ান্ত মোট চাপ কত হবে?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    In a closed vessel at $27^\circ\text{C}$, the total pressure of a mixture of dry air and water vapour is $1.07 \times 10^5\text{ N m}^{-2}$. At that temperature, the saturated water vapour pressure is $3.7 \times 10^3\text{ N m}^{-2}$. If the vessel is heated to raise the temperature to $40^\circ\text{C}$, what will be the final total pressure inside the vessel?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $1.12 \times 10^5\text{ N m}^{-2}$
+    \item[\textbf{B)}] $1.07 \times 10^5\text{ N m}^{-2}$
+    \item[\textbf{C)}] $1.25 \times 10^5\text{ N m}^{-2}$
+    \item[\textbf{D)}] $0.98 \times 10^5\text{ N m}^{-2}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $1.12 \times 10^5\text{ N m}^{-2}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{ধাপ ১: প্রাথমিক শুষ্ক বায়ুর আংশিক চাপ নির্ণয়} \\
+    ডাল্টনের আংশিক চাপ সূত্রানুসারে $27^\circ\text{C}$ ($300\text{ K}$) তাপমাত্রায় শুষ্ক বায়ুর চাপ:
+    \[ P_{air,1} = P_{total,1} - P_{vapor,1} = 1.07 \times 10^5 - 3.7 \times 10^3 = 107000 - 3700 = 103300\text{ N m}^{-2} \]
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ২: তাপমাত্রা বৃদ্ধির ফলে নতুন চাপ হিসাব} \\
+    গে-লুসাকের চাপের সূত্রানুসারে তাপমাত্রা $40^\circ\text{C}$ ($313\text{ K}$) এ উন্নীত হলে:
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item শুষ্ক বায়ুর নতুন চাপ, $P_{air,2} = 103300 \times \frac{313}{300} = 107776.67\text{ N m}^{-2}$
+        \item জলীয় বাষ্পের নতুন চাপ, $P_{vapor,2} = 3700 \times \frac{313}{300} = 3860.33\text{ N m}^{-2}$
+    \end{itemize}
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ৩: চূড়ান্ত মোট চাপ নির্ণয়}
+    \begin{align*}
+        P_{total,2} &= P_{air,2} + P_{vapor,2} \\
+        &= 107776.67 + 3860.33 \\
+        &= 111637\text{ N m}^{-2} \approx \mathbf{1.12 \times 10^5\text{ N m}^{-2}}
+    \end{align*}
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 24 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 24}]
+    \noindent
+    কোনো একটি ঘরের তাপমাত্রা $30^\circ\text{C}$ এবং শিশিরাঙ্ক $15^\circ\text{C}$। $30^\circ\text{C}$ তাপমাত্রায় গ্লাইশারের উৎপাদক $1.65$ হলে ওই ঘরের হাইগ্রোমিটারের সিক্ত বাল্বের তাপমাত্রা কত? আরও, যদি সম্পৃক্ত বাষ্পচাপ যথাক্রমে $31.83\text{ mm Hg}$ ও $25.25\text{ mm Hg}$ হয় এবং বাইরের তাপমাত্রা $26^\circ\text{C}$ এ আপেক্ষিক আর্দ্রতা $65\%$ হয়, তবে জানালা খুলে দিলে জলীয় বাষ্পের প্রবাহের দিক কোনটি হবে? ($30^\circ\text{C}$ এ ঘরের আপেক্ষিক আর্দ্রতা $50\%$)
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    The temperature of a room is $30^\circ\text{C}$ and its dew point is $15^\circ\text{C}$. If Glaisher's factor at $30^\circ\text{C}$ is $1.65$, what is the wet bulb temperature of the hygrometer? Furthermore, if the relative humidity of outdoor air at $26^\circ\text{C}$ is $65\%$, what will be the direction of water vapour flow if a window is opened?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}]  $20.91^\circ\text{C}$ , বাইরে থেকে ঘরের ভেতরে প্রবাহিত হবে।
+    \item[\textbf{B)}]  $20.91^\circ\text{C}$ , ঘর থেকে বাইরে প্রবাহিত হবে।
+    \item[\textbf{C)}]  $18.50^\circ\text{C}$ , বাইরে থেকে ঘরের ভেতরে প্রবাহিত হবে।
+    \item[\textbf{D)}]  $15.00^\circ\text{C}$ , কোনো প্রবাহ ঘটবে না।
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A)  $20.91^\circ\text{C}$ , বাইরে থেকে ঘরের ভেতরে প্রবাহিত হবে।
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{ধাপ ১: গ্লাইশারের সূত্র প্রয়োগ করে সিক্ত বাল্বের তাপমাত্রা নির্ণয়} \\
+    $\theta_{dew} = \theta_1 - G (\theta_1 - \theta_2)$। এখানে $\theta_1 = 30^\circ\text{C}$, $\theta_{dew} = 15^\circ\text{C}$, $G = 1.65$:
+    \begin{align*}
+        15 &= 30 - 1.65 (30 - \theta_2) \\
+        \implies 1.65 (30 - \theta_2) &= 15 \implies 30 - \theta_2 = \frac{15}{1.65} = 9.0909 \\
+        \implies \theta_2 &= 30 - 9.0909 = \mathbf{20.91^\circ\text{C}}
+    \end{align*}
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ২: ঘরের ভিতর ও বাইরের বাষ্পচাপ তুলনা}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item ঘরের ভেতরের বাষ্পচাপ, $f_{in} = 0.50 \times 31.83 = 15.915\text{ mm Hg}$
+        \item বাইরের বায়ুর বাষ্পচাপ, $f_{out} = 0.65 \times 25.25 = 16.4125\text{ mm Hg}$
+    \end{itemize}
+    যেহেতু $f_{out} > f_{in}$, উচ্চ বাষ্পচাপের অঞ্চল (বাইরে) থেকে নিম্ন বাষ্পচাপের অঞ্চলে (ভেতরে) জলীয় বাষ্প প্রবাহিত হবে।
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 25 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 25}]
+    \noindent
+    সম-আয়তনের দুটি পাত্রে যথাক্রমে $48\text{ g}$ অক্সিজেন ($\text{O}_2$) এবং $8\text{ g}$ হিলিয়াম ($\text{He}$) গ্যাস রাখা আছে। পাত্রদ্বয়ের তাপমাত্রা যথাক্রমে $60^\circ\text{C}$ এবং $20^\circ\text{C}$। উপেক্ষণীয় আয়তনের একটি নল দ্বারা পাত্র দুটিকে সংযুক্ত করলে সাম্যাবস্থায় সমগ্র ব্যবস্থার চূড়ান্ত তাপমাত্রা কত হবে?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    Two vessels of equal volume contain $48\text{ g}$ of Oxygen ($\text{O}_2$) and $8\text{ g}$ of Helium ($\text{He}$) gas respectively. The temperatures of the vessels are $60^\circ\text{C}$ and $20^\circ\text{C}$ respectively. If connected by a tube, what will be the final equilibrium temperature?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $42.22^\circ\text{C}$
+    \item[\textbf{B)}] $38.72^\circ\text{C}$
+    \item[\textbf{C)}] $50.00^\circ\text{C}$
+    \item[\textbf{D)}] $28.50^\circ\text{C}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $42.22^\circ\text{C}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{ধাপ ১: মোল সংখ্যা ও স্বাধীনতার মাত্রা নির্ণয়}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item অক্সিজেনের মোল সংখ্যা, $n_1 = \frac{48}{32} = 1.5\text{ mol}$ (দ্বি-পারমাণবিক, $f_1 = 5$)
+        \item হিলিয়ামের মোল সংখ্যা, $n_2 = \frac{8}{4} = 2.0\text{ mol}$ (এক-পারমাণবিক, $f_2 = 3$)
+        \item তাপমাত্রা, উষ্ণতা $T_1 = 273 + 60 = 333\text{ K}$, $T_2 = 273 + 20 = 293\text{ K}$
+    \end{itemize}
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ২: মোট অভ্যন্তরীণ শক্তির সংরক্ষণ নীতি প্রয়োগ}
+    \begin{align*}
+        \frac{f_1}{2} n_1 R T_1 + \frac{f_2}{2} n_2 R T_2 &= \left(\frac{f_1}{2} n_1 + \frac{f_2}{2} n_2\right) R T_f \\
+        \implies \frac{5}{2} \times 1.5 \times 333 + \frac{3}{2} \times 2.0 \times 293 &= \left(\frac{5}{2} \times 1.5 + \frac{3}{2} \times 2.0\right) T_f \\
+        \implies 3.75 \times 333 + 3.0 \times 293 &= (3.75 + 3.0) T_f \\
+        \implies 1248.75 + 879 &= 6.75 T_f \\
+        \implies 2127.75 &= 6.75 T_f \\
+        \implies T_f &= \frac{2127.75}{6.75} = 315.222\text{ K}
+    \end{align*}
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ৩: সেলসিয়াস স্কেলে রূপান্তর}
+    \[ t_f = 315.222 - 273 = \mathbf{42.22^\circ\text{C}} \]
+\end{tcolorbox}
+\end{document}

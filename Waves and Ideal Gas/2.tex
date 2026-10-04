@@ -1,0 +1,172 @@
+\documentclass[12pt, a4paper]{article}
+
+% ==========================================
+% 1. COMPILER, LANGUAGE & FONT SETUP
+% ==========================================
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{bengali}
+\setotherlanguage{english}
+\newfontfamily\bengalifont[Script=Bengali, AutoFakeBold=2.5, AutoFakeSlant=0.2]{Kalpurush}
+
+% ==========================================
+% 2. MATHEMATICS, UNITS & FORMATTING
+% ==========================================
+\usepackage{amsmath, amssymb, siunitx}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{microtype} % For better typography
+\onehalfspacing % Better line spacing for readability
+
+% ==========================================
+% 3. COLORS & BEAUTIFICATION PACKAGES
+% ==========================================
+\usepackage[dvipsnames, table]{xcolor}
+\usepackage[skins, breakable, theorems]{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{shadows, arrows.meta, positioning, decorations.pathmorphing, calc}
+\renewcommand{\labelitemi}{$\bullet$}
+
+% Define custom beautiful colors
+\definecolor{primary}{HTML}{0056b3}
+\definecolor{secondary}{HTML}{e7f1ff}
+\definecolor{success}{HTML}{198754}
+\definecolor{successbg}{HTML}{d1e7dd}
+\definecolor{accent}{HTML}{fd7e14}
+\definecolor{darkgray}{HTML}{343a40}
+
+% Custom Tcolorbox Styles
+\tcbset{
+    questionbox/.style={
+        enhanced, colback=secondary, colframe=primary, arc=2mm, boxrule=1pt,
+        fonttitle=\bfseries\Large, title=#1,
+        drop fuzzy shadow=black!10,
+        attach boxed title to top left={xshift=5mm, yshift=-3mm},
+        boxed title style={colback=primary, arc=1mm}
+    },
+    answerbox/.style={
+        enhanced, colback=successbg, colframe=success, arc=1.5mm, boxrule=1pt,
+        left=2mm, right=2mm, top=2mm, bottom=2mm,
+        drop fuzzy shadow=black!10
+    },
+    solutionbox/.style={
+        enhanced, colback=white, colframe=darkgray, arc=2mm, boxrule=1pt,
+        fonttitle=\bfseries\large, title=#1, breakable,
+        coltitle=white, colbacktitle=darkgray,
+        drop fuzzy shadow=black!10,
+        attach boxed title to top center={yshift=-3mm},
+        boxed title style={arc=1mm}
+    }
+}
+
+\begin{document}
+
+\newpage
+% ------------------------------------------
+% QUESTION 11 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 1}]
+    \noindent
+    একটি পাত্রের $0.25\text{ m}^2$ ক্ষেত্রফলের একটি দেয়ালের সাথে আদর্শ গ্যাসের অণুগুলোর স্থিতিস্থাপক সংঘাত ঘটে। প্রতি একক ক্ষেত্রফলে প্রতি সেকেন্ডে সংঘাতকারী অণুর সংখ্যা বেগের সাথে $n(v) = C v^3$ নিয়ম মেনে চলে, যেখানে $C = 1.0 \times 10^{12}\text{ s}^2\text{ m}^{-6}$। বেগ $100\text{ m s}^{-1}$ হতে $500\text{ m s}^{-1}$ পরিসরের মধ্যে থাকলে এবং প্রতিটি অণুর ভর $m = 5.0 \times 10^{-26}\text{ kg}$ হলে, যোগজীকরণ প্রক্রিয়ায় ওই দেয়ালে প্রযুক্ত মোট বল $F$ এবং ব্যবকলন প্রক্রিয়ায় ঊর্ধ্ব সীমা বেগের সাপেক্ষে বলের পরিবর্তনের হার $\frac{dF}{dv_2}$ কত হবে?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    Ideal gas molecules undergo elastic collisions with a container wall of area $0.25\text{ m}^2$. The number of molecules striking per unit area per second varies with speed as $n(v) = C v^3$, where $C = 1.0 \times 10^{12}\text{ s}^2\text{ m}^{-6}$. For speeds ranging from $100\text{ m s}^{-1}$ to $500\text{ m s}^{-1}$, and with each molecule having a mass of $m = 5.0 \times 10^{-26}\text{ kg}$, calculate the total force $F$ exerted on the wall using integration, and the rate of change of force with respect to the upper speed limit $\frac{dF}{dv_2}$ using differentiation.
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] বল $0.1562\text{ N}$ এবং পরিবর্তনের হার $1.563 \times 10^{-3}\text{ N s m}^{-1}$
+    \item[\textbf{B)}] বল $0.1500\text{ N}$ এবং পরিবর্তনের হার $3.200 \times 10^{-3}\text{ N s m}^{-1}$
+    \item[\textbf{C)}] বল $0.0250\text{ N}$ এবং পরিবর্তনের হার $0.500 \times 10^{-3}\text{ N s m}^{-1}$
+    \item[\textbf{D)}] বল $0.2450\text{ N}$ এবং পরিবর্তনের হার $2.100 \times 10^{-3}\text{ N s m}^{-1}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) বল $0.1562\text{ N}$ এবং পরিবর্তনের হার $1.563 \times 10^{-3}\text{ N s m}^{-1}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{ধাপ ১: যোগজীকরণ দ্বারা প্রযুক্ত মোট বল $F$ নির্ণয়}
+    প্রতিটি সংঘাতের ফলে ভরবেগের পরিবর্তন $\Delta p = 2 m v$। দেয়ালে প্রযুক্ত মোট বল $F$:
+    \begin{align*}
+        F &= A \int_{v_1}^{v_2} (2 m v) n(v) \, dv = 2 m C A \int_{100}^{500} v^4 \, dv = 2 m C A \left[ \frac{v^5}{5} \right]_{100}^{500}
+    \end{align*}
+    ধ্রুবকের মান: $2 m C A = 2 \times (5.0 \times 10^{-26}) \times (1.0 \times 10^{12}) \times 0.25 = 2.5 \times 10^{-14}$
+    \begin{align*}
+        F &= \frac{2.5 \times 10^{-14}}{5} \left[ (500)^5 - (100)^5 \right] \\
+        &= 5.0 \times 10^{-15} \times (3.125 \times 10^{13} - 1.0 \times 10^{10}) \\
+        &= 5.0 \times 10^{-15} \times (3.124 \times 10^{13}) = \mathbf{0.1562\text{ N}}
+    \end{align*}
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ২: ব্যবকলন দ্বারা বলের পরিবর্তনের হার নির্ণয়}
+    ঊর্ধ্ব সীমা বেগের সাপেক্ষে বলের পরিবর্তনের হার ($\frac{dF}{dv_2}$):
+    \begin{align*}
+        \frac{dF}{dv_2} &= 2 m C A v_2^4 = (2.5 \times 10^{-14}) \times (500)^4 \\
+        &= (2.5 \times 10^{-14}) \times (6.25 \times 10^{10}) = 1.5625 \times 10^{-3}\text{ N s m}^{-1} \approx \mathbf{1.563 \times 10^{-3}\text{ N s m}^{-1}}
+    \end{align*}
+\end{tcolorbox}
+
+\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 12 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 2}]
+    \noindent
+    $2\text{ kg}$ কাঠামোর ভর এবং $10\text{ m}^3$ আয়তন বিশিষ্ট একটি বেলুনে $300\text{ K}$ তাপমাত্রায় হিলিয়াম গ্যাস ($M = 4\text{ g mol}^{-1}$) ভরা আছে। বায়ুমণ্ডলের ঘনত্ব উচ্চতা $z$ এর সাথে $\rho_{\text{air}}(z) = \rho_0 e^{-z/z_0}$ নিয়ম মেনে পরিবর্তিত হয়, যেখানে $\rho_0 = 1.2\text{ kg m}^{-3}$ এবং $z_0 = 8000\text{ m}$। ভূ-পৃষ্ঠের চাপ $1.0 \times 10^5\text{ Pa}$ হলে, বেলুনটি সাম্যাবস্থায় পৌঁছানো পর্যন্ত সর্বোচ্চ উচ্চতা $z_{\text{max}}$ এবং $z = 0$ হতে $z_{\text{max}}$ পর্যন্ত প্লাবতা বল দ্বারা সম্পন্ন কাজের পরিমাণ যোগজীকরণ প্রক্রিয়ায় কত হবে? ($g = 9.8\text{ m s}^{-2}$, গ্যাস ধ্রুবক $R = 8.314\text{ J mol}^{-1}\text{ K}^{-1}$)
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    A balloon of skin mass $2\text{ kg}$ and volume $10\text{ m}^3$ contains Helium gas ($M = 4\text{ g mol}^{-1}$) at temperature $300\text{ K}$. The atmospheric density varies with altitude $z$ as $\rho_{\text{air}}(z) = \rho_0 e^{-z/z_0}$, where $\rho_0 = 1.2\text{ kg m}^{-3}$ and $z_0 = 8000\text{ m}$. If the surface pressure is $1.0 \times 10^5\text{ Pa}$, calculate the maximum equilibrium altitude $z_{\text{max}}$ and the work done by the buoyant force from $z = 0$ to $z_{\text{max}}$ using integration. ($g = 9.8\text{ m s}^{-2}$, $R = 8.314\text{ J mol}^{-1}\text{ K}^{-1}$)
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] সর্বোচ্চ উচ্চতা $9625\text{ m}$ এবং প্লাবতা বলের কাজ $658.33\text{ kJ}$
+    \item[\textbf{B)}] সর্বোচ্চ উচ্চতা $8000\text{ m}$ এবং প্লাবতা বলের কাজ $500.00\text{ kJ}$
+    \item[\textbf{C)}] সর্বোচ্চ উচ্চতা $12000\text{ m}$ এবং প্লাবতা বলের কাজ $820.50\text{ kJ}$
+    \item[\textbf{D)}] সর্বোচ্চ উচ্চতা $5400\text{ m}$ এবং প্লাবতা বলের কাজ $320.10\text{ kJ}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) সর্বোচ্চ উচ্চতা $9625\text{ m}$ এবং প্লাবতা বলের কাজ $658.33\text{ kJ}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{ধাপ ১: বেলুনের মোট ভর নির্ণয়}
+    হিলিয়াম গ্যাসের ভর:
+    \[ m_{\text{He}} = \frac{P V M}{R T} = \frac{10^5 \times 10 \times (4 \times 10^{-3})}{8.314 \times 300} = 1.603\text{ kg} \]
+    বেলুনের মোট ভর $m_{\text{tot}} = 2 + 1.603 = 3.603\text{ kg}$।
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ২: সর্বোচ্চ সাম্যাবস্থা উচ্চতা $z_{\text{max}}$ নির্ণয়}
+    সাম্যাবস্থা উচ্চতায় প্লাবতা বল বেলুনের ওজনের সমান হয় ($\rho_{\text{air}}(z_{\text{max}}) V g = m_{\text{tot}} g$):
+    \[ \rho_0 e^{-z_{\text{max}}/z_0} V = m_{\text{tot}} \implies 1.2 \times 10 \times e^{-z_{\text{max}}/8000} = 3.603 \]
+    \[ e^{-z_{\text{max}}/8000} = 0.30025 \implies z_{\text{max}} = -8000 \ln(0.30025) = \mathbf{9625\text{ m}} \]
+    
+    \vspace{0.4em}
+    \noindent\textbf{ধাপ ৩: যোগজীকরণ দ্বারা প্লাবতা বলের কাজ নির্ণয়}
+    \begin{align*}
+        W_B &= \int_0^{z_{\text{max}}} F_B(z) \, dz = \int_0^{z_{\text{max}}} \rho_0 V g e^{-z/z_0} \, dz \\
+        &= \rho_0 V g z_0 \left[ 1 - e^{-z_{\text{max}}/z_0} \right] \\
+        &= 1.2 \times 10 \times 9.8 \times 8000 \times (1 - 0.30025) \\
+        &= 940800 \times 0.69975 = 658324.8\text{ J} \approx \mathbf{658.33\text{ kJ}}
+    \end{align*}
+\end{tcolorbox}
+
+\vspace{2em}
+
+\end{document}

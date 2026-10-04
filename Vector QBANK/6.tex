@@ -6,7 +6,17 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta, angles, quotes, 3d, calc}
 \usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{pagecolor}
 
+% Set the background color to black and default text color to white
+\pagecolor{black}
+\color{white}
+\tcbset{
+    colback=black!80, % Dark background for boxes
+    colframe=white,   % White borders
+    coltitle=white    % White titles
+}
 % Configure Kalpurush font for Bangla rendering
 \setmainfont{Kalpurush}
 
