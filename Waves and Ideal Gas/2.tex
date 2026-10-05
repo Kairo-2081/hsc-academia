@@ -66,107 +66,1238 @@
 % ------------------------------------------
 % QUESTION 11 SECTION
 % ------------------------------------------
+% ------------------------------------------
+% QUESTION 1 SECTION
+% ------------------------------------------
 \begin{tcolorbox}[questionbox={প্রশ্ন (Question) 1}]
     \noindent
-    একটি পাত্রের $0.25\text{ m}^2$ ক্ষেত্রফলের একটি দেয়ালের সাথে আদর্শ গ্যাসের অণুগুলোর স্থিতিস্থাপক সংঘাত ঘটে। প্রতি একক ক্ষেত্রফলে প্রতি সেকেন্ডে সংঘাতকারী অণুর সংখ্যা বেগের সাথে $n(v) = C v^3$ নিয়ম মেনে চলে, যেখানে $C = 1.0 \times 10^{12}\text{ s}^2\text{ m}^{-6}$। বেগ $100\text{ m s}^{-1}$ হতে $500\text{ m s}^{-1}$ পরিসরের মধ্যে থাকলে এবং প্রতিটি অণুর ভর $m = 5.0 \times 10^{-26}\text{ kg}$ হলে, যোগজীকরণ প্রক্রিয়ায় ওই দেয়ালে প্রযুক্ত মোট বল $F$ এবং ব্যবকলন প্রক্রিয়ায় ঊর্ধ্ব সীমা বেগের সাপেক্ষে বলের পরিবর্তনের হার $\frac{dF}{dv_2}$ কত হবে?
+    একটি পাত্রের $0.25\text{ m}^2$ ক্ষেত্রফলের একটি দেয়ালের সাথে আদর্শ গ্যাসের অণুগুলোর স্থিতিস্থাপক সংঘাত ঘটে। প্রতি একক ক্ষেত্রফলে প্রতি সেকেন্ডে সংঘাতকারী অণুর সংখ্যা বেগের সাথে $n(v) = C v^3$ নিয়ম মেনে চলে, যেখানে $C = 1.0 \times 10^{12}\text{ s}^2\text{ m}^{-6}$। বেগ $100\text{ m s}^{-1}$ হতে $500\text{ m s}^{-1}$ পরিসরের মধ্যে থাকলে এবং প্রতিটি অণুর ভর $m = 5.0 \times 10^{-26}\text{ kg}$ হলে, ওই দেয়ালে প্রযুক্ত মোট বল $F$ কত হবে?
     
     \vspace{0.8em}
     \begin{english}
     \noindent\textit{\color{darkgray}
-    Ideal gas molecules undergo elastic collisions with a container wall of area $0.25\text{ m}^2$. The number of molecules striking per unit area per second varies with speed as $n(v) = C v^3$, where $C = 1.0 \times 10^{12}\text{ s}^2\text{ m}^{-6}$. For speeds ranging from $100\text{ m s}^{-1}$ to $500\text{ m s}^{-1}$, and with each molecule having a mass of $m = 5.0 \times 10^{-26}\text{ kg}$, calculate the total force $F$ exerted on the wall using integration, and the rate of change of force with respect to the upper speed limit $\frac{dF}{dv_2}$ using differentiation.
+    Ideal gas molecules undergo elastic collisions with a container wall of area $0.25\text{ m}^2$. The number of molecules striking per unit area per second varies with speed as $n(v) = C v^3$, where $C = 1.0 \times 10^{12}\text{ s}^2\text{ m}^{-6}$. For speeds ranging from $100\text{ m s}^{-1}$ to $500\text{ m s}^{-1}$, and with each molecule having a mass of $m = 5.0 \times 10^{-26}\text{ kg}$, calculate the total force $F$ exerted on the wall .
     }
     \end{english}
 \end{tcolorbox}
 
 \begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
-    \item[\textbf{A)}] বল $0.1562\text{ N}$ এবং পরিবর্তনের হার $1.563 \times 10^{-3}\text{ N s m}^{-1}$
-    \item[\textbf{B)}] বল $0.1500\text{ N}$ এবং পরিবর্তনের হার $3.200 \times 10^{-3}\text{ N s m}^{-1}$
-    \item[\textbf{C)}] বল $0.0250\text{ N}$ এবং পরিবর্তনের হার $0.500 \times 10^{-3}\text{ N s m}^{-1}$
-    \item[\textbf{D)}] বল $0.2450\text{ N}$ এবং পরিবর্তনের হার $2.100 \times 10^{-3}\text{ N s m}^{-1}$
+    \item[\textbf{A)}] $0.1562\text{ N}$
+    \item[\textbf{B)}] $0.1500\text{ N}$
+    \item[\textbf{C)}] $0.0250\text{ N}$
+    \item[\textbf{D)}] $0.2450\text{ N}$
 \end{itemize}
 
 \vspace{0.5em}
 \begin{tcolorbox}[answerbox]
-    \textbf{\color{success} উত্তর:} A) বল $0.1562\text{ N}$ এবং পরিবর্তনের হার $1.563 \times 10^{-3}\text{ N s m}^{-1}$
+    \textbf{\color{success} উত্তর:} A) $0.1562\text{ N}$
 \end{tcolorbox}
 \vspace{1em}
 
 \begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
     \noindent
-    \textbf{ধাপ ১: যোগজীকরণ দ্বারা প্রযুক্ত মোট বল $F$ নির্ণয়}
-    প্রতিটি সংঘাতের ফলে ভরবেগের পরিবর্তন $\Delta p = 2 m v$। দেয়ালে প্রযুক্ত মোট বল $F$:
+    \textbf{প্রদত্ত উপাত্ত:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item ক্ষেত্রফল, $A = 0.25\text{ m}^2$
+        \item অনুপাত ধ্রুবক, $C = 1.0 \times 10^{12}\text{ s}^2\text{ m}^{-6}$
+        \item প্রতিটি অণুর ভর, $m = 5.0 \times 10^{-26}\text{ kg}$
+        \item বেগের সীমা, $v_1 = 100\text{ m s}^{-1}$ এবং $v_2 = 500\text{ m s}^{-1}$
+    \end{itemize}
+
+    \vspace{0.6em}
+    \noindent\textbf{যোগজীকরণ দ্বারা প্রযুক্ত মোট বল $F$ নির্ণয়:} \\
+    প্রতিটি স্থিতিস্থাপক সংঘাতে ভরবেগের পরিবর্তন $\Delta p = 2mv$।
+    প্রতি সেকেন্ডে স্থানান্তরিত মোট ভরবেগ অর্থাৎ লব্ধি বল:
+    \[ F = A \int_{v_1}^{v_2} (2 m v) n(v) \, dv = 2 m C A \int_{v_1}^{v_2} v^4 \, dv \]
+    
+    এখানে ধ্রুবক সহগ:
+    \[ 2 m C A = 2 \times (5.0 \times 10^{-26}) \times (1.0 \times 10^{12}) \times 0.25 = 2.5 \times 10^{-14}\text{ kg s}^2\text{ m}^{-4} \]
+    
+    নির্দিষ্ট যোগজীকরণের মান বসিয়ে:
     \begin{align*}
-        F &= A \int_{v_1}^{v_2} (2 m v) n(v) \, dv = 2 m C A \int_{100}^{500} v^4 \, dv = 2 m C A \left[ \frac{v^5}{5} \right]_{100}^{500}
-    \end{align*}
-    ধ্রুবকের মান: $2 m C A = 2 \times (5.0 \times 10^{-26}) \times (1.0 \times 10^{12}) \times 0.25 = 2.5 \times 10^{-14}$
-    \begin{align*}
-        F &= \frac{2.5 \times 10^{-14}}{5} \left[ (500)^5 - (100)^5 \right] \\
+        F &= 2.5 \times 10^{-14} \times \left[ \frac{v^5}{5} \right]_{100}^{500} = \frac{2.5 \times 10^{-14}}{5} \left( 500^5 - 100^5 \right) \\
         &= 5.0 \times 10^{-15} \times (3.125 \times 10^{13} - 1.0 \times 10^{10}) \\
         &= 5.0 \times 10^{-15} \times (3.124 \times 10^{13}) = \mathbf{0.1562\text{ N}}
     \end{align*}
-    
-    \vspace{0.4em}
-    \noindent\textbf{ধাপ ২: ব্যবকলন দ্বারা বলের পরিবর্তনের হার নির্ণয়}
-    ঊর্ধ্ব সীমা বেগের সাপেক্ষে বলের পরিবর্তনের হার ($\frac{dF}{dv_2}$):
-    \begin{align*}
-        \frac{dF}{dv_2} &= 2 m C A v_2^4 = (2.5 \times 10^{-14}) \times (500)^4 \\
-        &= (2.5 \times 10^{-14}) \times (6.25 \times 10^{10}) = 1.5625 \times 10^{-3}\text{ N s m}^{-1} \approx \mathbf{1.563 \times 10^{-3}\text{ N s m}^{-1}}
-    \end{align*}
 \end{tcolorbox}
-
-\vspace{2em}
-
 % ------------------------------------------
-% QUESTION 12 SECTION
+% QUESTION 2 SECTION
 % ------------------------------------------
 \begin{tcolorbox}[questionbox={প্রশ্ন (Question) 2}]
     \noindent
-    $2\text{ kg}$ কাঠামোর ভর এবং $10\text{ m}^3$ আয়তন বিশিষ্ট একটি বেলুনে $300\text{ K}$ তাপমাত্রায় হিলিয়াম গ্যাস ($M = 4\text{ g mol}^{-1}$) ভরা আছে। বায়ুমণ্ডলের ঘনত্ব উচ্চতা $z$ এর সাথে $\rho_{\text{air}}(z) = \rho_0 e^{-z/z_0}$ নিয়ম মেনে পরিবর্তিত হয়, যেখানে $\rho_0 = 1.2\text{ kg m}^{-3}$ এবং $z_0 = 8000\text{ m}$। ভূ-পৃষ্ঠের চাপ $1.0 \times 10^5\text{ Pa}$ হলে, বেলুনটি সাম্যাবস্থায় পৌঁছানো পর্যন্ত সর্বোচ্চ উচ্চতা $z_{\text{max}}$ এবং $z = 0$ হতে $z_{\text{max}}$ পর্যন্ত প্লাবতা বল দ্বারা সম্পন্ন কাজের পরিমাণ যোগজীকরণ প্রক্রিয়ায় কত হবে? ($g = 9.8\text{ m s}^{-2}$, গ্যাস ধ্রুবক $R = 8.314\text{ J mol}^{-1}\text{ K}^{-1}$)
+    $2\text{ kg}$ কাঠামোর ভর এবং $10\text{ m}^3$ আয়তন বিশিষ্ট একটি বেলুনে $300\text{ K}$ তাপমাত্রায় হিলিয়াম গ্যাস ($M = 4\text{ g mol}^{-1}$) ভরা আছে। বায়ুমণ্ডলের ঘনত্ব উচ্চতা $z$ এর সাথে $\rho_{\text{air}}(z) = \rho_0 e^{-z/z_0}$ নিয়ম মেনে পরিবর্তিত হয়, যেখানে $\rho_0 = 1.2\text{ kg m}^{-3}$ এবং $z_0 = 8000\text{ m}$। ভূ-পৃষ্ঠের চাপ $1.0 \times 10^5\text{ Pa}$ হলে, বেলুনটি সাম্যাবস্থায় পৌঁছানো পর্যন্ত সর্বোচ্চ উচ্চতা $z_{\text{max}}$ কত হবে? ($g = 9.8\text{ m s}^{-2}$, গ্যাস ধ্রুবক $R = 8.314\text{ J mol}^{-1}\text{ K}^{-1}$)
     
     \vspace{0.8em}
     \begin{english}
     \noindent\textit{\color{darkgray}
-    A balloon of skin mass $2\text{ kg}$ and volume $10\text{ m}^3$ contains Helium gas ($M = 4\text{ g mol}^{-1}$) at temperature $300\text{ K}$. The atmospheric density varies with altitude $z$ as $\rho_{\text{air}}(z) = \rho_0 e^{-z/z_0}$, where $\rho_0 = 1.2\text{ kg m}^{-3}$ and $z_0 = 8000\text{ m}$. If the surface pressure is $1.0 \times 10^5\text{ Pa}$, calculate the maximum equilibrium altitude $z_{\text{max}}$ and the work done by the buoyant force from $z = 0$ to $z_{\text{max}}$ using integration. ($g = 9.8\text{ m s}^{-2}$, $R = 8.314\text{ J mol}^{-1}\text{ K}^{-1}$)
+    A balloon of skin mass $2\text{ kg}$ and volume $10\text{ m}^3$ contains Helium gas ($M = 4\text{ g mol}^{-1}$) at temperature $300\text{ K}$. The atmospheric density varies with altitude $z$ as $\rho_{\text{air}}(z) = \rho_0 e^{-z/z_0}$, where $\rho_0 = 1.2\text{ kg m}^{-3}$ and $z_0 = 8000\text{ m}$. If the surface pressure is $1.0 \times 10^5\text{ Pa}$, calculate the maximum equilibrium altitude $z_{\text{max}}$. ($g = 9.8\text{ m s}^{-2}$, $R = 8.314\text{ J mol}^{-1}\text{ K}^{-1}$)
     }
     \end{english}
 \end{tcolorbox}
 
 \begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
-    \item[\textbf{A)}] সর্বোচ্চ উচ্চতা $9625\text{ m}$ এবং প্লাবতা বলের কাজ $658.33\text{ kJ}$
-    \item[\textbf{B)}] সর্বোচ্চ উচ্চতা $8000\text{ m}$ এবং প্লাবতা বলের কাজ $500.00\text{ kJ}$
-    \item[\textbf{C)}] সর্বোচ্চ উচ্চতা $12000\text{ m}$ এবং প্লাবতা বলের কাজ $820.50\text{ kJ}$
-    \item[\textbf{D)}] সর্বোচ্চ উচ্চতা $5400\text{ m}$ এবং প্লাবতা বলের কাজ $320.10\text{ kJ}$
+    \item[\textbf{A)}] $9625\text{ m}$
+    \item[\textbf{B)}] $8000\text{ m}$
+    \item[\textbf{C)}] $12000\text{ m}$
+    \item[\textbf{D)}] $5400\text{ m}$
 \end{itemize}
 
 \vspace{0.5em}
 \begin{tcolorbox}[answerbox]
-    \textbf{\color{success} উত্তর:} A) সর্বোচ্চ উচ্চতা $9625\text{ m}$ এবং প্লাবতা বলের কাজ $658.33\text{ kJ}$
+    \textbf{\color{success} উত্তর:} A) $9625\text{ m}$
 \end{tcolorbox}
 \vspace{1em}
 
 \begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
     \noindent
-    \textbf{ধাপ ১: বেলুনের মোট ভর নির্ণয়}
-    হিলিয়াম গ্যাসের ভর:
-    \[ m_{\text{He}} = \frac{P V M}{R T} = \frac{10^5 \times 10 \times (4 \times 10^{-3})}{8.314 \times 300} = 1.603\text{ kg} \]
-    বেলুনের মোট ভর $m_{\text{tot}} = 2 + 1.603 = 3.603\text{ kg}$।
+    \textbf{ধাপ ১: হিলিয়াম গ্যাসের ভর ও বেলুনের মোট ভর নির্ণয়} \\
+    আদর্শ গ্যাস সমীকরণ $P V = \frac{m_{\text{He}}}{M} R T$ থেকে হিলিয়ামের ভর:
+    \[ m_{\text{He}} = \frac{P V M}{R T} = \frac{1.0 \times 10^5 \times 10 \times (4 \times 10^{-3})}{8.314 \times 300} = \frac{4000}{2494.2} \approx 1.6036\text{ kg} \]
+    কাঠামোর ভর $m_{\text{skin}} = 2\text{ kg}$ যোগ করে বেলুনের মোট ভর:
+    \[ m_{\text{tot}} = m_{\text{skin}} + m_{\text{He}} = 2 + 1.6036 = 3.6036\text{ kg} \]
+
+    \vspace{0.6em}
+    \noindent\textbf{ধাপ ২: সর্বোচ্চ সাম্যাবস্থা উচ্চতা $z_{\text{max}}$ নির্ণয়} \\
+    সাম্যাবস্থায় বেলুনের ওপর ঊর্ধ্বমুখী প্লাবতা বল এবং নিম্নমুখী মহাকর্ষীয় বল সমান হয় ($F_B = m_{\text{tot}} g$):
+    \[ \rho_{\text{air}}(z_{\text{max}}) V g = m_{\text{tot}} g \implies \rho_0 e^{-z_{\text{max}}/z_0} V = m_{\text{tot}} \]
     
-    \vspace{0.4em}
-    \noindent\textbf{ধাপ ২: সর্বোচ্চ সাম্যাবস্থা উচ্চতা $z_{\text{max}}$ নির্ণয়}
-    সাম্যাবস্থা উচ্চতায় প্লাবতা বল বেলুনের ওজনের সমান হয় ($\rho_{\text{air}}(z_{\text{max}}) V g = m_{\text{tot}} g$):
-    \[ \rho_0 e^{-z_{\text{max}}/z_0} V = m_{\text{tot}} \implies 1.2 \times 10 \times e^{-z_{\text{max}}/8000} = 3.603 \]
-    \[ e^{-z_{\text{max}}/8000} = 0.30025 \implies z_{\text{max}} = -8000 \ln(0.30025) = \mathbf{9625\text{ m}} \]
+    মান বসিয়ে:
+    \[ 1.2 \times 10 \times e^{-z_{\text{max}}/8000} = 3.6036 \implies e^{-z_{\text{max}}/8000} = \frac{3.6036}{12} = 0.3003 \]
+    উভয় পাশে স্বাভাবিক লগারিদম ($\ln$) নিয়ে:
+    \[ z_{\text{max}} = -8000 \times \ln(0.3003) = -8000 \times (-1.203) \approx \mathbf{9625\text{ m}} \]
+\end{tcolorbox}
+% ------------------------------------------
+% QUESTION 97 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 3}]
+    \noindent
+    একটি গ্যাস মিশ্রণে $2\text{ mol}$ এক-পারমাণবিক আদর্শ গ্যাস ($f = 3$) এবং $3\text{ mol}$ দৃঢ় দ্বি-পারমাণবিক আদর্শ গ্যাস ($f = 5$) মেশানো রয়েছে। মিশ্রণটির কার্যকর স্বাধীনতার মাত্রা ($f_{\text{eff}}$) কত হবে?
     
-    \vspace{0.4em}
-    \noindent\textbf{ধাপ ৩: যোগজীকরণ দ্বারা প্লাবতা বলের কাজ নির্ণয়}
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    A gas mixture contains $2\text{ mol}$ of a monatomic ideal gas ($f = 3$) and $3\text{ mol}$ of a rigid diatomic ideal gas ($f = 5$). What is the effective degree of freedom ($f_{\text{eff}}$) of the mixture?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}]  4.20
+    \item[\textbf{B)}]  4.00
+    \item[\textbf{C)}]  4.50
+    \item[\textbf{D)}]  3.80
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A)  4.20
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{প্রদত্ত উপাত্ত:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item এক-পারমাণবিক গ্যাসের মোল সংখ্যা, $n_1 = 2\text{ mol}$, স্বাধীনতার মাত্রা, $f_1 = 3$
+        \item দ্বি-পারমাণবিক গ্যাসের মোল সংখ্যা, $n_2 = 3\text{ mol}$, স্বাধীনতার মাত্রা, $f_2 = 5$
+    \end{itemize}
+
+    \vspace{0.6em}
+    \noindent\textbf{গণনা:} \\
+    গ্যাস মিশ্রণের কার্যকর স্বাধীনতার মাত্রা ($f_{\text{eff}}$):
+    \[ f_{\text{eff}} = \frac{n_1 f_1 + n_2 f_2}{n_1 + n_2} = \frac{2 \times 3 + 3 \times 5}{2 + 3} = \frac{6 + 15}{5} = \frac{21}{5} = \mathbf{4.20} \]
+    
+\end{tcolorbox}
+
+
+% ------------------------------------------
+% QUESTION 99 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 4}]
+    \noindent
+    $T$ তাপমাত্রায় রাখা একটি আদর্শ গ্যাসের অণুগুলোর সর্বাধিক সম্ভাব্য বেগ ($c_{\text{mp}}$) $400\text{ m s}^{-1}$। একই তাপমাত্রায় অণুগুলোর গড় বেগ ($c_{\text{avg}}$) এবং মূল গড় বর্গবেগ ($c_{\text{rms}}$) কত হবে?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    In an ideal gas kept at temperature $T$, the most probable speed ($c_{\text{mp}}$) of the molecules is $400\text{ m s}^{-1}$. What are the average speed ($c_{\text{avg}}$) and root mean square speed ($c_{\text{rms}}$) of the molecules at the same temperature?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $c_{\text{avg}} = 451.35\text{ m s}^{-1}, c_{\text{rms}} = 489.90\text{ m s}^{-1}$
+    \item[\textbf{B)}] $c_{\text{avg}} = 489.90\text{ m s}^{-1}, c_{\text{rms}} = 451.35\text{ m s}^{-1}$
+    \item[\textbf{C)}] $c_{\text{avg}} = 400.00\text{ m s}^{-1}, c_{\text{rms}} = 500.00\text{ m s}^{-1}$
+    \item[\textbf{D)}] $c_{\text{avg}} = 512.10\text{ m s}^{-1}, c_{\text{rms}} = 600.00\text{ m s}^{-1}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $c_{\text{avg}} = 451.35\text{ m s}^{-1}, c_{\text{rms}} = 489.90\text{ m s}^{-1}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{প্রদত্ত উপাত্ত:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item সর্বাধিক সম্ভাব্য বেগ, $c_{\text{mp}} = \sqrt{\frac{2 R T}{M}} = 400\text{ m s}^{-1}$
+    \end{itemize}
+
+    \vspace{0.6em}
+    \noindent\textbf{গণনা:} \\
+    গড় বেগ ($c_{\text{avg}}$):
+    \[ c_{\text{avg}} = \sqrt{\frac{8 R T}{\pi M}} = c_{\text{mp}} \times \sqrt{\frac{4}{\pi}} = 400 \times \sqrt{\frac{4}{3.14159}} = 400 \times 1.12838 = \mathbf{451.35\text{ m s}^{-1}} \]
+    
+    মূল গড় বর্গবেগ ($c_{\text{rms}}$):
+    \[ c_{\text{rms}} = \sqrt{\frac{3 R T}{M}} = c_{\text{mp}} \times \sqrt{\frac{3}{2}} = 400 \times \sqrt{1.5} = 400 \times 1.22474 = \mathbf{489.90\text{ m s}^{-1}} \]
+\end{tcolorbox}
+
+
+% ------------------------------------------
+% QUESTION 100 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 5}]
+    \noindent
+    $400\text{ K}$ তাপমাত্রায় $2\text{ mol}$ জলীয় বাষ্প ($\text{H}_2\text{O}$, অ-সরলরৈখিক ত্রিপারমাণবিক গ্যাস, $f = 6$) একটি পাত্রে রাখা আছে। স্বাধীনতার মাত্রা প্রতি অণুর গড় গতিশক্তি এবং $2\text{ mol}$ গ্যাসের মোট অভ্যন্তরীণ গতিশক্তি কত? ($k = 1.38 \times 10^{-23}\text{ J K}^{-1}$, $R = 8.314\text{ J mol}^{-1}\text{ K}^{-1}$)
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    A container holds $2\text{ mol}$ of water vapor ($\text{H}_2\text{O}$, non-linear triatomic gas, $f = 6$) at $400\text{ K}$. What is the average kinetic energy per molecule per degree of freedom, and the total internal kinetic energy of $2\text{ mol}$ of this gas? ($k = 1.38 \times 10^{-23}\text{ J K}^{-1}$, $R = 8.314\text{ J mol}^{-1}\text{ K}^{-1}$)
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $E_{\text{df}} = 2.76 \times 10^{-21}\text{ J}, E_{\text{total}} = 19.95\text{ kJ}$
+    \item[\textbf{B)}] $E_{\text{df}} = 5.52 \times 10^{-21}\text{ J}, E_{\text{total}} = 39.91\text{ kJ}$
+    \item[\textbf{C)}] $E_{\text{df}} = 1.38 \times 10^{-21}\text{ J}, E_{\text{total}} = 9.98\text{ kJ}$
+    \item[\textbf{D)}] $E_{\text{df}} = 8.28 \times 10^{-21}\text{ J}, E_{\text{total}} = 29.93\text{ kJ}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $E_{\text{df}} = 2.76 \times 10^{-21}\text{ J}, E_{\text{total}} = 19.95\text{ kJ}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{প্রদত্ত উপাত্ত:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item মোল সংখ্যা, $n = 2\text{ mol}$
+        \item তাপমাত্রা, $T = 400\text{ K}$
+        \item স্বাধীনতার মাত্রা, $f = 6$
+        \item বোল্টজমান ধ্রুবক, $k = 1.38 \times 10^{-23}\text{ J K}^{-1}$
+        \item সার্বজনীন গ্যাস ধ্রুবক, $R = 8.314\text{ J mol}^{-1}\text{ K}^{-1}$
+    \end{itemize}
+
+    \vspace{0.6em}
+    \noindent\textbf{গণনা:} \\
+    (i) সমশক্তি বণ্টন নীতিানুসারে প্রতি অণুর স্বাধীনতার মাত্রা প্রতি গড় গতিশক্তি:
+    \[ E_{\text{df}} = \frac{1}{2} k T = 0.5 \times (1.38 \times 10^{-23}) \times 400 = \mathbf{2.76 \times 10^{-21}\text{ J}} \]
+    
+    (ii) $2\text{ mol}$ ত্রিপারমাণবিক গ্যাসের ($f = 6$) মোট অভ্যন্তরীণ গতিশক্তি:
     \begin{align*}
-        W_B &= \int_0^{z_{\text{max}}} F_B(z) \, dz = \int_0^{z_{\text{max}}} \rho_0 V g e^{-z/z_0} \, dz \\
-        &= \rho_0 V g z_0 \left[ 1 - e^{-z_{\text{max}}/z_0} \right] \\
-        &= 1.2 \times 10 \times 9.8 \times 8000 \times (1 - 0.30025) \\
-        &= 940800 \times 0.69975 = 658324.8\text{ J} \approx \mathbf{658.33\text{ kJ}}
+        E_{\text{total}} &= \frac{f}{2} n R T = \frac{6}{2} \times 2 \times 8.314 \times 400 \\
+        &= 6 \times 8.314 \times 400 = 19953.6\text{ J} = 19.9536\text{ kJ} \approx \mathbf{19.95\text{ kJ}}
     \end{align*}
 \end{tcolorbox}
 
-\vspace{2em}
+
+% ------------------------------------------
+% QUESTION 101 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 6}]
+    \noindent
+    দুটি আদর্শ গ্যাস A ($M_A = 4\text{ g mol}^{-1}$) এবং B ($M_B = 16\text{ g mol}^{-1}$) যথাক্রমে $T_A = 300\text{ K}$ এবং $T_B = 1200\text{ K}$ তাপমাত্রায় রয়েছে। A গ্যাসের অণুর $c_{\text{rms}}$ এবং B গ্যাসের অণুর $c_{\text{rms}}$ এর অনুপাত ($c_{\text{rms,A}} / c_{\text{rms,B}}$) কত? এবং তাদের সর্বাধিক সম্ভাব্য বেগের অনুপাত ($c_{\text{mp,A}} / c_{\text{mp,B}}$) কত?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    Two ideal gases A ($M_A = 4\text{ g mol}^{-1}$) and B ($M_B = 16\text{ g mol}^{-1}$) are at temperatures $T_A = 300\text{ K}$ and $T_B = 1200\text{ K}$ respectively. What is the ratio of $c_{\text{rms}}$ of gas A to $c_{\text{rms}}$ of gas B ($c_{\text{rms,A}} / c_{\text{rms,B}}$)? And what is the ratio of their most probable speeds ($c_{\text{mp,A}} / c_{\text{mp,B}}$)?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $\frac{c_{\text{rms,A}}}{c_{\text{rms,B}}} = 1.0, \frac{c_{\text{mp,A}}}{c_{\text{mp,B}}} = 1.0$
+    \item[\textbf{B)}] $\frac{c_{\text{rms,A}}}{c_{\text{rms,B}}} = 2.0, \frac{c_{\text{mp,A}}}{c_{\text{mp,B}}} = 0.5$
+    \item[\textbf{C)}] $\frac{c_{\text{rms,A}}}{c_{\text{rms,B}}} = 0.5, \frac{c_{\text{mp,A}}}{c_{\text{mp,B}}} = 2.0$
+    \item[\textbf{D)}] $\frac{c_{\text{rms,A}}}{c_{\text{rms,B}}} = 4.0, \frac{c_{\text{mp,A}}}{c_{\text{mp,B}}} = 1.0$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $\frac{c_{\text{rms,A}}}{c_{\text{rms,B}}} = 1.0, \frac{c_{\text{mp,A}}}{c_{\text{mp,B}}} = 1.0$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{প্রদত্ত উপাত্ত:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item $M_A = 4\text{ g mol}^{-1}$, $T_A = 300\text{ K}$
+        \item $M_B = 16\text{ g mol}^{-1}$, $T_B = 1200\text{ K}$
+    \end{itemize}
+
+    \vspace{0.6em}
+    \noindent\textbf{গণনা:} \\
+    (i) মূল গড় বর্গবেগের অনুপাত:
+    \[ \frac{c_{\text{rms,A}}}{c_{\text{rms,B}}} = \sqrt{\frac{T_A}{T_B} \times \frac{M_B}{M_A}} = \sqrt{\frac{300}{1200} \times \frac{16}{4}} = \sqrt{\frac{1}{4} \times 4} = \sqrt{1} = \mathbf{1.0} \]
+    
+    (ii) সর্বাধিক সম্ভাব্য বেগের অনুপাত:
+    \[ \frac{c_{\text{mp,A}}}{c_{\text{mp,B}}} = \sqrt{\frac{T_A}{T_B} \times \frac{M_B}{M_A}} = \sqrt{\frac{300}{1200} \times \frac{16}{4}} = \sqrt{1} = \mathbf{1.0} \]
+\end{tcolorbox}
+
+
+% ------------------------------------------
+% QUESTION 102 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 7}]
+    \noindent
+    স্থির চাপে (constant $P$) রাখা একটি আদর্শ গ্যাসের পরম তাপমাত্রা $T$ বাড়িয়ে চারগুণ ($T_2 = 4T_1$) করা হলে অণুগুলোর গড় মুক্ত পথ ($\lambda$) এবং প্রতি সেকেন্ডে সংঘাত সংখ্যা ($f_c$) প্রাথমিক মান $\lambda_1$ ও $f_{c1}$ এর সাপেক্ষে কত হবে?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    An ideal gas undergoes a process at constant pressure $P$. If the absolute temperature $T$ of the gas is quadrupled ($T_2 = 4T_1$), how do the mean free path ($\lambda$) and collision frequency ($f_c$) change relative to their initial values $\lambda_1$ and $f_{c1}$?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $\lambda_2 = 4 \lambda_1, f_{c2} = 0.5 f_{c1}$
+    \item[\textbf{B)}] $\lambda_2 = 2 \lambda_1, f_{c2} = 2 f_{c1}$
+    \item[\textbf{C)}] $\lambda_2 = \lambda_1, f_{c2} = 4 f_{c1}$
+    \item[\textbf{D)}] $\lambda_2 = 0.25 \lambda_1, f_{c2} = 0.5 f_{c1}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $\lambda_2 = 4 \lambda_1, f_{c2} = 0.5 f_{c1}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{প্রদত্ত উপাত্ত:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item স্থির চাপ $P$
+        \item চূড়ান্ত পরম তাপমাত্রা, $T_2 = 4 T_1$
+    \end{itemize}
+
+    \vspace{0.6em}
+    \noindent\textbf{গণনা:} \\
+    (i) স্থির চাপে ম্যাক্সওয়েলের গড় মুক্ত পথের সমীকরণ:
+    \[ \lambda = \frac{k T}{\sqrt{2} \pi d^2 P} \implies \lambda \propto T \]
+    তাপমাত্রা $4$ গুণ বাড়ালে:
+    \[ \lambda_2 = \mathbf{4 \lambda_1} \]
+    
+    (ii) সংঘাত সংখ্যা (Collision Frequency):
+    \[ f_c = \frac{c_{\text{rms}}}{\lambda} \]
+    যেহেতু $c_{\text{rms}} \propto \sqrt{T}$ এবং $\lambda \propto T$:
+    \[ f_c \propto \frac{\sqrt{T}}{T} = \frac{1}{\sqrt{T}} \]
+    তাপমাত্রা $4$ গুণ করা হলে:
+    \[ f_{c2} = \frac{f_{c1}}{\sqrt{4}} = \frac{f_{c1}}{2} = \mathbf{0.5 f_{c1}} \]
+\end{tcolorbox}
+% ------------------------------------------
+% QUESTION 87 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 8}]
+    \noindent
+    একটি অক্সিজেনের সিলিন্ডারে $300\text{ K}$ তাপমাত্রায় এবং $2.5 \times 10^5\text{ N m}^{-2}$ চাপে $1 \times 10^{-2}\text{ m}^3$ অক্সিজেন গ্যাস সংরক্ষিত আছে। পাত্রের তাপমাত্রা স্থির রেখে কিছু অক্সিজেন বের করে দেওয়া হলো যার ফলে চাপ কমে $1.3 \times 10^5\text{ N m}^{-2}$ হয়। নির্গত অক্সিজেনের ভর কত? (অক্সিজেনের আণবিক ভর $M = 32\text{ g mol}^{-1}$, $R = 8.314\text{ J mol}^{-1}\text{ K}^{-1}$)
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    An oxygen cylinder of volume $1 \times 10^{-2}\text{ m}^3$ contains oxygen gas at $300\text{ K}$ temperature and $2.5 \times 10^5\text{ N m}^{-2}$ pressure. Keeping the temperature constant, some oxygen is released until the pressure drops to $1.3 \times 10^5\text{ N m}^{-2}$. What mass of oxygen was released? (Molar mass of Oxygen $M = 32\text{ g mol}^{-1}$, $R = 8.314\text{ J mol}^{-1}\text{ K}^{-1}$)
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $15.40\text{ g}$
+    \item[\textbf{B)}] $32.00\text{ g}$
+    \item[\textbf{C)}] $8.50\text{ g}$
+    \item[\textbf{D)}] $24.12\text{ g}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $15.40\text{ g}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{প্রদত্ত উপাত্ত:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item পাত্রের আয়তন, $V = 1 \times 10^{-2}\text{ m}^3$
+        \item তাপমাত্রা, $T = 300\text{ K}$
+        \item প্রাথমিক চাপ, $P_1 = 2.5 \times 10^5\text{ N m}^{-2}$
+        \item শেষ চাপ, $P_2 = 1.3 \times 10^5\text{ N m}^{-2}$
+        \item আণবিক ভর, $M = 32\text{ g mol}^{-1}$
+        \item গ্যাস ধ্রুবক, $R = 8.314\text{ J mol}^{-1}\text{ K}^{-1}$
+    \end{itemize}
+
+    \vspace{0.6em}
+    \noindent\textbf{গণনা:} \\
+    চাপের পরিবর্তন:
+    \[ P_1 - P_2 = 2.5 \times 10^5 - 1.3 \times 10^5 = 1.2 \times 10^5\text{ N m}^{-2} \]
+    
+    স্থির আয়তন ও তাপমাত্রায় নির্গত মোল সংখ্যা:
+    \[ \Delta n = \frac{(P_1 - P_2) V}{R T} = \frac{1.2 \times 10^5 \times 1 \times 10^{-2}}{8.314 \times 300} = \frac{1200}{2494.2} = 0.4811\text{ mol} \]
+    
+    নির্গত অক্সিজেনের ভর:
+    \[ m = \Delta n \times M = 0.4811 \times 32\text{ g} = 15.395\text{ g} \approx \mathbf{15.40\text{ g}} \]
+\end{tcolorbox}
+
+
+
+% ------------------------------------------
+% QUESTION 89 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 9}]
+    \noindent
+    $30^\circ\text{C}$ তাপমাত্রায় একটি পাত্রে $10\text{ g}$ অক্সিজেন গ্যাস ($M = 32\text{ g mol}^{-1}$) আবদ্ধ থাকলে অণুগুলোর মোট অভ্যন্তরীণ গতিশক্তি কত? (অক্সিজেন দ্বি-পারমাণবিক গ্যাস হওয়ায় $f = 5$, $R = 8.314\text{ J mol}^{-1}\text{ K}^{-1}$)
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    If $10\text{ g}$ of Oxygen gas ($M = 32\text{ g mol}^{-1}$) is enclosed in a vessel at $30^\circ\text{C}$, what is the total internal kinetic energy of the molecules? (Since Oxygen is a diatomic gas $f = 5$, $R = 8.314\text{ J mol}^{-1}\text{ K}^{-1}$)
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $1968.08\text{ J}$
+    \item[\textbf{B)}] $1180.85\text{ J}$
+    \item[\textbf{C)}] $2361.70\text{ J}$
+    \item[\textbf{D)}] $1476.06\text{ J}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $1968.08\text{ J}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{প্রদত্ত উপাত্ত:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item ভর, $m = 10\text{ g}$
+        \item আণবিক ভর, $M = 32\text{ g mol}^{-1}$
+        \item তাপমাত্রা, $T = 273 + 30 = 303\text{ K}$
+        \item স্বাধীনতার মাত্রা, $f = 5$
+        \item গ্যাস ধ্রুবক, $R = 8.314\text{ J mol}^{-1}\text{ K}^{-1}$
+    \end{itemize}
+
+    \vspace{0.6em}
+    \noindent\textbf{গণনা:} \\
+    অক্সিজেনের মোল সংখ্যা:
+    \[ n = \frac{m}{M} = \frac{10}{32} = 0.3125\text{ mol} \]
+    
+    দ্বি-পারমাণবিক গ্যাসের মোট গতিশক্তি:
+    \begin{align*}
+        E_k &= \frac{f}{2} n R T = \frac{5}{2} \times 0.3125 \times 8.314 \times 303 \\
+        &= 2.5 \times 0.3125 \times 2519.142 = \mathbf{1968.08\text{ J}}
+    \end{align*}
+\end{tcolorbox}
+
+
+% ------------------------------------------
+% QUESTION 90 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 10}]
+    \noindent
+    $300\text{ K}$ তাপমাত্রায় একটি আদর্শ গ্যাসের অণুর ব্যাস $2.5 \times 10^{-10}\text{ m}$ এবং প্রতি ঘনমিটারে অণুর সংখ্যা $6.02 \times 10^{25}\text{ m}^{-3}$। অণুগুলোর মূল গড় বর্গবেগ $500\text{ m s}^{-1}$ হলে অণুর প্রতি সেকেন্ডে গড় সংঘাত সংখ্যা (collision frequency, $f_c$) কত?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    At $300\text{ K}$, the molecular diameter of an ideal gas is $2.5 \times 10^{-10}\text{ m}$ and the number density of molecules is $6.02 \times 10^{25}\text{ m}^{-3}$. If the root mean square speed of the molecules is $500\text{ m s}^{-1}$, what is the average collision frequency per second ($f_c$) of a molecule?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $8.36 \times 10^9\text{ s}^{-1}$
+    \item[\textbf{B)}] $4.18 \times 10^9\text{ s}^{-1}$
+    \item[\textbf{C)}] $1.67 \times 10^{10}\text{ s}^{-1}$
+    \item[\textbf{D)}] $5.98 \times 10^{-8}\text{ s}^{-1}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $8.36 \times 10^9\text{ s}^{-1}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{প্রদত্ত উপাত্ত:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item অণুর ব্যাস, $d = 2.5 \times 10^{-10}\text{ m}$
+        \item সংখ্যা ঘনত্ব, $n_V = 6.02 \times 10^{25}\text{ m}^{-3}$
+        \item মূল গড় বর্গবেগ, $c_{\text{rms}} = 500\text{ m s}^{-1}$
+    \end{itemize}
+
+    \vspace{0.6em}
+    \noindent\textbf{গণনা:} \\
+    ম্যাক্সওয়েলের সূত্রানুসারে অণুর গড় মুক্ত পথ:
+    \[ \lambda = \frac{1}{\sqrt{2} \pi d^2 n_V} = \frac{1}{1.4142 \times 3.1416 \times (2.5 \times 10^{-10})^2 \times (6.02 \times 10^{25})} = 5.982 \times 10^{-8}\text{ m} \]
+    
+    প্রতি সেকেন্ডে গড় সংঘাত সংখ্যা (collision frequency):
+    \[ f_c = \frac{c_{\text{rms}}}{\lambda} = \frac{500}{5.982 \times 10^{-8}} = 8.358 \times 10^9\text{ s}^{-1} \approx \mathbf{8.36 \times 10^9\text{ s}^{-1}} \]
+\end{tcolorbox}
+
+
+% ------------------------------------------
+% QUESTION 91 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 11}]
+    \noindent
+    একটি ঘরের শুষ্ক ও সিক্ত বাল্বের তাপমাত্রা যথাক্রমে $30^\circ\text{C}$ ও $20^\circ\text{C}$। $30^\circ\text{C}$ তাপমাত্রায় গ্লাইশারের উৎপাদক $1.65$। $30^\circ\text{C}$ এবং শিশিরাঙ্ক তাপমাত্রায় ($13.5^\circ\text{C}$) সম্পৃক্ত বাষ্পচাপ যথাক্রমে $31.83\text{ mm Hg}$ এবং $11.61\text{ mm Hg}$ হলে ওই ঘরের আপেক্ষিক আর্দ্রতা কত?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    The dry and wet bulb temperatures of a room are $30^\circ\text{C}$ and $20^\circ\text{C}$ respectively. Glaisher's factor at $30^\circ\text{C}$ is $1.65$. If the saturated vapour pressures at $30^\circ\text{C}$ and the dew point temperature ($13.5^\circ\text{C}$) are $31.83\text{ mm Hg}$ and $11.61\text{ mm Hg}$ respectively, what is the relative humidity of the room?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $36.47\%$
+    \item[\textbf{B)}] $50.00\%$
+    \item[\textbf{C)}] $62.80\%$
+    \item[\textbf{D)}] $42.15\%$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $36.47\%$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{প্রদত্ত উপাত্ত:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item শুষ্ক বাল্বের তাপমাত্রা, $\theta_1 = 30^\circ\text{C}$
+        \item সিক্ত বাল্বের তাপমাত্রা, $\theta_2 = 20^\circ\text{C}$
+        \item গ্লাইশারের উৎপাদক, $G = 1.65$
+        \item শিশিরাঙ্কে ($13.5^\circ\text{C}$) সম্পৃক্ত বাষ্পচাপ, $f = 11.61\text{ mm Hg}$
+        \item বায়ুর তাপমাত্রায় ($30^\circ\text{C}$) সম্পৃক্ত বাষ্পচাপ, $F = 31.83\text{ mm Hg}$
+    \end{itemize}
+
+    \vspace{0.6em}
+    \noindent\textbf{গণনা:} \\
+    গ্লাইশারের সূত্রানুসারে শিশিরাঙ্ক:
+    \[ \theta = \theta_1 - G(\theta_1 - \theta_2) = 30 - 1.65 \times (30 - 20) = 30 - 16.5 = 13.5^\circ\text{C} \]
+    
+    আপেক্ষিক আর্দ্রতা:
+    \[ R = \frac{f}{F} \times 100\% = \frac{11.61\text{ mm Hg}}{31.83\text{ mm Hg}} \times 100\% = \mathbf{36.47\%} \]
+\end{tcolorbox}
+
+% ------------------------------------------
+% QUESTION 95 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 12}]
+    \noindent
+    $1\text{ mol}$ এক-পারমাণবিক আদর্শ গ্যাস $V_1 = 1\text{ L}$ ($1 \times 10^{-3}\text{ m}^3$) আয়তন হতে $V_2 = 4\text{ L}$ ($4 \times 10^{-3}\text{ m}^3$) আয়তনে প্রসারিত হয়, যেখানে চাপ আয়তনের সাথে $P(V) = P_0 \left(\frac{V}{V_0}\right)^{1/2}$ নিয়ম মেনে চলে ($P_0 = 1.0 \times 10^5\text{ Pa}$, $V_0 = 1 \times 10^{-3}\text{ m}^3$)। গ্যাস দ্বারা সম্পাদনকৃত মোট কাজের পরিমাণ কত?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    $1\text{ mol}$ of a monatomic ideal gas expands from volume $V_1 = 1\text{ L}$ ($1 \times 10^{-3}\text{ m}^3$) to $V_2 = 4\text{ L}$ ($4 \times 10^{-3}\text{ m}^3$) following $P(V) = P_0 \left(\frac{V}{V_0}\right)^{1/2}$, where $P_0 = 1.0 \times 10^5\text{ Pa}$ and $V_0 = 1 \times 10^{-3}\text{ m}^3$. Calculate the total work done by the gas.
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $466.67\text{ J}$
+    \item[\textbf{B)}] $300.00\text{ J}$
+    \item[\textbf{C)}] $700.00\text{ J}$
+    \item[\textbf{D)}] $233.33\text{ J}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $466.67\text{ J}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{প্রদত্ত উপাত্ত:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item প্রাথমিক আয়তন, $V_1 = 1 \times 10^{-3}\text{ m}^3$
+        \item চূড়ান্ত আয়তন, $V_2 = 4 \times 10^{-3}\text{ m}^3$
+        \item $P_0 = 1.0 \times 10^5\text{ Pa}$
+        \item $V_0 = 1 \times 10^{-3}\text{ m}^3$
+    \end{itemize}
+
+    \vspace{0.6em}
+    \noindent\textbf{গণনা:} \\
+    যোগজীকরণ প্রক্রিয়ায় কাজের মান:
+    \begin{align*}
+        W &= \frac{P_0}{V_0^{1/2}} \int_{1 \times 10^{-3}}^{4 \times 10^{-3}} V^{1/2} \, dV = \frac{2 P_0}{3 V_0^{1/2}} \left[ V^{3/2} \right]_{1 \times 10^{-3}}^{4 \times 10^{-3}} \\
+        &= \frac{2 \times 10^5}{3 \times (10^{-3})^{1/2}} \times (10^{-3})^{3/2} \times \left[ 4^{3/2} - 1^{3/2} \right] \\
+        &= \frac{200 \times (8 - 1)}{3} = \frac{1400}{3} = \mathbf{466.67\text{ J}}
+    \end{align*}
+\end{tcolorbox}
+
+
+% ------------------------------------------
+% QUESTION 96 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 13}]
+    \noindent
+    $40\text{ m}$ গভীর একটি হ্রদের তলদেশে (যেখানে তাপমাত্রা $7^\circ\text{C}$) উৎপন্ন একটি বায়ুবুদ্বুদ পানির উপরিতলে (যেখানে তাপমাত্রা $27^\circ\text{C}$ এবং বায়ুমণ্ডলীয় চাপ $1.013 \times 10^5\text{ Pa}$) উঠে আসে। পানির ঘনত্ব $1000\text{ kg m}^{-3}$ এবং $g = 9.8\text{ m s}^{-2}$ হলে উপরিতলে পৌঁছানোর পর বুদ্বুদটির চূড়ান্ত আয়তন ও প্রাথমিক আয়তনের অনুপাত ($V_2 / V_1$) কত হবে?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    An air bubble formed at the bottom of a $40\text{ m}$ deep lake (where temperature is $7^\circ\text{C}$) rises to the surface of the water (where temperature is $27^\circ\text{C}$ and atmospheric pressure is $1.013 \times 10^5\text{ Pa}$). If the density of water is $1000\text{ kg m}^{-3}$ and $g = 9.8\text{ m s}^{-2}$, what will be the ratio of the final volume to the initial volume ($V_2 / V_1$) of the bubble upon reaching the surface?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $5.22$
+    \item[\textbf{B)}] $4.87$
+    \item[\textbf{C)}] $3.50$
+    \item[\textbf{D)}] $6.10$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $5.22$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{প্রদত্ত উপাত্ত:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item তলদেশে তাপমাত্রা, $T_1 = 273 + 7 = 280\text{ K}$
+        \item তলদেশে চাপ, $P_1 = 1.013 \times 10^5 + (40 \times 1000 \times 9.8) = 4.933 \times 10^5\text{ Pa}$
+        \item উপরিতলে তাপমাত্রা, $T_2 = 273 + 27 = 300\text{ K}$
+        \item উপরিতলে চাপ, $P_2 = 1.013 \times 10^5\text{ Pa}$
+    \end{itemize}
+
+    \vspace{0.6em}
+    \noindent\textbf{গণনা:} \\
+    আদর্শ গ্যাসের সমন্বয় সূত্রানুসারে:
+    \[ \frac{V_2}{V_1} = \frac{P_1}{P_2} \times \frac{T_2}{T_1} \]
+    
+    মানগুলো বসিয়ে পাই:
+    \[ \frac{V_2}{V_1} = \frac{4.933 \times 10^5}{1.013 \times 10^5} \times \frac{300}{280} = 4.8697 \times 1.0714 = 5.217 \approx \mathbf{5.22} \]
+\end{tcolorbox}
+
+
+% ------------------------------------------
+% QUESTION 78 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 14}]
+    \noindent
+    $300\text{ K}$ পরম তাপমাত্রায় একটি আবদ্ধ পাত্রে রাখা হিলিয়াম গ্যাসের অণুগুলোর মূল গড় বর্গবেগ (rms velocity) মেপে $1368\text{ m s}^{-1}$ পাওয়া গেল। একই তাপমাত্রায় অন্য একটি সম-আয়তনের পাত্রে আবদ্ধ অক্সিজেন গ্যাসের ($M = 32\text{ g mol}^{-1}$) অণুগুলোর মূল গড় বর্গবেগ কত হবে? (হিলিয়ামের আণবিক ভর $M_{\text{He}} = 4\text{ g mol}^{-1}$)
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    In a closed container at an absolute temperature of $300\text{ K}$, the root mean square (rms) velocity of helium gas molecules was measured to be $1368\text{ m s}^{-1}$. What will be the root mean square velocity of oxygen gas molecules ($M = 32\text{ g mol}^{-1}$) contained in another equal-volume vessel at the same temperature? (Molar mass of Helium $M_{\text{He}} = 4\text{ g mol}^{-1}$)
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $483.66\text{ m s}^{-1}$
+    \item[\textbf{B)}] $684.00\text{ m s}^{-1}$
+    \item[\textbf{C)}] $342.00\text{ m s}^{-1}$
+    \item[\textbf{D)}] $241.83\text{ m s}^{-1}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $483.66\text{ m s}^{-1}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{প্রদত্ত উপাত্ত:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item তাপমাত্রা, $T = 300\text{ K}$
+        \item হিলিয়ামের আণবিক ভর, $M_{\text{He}} = 4\text{ g mol}^{-1}$
+        \item অক্সিজেনের আণবিক ভর, $M_{\text{O}_2} = 32\text{ g mol}^{-1}$
+        \item হিলিয়াম অণুর মূল গড় বর্গবেগ, $c_{\text{He}} = 1368\text{ m s}^{-1}$
+    \end{itemize}
+
+    \vspace{0.6em}
+    \noindent\textbf{গণনা:} \\
+    গ্যাসের অণুর মূল গড় বর্গবেগের সমীকরণ:
+    \[ c_{\text{rms}} = \sqrt{\frac{3 R T}{M}} \]
+    
+    যেহেতু উভয় গ্যাসের তাপমাত্রা $T = 300\text{ K}$ সমান এবং সর্বজনীন গ্যাস ধ্রুবক $R$ স্থির, তাই মূল গড় বর্গবেগ আণবিক ভরের বর্গমূলের ব্যস্তানুপাতিক:
+    \[ c_{\text{rms}} \propto \frac{1}{\sqrt{M}} \implies \frac{c_{\text{O}_2}}{c_{\text{He}}} = \sqrt{\frac{M_{\text{He}}}{M_{\text{O}_2}}} \]
+    
+    মানসমূহ বসিয়ে পাই:
+    \[ \frac{c_{\text{O}_2}}{1368} = \sqrt{\frac{4}{32}} = \sqrt{\frac{1}{8}} = \frac{1}{2.8284} \]
+    \[ c_{\text{O}_2} = \frac{1368}{2.8284} = \mathbf{483.66\text{ m s}^{-1}} \]
+\end{tcolorbox}
+
+
+% ------------------------------------------
+% QUESTION 79 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 15}]
+    \noindent
+    $27^\circ\text{C}$ স্থির তাপমাত্রায় রাখা একটি সিলিন্ডারে $0.5\text{ mol}$ এক-পারমাণবিক আদর্শ গ্যাস আবদ্ধ রয়েছে। এক-পারমাণবিক গ্যাসের অণুগুলোর কেবল অনুবাদ গতিশক্তি (translational kinetic energy) বিবেচনা করে এবং স্বাধীনতার মাত্রা $f = 3$ প্রয়োগ করে গ্যাসের অণুগুলোর মোট গতিশক্তি কত হবে? ($R = 8.314\text{ J mol}^{-1}\text{ K}^{-1}$)
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    A cylinder kept at a constant temperature of $27^\circ\text{C}$ contains $0.5\text{ mol}$ of a monatomic ideal gas. Considering only the translational kinetic energy of the monatomic molecules with degrees of freedom $f = 3$, what will be the total kinetic energy of the gas molecules? ($R = 8.314\text{ J mol}^{-1}\text{ K}^{-1}$)
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $1870.65\text{ J}$
+    \item[\textbf{B)}] $3741.30\text{ J}$
+    \item[\textbf{C)}] $1247.10\text{ J}$
+    \item[\textbf{D)}] $2494.20\text{ J}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $1870.65\text{ J}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{প্রদত্ত উপাত্ত:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item মোল সংখ্যা, $n = 0.5\text{ mol}$
+        \item তাপমাত্রা, $T = 273 + 27 = 300\text{ K}$
+        \item স্বাধীনতার মাত্রা, $f = 3$
+        \item গ্যাস ধ্রুবক, $R = 8.314\text{ J mol}^{-1}\text{ K}^{-1}$
+    \end{itemize}
+
+    \vspace{0.6em}
+    \noindent\textbf{গণনা:} \\
+    সমশক্তি বণ্টন নীতিানুসারে, $f$ স্বাধীনতার মাত্রা বিশিষ্ট $n$ মোল গ্যাসের মোট গতিশক্তির সমীকরণ:
+    \[ E_k = \frac{f}{2} n R T \]
+    
+    মানগুলো সমীকরণে বসিয়ে পাই:
+    \[ E_k = \frac{3}{2} \times 0.5\text{ mol} \times 8.314\text{ J mol}^{-1}\text{ K}^{-1} \times 300\text{ K} \]
+    \[ E_k = 1.5 \times 0.5 \times 8.314 \times 300 = \mathbf{1870.65\text{ J}} \]
+\end{tcolorbox}
+
+
+% ------------------------------------------
+% QUESTION 80 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 16}]
+    \noindent
+    একটি নির্দিষ্ট চাপ ও তাপমাত্রায় থাকা একটি আদর্শ গ্যাসের অণুগুলোর কার্যকর ব্যাস $2.0 \times 10^{-10}\text{ m}$ এবং ওই অবস্থায় প্রতি ঘনমিটারে অণুর সংখ্যা $3.0 \times 10^{25}\text{ m}^{-3}$। ম্যাক্সওয়েলের আণবিক সংঘর্ষ তত্ত্বের সমীকরণ ব্যবহার করে গ্যাসটির অণুগুলোর পরপর দুটি সংঘাতের মধ্যবর্তী গড় মুক্ত পথ (mean free path) নির্ণয় করো।
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    At a specific pressure and temperature, the effective diameter of ideal gas molecules is $2.0 \times 10^{-10}\text{ m}$, and the number of molecules per cubic meter under this condition is $3.0 \times 10^{25}\text{ m}^{-3}$. Using Maxwell's molecular collision theory equation, calculate the mean free path between two consecutive collisions of the gas molecules.
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $1.875 \times 10^{-7}\text{ m}$
+    \item[\textbf{B)}] $5.305 \times 10^{-7}\text{ m}$
+    \item[\textbf{C)}] $1.326 \times 10^{-7}\text{ m}$
+    \item[\textbf{D)}] $2.653 \times 10^{-7}\text{ m}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $1.875 \times 10^{-7}\text{ m}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{প্রদত্ত উপাত্ত:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item অণুর কার্যকর ব্যাস, $d = 2.0 \times 10^{-10}\text{ m}$
+        \item প্রতি ঘনমিটারে অণুর সংখ্যা, $n_V = 3.0 \times 10^{25}\text{ m}^{-3}$
+    \end{itemize}
+
+    \vspace{0.6em}
+    \noindent\textbf{গণনা:} \\
+    ম্যাক্সওয়েলের সূত্রানুসারে অণুর গড় মুক্ত পথ $\lambda$:
+    \[ \lambda = \frac{1}{\sqrt{2} \pi d^2 n_V} \]
+    
+    মানগুলো বসিয়ে হিসাব করে পাই:
+    \begin{align*}
+        \lambda &= \frac{1}{1.4142 \times 3.1416 \times (2.0 \times 10^{-10})^2 \times (3.0 \times 10^{25})} \\
+        &= \frac{1}{4.44288 \times (4.0 \times 10^{-20}) \times (3.0 \times 10^{25})} \\
+        &= \frac{1}{5.3314 \times 10^6} = 1.8756 \times 10^{-7}\text{ m} \approx \mathbf{1.875 \times 10^{-7}\text{ m}}
+    \end{align*}
+\end{tcolorbox}
+
+
+% ------------------------------------------
+% QUESTION 81 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 17}]
+    \noindent
+    কোনো এক আবহাওয়া পর্যবেক্ষণ কেন্দ্রে দিনের বেলায় বায়ুর তাপমাত্রা $25^\circ\text{C}$ রেকর্ড করা হলো এবং পরীক্ষা করে দেখা গেল বায়ুমণ্ডলে শিশিরাঙ্ক তাপমাত্রা $15^\circ\text{C}$। যদি $25^\circ\text{C}$ এবং $15^\circ\text{C}$ তাপমাত্রায় সম্পৃক্ত জলীয় বাষ্পের চাপ যথাক্রমে $23.76\text{ mm Hg}$ এবং $12.79\text{ mm Hg}$ হয়, তবে ওই পর্যবেক্ষণ কেন্দ্রে রেকর্ডকৃত বায়ুর আপেক্ষিক আর্দ্রতা কত শতাংশ?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    At a weather observation station, the daytime air temperature was recorded as $25^\circ\text{C}$, and testing indicated a dew point temperature of $15^\circ\text{C}$ in the atmosphere. If the saturated vapour pressures at $25^\circ\text{C}$ and $15^\circ\text{C}$ are $23.76\text{ mm Hg}$ and $12.79\text{ mm Hg}$ respectively, what is the relative humidity percentage of the air recorded at that observation station?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $53.83\%$
+    \item[\textbf{B)}] $60.50\%$
+    \item[\textbf{C)}] $42.10\%$
+    \item[\textbf{D)}] $75.20\%$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $53.83\%$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{প্রদত্ত উপাত্ত:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item শিশিরাঙ্কে ($15^\circ\text{C}$) সম্পৃক্ত জলীয় বাষ্পের চাপ, $f = 12.79\text{ mm Hg}$
+        \item বায়ুর তাপমাত্রায় ($25^\circ\text{C}$) সম্পৃক্ত জলীয় বাষ্পের চাপ, $F = 23.76\text{ mm Hg}$
+    \end{itemize}
+
+    \vspace{0.6em}
+    \noindent\textbf{গণনা:} \\
+    আপেক্ষিক আর্দ্রতার (Relative Humidity) গাণিতিক সূত্র:
+    \[ R = \frac{f}{F} \times 100\% \]
+    
+    মানসমূহ বসিয়ে পাই:
+    \[ R = \frac{12.79\text{ mm Hg}}{23.76\text{ mm Hg}} \times 100\% = 0.538299 \times 100\% = \mathbf{53.83\%} \]
+\end{tcolorbox}
+
+
+% ------------------------------------------
+% QUESTION 82 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 18}]
+    \noindent
+    $10\text{ L}$ স্থির আয়তনের একটি বদ্ধ পাত্রে $27^\circ\text{C}$ তাপমাত্রায় $0.4\text{ mol}$ নাইট্রোজেন ($\text{N}_2$) গ্যাস এবং $0.6\text{ mol}$ অক্সিজেন ($\text{O}_2$) গ্যাসের একটি মিশ্রণ রাখা হয়েছে। গ্যাসের উপাদানগুলোর মধ্যে কোনো রাসায়নিক বিক্রিয়া না ঘটলে ডাল্টনের আংশিক চাপ সূত্র প্রয়োগ করে সমগ্র পাত্রটির মোটের ওপর চূড়ান্ত আংশিক চাপ বা মোট চাপ কত পাওয়া যাবে? ($R = 0.0821\text{ L atm mol}^{-1}\text{ K}^{-1}$)
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    A $10\text{ L}$ fixed-volume closed vessel contains a mixture of $0.4\text{ mol}$ Nitrogen ($\text{N}_2$) gas and $0.6\text{ mol}$ Oxygen ($\text{O}_2$) gas at a temperature of $27^\circ\text{C}$. Assuming no chemical reaction occurs between the gas components, what will be the total pressure of the vessel applying Dalton's law of partial pressures? ($R = 0.0821\text{ L atm mol}^{-1}\text{ K}^{-1}$)
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $2.463\text{ atm}$
+    \item[\textbf{B)}] $1.231\text{ atm}$
+    \item[\textbf{C)}] $3.695\text{ atm}$
+    \item[\textbf{D)}] $4.926\text{ atm}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $2.463\text{ atm}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{প্রদত্ত উপাত্ত:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item পাত্রের আয়তন, $V = 10\text{ L}$
+        \item তাপমাত্রা, $T = 273 + 27 = 300\text{ K}$
+        \item গ্যাস ধ্রুবক, $R = 0.0821\text{ L atm mol}^{-1}\text{ K}^{-1}$
+        \item মিশ্রণের মোট মোল সংখ্যা, $n_{\text{total}} = n_{\text{N}_2} + n_{\text{O}_2} = 0.4\text{ mol} + 0.6\text{ mol} = 1.0\text{ mol}$
+    \end{itemize}
+
+    \vspace{0.6em}
+    \noindent\textbf{গণনা:} \\
+    ডাল্টনের আংশিক চাপ সূত্রানুসারে, গ্যাস মিশ্রণের মোট চাপ:
+    \[ P_{\text{total}} = \frac{n_{\text{total}} R T}{V} \]
+    
+    মানগুলো সমীকরণে বসিয়ে পাই:
+    \[ P_{\text{total}} = \frac{1.0 \times 0.0821 \times 300}{10} = \frac{24.63}{10} = \mathbf{2.463\text{ atm}} \]
+\end{tcolorbox}
+
+
+% ------------------------------------------
+% QUESTION 83 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 19}]
+    \noindent
+    প্রমাণ তাপমাত্রা ও চাপে (STP) একটি গ্যাসের ঘনত্ব $1.43\text{ kg m}^{-3}$। গ্যাসটিকে স্থির বায়ুমণ্ডলীয় চাপে রেখে একটি উত্তপ্ত প্রকোষ্ঠে স্থানান্তর করায় এর তাপমাত্রা বেড়ে $91^\circ\text{C}$ হয়। স্থির চাপে চার্লসের সূত্রের সাহায্যে তাপমাত্রার বৃদ্ধির ফলে গ্যাসটির নতুন ঘনত্ব নির্ণয় করো।
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    The density of a gas at standard temperature and pressure (STP) is $1.43\text{ kg m}^{-3}$. The gas is transferred to a heated chamber at constant atmospheric pressure, raising its temperature to $91^\circ\text{C}$. Using Charles's law at constant pressure, calculate the new density of the gas resulting from this temperature rise.
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $1.07\text{ kg m}^{-3}$
+    \item[\textbf{B)}] $1.91\text{ kg m}^{-3}$
+    \item[\textbf{C)}] $0.85\text{ kg m}^{-3}$
+    \item[\textbf{D)}] $1.25\text{ kg m}^{-3}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $1.07\text{ kg m}^{-3}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{প্রদত্ত উপাত্ত:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item প্রাথমিক ঘনত্ব, $\rho_1 = 1.43\text{ kg m}^{-3}$
+        \item প্রাথমিক তাপমাত্রা (STP), $T_1 = 273\text{ K}$
+        \item চূড়ান্ত তাপমাত্রা, $T_2 = 273 + 91 = 364\text{ K}$
+    \end{itemize}
+
+    \vspace{0.6em}
+    \noindent\textbf{গণনা:} \\
+    স্থির চাপ ও নির্দিষ্ট ভরের গ্যাসের ক্ষেত্রে আদর্শ গ্যাস সমীকরণ $P = \rho R M^{-1} T$ হতে দেখা যায় যে ঘনত্ব পরম তাপমাত্রার ব্যস্তানুপাতিক:
+    \[ \rho \propto \frac{1}{T} \implies \rho_1 T_1 = \rho_2 T_2 \implies \rho_2 = \rho_1 \times \frac{T_1}{T_2} \]
+    
+    মানসমূহ বসিয়ে পাই:
+    \[ \rho_2 = 1.43 \times \frac{273}{364} = 1.43 \times 0.75 = 1.0725\text{ kg m}^{-3} \approx \mathbf{1.07\text{ kg m}^{-3}} \]
+\end{tcolorbox}
+
+
+% ------------------------------------------
+% QUESTION 84 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 20}]
+    \noindent
+    একটি গভীর হ্রদের তলদেশে উৎপন্ন একটি বায়ুবুদ্বুদ যখন পানির উপরিতলে এসে পৌঁছায়, তখন এর আয়তন প্রাথমিক আয়তনের $4$ গুণ বৃদ্ধি পায়। পানির উপরিতলে বায়ুমণ্ডলের চাপ $10^5\text{ Pa}$ এবং পানির ঘনত্ব $1000\text{ kg m}^{-3}$ হলে, তাপমাত্রা ধ্রুবক ধরে নিয়ে বোয়েলের সূত্রের সাহায্যে হ্রদের গভীরতা কত নির্ণয় করো। ($g = 9.8\text{ m s}^{-2}$)
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    An air bubble generated at the bottom of a deep lake expands to $4$ times its initial volume upon reaching the water surface. If the atmospheric pressure at the surface is $10^5\text{ Pa}$ and the density of water is $1000\text{ kg m}^{-3}$, calculate the depth of the lake using Boyle's law, assuming constant temperature. ($g = 9.8\text{ m s}^{-2}$)
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $30.61\text{ m}$
+    \item[\textbf{B)}] $40.82\text{ m}$
+    \item[\textbf{C)}] $20.41\text{ m}$
+    \item[\textbf{D)}] $10.20\text{ m}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $30.61\text{ m}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{প্রদত্ত উপাত্ত:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item প্রাথমিক আয়তন, $V_1 = V$ এবং চূড়ান্ত আয়তন, $V_2 = 4V$
+        \item উপরিতলে চাপ, $P_2 = P_a = 10^5\text{ Pa}$
+        \item হ্রদের তলদেশে মোট চাপ, $P_1 = P_a + h \rho g = 10^5 + (1000 \times 9.8 \times h) = 10^5 + 9800h\text{ Pa}$
+    \end{itemize}
+
+    \vspace{0.6em}
+    \noindent\textbf{গণনা:} \\
+    সমতাপীয় প্রক্রিয়ায় বোয়েলের সূত্রানুসারে:
+    \[ P_1 V_1 = P_2 V_2 \]
+    
+    মানগুলো সমীকরণে বসিয়ে পাই:
+    \begin{align*}
+        (10^5 + 9800h) V &= 10^5 \times (4V) \\
+        10^5 + 9800h &= 4 \times 10^5 \\
+        9800h &= 3 \times 10^5 \implies h = \frac{3 \times 10^5}{9800} = 30.612\text{ m} \approx \mathbf{30.61\text{ m}}
+    \end{align*}
+\end{tcolorbox}
+
+% ------------------------------------------
+% QUESTION 86 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 21}]
+    \noindent
+    $27^\circ\text{C}$ তাপমাত্রায় এবং $1.013 \times 10^5\text{ Pa}$ প্রমিত বায়ুমণ্ডলীয় চাপে $1\text{ cm}^3$ ক্ষুদ্র আয়তনের একটি কাচপাত্রে কতটি গ্যাসের অণু বিদ্যমান থাকবে? (বোল্টজম্যান ধ্রুবক $k = 1.38 \times 10^{-23}\text{ J K}^{-1}$)
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    How many gas molecules are present in a small glass vessel of volume $1\text{ cm}^3$ at a temperature of $27^\circ\text{C}$ and a standard atmospheric pressure of $1.013 \times 10^5\text{ Pa}$? (Boltzmann constant $k = 1.38 \times 10^{-23}\text{ J K}^{-1}$)
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $2.447 \times 10^{19}$
+    \item[\textbf{B)}] $2.687 \times 10^{19}$
+    \item[\textbf{C)}] $6.023 \times 10^{23}$
+    \item[\textbf{D)}] $1.223 \times 10^{19}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $2.447 \times 10^{19}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{প্রদত্ত উপাত্ত:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item চাপ, $P = 1.013 \times 10^5\text{ Pa}$
+        \item আয়তন, $V = 1\text{ cm}^3 = 1 \times 10^{-6}\text{ m}^3$
+        \item তাপমাত্রা, $T = 273 + 27 = 300\text{ K}$
+        \item বোল্টজম্যান ধ্রুবক, $k = 1.38 \times 10^{-23}\text{ J K}^{-1}$
+    \end{itemize}
+
+    \vspace{0.6em}
+    \noindent\textbf{গণনা:} \\
+    আদর্শ গ্যাস সমীকরণ $P V = N k T$ হতে গ্যাসের অণুর সংখ্যা $N$:
+    \[ N = \frac{P V}{k T} \]
+    
+    মানগুলো বসিয়ে পাই:
+    \[ N = \frac{(1.013 \times 10^5) \times (1 \times 10^{-6})}{(1.38 \times 10^{-23}) \times 300} = \frac{0.1013}{4.14 \times 10^{-21}} = 2.44686 \times 10^{19} \approx \mathbf{2.447 \times 10^{19}} \]
+\end{tcolorbox}
+
+% ------------------------------------------
+% QUESTION 98 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 22}]
+    \noindent
+    প্রাথমিক মৌলিক সংঘাত তত্ত্বানুসারে অণুর গড় মুক্ত পথ $\lambda_0$ এবং ম্যাক্সওয়েলের সংঘাত তত্ত্বানুসারে গড় মুক্ত পথ $\lambda_M$ হলে, এই দুই তত্ত্বের গড় মুক্ত পথের অনুপাত $\frac{\lambda_M}{\lambda_0}$ কত? যদি $\lambda_0 = 2.0 \times 10^{-7}\text{ m}$ হয়, তবে ম্যাক্সওয়েলের সংঘাত তত্ত্ব অনুযায়ী গড় মুক্ত পথ $\lambda_M$ এর মান কত হবে?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    If $\lambda_0$ represents the mean free path of gas molecules according to elementary collision theory and $\lambda_M$ represents the mean free path according to Maxwell's collision theory, what is the ratio of their mean free paths $\frac{\lambda_M}{\lambda_0}$? If $\lambda_0 = 2.0 \times 10^{-7}\text{ m}$, what is Maxwell's mean free path $\lambda_M$?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $\frac{\lambda_M}{\lambda_0} = 0.707, \quad \lambda_M = 1.414 \times 10^{-7}\text{ m}$
+    \item[\textbf{B)}] $\frac{\lambda_M}{\lambda_0} = 1.414, \quad \lambda_M = 2.828 \times 10^{-7}\text{ m}$
+    \item[\textbf{C)}] $\frac{\lambda_M}{\lambda_0} = 0.750, \quad \lambda_M = 1.500 \times 10^{-7}\text{ m}$
+    \item[\textbf{D)}] $\frac{\lambda_M}{\lambda_0} = 0.500, \quad \lambda_M = 1.000 \times 10^{-7}\text{ m}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $\frac{\lambda_M}{\lambda_0} = 0.707, \quad \lambda_M = 1.414 \times 10^{-7}\text{ m}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{প্রদত্ত সূত্রাবলী:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item প্রাথমিক মৌলিক সংঘাত তত্ত্বানুসারে: $\lambda_0 = \frac{1}{\pi d^2 n_V}$
+        \item ম্যাক্সওয়েলের আণবিক সংঘাত তত্ত্বানুসারে: $\lambda_M = \frac{1}{\sqrt{2} \pi d^2 n_V}$
+        \item প্রাথমিক গড় মুক্ত পথ, $\lambda_0 = 2.0 \times 10^{-7}\text{ m}$
+    \end{itemize}
+
+    \vspace{0.6em}
+    \noindent\textbf{গণনা:} \\
+    (i) গড় মুক্ত পথের অনুপাত:
+    \[ \frac{\lambda_M}{\lambda_0} = \frac{\frac{1}{\sqrt{2} \pi d^2 n_V}}{\frac{1}{\pi d^2 n_V}} = \frac{1}{\sqrt{2}} \approx \mathbf{0.707} \]
+    
+    (ii) $\lambda_0 = 2.0 \times 10^{-7}\text{ m}$ হলে ম্যাক্সওয়েলের গড় মুক্ত পথ:
+    \[ \lambda_M = 0.7071 \times (2.0 \times 10^{-7}\text{ m}) = 1.4142 \times 10^{-7}\text{ m} \approx \mathbf{1.414 \times 10^{-7}\text{ m}} \]
+\end{tcolorbox}
+% ------------------------------------------
+% QUESTION 103 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 23}]
+    \noindent
+    কোনো স্থানে বায়ুর তাপমাত্রা $28^\circ\text{C}$ এবং শিশিরাঙ্ক $16^\circ\text{C}$। $28^\circ\text{C}$ এবং $16^\circ\text{C}$ তাপমাত্রায় সম্পৃক্ত জলীয় বাষ্পের চাপ যথাক্রমে $28.35\text{ mm Hg}$ এবং $13.63\text{ mm Hg}$। তাপমাত্রা অপরিবর্তিত রেখে যদি ঘরের আয়তন কমিয়ে অর্ধেক করা হয়, তবে নতুন আপেক্ষিক আর্দ্রতা কত হবে?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    At a certain location, the air temperature is $28^\circ\text{C}$ and the dew point is $16^\circ\text{C}$. The saturated vapour pressures at $28^\circ\text{C}$ and $16^\circ\text{C}$ are $28.35\text{ mm Hg}$ and $13.63\text{ mm Hg}$ respectively. Keeping the temperature constant, if the volume of the room is compressed to half, what will be the new relative humidity?
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $96.16\%$
+    \item[\textbf{B)}] $48.08\%$
+    \item[\textbf{C)}] $100.00\%$
+    \item[\textbf{D)}] $85.50\%$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $96.16\%$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{প্রদত্ত উপাত্ত:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item প্রাথমিক অবস্থায় বাষ্পচাপ (শিশিরাঙ্কে সম্পৃক্ত বাষ্পচাপ), $f_1 = 13.63\text{ mm Hg}$
+        \item $28^\circ\text{C}$ তাপমাত্রায় সম্পৃক্ত বাষ্পচাপ, $F = 28.35\text{ mm Hg}$
+        \item নতুন আয়তন, $V_2 = \frac{V_1}{2}$
+    \end{itemize}
+
+    \vspace{0.6em}
+    \noindent\textbf{গণনা:} \\
+    তাপমাত্রা স্থির রেখে আয়তন অর্ধেক করলে বোয়েলের সূত্রানুসারে নতুন বাষ্পচাপ হবে:
+    \[ f_2 = 2 \times f_1 = 2 \times 13.63\text{ mm Hg} = 27.26\text{ mm Hg} \]
+    
+    যেহেতু $28^\circ\text{C}$ এ সম্পৃক্ত বাষ্পচাপ $F = 28.35\text{ mm Hg}$ এবং $f_2 < F$, তাই কোনো বাষ্প ঘনীভূত হবে না।
+    
+    \vspace{0.4em}
+    নতুন আপেক্ষিক আর্দ্রতা:
+    \[ R_2 = \frac{f_2}{F} \times 100\% = \frac{27.26}{28.35} \times 100\% = 96.155\% \approx \mathbf{96.16\%} \]
+\end{tcolorbox}
+
+% ------------------------------------------
+% QUESTION 111 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 24}]
+    \noindent
+    $2\text{ mol}$ অক্সিজেন গ্যাস ($M = 32\text{ g mol}^{-1}$, $f = 5$) $V = 0.01\text{ m}^3$ স্থির আয়তনের একটি সুদৃঢ় পাত্রে $T_1 = 300\text{ K}$ প্রাথমিক তাপমাত্রায় সংরক্ষিত আছে। সম-আয়তন প্রক্রিয়ায় গ্যাসটিতে তাপ সরবরাহ করা হলো যতক্ষণ না এর চাপ প্রাথমিক চাপের দ্বিগুণ ($P_2 = 2P_1$) হয়। গাণিতিকভাবে নির্ণয় করো: (i) গ্যাসের মোট অভ্যন্তরীণ গতিশক্তির বৃদ্ধি ($\Delta E_k$) এবং (ii) চূড়ান্ত তাপমাত্রায় গড় বেগ ($c_{\text{avg},2}$) ও প্রাথমিক তাপমাত্রায় সর্বাধিক সম্ভাব্য বেগের ($c_{\text{mp},1}$) অনুপাত $\frac{c_{\text{avg},2}}{c_{\text{mp},1}}$। ($R = 8.314\text{ J mol}^{-1}\text{ K}^{-1}$)
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    A rigid vessel of fixed volume $V = 0.01\text{ m}^3$ contains $2\text{ mol}$ of Oxygen gas ($M = 32\text{ g mol}^{-1}$, $f = 5$) at an initial temperature $T_1 = 300\text{ K}$. Heat is supplied to the gas in an isochoric process until its pressure doubles ($P_2 = 2P_1$). Calculate: (i) the increase in total internal kinetic energy ($\Delta E_k$), and (ii) the ratio of the average speed at final temperature ($c_{\text{avg},2}$) to the initial most probable speed ($c_{\text{mp},1}$), i.e., $\frac{c_{\text{avg},2}}{c_{\text{mp},1}}$. ($R = 8.314\text{ J mol}^{-1}\text{ K}^{-1}$)
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $\Delta E_k = 12.471\text{ kJ}, \quad \frac{c_{\text{avg},2}}{c_{\text{mp},1}} = 1.60$
+    \item[\textbf{B)}] $\Delta E_k = 7.483\text{ kJ}, \quad \frac{c_{\text{avg},2}}{c_{\text{mp},1}} = 2.26$
+    \item[\textbf{C)}] $\Delta E_k = 14.965\text{ kJ}, \quad \frac{c_{\text{avg},2}}{c_{\text{mp},1}} = 1.22$
+    \item[\textbf{D)}] $\Delta E_k = 24.942\text{ kJ}, \quad \frac{c_{\text{avg},2}}{c_{\text{mp},1}} = 1.41$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $\Delta E_k = 12.471\text{ kJ}, \quad \frac{c_{\text{avg},2}}{c_{\text{mp},1}} = 1.60$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{প্রদত্ত উপাত্ত:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item মোল সংখ্যা, $n = 2\text{ mol}$
+        \item আণবিক ভর, $M = 32\text{ g mol}^{-1} = 0.032\text{ kg mol}^{-1}$
+        \item স্বাধীনতার মাত্রা, $f = 5$
+        \item প্রাথমিক তাপমাত্রা, $T_1 = 300\text{ K}$
+        \item চাপের পরিবর্তন, $P_2 = 2P_1$
+    \end{itemize}
+
+    \vspace{0.6em}
+    \noindent\textbf{গণনা:} \\
+    (i) স্থির আয়তন প্রক্রিয়ায় চাপ সূত্রানুসারে:
+    \[ \frac{P_1}{T_1} = \frac{P_2}{T_2} \implies T_2 = T_1 \times \frac{P_2}{P_1} = 300 \times 2 = 600\text{ K} \]
+    তাপমাত্রার পরিবর্তন, $\Delta T = T_2 - T_1 = 600 - 300 = 300\text{ K}$
+    
+    \vspace{0.4em}
+    দ্বি-পারমাণবিক গ্যাসের ($f = 5$) অভ্যন্তরীণ গতিশক্তির পরিবর্তন:
+    \[ \Delta E_k = \frac{f}{2} n R \Delta T = \frac{5}{2} \times 2 \times 8.314 \times 300 = 12471\text{ J} = \mathbf{12.471\text{ kJ}} \]
+    
+    (ii) $T_2 = 600\text{ K}$ তাপমাত্রায় গড় বেগ ($c_{\text{avg},2}$) এবং $T_1 = 300\text{ K}$ তাপমাত্রায় সর্বাধিক সম্ভাব্য বেগ ($c_{\text{mp},1}$) এর অনুপাত:
+    \[ c_{\text{avg},2} = \sqrt{\frac{8 R T_2}{\pi M}}, \quad c_{\text{mp},1} = \sqrt{\frac{2 R T_1}{M}} \]
+    \[ \frac{c_{\text{avg},2}}{c_{\text{mp},1}} = \sqrt{\frac{8 R (2 T_1)}{\pi M} \div \frac{2 R T_1}{M}} = \sqrt{\frac{16}{2\pi}} = \sqrt{\frac{8}{\pi}} = \sqrt{\frac{8}{3.14159}} = \sqrt{2.5465} \approx \mathbf{1.60} \]
+\end{tcolorbox}
+
+
+% ------------------------------------------
+% QUESTION 112 SECTION
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 25}]
+    \noindent
+    একটি আবহাওয়া প্রকোষ্ঠে শুষ্ক ও সিক্ত বাল্বের তাপমাত্রা যথাক্রমে $\theta_1 = 30^\circ\text{C}$ এবং $\theta_2 = 20^\circ\text{C}$। $30^\circ\text{C}$ এ গ্লাইশারের উৎপাদক $G = 1.65$। $30^\circ\text{C}$ এবং শিশিরাঙ্ক $\theta$ তাপমাত্রায় সম্পৃক্ত বাষ্পচাপ যথাক্রমে $F = 31.83\text{ mm Hg}$ এবং $f = 11.61\text{ mm Hg}$। অপরদিকে, $T = 300\text{ K}$ তাপমাত্রায় এবং $P = 1.013 \times 10^5\text{ Pa}$ চাপে নাইট্রোজেন গ্যাসের ($M = 28\text{ g mol}^{-1}$, অণুর ব্যাস $d = 2.5 \times 10^{-10}\text{ m}$) একটি প্রকোষ্ঠে ম্যাক্সওয়েলের গড় মুক্ত পথ $\lambda$ এবং মূল গড় বর্গবেগ $c_{\text{rms}}$ বিবেচনা করা হলো। গাণিতিকভাবে নির্ণয় করো: (i) প্রকোষ্ঠের বায়ুর আপেক্ষিক আর্দ্রতা ($R$) এবং (ii) নাইট্রোজেন গ্যাসের অণুগুলোর দুটি সংঘাতের মধ্যবর্তী গড় সময়কাল ($T_c = \frac{\lambda}{c_{\text{rms}}}$)। ($k = 1.38 \times 10^{-23}\text{ J K}^{-1}$, $R = 8.314\text{ J mol}^{-1}\text{ K}^{-1}$)
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    In a weather chamber, dry bulb and wet bulb temperatures are $\theta_1 = 30^\circ\text{C}$ and $\theta_2 = 20^\circ\text{C}$ respectively. Glaisher's factor at $30^\circ\text{C}$ is $G = 1.65$. Saturated vapour pressures at $30^\circ\text{C}$ and dew point $\theta$ are $F = 31.83\text{ mm Hg}$ and $f = 11.61\text{ mm Hg}$ respectively. In a separate chamber containing Nitrogen gas ($M = 28\text{ g mol}^{-1}$, molecular diameter $d = 2.5 \times 10^{-10}\text{ m}$) at $T = 300\text{ K}$ and $P = 1.013 \times 10^5\text{ Pa}$, Maxwell's mean free path $\lambda$ and rms speed $c_{\text{rms}}$ are considered. Calculate: (i) the relative humidity ($R$) of the air, and (ii) the mean collision time between two collisions ($T_c = \frac{\lambda}{c_{\text{rms}}}$) for Nitrogen molecules. ($k = 1.38 \times 10^{-23}\text{ J K}^{-1}$, $R = 8.314\text{ J mol}^{-1}\text{ K}^{-1}$)
+    }
+    \end{english}
+\end{tcolorbox}
+
+\begin{itemize}[label={}, leftmargin=1cm, itemsep=0.5em]
+    \item[\textbf{A)}] $R = 36.47\%, \quad T_c = 2.84 \times 10^{-10}\text{ s}$
+    \item[\textbf{B)}] $R = 50.00\%, \quad T_c = 1.42 \times 10^{-10}\text{ s}$
+    \item[\textbf{C)}] $R = 62.80\%, \quad T_c = 5.68 \times 10^{-10}\text{ s}$
+    \item[\textbf{D)}] $R = 42.15\%, \quad T_c = 3.52 \times 10^{-10}\text{ s}$
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tcolorbox}[answerbox]
+    \textbf{\color{success} উত্তর:} A) $R = 36.47\%, \quad T_c = 2.84 \times 10^{-10}\text{ s}$
+\end{tcolorbox}
+\vspace{1em}
+
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+    \noindent
+    \textbf{প্রদত্ত উপাত্ত:}
+    \begin{itemize}[leftmargin=1.5em, itemsep=0.2em]
+        \item শুষ্ক বাল্ব তাপমাত্রা, $\theta_1 = 30^\circ\text{C}$, সিক্ত বাল্ব তাপমাত্রা, $\theta_2 = 20^\circ\text{C}$
+        \item গ্লাইশারের উৎপাদক, $G = 1.65$
+        \item $30^\circ\text{C}$ এ সম্পৃক্ত বাষ্পচাপ, $F = 31.83\text{ mm Hg}$
+        \item শিশিরাঙ্কে সম্পৃক্ত বাষ্পচাপ, $f = 11.61\text{ mm Hg}$
+        \item নাইট্রোজেন গ্যাসের ক্ষেত্রে: $T = 300\text{ K}$, $P = 1.013 \times 10^5\text{ Pa}$
+        \item $M = 28\text{ g mol}^{-1} = 0.028\text{ kg mol}^{-1}$, অণুর ব্যাস $d = 2.5 \times 10^{-10}\text{ m}$
+    \end{itemize}
+
+    \vspace{0.6em}
+    \noindent\textbf{গণনা:} \\
+    (i) গ্লাইশারের সূত্রানুসারে শিশিরাঙ্ক:
+    \[ \theta = \theta_1 - G(\theta_1 - \theta_2) = 30 - 1.65 \times (30 - 20) = 30 - 16.5 = 13.5^\circ\text{C} \]
+    
+    আপেক্ষিক আর্দ্রতা:
+    \[ R = \frac{f}{F} \times 100\% = \frac{11.61\text{ mm Hg}}{31.83\text{ mm Hg}} \times 100\% = 36.475\% \approx \mathbf{36.47\%} \]
+    
+    (ii) প্রতি একক আয়তনে অণুর সংখ্যা ($n_V$):
+    \[ P = n_V k T \implies n_V = \frac{P}{k T} = \frac{1.013 \times 10^5}{(1.38 \times 10^{-23}) \times 300} = 2.44686 \times 10^{25}\text{ m}^{-3} \]
+    
+    ম্যাক্সওয়েলের গড় মুক্ত পথ ($\lambda$):
+    \[ \lambda = \frac{1}{\sqrt{2} \pi d^2 n_V} = \frac{1}{\sqrt{2} \times 3.1416 \times (2.5 \times 10^{-10})^2 \times (2.44686 \times 10^{25})} = 1.4699 \times 10^{-7}\text{ m} \]
+    
+    $T = 300\text{ K}$ এ মূল গড় বর্গবেগ ($c_{\text{rms}}$):
+    \[ c_{\text{rms}} = \sqrt{\frac{3 R T}{M}} = \sqrt{\frac{3 \times 8.314 \times 300}{0.028}} = 516.95\text{ m s}^{-1} \]
+    
+    সংঘাতের মধ্যবর্তী গড় সময়কাল ($T_c$):
+    \[ T_c = \frac{\lambda}{c_{\text{rms}}} = \frac{1.4699 \times 10^{-7}}{516.95} = 2.843 \times 10^{-10}\text{ s} \approx \mathbf{2.84 \times 10^{-10}\text{ s}} \]
+\end{tcolorbox}
 
 \end{document}
