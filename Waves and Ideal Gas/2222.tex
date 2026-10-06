@@ -1,0 +1,716 @@
+\documentclass[12pt, a4paper]{article}
+
+% ==========================================
+% 1. COMPILER, LANGUAGE & FONT SETUP
+% ==========================================
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{bengali}
+\setotherlanguage{english}
+\newfontfamily\bengalifont[Script=Bengali, AutoFakeBold=2.5, AutoFakeSlant=0.2]{Kalpurush}
+
+% ==========================================
+% 2. MATHEMATICS, UNITS & FORMATTING
+% ==========================================
+\usepackage{amsmath, amssymb, siunitx}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{microtype} % For better typography
+\onehalfspacing % Better line spacing for readability
+
+% ==========================================
+% 3. COLORS & BEAUTIFICATION PACKAGES
+% ==========================================
+\usepackage[dvipsnames, table]{xcolor}
+\usepackage[skins, breakable, theorems]{tcolorbox}
+\usepackage{tikz}
+\renewcommand{\labelitemi}{$\bullet$}
+
+% Define custom beautiful colors
+\definecolor{primary}{HTML}{0056b3}
+\definecolor{secondary}{HTML}{e7f1ff}
+\definecolor{success}{HTML}{198754}
+\definecolor{successbg}{HTML}{d1e7dd}
+\definecolor{accent}{HTML}{fd7e14}
+\definecolor{darkgray}{HTML}{343a40}
+
+% Custom Tcolorbox Styles
+\tcbset{
+    questionbox/.style={
+        enhanced, colback=secondary, colframe=primary, arc=2mm, boxrule=1pt,
+        fonttitle=\bfseries\Large, title=#1,
+        drop fuzzy shadow=black!10,
+        attach boxed title to top left={xshift=5mm, yshift=-3mm},
+        boxed title style={colback=primary, arc=1mm}
+    },
+    answerbox/.style={
+        enhanced, colback=successbg, colframe=success, arc=1.5mm, boxrule=1pt,
+        left=2mm, right=2mm, top=2mm, bottom=2mm,
+        drop fuzzy shadow=black!10
+    },
+    solutionbox/.style={
+        enhanced, colback=white, colframe=darkgray, arc=2mm, boxrule=1pt,
+        fonttitle=\bfseries\large, title=#1, breakable,
+        coltitle=white, colbacktitle=darkgray,
+        drop fuzzy shadow=black!10,
+        attach boxed title to top center={yshift=-3mm},
+        boxed title style={arc=1mm}
+    }
+}
+
+\begin{document}
+
+\newpage
+% ------------------------------------------
+% QUESTION SECTION 1 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 1}]
+\noindent
+একটি অগ্রগামী তরঙ্গের সমীকরণ $y_1 = 15 \sin \frac{2\pi}{6}(100t - x)\text{ m}$। তরঙ্গটি মুক্ত প্রান্তে প্রতিফলিত হয়ে বিপরীত দিকে ফিরে এলে লব্ধি স্থির তরঙ্গের সমীকরণ গঠন করো এবং $x = 3\text{ m}$ অবস্থানে অবস্থিত কণার পর্যায়কালের বিভিন্ন মুহূর্তে ($t = 0, \frac{T}{4}, \frac{T}{2}, \frac{3T}{4}, T$) সরণের মান নির্ণয় করো। এছাড়াও উক্ত কণার জন্য সরণ-সময় ($y\text{ vs }t$) এবং বেগ-সময় ($v\text{ vs }t$) লেখচিত্র অঙ্কন করো।
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+The equation of a progressive wave is $y_1 = 15 \sin \frac{2\pi}{6}(100t - x)\text{ m}$. When the wave reflects from a free boundary and returns in the opposite direction, form the equation of the resulting standing wave, and calculate the displacement of a particle at $x = 3\text{ m}$ at different fractions of time period $t = 0, \frac{T}{4}, \frac{T}{2}, \frac{3T}{4}, T$. Also draw the displacement-time ($y\text{ vs }t$) and velocity-time ($v\text{ vs }t$) graphs for the particle.
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 1
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. স্থির তরঙ্গের সমীকরণ গঠন: মুক্ত প্রান্তে প্রতিফলনের ফলে কোনো দশা পরিবর্তন ($\Delta \phi = 0$) হয় না। প্রতিফলিত তরঙ্গ: $y_2 = 15 \sin \frac{2\pi}{6}(100t + x)$ \\
+লব্ধি স্থির তরঙ্গ:
+\[ y = y_1 + y_2 = 15 \left[ \sin \frac{2\pi}{6}(100t - x) + \sin \frac{2\pi}{6}(100t + x) \right] \]
+\[ y = 30 \cos\left(\frac{2\pi x}{6}\right) \sin\left(\frac{2\pi \times 100t}{6}\right) = 30 \cos\left(\frac{\pi x}{3}\right) \sin\left(\frac{100\pi t}{3}\right)\text{ m} \]
+
+\noindent
+২. $x = 3\text{ m}$ কণার জন্য সরণ ও বেগ সমীকরণ:
+\[ A(x=3) = 30 \cos\left(\frac{3\pi}{3}\right) = 30 \cos(\pi) = -30\text{ m} \]
+সুতরাং, সরণের সমীকরণ: 
+\[ y(3, t) = -30 \sin\left(\frac{100\pi t}{3}\right) = -30 \sin\left(\frac{2\pi t}{T}\right)\text{ m} \]
+কণাটির বেগের সমীকরণ ($v = \frac{dy}{dt}$):
+\[ v(3, t) = -30 \times \frac{100\pi}{3} \cos\left(\frac{100\pi t}{3}\right) = -1000\pi \cos\left(\frac{2\pi t}{T}\right)\text{ m s}^{-1} \]
+
+\noindent
+৩. বিভিন্ন সময়ে সরণ ($y$) ও বেগ ($v$) এর মান: \\
+- $t = 0$ হলে: $y = 0\text{ m}$, \quad $v = -1000\pi \approx -3141.59\text{ m s}^{-1}$ \\
+- $t = \frac{T}{4}$ হলে: $y = -30\text{ m}$, \quad $v = 0\text{ m s}^{-1}$ \\
+- $t = \frac{T}{2}$ হলে: $y = 0\text{ m}$, \quad $v = +1000\pi \approx +3141.59\text{ m s}^{-1}$ \\
+- $t = \frac{3T}{4}$ হলে: $y = +30\text{ m}$, \quad $v = 0\text{ m s}^{-1}$ \\
+- $t = T$ হলে: $y = 0\text{ m}$, \quad $v = -1000\pi \approx -3141.59\text{ m s}^{-1}$
+
+\vspace{1em}
+\noindent
+\textbf{৪. সরণ-সময় ($y\text{ vs }t$) ও বেগ-সময় ($v\text{ vs }t$) লেখচিত্র:}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.05, >=stealth]
+    % ==========================================
+    % GRAPH 1: Displacement vs Time (y vs t)
+    % ==========================================
+    \begin{scope}[shift={(0,0)}]
+        % Grid
+        \draw[gray!20, thin] (-0.5,-2.2) grid (5.5,2.2);
+
+        % Axes
+        \draw[->, thick] (-0.5,0) -- (5.8,0) node[right] {$t$};
+        \draw[->, thick] (0,-2.3) -- (0,2.3) node[above] {$y\text{ (m)}$};
+
+        % Y-Axis Ticks & Labels
+        \draw (0.1, 1.5) -- (-0.1, 1.5) node[left, font=\small] {$+30$};
+        \draw (0.1, -1.5) -- (-0.1, -1.5) node[left, font=\small] {$-30$};
+        \node[below left, font=\small] at (0,0) {$0$};
+
+        % X-Axis Ticks & Labels
+        \draw (1.25, 0.1) -- (1.25, -0.1) node[above=2pt, font=\small] {$\frac{T}{4}$};
+        \draw (2.5, 0.1) -- (2.5, -0.1) node[below=2pt, font=\small] {$\frac{T}{2}$};
+        \draw (3.75, 0.1) -- (3.75, -0.1) node[below=2pt, font=\small] {$\frac{3T}{4}$};
+        \draw (5.0, 0.1) -- (5.0, -0.1) node[below=2pt, font=\small] {$T$};
+
+        % Dashed Projection Lines
+        \draw[dashed, red!60] (0, -1.5) -- (1.25, -1.5) -- (1.25, 0);
+        \draw[dashed, blue!60] (0, 1.5) -- (3.75, 1.5) -- (3.75, 0);
+
+        % Curve: y = -1.5 * sin(2*pi*x / 5)
+        \draw[ultra thick, blue!80!black, domain=0:5, samples=100] 
+            plot (\x, {-1.5*sin(\x*360/5)});
+
+        % Key Points
+        \fill[red!80!black] (0,0) circle (2.5pt);
+        \fill[red!80!black] (1.25,-1.5) circle (2.5pt);
+        \fill[red!80!black] (2.5,0) circle (2.5pt);
+        \fill[red!80!black] (3.75,1.5) circle (2.5pt);
+        \fill[red!80!black] (5.0,0) circle (2.5pt);
+
+        % Graph Title
+        \node[above, blue!80!black, font=\small\bfseries] at (2.5, 2.3) {সরণ-সময় লেখচিত্র ($y\text{ vs }t$)};
+    \end{scope}
+
+    % ==========================================
+    % GRAPH 2: Velocity vs Time (v vs t)
+    % ==========================================
+    \begin{scope}[shift={(0,-5.5)}]
+        % Grid
+        \draw[gray!20, thin] (-0.5,-2.2) grid (5.5,2.2);
+
+        % Axes
+        \draw[->, thick] (-0.5,0) -- (5.8,0) node[right] {$t$};
+        \draw[->, thick] (0,-2.3) -- (0,2.3) node[above] {$v\text{ (m s}^{-1})$};
+
+        % Y-Axis Ticks & Labels
+        \draw (0.1, 1.5) -- (-0.1, 1.5) node[left, font=\small] {$+1000\pi$};
+        \draw (0.1, -1.5) -- (-0.1, -1.5) node[left, font=\small] {$-1000\pi$};
+        \node[below left, font=\small] at (0,0) {$0$};
+
+        % X-Axis Ticks & Labels
+        \draw (1.25, 0.1) -- (1.25, -0.1) node[below=2pt, font=\small] {$\frac{T}{4}$};
+        \draw (2.5, 0.1) -- (2.5, -0.1) node[below=2pt, font=\small] {$\frac{T}{2}$};
+        \draw (3.75, 0.1) -- (3.75, -0.1) node[below=2pt, font=\small] {$\frac{3T}{4}$};
+        \draw (5.0, 0.1) -- (5.0, -0.1) node[below=2pt, font=\small] {$T$};
+
+        % Dashed Projection Lines
+        \draw[dashed, red!60] (0, -1.5) -- (5.0, -1.5);
+        \draw[dashed, blue!60] (0, 1.5) -- (2.5, 1.5) -- (2.5, 0);
+
+        % Curve: v = -1.5 * cos(2*pi*x / 5)
+        \draw[ultra thick, teal!80!black, domain=0:5, samples=100] 
+            plot (\x, {-1.5*cos(\x*360/5)});
+
+        % Key Points
+        \fill[red!80!black] (0,-1.5) circle (2.5pt);
+        \fill[red!80!black] (1.25,0) circle (2.5pt);
+        \fill[red!80!black] (2.5,1.5) circle (2.5pt);
+        \fill[red!80!black] (3.75,0) circle (2.5pt);
+        \fill[red!80!black] (5.0,-1.5) circle (2.5pt);
+
+        % Graph Title
+        \node[above, teal!80!black, font=\small\bfseries] at (2.5, 2.3) {বেগ-সময় লেখচিত্র ($v\text{ vs }t$)};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+\end{tcolorbox}
+
+% ------------------------------------------
+% QUESTION SECTION 12 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 2}]
+\noindent
+একটি রকেট ভূমির সাথে উল্লম্বভাবে $200\text{ km h}^{-1}$ সুষম বেগে ওপরের দিকে উঠছে। ভূমির ওপর নির্দিষ্ট উচ্চতায় পৌঁছানোর মুহূর্তে রকেট থেকে ভূমির দিকে একটি সংকেত (শব্দ) পাঠানো হলো। ভূমি থেকে প্রতিফলিত প্রতিধ্বনি রকেটে পৌঁছাতে $3.3\text{ s}$ সময় নেয়। বাতাসে শব্দের বেগ $340\text{ m s}^{-1}$ হলে, সংকেত পাঠানোর মুহূর্তে রকেটের উচ্চতা কত ছিল?
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+A rocket ascends vertically upwards at a uniform speed of $200\text{ km h}^{-1}$. At a certain height above the ground, a sound signal is emitted from the rocket towards the ground. The echo reflected from the ground reaches the rocket after $3.3\text{ s}$. If the speed of sound in air is $340\text{ m s}^{-1}$, what was the altitude of the rocket at the instant the signal was emitted?
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+% ------------------------------------------
+% SOLUTION SECTION 12
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. প্রদত্ত উপাত্ত: \\
+- রকেটের বেগ, $v_r = \frac{200}{3.6} = 55.56\text{ m s}^{-1}$ \\
+- শব্দের বেগ, $v_s = 340\text{ m s}^{-1}$ \\
+- মোট সময়, $t = 3.3\text{ s}$ \\
+২. দূরত্ব সমীকরণ গঠন: ধরি, সংকেত নিসরণের মুহূর্তে রকেটের উচ্চতা ছিল $h$। $t = 3.3\text{ s}$ সময়ে রকেটটি ওপরের দিকে অতিক্রান্ত দূরত্ব, $s_r = v_r \times t = 55.56 \times 3.3 = 183.35\text{ m}$। \\
+শব্দ তরঙ্গটিকে নিচে ভূমিতে গিয়ে ($h$) আবার প্রতিফলিত হয়ে রকেটের নতুন অবস্থানে পৌঁছাতে অতিক্রান্ত দূরত্ব = $h + (h - s_r) = 2h - s_r$। \\
+শব্দের অতিক্রান্ত মোট দূরত্ব:
+\[ 2h - s_r = v_s \times t \]
+\[ 2h - 183.35 = 340 \times 3.3 = 1122\text{ m} \]
+\[ 2h = 1122 + 183.35 = 1305.35\text{ m} \]
+\[ h = \frac{1305.35}{2} = 652.68\text{ m} \]
+অতএব, সংকেত পাঠানোর মুহূর্তে রকেটের উচ্চতা ছিল $652.68\text{ m}$।
+\end{tcolorbox}
+
+\vspace{1.5em}
+
+% ------------------------------------------
+% QUESTION SECTION 13 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 3}]
+\noindent
+$1\text{ m}$ দীর্ঘ একটি তার $40\text{ N}$ বল দ্বারা টানা অবস্থায় $320\text{ Hz}$ কম্পাঙ্কের একটি সুরশলাকার সাথে ঐকতানে (Resonance) কাঁপছে। তারের টান পরিবর্তন করে $20\text{ N}$ করা হলে, তারটিকে পুনরায় উক্ত সুরশলাকার সাথে ঐকতানে আনতে এর দৈর্ঘ্য কতটুকু পরিবর্তন করতে হবে?
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+A wire of length $1\text{ m}$ under a tension of $40\text{ N}$ vibrates in resonance with a tuning fork of frequency $320\text{ Hz}$. If the tension is changed to $20\text{ N}$, by how much must the length of the wire be altered to bring it back into resonance with the same tuning fork?
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 13
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. সূত্র প্রয়োগ: টানা তারের মূলসুরের কম্পাঙ্কের সূত্র: $f = \frac{1}{2l}\sqrt{\frac{T}{\mu}}$। যেহেতু কম্পাঙ্ক $f = 320\text{ Hz}$ এবং একক দৈর্ঘ্যের ভর $\mu$ অপরিবর্তিত থাকে:
+\[ \frac{\sqrt{T_1}}{l_1} = \frac{\sqrt{T_2}}{l_2} \]
+২. নতুন দৈর্ঘ্য ($l_2$) নির্ণয়: প্রদত্ত, $T_1 = 40\text{ N}$, $l_1 = 1.0\text{ m}$, $T_2 = 20\text{ N}$।
+\[ l_2 = l_1 \times \sqrt{\frac{T_2}{T_1}} = 1.0 \times \sqrt{\frac{20}{40}} = \frac{1}{\sqrt{2}} \approx 0.7071\text{ m} = 70.71\text{ cm} \]
+৩. দৈর্ঘ্যের পরিবর্তন ($\Delta l$) নির্ণয়:
+\[ \Delta l = l_1 - l_2 = 1.0 - 0.7071 = 0.2929\text{ m} = 29.29\text{ cm} \]
+অতএব, তারটিকে পুনরায় ঐকতানে আনতে এর দৈর্ঘ্য $29.29\text{ cm}$ কমাতে হবে।
+\end{tcolorbox}
+
+\vspace{1.5em}
+
+% ------------------------------------------
+% QUESTION SECTION 14 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 4}]
+\noindent
+$A, B, C$ ও $D$ চারটি সুরশলাকা রয়েছে। $A$ শলাকার কম্পাঙ্ক $250\text{ Hz}$। $A$ শলাকাটি $B$ ও $D$-এর সাথে যথাক্রমে প্রতি সেকেন্ডে $2$ টি ও $6$ টি বিট উৎপন্ন করে। $B$ ও $D$ পরস্পরের সাথে প্রতি সেকেন্ডে $4$ টি বিট উৎপন্ন করে। আবার, $B$ ও $D$ শলাকাদ্বয়ের প্রতিটি $C$-এর সাথে প্রতি সেকেন্ডে $2$ টি বিট উৎপন্ন করে। $C$ সুরশলাকার সম্ভাব্য কম্পাঙ্ক গাণিতিকভাবে বিশ্লেষণ করো।
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+Four tuning forks $A, B, C,$ and $D$ are given. The frequency of $A$ is $250\text{ Hz}$. Fork $A$ produces $2$ and $6$ beats per second with $B$ and $D$ respectively. $B$ and $D$ produce $4$ beats per second with each other. Moreover, each of the forks $B$ and $D$ produces $2$ beats per second with $C$. Analyze mathematically to find the possible frequencies of tuning fork $C$.
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 14
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. $B$ ও $D$-এর কম্পাঙ্ক নির্ধারণ: দেওয়া আছে, $f_A = 250\text{ Hz}$। \\
+- $f_B = 250 \pm 2 = 252\text{ Hz}$ অথবা $248\text{ Hz}$ \\
+- $f_D = 250 \pm 6 = 256\text{ Hz}$ অথবা $244\text{ Hz}$ \\
+যেহেতু $B$ ও $D$ প্রতি সেকেন্ডে $4$ টি বিট দেয় ($|f_B - f_D| = 4$), তাই দুটি ক্ষেত্র সম্ভব: \\
+- ক্ষেত্র-১: $f_B = 252\text{ Hz}$ এবং $f_D = 256\text{ Hz}$ \\
+- ক্ষেত্র-২: $f_B = 248\text{ Hz}$ এবং $f_D = 244\text{ Hz}$ \\
+২. $C$-এর সম্ভাব্য কম্পাঙ্ক গাণিতিক পরীক্ষা: $C$ শলাকাটি $B$ এবং $D$ উভয়ের সাথেই প্রতি সেকেন্ডে $2$ টি বিট সৃষ্টি করে। \\
+- ক্ষেত্র-১ এর জন্য ($f_B = 252\text{ Hz}, f_D = 256\text{ Hz}$): \\
+$|f_C - 252| = 2 \implies f_C = 254\text{ Hz}$ অথবা $250\text{ Hz}$। এখন $f_D = 256$-এর সাথে মেলালে: $|254 - 256| = 2$ (সঠিক)। (কিন্তু $f_C = 250$ হলে $|250 - 256| = 6 \neq 2$)। সুতরাং, ১ম ক্ষেত্রে $f_C = 254\text{ Hz}$। \\
+- ক্ষেত্র-২ এর জন্য ($f_B = 248\text{ Hz}, f_D = 244\text{ Hz}$): \\
+$|f_C - 248| = 2 \implies f_C = 246\text{ Hz}$ অথবা $250\text{ Hz}$। এখন $f_D = 244$-এর সাথে মেলালে: $|246 - 244| = 2$ (সঠিক)। সুতরাং, ২য় ক্ষেত্রে $f_C = 246\text{ Hz}$। \\
+অতএব, $C$ সুরশলাকাটির সম্ভাব্য কম্পাঙ্ক হলো $254\text{ Hz}$ অথবা $246\text{ Hz}$।
+\end{tcolorbox}
+
+\vspace{1.5em}
+
+% ------------------------------------------
+% QUESTION SECTION 15 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 5}]
+\noindent
+$256\text{ Hz}$ কম্পাঙ্কের একটি সুরশলাকা একটি দুই মুখ খোলা নলের সাথে প্রতি সেকেন্ডে $8$ টি বিট উৎপন্ন করে। সুরশলাকাটির বাহুতে মোম লাগালে বিট সংখ্যা বৃদ্ধি পায়। বাতাসে শব্দের বেগ $285.25\text{ m s}^{-1}$ হলে নলটির প্রাথমিক দৈর্ঘ্য কত? নলটিকে এক মুখ বন্ধ অর্গান নলে রূপান্তরিত করে সুরশলাকাটির (মোম ছাড়া) সাথে অনুনাদ সৃষ্টি করতে হলে নলের দৈর্ঘ্যের পরিবর্তন কত হবে?
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+A tuning fork of frequency $256\text{ Hz}$ produces $8$ beats per second with an open organ pipe. Loading wax on the tuning fork increases the beat frequency. If the speed of sound in air is $285.25\text{ m s}^{-1}$, what is the initial length of the pipe? If the pipe is converted into a closed organ pipe to resonate with the unloaded tuning fork, what must be the change in length of the pipe?
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 15
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. খোলা নলের কম্পাঙ্ক ($f_{\text{pipe}}$) নির্ধারণ: সুরশলাকার কম্পাঙ্ক $f_{\text{fork}} = 256\text{ Hz}$। বিট সংখ্যা = $8 \implies f_{\text{pipe}} = 256 + 8 = 264\text{ Hz}$ অথবা $256 - 8 = 248\text{ Hz}$। \\
+সুরশলাকায় মোম লাগালে এর কম্পাঙ্ক কমে। যেহেতু এর ফলে বিট সংখ্যা বৃদ্ধি পায়, তাই নলের কম্পাঙ্ক অবশ্যই সুরশলাকার কম্পাঙ্কের চেয়ে বেশি ছিল। সুতরাং, $f_{\text{pipe}} = 264\text{ Hz}$। \\
+২. খোলা নলের প্রাথমিক দৈর্ঘ্য ($L_1$) নির্ণয়:
+\[ f_{\text{pipe}} = \frac{v}{2 L_1} \implies 264 = \frac{285.25}{2 L_1} \]
+\[ L_1 = \frac{285.25}{2 \times 264} = 0.5402\text{ m} = 54.02\text{ cm} \]
+৩. এক মুখ বন্ধ নলে রূপান্তরিত করার পর নতুন দৈর্ঘ্য ($L_2$) নির্ণয়: সুরশলাকা ($256\text{ Hz}$)-এর সাথে বন্ধ নলের মূলসুরের অনুনাদের জন্য:
+\[ f_{\text{closed}} = \frac{v}{4 L_2} \implies 256 = \frac{285.25}{4 L_2} \]
+\[ L_2 = \frac{285.25}{4 \times 256} = 0.2786\text{ m} = 27.86\text{ cm} \]
+৪. দৈর্ঘ্যের প্রয়োজনীয় পরিবর্তন ($\Delta L$):
+\[ \Delta L = L_1 - L_2 = 54.02 - 27.86 = 26.16\text{ cm} \]
+অতএব, নলের প্রাথমিক দৈর্ঘ্য ছিল $54.02\text{ cm}$ এবং এটিকে বন্ধ নলে রূপান্তর করে ঐকতানে আনতে দৈর্ঘ্য $26.16\text{ cm}$ কমাতে হবে।
+\end{tcolorbox}
+% ------------------------------------------
+% QUESTION SECTION 18 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 6}]
+\noindent
+একই দিকে ধাবমান দুটি অগ্রগামী শব্দ তরঙ্গের সমীকরণ $y_1 = 0.5 \sin \pi(110.03t - 3.09x)$ এবং $y_2 = 0.5 \sin \pi(134t - 3.4x)$, যেখানে সকল রাশি SI এককে। (ক) তরঙ্গদ্বয়ের উপরিপাতনে সৃষ্ট বিটের পর্যায়কাল কত? (খ) বিট চক্রে সর্বোচ্চ ও সর্বনিম্ন তীব্রতার অনুপাত ($I_{\max} / I_{\min}$) নির্ণয় করো যদি তাদের বিস্তারের অনুপাত $2:1$ হয়।
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+Equations of two progressive sound waves propagating in the same direction are $y_1 = 0.5 \sin \pi(110.03t - 3.09x)$ and $y_2 = 0.5 \sin \pi(134t - 3.4x)$, where all quantities are in SI units. (a) What is the time period of beats formed by their superposition? (b) Find the ratio of maximum to minimum intensity ($I_{\max} / I_{\min}$) in the beat cycle if their amplitudes were in the ratio $2:1$.
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 18
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. বিট কম্পাঙ্ক ও পর্যায়কাল নির্ণয়: \\
+- ১ম তরঙ্গের কৌণিক কম্পাঙ্ক, $\omega_1 = 110.03\pi \implies 2\pi f_1 = 110.03\pi \implies f_1 = 55.015\text{ Hz}$ \\
+- ২য় তরঙ্গের কৌণিক কম্পাঙ্ক, $\omega_2 = 134\pi \implies 2\pi f_2 = 134\pi \implies f_2 = 67\text{ Hz}$ \\
+প্রতি সেকেন্ডে বিট সংখ্যা, $f_{\text{beat}} = |f_2 - f_1| = 67 - 55.015 = 11.985\text{ Hz} \approx 12\text{ Hz}$। বিট পর্যায়কাল:
+\[ T_{\text{beat}} = \frac{1}{f_{\text{beat}}} = \frac{1}{11.985} \approx 0.0834\text{ s} \]
+২. সর্বোচ্চ ও সর্বনিম্ন তীব্রতার অনুপাত নির্ণয়: প্রদত্ত বিস্তারের অনুপাত $\frac{A_1}{A_2} = \frac{2}{1}$।
+\[ \frac{I_{\max}}{I_{\min}} = \left(\frac{A_1 + A_2}{A_1 - A_2}\right)^2 = \left(\frac{2 + 1}{2 - 1}\right)^2 = 3^2 = 9:1 \]
+অতএব, বিটের পর্যায়কাল $0.0834\text{ s}$ এবং সর্বোচ্চ ও সর্বনিম্ন তীব্রতার অনুপাত $9:1$।
+\end{tcolorbox}
+
+\vspace{1.5em}
+
+% ------------------------------------------
+% QUESTION SECTION 47 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 7}]
+\noindent
+একটি বিন্দু শব্দ উৎস হতে নির্গত শব্দের ক্ষমতা $P$। উৎস হতে $r_1 = 10\text{ m}$ দূরত্বে শব্দ তীব্রতা স্তর $\beta_1 = 80\text{ dB}$। (প্রমাণ তীব্রতা $I_0 = 10^{-12}\text{ W m}^{-2}$)
+
+\vspace{0.5em}
+\noindent
+(ক) শব্দ তীব্রতা স্তর ($\beta$) এবং দূরত্বের লগারিদম ($\log_{10} r$)-এর মধ্যে গাণিতিক সম্পর্ক প্রতিপাদন করো। $\log_{10} r = 1$ থেকে $\log_{10} r = 5$ ব্যবধানে $\beta$ বনাম $\log_{10} r$ লেখচিত্রটি অঙ্কন করো এবং এর ঢাল (Slope) নির্ণয় করো।
+
+\vspace{0.3em}
+\noindent
+(খ) অঙ্কিত লেখচিত্র হতে $r_2 = 100\text{ m}$ (অর্থাৎ $\log_{10} r_2 = 2$) দূরত্বে শব্দ তীব্রতা স্তর বের করো। শব্দ উৎসের ক্ষমতা $P$ হিসাব করো এবং লেখচিত্রে তীব্রতা স্তর শ্রবণসীমায় (Threshold of Hearing) নেমে $0\text{ dB}$ হওয়ার বিন্দুটি চিহ্নিত করে এর দূরত্ব $r_0$ নির্ণয় করো।
+
+\vspace{0.8em}
+{\color{darkgray}\itshape
+\noindent
+A point sound source emits sound with a total power $P$. At a distance $r_1 = 10\text{ m}$, the sound intensity level is observed to be $\beta_1 = 80\text{ dB}$. (Reference intensity $I_0 = 10^{-12}\text{ W m}^{-2}$).
+
+\vspace{0.3em}
+\noindent
+(a) Derive the mathematical relationship between the sound intensity level ($\beta$) and the logarithm of distance ($\log_{10} r$). Plot the $\beta$ vs $\log_{10} r$ graph in the range $\log_{10} r \in [1, 5]$ and determine its slope.
+
+\vspace{0.3em}
+\noindent
+(b) From the plotted graph, determine the sound intensity level at $r_2 = 100\text{ m}$ (i.e., $\log_{10} r_2 = 2$). Calculate the sound power $P$ of the source, and identify on the graph the point where the intensity level drops to the threshold of hearing ($0\text{ dB}$) to find the corresponding distance $r_0$.
+}
+\end{tcolorbox}
+
+% ------------------------------------------
+% SOLUTION SECTION 47
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+\textbf{(ক) সমীকরণ প্রতিপাদন, লেখচিত্র অঙ্কন ও ঢাল নির্ণয়:}
+
+\vspace{0.5em}
+\noindent
+বিন্দু উৎস হতে $r$ দূরত্বে শব্দ তীব্রতা:
+\[ I(r) = \frac{P}{4\pi r^2} \]
+
+\noindent
+শব্দ তীব্রতা স্তরের সমীকরণ:
+\[ \beta(r) = 10 \log_{10}\left(\frac{I}{I_0}\right) = 10 \log_{10}\left(\frac{P}{4\pi I_0 r^2}\right) \]
+\[ \beta(r) = 10 \log_{10}\left(\frac{P}{4\pi I_0}\right) - 20 \log_{10}(r) \]
+
+\noindent
+ধরি, $X = \log_{10}(r)$ এবং ধ্রুবক $C = 10 \log_{10}\left(\frac{P}{4\pi I_0}\right)$। ফলে সমীকরণটি দাঁড়ায়:
+\[ \beta = -20 X + C \]
+এটি $y = mX + C$ আকারের একটি ঋণাত্মক ঢালবিশিষ্ট সরলরেখা।
+
+\vspace{0.5em}
+\noindent
+\textbf{লেখচিত্র অঙ্কনের সারণী ($\beta$ vs $\log_{10}r$):}
+\begin{itemize}[leftmargin=2em, itemsep=0.2em]
+    \item $r_1 = 10\text{ m} \implies X_1 = \log_{10}(10) = 1 \implies \beta_1 = 80\text{ dB}$
+    \item $r_2 = 100\text{ m} \implies X_2 = \log_{10}(100) = 2 \implies \beta_2 = 60\text{ dB}$
+    \item $r_0 = 10^5\text{ m} \implies X_0 = \log_{10}(10^5) = 5 \implies \beta_0 = 0\text{ dB}$
+\end{itemize}
+
+\vspace{0.3em}
+\noindent
+\textbf{লেখচিত্রের ঢাল (Slope):}
+\[ m = \frac{\Delta \beta}{\Delta (\log_{10} r)} = \frac{\beta_2 - \beta_1}{X_2 - X_1} = \frac{60 - 80}{2 - 1} = -20\text{ dB/decade} \]
+
+\vspace{1em}
+\noindent
+\textbf{(খ) লেখচিত্র হতে মান নির্ণয় ও উৎসের ক্ষমতা $P$ হিসাব:}
+
+\vspace{0.5em}
+\noindent
+\textbf{১. $r_2 = 100\text{ m}$-এ তীব্রতা স্তর ($\beta_2$):} \\
+লেখচিত্রে $X = \log_{10}(100) = 2$ অক্ষীয় বিন্দু বরাবর নির্দেশিত $\beta$-এর মান:
+\[ \beta_2 = 60\text{ dB} \]
+
+\noindent
+\textbf{২. শব্দ উৎসের ক্ষমতা ($P$):} \\
+$r_1 = 10\text{ m}$ এ $\beta_1 = 80\text{ dB}$ ব্যবহার করে:
+\[ 80 = 10 \log_{10}\left(\frac{I_1}{10^{-12}}\right) \implies I_1 = 10^{-4}\text{ W m}^{-2} \]
+\[ P = I_1 \times 4\pi r_1^2 = 10^{-4} \times 4\pi (10)^2 = 0.04\pi\text{ W} \approx 0.1257\text{ W} \]
+
+\noindent
+\textbf{৩. শ্রবণসীমায় ($0\text{ dB}$) দূরত্ব ($r_0$):} \\
+লেখচিত্রের $X$-অক্ষ ছেদক বিন্দুতে ($\beta = 0\text{ dB}$):
+\[ \log_{10}(r_0) = 5 \implies r_0 = 10^5\text{ m} = 100\text{ km} \]
+
+\vspace{0.8em}
+\noindent
+\textbf{বিশেষ দ্রষ্টব্য (শব্দ তীব্রতার দুই সীমা):}
+\begin{itemize}[leftmargin=2em, itemsep=0.3em]
+    \item \textbf{শ্রবণসীমা (Threshold of Hearing):} মানবকান দ্বারা শোনা যায় এমন সর্বনিম্ন শব্দ তীব্রতা হলো $I_0 = 10^{-12}\text{ W m}^{-2}$। এর সাপেক্ষে তীব্রতা স্তর হয় $\beta = 0\text{ dB}$।
+    \item \textbf{বেদনাসীমা (Threshold of Pain):} শব্দের তীব্রতা অতিরিক্ত বৃদ্ধি পেয়ে যখন কানে শ্রবণের অনুভূতির পরিবর্তে তীব্র যন্ত্রণার সৃষ্টি করে, তাকে বেদনাসীমা বলে। এর তীব্রতা $I = 1\text{ W m}^{-2}$ এবং তীব্রতা স্তর $\beta = 120\text{ dB}$।
+\end{itemize}
+
+\vspace{1.2em}
+\begin{center}
+\begin{tikzpicture}[scale=1.05, >=stealth]
+    % Grid
+    \draw[gray!20, thin] (-0.5,-0.5) grid (6.2,4.5);
+
+    % Axes
+    \draw[->, thick] (-0.5,0) -- (6.5,0) node[right] {$X = \log_{10}(r)$};
+    \draw[->, thick] (0,-0.5) -- (0,4.8) node[above] {$\beta\text{ (dB)}$};
+
+    % Y-Axis Ticks & Labels
+    \draw (0.1, 0.8) -- (-0.1, 0.8) node[left, font=\small] {$20$};
+    \draw (0.1, 1.6) -- (-0.1, 1.6) node[left, font=\small] {$40$};
+    \draw (0.1, 2.4) -- (-0.1, 2.4) node[left, font=\small] {$60$};
+    \draw (0.1, 3.2) -- (-0.1, 3.2) node[left, font=\small] {$80$};
+    \draw (0.1, 4.0) -- (-0.1, 4.0) node[left, font=\small] {$100$};
+    \node[below left, font=\small] at (0,0) {$0$};
+
+    % X-Axis Ticks & Labels
+    \foreach \xval in {1, 2, 3, 4, 5} {
+        \draw (\xval, 0.1) -- (\xval, -0.1) node[below=2pt, font=\small] {$\xval$};
+    }
+
+    % Plotted Line
+    \draw[ultra thick, red!80!black] (0, 4.0) -- (5.2, -0.16);
+
+    % Projection Lines
+    \draw[dashed, blue!70!black] (0, 3.2) -- (1, 3.2) -- (1, 0);
+    \draw[dashed, blue!70!black] (0, 2.4) -- (2, 2.4) -- (2, 0);
+
+    % Points
+    \fill[red!80!black] (1, 3.2) circle (2.5pt) node[above right, font=\small] {$(1, 80\text{ dB})$};
+    \fill[red!80!black] (2, 2.4) circle (2.5pt) node[above right, font=\small] {$(2, 60\text{ dB})$};
+    \fill[teal!80!black] (5, 0) circle (2.5pt) node[above right, font=\small] {$(5, 0\text{ dB}) \implies r_0 = 10^5\text{ m}$};
+
+    % Slope Text
+    \node[red!80!black, font=\small\bfseries] at (3.5, 2.2) {ঢাল $m = -20\text{ dB/decade}$};
+\end{tikzpicture}
+\end{center}
+\end{tcolorbox}
+
+% ------------------------------------------
+% QUESTION SECTION 32 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 8}]
+\noindent
+একটি রকেট উড্ডয়ন কেন্দ্র হতে সোজা ওপরের দিকে $150\text{ m s}^{-1}$ সুষম বেগে উঠছিল। রকেটটি থেকে বিস্ফোরক শব্দ উৎপন্ন হওয়ার $5\text{ s}$ এবং $7\text{ s}$ সময় পর দুটি পর্যবেক্ষণ স্টেশন যথাক্রমে শব্দ শুনতে পেল। বিস্ফোরণের ফলে উৎপন্ন শব্দতরঙ্গ $y = 0.1 \sin(69.53\pi t + 0.6283x)$ দ্বারা প্রকাশিত হলে, বিস্ফোরণের মুহূর্তে রকেটের উচ্চতা এবং স্টেশনদ্বয়ের মধ্যবর্তী দূরত্ব নির্ণয় করো।
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+A rocket was ascending vertically upwards at a uniform speed of $150\text{ m s}^{-1}$ from a launchpad. Sound from an explosion on the rocket was received by two observation stations after $5\text{ s}$ and $7\text{ s}$ respectively. If the explosion sound wave is represented by $y = 0.1 \sin(69.53\pi t + 0.6283x)$, calculate the rocket's height at the moment of explosion and the distance between the two stations.
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 32
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. শব্দের বেগ ($v$) নির্ণয়: \\
+প্রদত্ত তরঙ্গ সমীকরণ হতে,
+\[ k = 0.6283 \implies \frac{2\pi}{\lambda} = 0.6283 \implies \lambda = 10\text{ m} \]
+\[ \omega = 69.53\pi \implies 2\pi f = 69.53\pi \implies f = 34.765\text{ Hz} \]
+শব্দের বেগ:
+\[ v = f \times \lambda = 34.765 \times 10 = 347.65\text{ m s}^{-1} \approx 348\text{ m s}^{-1} \]
+
+\noindent
+২. বিস্ফোরণের মুহূর্তে রকেটের উল্লম্ব উচ্চতা ($h$) নির্ণয়: \\
+১ম স্টেশনটি রকেটের ঠিক নিচে অবস্থান করায় এর কাছে শব্দ পৌঁছাতে সর্বনিম্ন সময় ($t_1 = 5\text{ s}$) লাগে। \\
+বিস্ফোরণের মুহূর্তে রকেটের উচ্চতা:
+\[ h = v \times t_1 = 348 \times 5 = 1740\text{ m} = 1.74\text{ km} \]
+
+\noindent
+৩. স্টেশনদ্বয়ের মধ্যবর্তী অনুভূমিক দূরত্ব ($x$) নির্ণয়: \\
+২য় স্টেশনে শব্দ পৌঁছাতে সময় লাগে $t_2 = 7\text{ s}$। ২য় স্টেশন হতে বিস্ফোরণস্থলের লম্ব-দূরত্ব (অতিভুজ):
+\[ d_2 = v \times t_2 = 348 \times 7 = 2436\text{ m} \]
+পিথাগোরাসের উপপাদ্য অনুযায়ী স্টেশনদ্বয়ের অনুভূমিক দূরত্ব:
+\[ x = \sqrt{d_2^2 - h^2} = \sqrt{2436^2 - 1740^2} = \sqrt{5934096 - 3027600} = \sqrt{2906496} \approx 1704.84\text{ m} \]
+
+\vspace{0.5em}
+\noindent
+অতএব, বিস্ফোরণের মুহূর্তে রকেটের উচ্চতা ছিল $1740\text{ m}$ এবং পর্যবেক্ষণ স্টেশনদ্বয়ের মধ্যবর্তী দূরত্ব $1704.84\text{ m}$।
+\end{tcolorbox}
+
+% ------------------------------------------
+% QUESTION SECTION 48 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 9}]
+\noindent
+দুটি শব্দ তরঙ্গ $y_1(t) = 0.05 \sin(2\pi f_1 t)$ এবং $y_2(t) = 0.05 \sin(2\pi f_2 t)$ (যেখানে $f_1 > f_2$) উপরিপাতিত হয়ে বিট (Beats) সৃষ্টি করে। উৎপন্ন লব্ধি তরঙ্গের বাহক কম্পাঙ্কের (Carrier frequency) মান $100\text{ Hz}$ এবং প্রতি সেকেন্ডে ৪টি বিট এনভেলপ ডালপালা (Loops) সম্পন্ন হয়।
+
+\vspace{0.5em}
+\noindent
+(ক) মূল তরঙ্গদ্বয়ের কম্পাঙ্ক $f_1$ ও $f_2$ নির্ণয় করো।
+
+\vspace{0.3em}
+\noindent
+(খ) বিট এনভেলপের গাণিতিক সমীকরণ ($Y_{\text{envelope}}(t)$) গঠন করো। $t = 0$ থেকে $t = 1\text{ s}$ সময় ব্যবধানে লব্ধি তরঙ্গের সরণ-সময় ($y-t$) ও বিট এনভেলপের লেখচিত্রটি অঙ্কন করো এবং ধ্বংসাত্মক ব্যতিচারের (Destructive interference) ফলে যে মুহূর্তগুলোতে শব্দ তীব্রতা সম্পূর্ণ শূন্য হয়, তা লেখচিত্রে সুনির্দিষ্টভাবে চিহ্নিত করো।
+
+\vspace{0.8em}
+{\color{darkgray}\itshape
+\noindent
+Two sound waves $y_1(t) = 0.05 \sin(2\pi f_1 t)$ and $y_2(t) = 0.05 \sin(2\pi f_2 t)$ (where $f_1 > f_2$) superpose to form beats. The carrier frequency of the resulting wave is observed to be $100\text{ Hz}$ and 4 beat loops are formed per second.
+
+\vspace{0.3em}
+\noindent
+(a) Determine the frequencies $f_1$ and $f_2$ of the component waves.
+
+\vspace{0.3em}
+\noindent
+(b) Form the mathematical equation of the beat envelope ($Y_{\text{envelope}}(t)$). Plot the displacement-time ($y-t$) graph of the resultant wave along with the beat envelope in the range $t \in [0, 1\text{ s}]$, and explicitly mark the key points where the sound intensity drops to zero due to destructive interference.
+}
+\end{tcolorbox}
+
+\vspace{1.2em}
+
+% ------------------------------------------
+% SOLUTION SECTION 48
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+\textbf{(ক) মূল তরঙ্গদ্বয়ের কম্পাঙ্ক ($f_1, f_2$) নির্ণয়:}
+
+\vspace{0.5em}
+\noindent
+তরঙ্গের উপরিপাতন নীতি অনুসারে লব্ধি তরঙ্গের সরণ:
+\[ y_{\text{net}}(t) = y_1(t) + y_2(t) = 0.05 \left[\sin(2\pi f_1 t) + \sin(2\pi f_2 t)\right] \]
+\[ y_{\text{net}}(t) = 2 (0.05) \cos\left(2\pi \frac{f_1 - f_2}{2} t\right) \sin\left(2\pi \frac{f_1 + f_2}{2} t\right) \]
+
+\noindent
+প্রদত্ত তথ্যানুসারে, বাহক কম্পাঙ্ক (Carrier frequency):
+\[ f_{\text{carrier}} = \frac{f_1 + f_2}{2} = 100\text{ Hz} \implies f_1 + f_2 = 200\text{ Hz} \quad \text{--- (১)} \]
+
+\noindent
+প্রতি সেকেন্ডে বিট সংখ্যা (Beat frequency):
+\[ f_{\text{beat}} = f_1 - f_2 = 4\text{ Hz} \quad \text{--- (২)} \]
+
+\noindent
+সমীকরণ (১) ও (২) যোগ ও বিয়োগ করে পাই:
+\[ 2f_1 = 204 \implies f_1 = 102\text{ Hz} \]
+\[ 2f_2 = 196 \implies f_2 = 98\text{ Hz} \]
+
+\vspace{1em}
+\noindent
+\textbf{(খ) বিট এনভেলপের সমীকরণ, শব্দ শূন্য হওয়ার মুহূর্ত ও লেখচিত্র অঙ্কন:}
+
+\vspace{0.5em}
+\noindent
+লব্ধি তরঙ্গের মডুলেটেড বিস্তার বা এনভেলপের গাণিতিক সমীকরণ:
+\[ Y_{\text{envelope}}(t) = \pm 2A \cos\left(2\pi \frac{f_1 - f_2}{2} t\right) \]
+\[ Y_{\text{envelope}}(t) = \pm 0.1 \cos\left(2\pi \times \frac{4}{2} t\right) = \pm 0.1 \cos(4\pi t)\text{ m} \]
+
+\vspace{0.3em}
+\noindent
+ধ্বংসাত্মক ব্যতিচারে শব্দ তীব্রতা সম্পূর্ণ শূন্য হওয়ার জন্য এনভেলপের বিস্তার শূন্য হতে হবে:
+\[ \cos(4\pi t) = 0 \implies 4\pi t = (2n + 1)\frac{\pi}{2} \quad [n = 0, 1, 2, 3, \dots] \]
+\[ t = \frac{2n + 1}{8}\text{ s} \]
+
+\vspace{0.3em}
+\noindent
+$t \in [0, 1\text{ s}]$ সীমার মধ্যে লেখচিত্রে চিহ্নিত করার জন্য প্রয়োজনীয় সময়গুলো:
+\begin{itemize}[leftmargin=2em, itemsep=0.2em]
+    \item $n = 0 \implies t_1 = \frac{1}{8}\text{ s} = 0.125\text{ s}$ \quad (\textbf{শব্দ শূন্য})
+    \item $n = 1 \implies t_2 = \frac{3}{8}\text{ s} = 0.375\text{ s}$ \quad (\textbf{শব্দ শূন্য})
+    \item $n = 2 \implies t_3 = \frac{5}{8}\text{ s} = 0.625\text{ s}$ \quad (\textbf{শব্দ শূন্য})
+    \item $n = 3 \implies t_4 = \frac{7}{8}\text{ s} = 0.875\text{ s}$ \quad (\textbf{শব্দ শূন্য})
+\end{itemize}
+
+\vspace{1.2em}
+\begin{center}
+\begin{tikzpicture}[scale=1.05, >=stealth]
+    
+    % Grid
+    \draw[gray!20, thin] (-0.5,-1.8) grid (6.2,1.8);
+
+    % Axes
+    \draw[->, thick] (-0.5,0) -- (6.5,0) node[right] {$t\text{ (s)}$};
+    \draw[->, thick] (0,-1.8) -- (0,2.1) node[above] {$y\text{ (m)}$};
+
+    % Y-Axis Ticks & Labels
+    \draw (0.1, 1.2) -- (-0.1, 1.2) node[left, font=\small] {$+0.1$};
+    \draw (0.1, -1.2) -- (-0.1, -1.2) node[left, font=\small] {$-0.1$};
+    \node[below left, font=\small] at (0,0) {$0$};
+
+    % X-Axis Ticks & Labels
+    \foreach \xval/\xtext in {0.7/\frac{1}{8}, 1.4/\frac{1}{4}, 2.1/\frac{3}{8}, 2.8/\frac{1}{2}, 3.5/\frac{5}{8}, 4.2/\frac{3}{4}, 4.9/\frac{7}{8}, 5.6/1} {
+        \draw (\xval, 0.1) -- (\xval, -0.1) node[below=2pt, font=\small] {$\xtext$};
+    }
+
+    % Envelope curves
+    \draw[thick, red!80!black, dashed, domain=0:5.6, samples=150] 
+        plot (\x, {1.2*cos(900*\x/7)});
+    \draw[thick, red!80!black, dashed, domain=0:5.6, samples=150] 
+        plot (\x, {-1.2*cos(900*\x/7)});
+
+    % Inside wave (Carrier frequency = 100 Hz)
+\draw plot[domain=0:5, samples=500] 
+  (\x, {1.2 * cos(128.5714*\x) * sin(360*(\x*17.85714 - floor(\x*17.85714))) });
+
+    % Nodes (Zero intensity points)
+    \foreach \xval in {0.7, 2.1, 3.5, 4.9} {
+        \fill[teal!80!black] (\xval, 0) circle (2.5pt);
+    }
+
+    % Title
+    \node[above, blue!80!black, font=\small\bfseries] at (3.8, 2.1) {বিট এনভেলপ ও লব্ধি তরঙ্গ ($y-t$ লেখচিত্র)};
+\end{tikzpicture}
+\end{center}
+\end{tcolorbox}
+% ------------------------------------------
+% QUESTION SECTION 22 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 10}]
+\noindent
+গাছের ডালে বসা একটি পাখি অনবরত নির্দিষ্ট শক্তিতে ডাকছে। একজন পর্যবেক্ষক পাখির ডাকের তীব্রতা পর্যবেক্ষণ শুরু করার পর নিজের অবস্থান থেকে পাখিটির দূরত্ব দ্বিগুণ করে নিল। পাখির সৃষ্ট শব্দের ক্ষমতা $10^{-7}\text{ W}$। (ক) পাখির অবস্থান হতে ন্যূনতম কত দূরত্বে শব্দ তীব্রতা স্তর শূন্য ডেসিবল ($0\text{ dB}$) হবে? (খ) দূরত্ব দ্বিগুণ করার ফলে পর্যবেক্ষকের নিকট শব্দ তীব্রতা স্তরের পরিবর্তন কত হবে গাণিতিকভাবে বিশ্লেষণ করো। ($I_0 = 10^{-12}\text{ W m}^{-2}$)
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+A bird sitting on a tree branch chirps continuously with constant power. An observer listening to the chirping doubles his distance from the bird's location. The sound power generated by the bird is $10^{-7}\text{ W}$. (a) At what minimum distance from the source will the sound intensity level be zero decibels ($0\text{ dB}$)? (b) Mathematically analyze the change in sound intensity level at the observer's position due to doubling the distance. ($I_0 = 10^{-12}\text{ W m}^{-2}$)
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 22
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. $0\text{ dB}$ তীব্রতা স্তরের জন্য দূরত্ব ($r$) নির্ণয়: \\
+$0\text{ dB}$ মানে তীব্রতা $I = I_0 = 10^{-12}\text{ W m}^{-2}$। শব্দ ক্ষমতা, $P = 10^{-7}\text{ W}$।
+\[ I = \frac{P}{4\pi r^2} \implies 10^{-12} = \frac{10^{-7}}{4\pi r^2} \]
+\[ r^2 = \frac{10^{-7}}{4\pi \times 10^{-12}} = \frac{10^5}{4\pi} \approx 7957.7 \implies r \approx 89.2\text{ m} \]
+২. দূরত্ব দ্বিগুণ করার ফলে তীব্রতা স্তরের পরিবর্তন ($\Delta \beta$) নির্ণয়: \\
+ধরি, প্রাথমিক দূরত্ব $r_1$ এবং পরবর্তী দূরত্ব $r_2 = 2 r_1$। শব্দ তীব্রতার ব্যস্ত বর্গীয় সূত্রানুসারে:
+\[ \frac{I_2}{I_1} = \left(\frac{r_1}{r_2}\right)^2 = \left(\frac{r_1}{2r_1}\right)^2 = \frac{1}{4} \]
+শব্দ তীব্রতা স্তরের পরিবর্তন:
+\[ \Delta \beta = 10 \log_{10} \left(\frac{I_2}{I_1}\right) = 10 \log_{10} \left(\frac{1}{4}\right) = 10 \times (-0.60206) = -6.02\text{ dB} \]
+অতএব, ন্যূনতম দূরত্ব $89.2\text{ m}$ এবং দূরত্ব দ্বিগুণ করায় শব্দ তীব্রতা স্তর $6.02\text{ dB}$ হ্রাস পাবে।
+\end{tcolorbox}
+\end{document}

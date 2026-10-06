@@ -1,0 +1,418 @@
+\documentclass[12pt, a4paper]{article}
+
+% ==========================================
+% 1. COMPILER, LANGUAGE & FONT SETUP
+% ==========================================
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{bengali}
+\setotherlanguage{english}
+\newfontfamily\bengalifont[Script=Bengali, AutoFakeBold=2.5, AutoFakeSlant=0.2]{Kalpurush}
+
+% ==========================================
+% 2. MATHEMATICS, UNITS & FORMATTING
+% ==========================================
+\usepackage{amsmath, amssymb, siunitx}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{microtype} % For better typography
+\onehalfspacing % Better line spacing for readability
+
+% ==========================================
+% 3. COLORS & BEAUTIFICATION PACKAGES
+% ==========================================
+\usepackage[dvipsnames, table]{xcolor}
+\usepackage[skins, breakable, theorems]{tcolorbox}
+\usepackage{tikz}
+\renewcommand{\labelitemi}{$\bullet$}
+
+% Define custom beautiful colors
+\definecolor{primary}{HTML}{0056b3}
+\definecolor{secondary}{HTML}{e7f1ff}
+\definecolor{success}{HTML}{198754}
+\definecolor{successbg}{HTML}{d1e7dd}
+\definecolor{accent}{HTML}{fd7e14}
+\definecolor{darkgray}{HTML}{343a40}
+
+% Custom Tcolorbox Styles
+\tcbset{
+    questionbox/.style={
+        enhanced, colback=secondary, colframe=primary, arc=2mm, boxrule=1pt,
+        fonttitle=\bfseries\Large, title=#1,
+        drop fuzzy shadow=black!10,
+        attach boxed title to top left={xshift=5mm, yshift=-3mm},
+        boxed title style={colback=primary, arc=1mm}
+    },
+    answerbox/.style={
+        enhanced, colback=successbg, colframe=success, arc=1.5mm, boxrule=1pt,
+        left=2mm, right=2mm, top=2mm, bottom=2mm,
+        drop fuzzy shadow=black!10
+    },
+    solutionbox/.style={
+        enhanced, colback=white, colframe=darkgray, arc=2mm, boxrule=1pt,
+        fonttitle=\bfseries\large, title=#1, breakable,
+        coltitle=white, colbacktitle=darkgray,
+        drop fuzzy shadow=black!10,
+        attach boxed title to top center={yshift=-3mm},
+        boxed title style={arc=1mm}
+    }
+}
+
+\begin{document}
+
+\newpage
+% ------------------------------------------
+% QUESTION SECTION 1 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 1}]
+\noindent
+একটি তাপীয়ভাবে নিরোধিত আবদ্ধ পাত্রে $3\text{ mol}$ এক-পারমাণবিক হিলিয়াম ($\text{He}$) গ্যাস $67^\circ\text{C}$ তাপমাত্রায় এবং $2\text{ mol}$ দ্বি-পারমাণবিক নাইট্রোজেন ($\text{N}_2$) গ্যাস $27^\circ\text{C}$ তাপমাত্রায় মিশানো হলো। মিশ্রণটি তাপীয় সাম্যাবস্থায় পৌঁছানোর পর মিশ্রণের চূড়ান্ত তাপমাত্রা এবং হিলিয়াম অণুর মূল-গড়-বর্গ (RMS) বেগ নির্ণয় করো।
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+In a thermally insulated closed container, $3\text{ mol}$ of monoatomic Helium ($\text{He}$) gas at $67^\circ\text{C}$ is mixed with $2\text{ mol}$ of diatomic Nitrogen ($\text{N}_2$) gas at $27^\circ\text{C}$. After the mixture reaches thermal equilibrium, calculate the final temperature of the mixture and the root-mean-square (RMS) speed of the Helium molecules.
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 1
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. শক্তি সংরক্ষণশীলতা নীতি অনুযায়ী, তাপীয়ভাবে নিরোধিত ব্যবস্থায় শক্তির অপচয় হয় না। সুতরাং, মিশ্রণের পূর্বের মোট অভ্যন্তরীণ শক্তি = মিশ্রণের পরের মোট অভ্যন্তরীণ শক্তি। \\
+২. এক-পারমাণবিক গ্যাসের স্বাধীনতার মাত্রা $f_1 = 3$ এবং দ্বি-পারমাণবিক গ্যাসের স্বাধীনতার মাত্রা $f_2 = 5$। \\
+৩. প্রাথমিক অবস্থাসমূহ: \\
+হিলিয়াম: $n_1 = 3\text{ mol}$, $T_1 = 67 + 273 = 340\text{ K}$ \\
+নাইট্রোজেন: $n_2 = 2\text{ mol}$, $T_2 = 27 + 273 = 300\text{ K}$ \\
+৪. মোট অভ্যন্তরীণ শক্তির সমীকরণ:
+\[ E = \frac{f_1}{2} n_1 R T_1 + \frac{f_2}{2} n_2 R T_2 = \left(\frac{f_1}{2} n_1 + \frac{f_2}{2} n_2\right) R T_f \]
+\[ \frac{3}{2}(3)(340) + \frac{5}{2}(2)(300) = \left[\frac{3}{2}(3) + \frac{5}{2}(2)\right] T_f \]
+\[ 1530 + 1500 = (4.5 + 5) T_f \implies 3030 = 9.5 T_f \]
+\[ T_f = \frac{3030}{9.5} \approx 318.95\text{ K} = 45.95^\circ\text{C} \]
+৫. হিলিয়াম অণুর চূড়ান্ত RMS বেগ ($M_{\text{He}} = 4 \times 10^{-3}\text{ kg mol}^{-1}$):
+\[ c_{\text{rms}} = \sqrt{\frac{3 R T_f}{M_{\text{He}}}} = \sqrt{\frac{3 \times 8.314 \times 318.95}{4 \times 10^{-3}}} \approx 1410.24\text{ m s}^{-1} \]
+\end{tcolorbox}
+
+\vspace{1.5em}
+
+
+
+% ------------------------------------------
+% QUESTION SECTION 3 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 2}]
+\noindent
+একটি $500\text{ m}^3$ আয়তনের উন্মুক্ত কক্ষের বায়ুর তাপমাত্রা সকালবেলা $17^\circ\text{C}$ থেকে দুপুরে রোদের কারণে বেড়ে $27^\circ\text{C}$ হলো। কক্ষের বায়ুমণ্ডলীয় চাপ অপরিবর্তিত থাকলে ($1.013 \times 10^5\text{ Pa}$), (i) কক্ষ থেকে বের হয়ে যাওয়া বায়ুর অণুর সংখ্যা এবং (ii) কক্ষে অবশিষ্ট বায়ুর মোট রৈখিক গতিশক্তির মান নির্ণয় করো।
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+The air temperature of an open room with a volume of $500\text{ m}^3$ rises from $17^\circ\text{C}$ in the morning to $27^\circ\text{C}$ at noon due to sunshine. If atmospheric pressure remains constant ($1.013 \times 10^5\text{ Pa}$), determine (i) the number of air molecules that escape from the room, and (ii) the total linear kinetic energy of the air remaining inside the room.
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 3
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. প্রাথমিক অবস্থা: $V = 500\text{ m}^3$, $P = 1.013 \times 10^5\text{ Pa}$, $T_1 = 17 + 273 = 290\text{ K}$। \\
+২. চূড়ান্ত অবস্থা: $T_2 = 27 + 273 = 300\text{ K}$। \\
+৩. নিষ্ক্রান্ত মোল সংখ্যা ($\Delta n = n_1 - n_2$):
+\[ \Delta n = \frac{P V}{R} \left(\frac{1}{T_1} - \frac{1}{T_2}\right) = \frac{1.013 \times 10^5 \times 500}{8.314} \left(\frac{1}{290} - \frac{1}{300}\right) \]
+\[ \Delta n = 6092133.7 \times \frac{10}{87000} \approx 700.24\text{ mol} \]
+৪. নিষ্ক্রান্ত অণুর সংখ্যা:
+\[ \Delta N = \Delta n \times N_A = 700.24 \times 6.023 \times 10^{23} \approx 4.218 \times 10^{26}\text{ টি অণু} \]
+৫. কক্ষে অবশিষ্ট দ্বি-পারমাণবিক বায়ুর মোট রৈখিক গতিশক্তি:
+\[ E_k = \frac{3}{2} n_2 R T_2 = \frac{3}{2} P V = \frac{3}{2} \times 1.013 \times 10^5 \times 500 = 7.5975 \times 10^7\text{ J} \]
+(দ্রষ্টব্য: চাপ ও আয়তন স্থির থাকায় অভ্যন্তরীণ মোট রৈখিক গতিশক্তি ধ্রুবক থাকে)।
+\end{tcolorbox}
+
+\vspace{1.5em}
+
+% ------------------------------------------
+% QUESTION SECTION 4 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 3}]
+\noindent
+উপেলক্ষণীয় আয়তনের একটি সরু নল দ্বারা যুক্ত দুটি কাচের পাত্র $A$ (আয়তন $500\text{ cm}^3$) এবং $B$ (আয়তন $100\text{ cm}^3$) এর মধ্যে $20^\circ\text{C}$ তাপমাত্রায় এবং $70\text{ cm Hg}$ চাপে বাতাস আবদ্ধ আছে। পাত্র $B$-কে $20^\circ\text{C}$ তাপমাত্রায় রেখে পাত্র $A$-কে $100^\circ\text{C}$ তাপমাত্রায় উত্তপ্ত করা হলে ব্যবস্থার চূড়ান্ত সাম্য চাপ কত হবে এবং পাত্র $A$ হতে শতকরা কত মোল গ্যাস পাত্র $B$-তে স্থানান্তরিত হবে?
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+Two glass vessels $A$ (volume $500\text{ cm}^3$) and $B$ (volume $100\text{ cm}^3$) connected by a narrow tube of negligible volume contain air at $20^\circ\text{C}$ and $70\text{ cm Hg}$ pressure. If vessel $B$ is maintained at $20^\circ\text{C}$ while vessel $A$ is heated to $100^\circ\text{C}$, what will be the final equilibrium pressure of the system, and what percentage of gas moles originally in vessel $A$ will transfer to vessel $B$?
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 4
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. প্রাথমিক অবস্থায় মোট মোল সংখ্যা $n_{\text{total}} = \frac{P_0 (V_A + V_B)}{R T_0}$:
+\[ n_{\text{total}} = \frac{70 \times (500 + 100)}{R \times 293} = \frac{42000}{293 R} \]
+২. পাত্র $A$-এর প্রাথমিক মোল সংখ্যা $n_{A0} = \frac{70 \times 500}{293 R} = \frac{35000}{293 R}$। \\
+৩. চূড়ান্ত অবস্থায় ধরে নিই সাম্য চাপ $P_f$। \\
+পাত্র $A$-তে অবশিষ্ট মোল: $n_{Af} = \frac{P_f \times 500}{R \times 373}$ \\
+পাত্র $B$-তে চূড়ান্ত মোল: $n_{Bf} = \frac{P_f \times 100}{R \times 293}$ \\
+৪. মোল সংরক্ষণশীলতা: $n_{Af} + n_{Bf} = n_{\text{total}}$:
+\[ \frac{P_f}{R} \left(\frac{500}{373} + \frac{100}{293}\right) = \frac{42000}{293 R} \]
+\[ P_f (1.34048 + 0.34130) = 143.345 \implies 1.68178 P_f = 143.345 \]
+\[ P_f \approx 85.23\text{ cm Hg} \]
+৫. পাত্র $A$ থেকে অপসারিত মোল সংখ্যা:
+\[ n_{A0} - n_{Af} = \frac{35000}{293 R} - \frac{85.23 \times 500}{373 R} = \frac{119.454}{R} - \frac{114.249}{R} = \frac{5.205}{R} \]
+৬. স্থানান্তরিত বায়ুর শতকরা হার:
+\[ \frac{5.205 / R}{119.454 / R} \times 100\% \approx 4.36\% \]
+\end{tcolorbox}
+
+\vspace{1.5em}
+
+% ------------------------------------------
+% QUESTION SECTION 5 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 4}]
+\noindent
+$300\text{ K}$ তাপমাত্রায় এবং $2.5 \times 10^5\text{ N m}^{-2}$ চাপে অক্সিজেন ($\text{O}_2$) গ্যাসের অনুসমূহের কার্যকর ব্যাস $2.0 \times 10^{-10}\text{ m}$। ম্যাক্সওয়েলের বণ্টন সূত্রানুসারে (i) গড় মুক্ত পথ ($\lambda$) এবং (ii) প্রতি সেকেন্ডে একটি অণুর গড় ধাক্কার সংখ্যা (সংঘর্ষ কম্পাঙ্ক) নির্ণয় করো।
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+At a temperature of $300\text{ K}$ and pressure of $2.5 \times 10^5\text{ N m}^{-2}$, the effective diameter of oxygen ($\text{O}_2$) molecules is $2.0 \times 10^{-10}\text{ m}$. According to Maxwell's distribution law, calculate (i) the mean free path ($\lambda$) and (ii) the average number of collisions per second for a single molecule (collision frequency).
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 5
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. একক আয়তনে অণুর সংখ্যা $n = \frac{N}{V} = \frac{P N_A}{R T}$:
+\[ n = \frac{2.5 \times 10^5 \times 6.023 \times 10^{23}}{8.314 \times 300} = \frac{1.50575 \times 10^{29}}{2494.2} \approx 6.037 \times 10^{25}\text{ m}^{-3} \]
+২. ম্যাক্সওয়েলের গড় মুক্ত পথের সমীকরণ:
+\[ \lambda = \frac{1}{\sqrt{2} \pi \sigma^2 n} = \frac{1}{\sqrt{2} \times \pi \times (2.0 \times 10^{-10})^2 \times (6.037 \times 10^{25})} \]
+\[ \lambda = \frac{1}{1.0722 \times 10^7} \approx 9.327 \times 10^{-8}\text{ m} = 93.27\text{ nm} \]
+৩. অক্সিজেনের RMS বেগ ($M = 32 \times 10^{-3}\text{ kg mol}^{-1}$):
+\[ c_{\text{rms}} = \sqrt{\frac{3 R T}{M}} = \sqrt{\frac{3 \times 8.314 \times 300}{32 \times 10^{-3}}} \approx 483.44\text{ m s}^{-1} \]
+৪. প্রতি সেকেন্ডে সংঘর্ষের সংখ্যা (সংঘর্ষ কম্পাঙ্ক, $f_c$):
+\[ f_c = \frac{c_{\text{rms}}}{\lambda} = \frac{483.44}{9.327 \times 10^{-8}} \approx 5.183 \times 10^9\text{ s}^{-1} \]
+\end{tcolorbox}
+
+\vspace{1.5em}
+
+% ------------------------------------------
+% QUESTION SECTION 6 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 5}]
+\noindent
+কোনো একদিন শুষ্ক ও সিক্ত বাল্ব আর্দ্রতামাপক যন্ত্রে শুষ্ক বাল্বের পাঠ $30^\circ\text{C}$ এবং সিক্ত বাল্বের পাঠ $28^\circ\text{C}$। $30^\circ\text{C}$ তাপমাত্রায় গ্লেইশারের গুণক $1.65$। $26^\circ\text{C}$, $28^\circ\text{C}$ এবং $30^\circ\text{C}$ তাপমাত্রায় সম্পৃক্ত জলীয় বাষ্পের চাপ যথাক্রমে $25.25\text{ mm Hg}$, $28.45\text{ mm Hg}$ এবং $31.85\text{ mm Hg}$। (i) ওই দিনের শিশিরাঙ্ক ও আপেক্ষিক আর্দ্রতা নির্ণয় করো এবং (ii) ঘরের তাপমাত্রা অপরিবর্তিত রেখে আপেক্ষিক আর্দ্রতা $50\%$-এ নামিয়ে আনতে প্রতি ঘনমিটার বায়ু হতে কত গ্রাম বাষ্প অপসারণ করতে হবে?
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+On a certain day, the dry bulb and wet bulb thermometer readings are $30^\circ\text{C}$ and $28^\circ\text{C}$ respectively. Glaisher's factor at $30^\circ\text{C}$ is $1.65$. The saturated vapor pressures at $26^\circ\text{C}$, $28^\circ\text{C}$, and $30^\circ\text{C}$ are $25.25\text{ mm Hg}$, $28.45\text{ mm Hg}$, and $31.85\text{ mm Hg}$ respectively. Calculate (i) the dew point and relative humidity on that day, and (ii) how many grams of water vapor per cubic meter must be removed to lower the relative humidity to $50\%$ at constant room temperature?
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 6
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. শিশিরাঙ্ক নির্ণয় (গ্লেইশারের সূত্রানুসারে):
+\[ \theta = \theta_1 - G(\theta_1 - \theta_2) = 30 - 1.65(30 - 28) = 30 - 3.30 = 26.7^\circ\text{C} \]
+২. রৈখিক সমানুপাতিক নিয়মে $26.7^\circ\text{C}$-এ সম্পৃক্ত বাষ্পচাপ ($f$):
+\[ f = f_{26} + \frac{26.7 - 26}{28 - 26} (f_{28} - f_{26}) = 25.25 + 0.35 \times (28.45 - 25.25) = 26.37\text{ mm Hg} \]
+৩. আপেক্ষিক আর্দ্রতা ($R$):
+\[ R = \frac{f}{F} \times 100\% = \frac{26.37}{31.85} \times 100\% \approx 82.79\% \]
+৪. $50\%$ আপেক্ষিক আর্দ্রতার জন্য প্রয়োজনীয় বাষ্পচাপ $f' = 0.50 \times 31.85 = 15.925\text{ mm Hg}$। \\
+৫. অপসারিত বাষ্পের চাপের পরিবর্তন $\Delta f = 26.37 - 15.925 = 10.445\text{ mm Hg}$:
+\[ \Delta f = 10.445 \times \frac{101325}{760} \approx 1392.5\text{ Pa} \]
+৬. প্রতি $1\text{ m}^3$ বায়ুর অপসারিত বাষ্পের ভর ($M_{\text{H}_2\text{O}} = 18 \times 10^{-3}\text{ kg mol}^{-1}$):
+\[ m = \frac{\Delta f \cdot V \cdot M}{R T} = \frac{1392.5 \times 1 \times 18 \times 10^{-3}}{8.314 \times 303} \approx 9.95 \times 10^{-3}\text{ kg} = 9.95\text{ g} \]
+\end{tcolorbox}
+
+\vspace{1.5em}
+
+% ------------------------------------------
+% QUESTION SECTION 7 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 6}]
+\noindent
+একটি কাল্পনিক গ্রহের ব্যাসার্ধ $6370\text{ km}$ এবং পৃষ্ঠের মহাকর্ষীয় ত্বরণ $9.8\text{ m s}^{-2}$। গ্রহটিতে নাইট্রোজেন ($\text{N}_2$) গ্যাসের অণুর মূল-গড়-বর্গ বেগ (RMS speed) যদি গ্রহটির মুক্তিবেগের (Escape velocity) $\frac{1}{\sqrt{2}}$ গুণ হয়, তবে গ্রহপৃষ্ঠের ন্যূনতম তাপমাত্রা কত হতে হবে? ওই তাপমাত্রায় প্রতিটি নাইট্রোজেন অণুর গড় গতিশক্তি কত? [নাইট্রোজেনের আণবিক ভর $M = 28 \times 10^{-3}\text{ kg mol}^{-1}$]
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+A hypothetical planet has a radius of $6370\text{ km}$ and surface gravitational acceleration of $9.8\text{ m s}^{-2}$. If the root-mean-square (RMS) speed of Nitrogen ($\text{N}_2$) gas molecules on this planet equals $\frac{1}{\sqrt{2}}$ times its escape velocity, what must be the minimum surface temperature of the planet? What is the average kinetic energy per Nitrogen molecule at that temperature? [Molar mass of Nitrogen $M = 28 \times 10^{-3}\text{ kg mol}^{-1}$]
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 7
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. মুক্তিবেগ $v_e = \sqrt{2 g_p R_p}$ এবং RMS বেগ $c_{\text{rms}} = \sqrt{\frac{3 R T}{M}}$। \\
+২. শর্তানুসারে, $c_{\text{rms}} = \frac{1}{\sqrt{2}} v_e$:
+\[ \sqrt{\frac{3 R T}{M}} = \frac{1}{\sqrt{2}} \sqrt{2 g_p R_p} \implies \frac{3 R T}{M} = g_p R_p \]
+\[ T = \frac{M g_p R_p}{3 R} = \frac{28 \times 10^{-3} \times 9.8 \times (6370 \times 10^3)}{3 \times 8.314} \]
+\[ T = \frac{1748024}{24.942} \approx 70083.55\text{ K} \]
+৩. অণুর গড় গতিশক্তি ($E_k = \frac{3}{2} k T$):
+\[ E_k = \frac{3}{2} \times (1.38 \times 10^{-23}) \times 70083.55 \approx 1.45 \times 10^{-18}\text{ J} \]
+\end{tcolorbox}
+
+\vspace{1.5em}
+
+
+
+% ------------------------------------------
+% QUESTION SECTION 24 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 7}]
+\noindent
+কত তাপমাত্রায় এক-পারমাণবিক আদর্শ গ্যাসের একটি অণুর গড় স্থানান্তরণ গতিশক্তি $\lambda = 5000\text{ \AA}$ তরঙ্গদৈর্ঘ্যের একটি ফোটনের শক্তির সমান হবে? [দেওয়া আছে: বোল্টজম্যান ধ্রুবক $k = 1.38 \times 10^{-23}\text{ J K}^{-1}$, প্লাঙ্কের ধ্রুবক $h = 6.63 \times 10^{-34}\text{ J s}$, আলোর বেগ $c = 3 \times 10^8\text{ m s}^{-1}$]
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+At what temperature will the average translational kinetic energy of a monoatomic ideal gas molecule equal the energy of a photon with a wavelength of $\lambda = 5000\text{ \AA}$? [Given: Boltzmann constant $k = 1.38 \times 10^{-23}\text{ J K}^{-1}$, Planck's constant $h = 6.63 \times 10^{-34}\text{ J s}$, speed of light $c = 3 \times 10^8\text{ m s}^{-1}$]
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 24
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. গ্যাস অণুর গড় স্থানান্তরণ গতিশক্তি $E_k = \frac{3}{2} k T$। \\
+২. ফোটনের শক্তি $E_{\text{photon}} = \frac{h c}{\lambda}$ (এখানে $\lambda = 5000 \times 10^{-10}\text{ m}$)। \\
+৩. শর্তানুসারে:
+\[ \frac{3}{2} k T = \frac{h c}{\lambda} \implies T = \frac{2 h c}{3 k \lambda} \]
+\[ T = \frac{2 \times (6.63 \times 10^{-34}) \times (3 \times 10^8)}{3 \times (1.38 \times 10^{-23}) \times (5000 \times 10^{-10})} \]
+\[ T = \frac{3.978 \times 10^{-25}}{2.07 \times 10^{-29}} \approx 19217.39\text{ K} \]
+\end{tcolorbox}
+
+% ------------------------------------------
+% QUESTION SECTION 12 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 8}]
+\noindent
+$900\text{ m}^3$ আয়তনের এবং $200\text{ kg}$ কাঠামোগত ভরের একটি বেলুনকে $0.18\text{ kg m}^{-3}$ ঘনত্বের হিলিয়াম গ্যাস দ্বারা পূর্ণ করা হলো। চারপাশের বায়ুর ঘনত্ব $1.29\text{ kg m}^{-3}$। বেলুনটি সর্বাধিক কত ভরের অতিরিক্ত বোঝা (Payload) বহন করে সমুদ্রপৃষ্ঠ থেকে উপরে উঠতে পারবে?
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+A balloon with a volume of $900\text{ m}^3$ and a structural frame mass of $200\text{ kg}$ is filled with helium gas of density $0.18\text{ kg m}^{-3}$. The surrounding air density is $1.29\text{ kg m}^{-3}$. What is the maximum additional payload mass the balloon can lift from sea level?
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 12
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. বায়ুর প্লবতা বল (Upward Buoyant Force, $F_B$):
+\[ F_B = V \rho_{\text{air}} g = 900 \times 1.29 \times 9.8 = 11377.8\text{ N} \]
+২. হিলিয়াম গ্যাস ও কাঠামোর নিজস্ব মোট ওজন ($W_{\text{self}}$):
+\[ W_{\text{self}} = (m_{\text{frame}} + V \rho_{\text{He}}) g = (200 + 900 \times 0.18) \times 9.8 = (200 + 162) \times 9.8 = 3547.6\text{ N} \]
+৩. সাম্যাবস্থায় বহনযোগ্য অতিরিক্ত বোঝার সর্বোচ্চ ওজন ($W_{\text{payload}}$):
+\[ W_{\text{payload}} = F_B - W_{\text{self}} = 11377.8 - 3547.6 = 7830.2\text{ N} \]
+৪. অতিরিক্ত বোঝার সর্বোচ্চ ভর ($m_{\text{payload}}$):
+\[ m_{\text{payload}} = \frac{7830.2}{9.8} = 799\text{ kg} \]
+\end{tcolorbox}
+
+\vspace{1.5em}
+
+
+
+% ------------------------------------------
+% QUESTION SECTION 14 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 9}]
+\noindent
+$100\text{ cm}$ দীর্ঘ একটি বায়ুমাপক (Barometer) কাচনল পারদ পাত্রে উলম্বভাবে ডোবানো আছে। প্রমাণ বায়ুমণ্ডলীয় চাপে ($76\text{ cm Hg}$) কাচনলের ভেতরে আবদ্ধ বায়ুস্তম্ভের দৈর্ঘ্য $50\text{ cm}$। নলটিকে পারদ পাত্রে আরও গভীরে প্রবেশ করানোর ফলে আবদ্ধ বায়ুর দৈর্ঘ্য কমে $38\text{ cm}$ হলো। তাপমাত্রা স্থির থাকলে কাচনলের ভেতরের পারদ স্তম্ভের উচ্চতা পাত্রের পারদ তল থেকে কত সেমি ওপরে থাকবে?
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+A $100\text{ cm}$ long barometer glass tube is vertically inverted into a mercury trough. At standard atmospheric pressure ($76\text{ cm Hg}$), the trapped air column length inside the tube is $50\text{ cm}$. Upon pushing the tube deeper into the mercury, the trapped air column compresses to $38\text{ cm}$. Assuming constant temperature, how many cm above the external mercury level will the internal mercury column stand?
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 14
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. বয়েলের সূত্রানুসারে তাপমাত্রা স্থির থাকলে $P_1 V_1 = P_2 V_2 \implies P_1 L_1 = P_2 L_2$। \\
+২. প্রাথমিক চাপ $P_1 = 76\text{ cm Hg}$, প্রাথমিক দৈর্ঘ্য $L_1 = 50\text{ cm}$। \\
+৩. সংকুচিত অবস্থায় আবদ্ধ বায়ুর নতুন চাপ ($P_2$):
+\[ 76 \times 50 = P_2 \times 38 \implies P_2 = \frac{3800}{38} = 100\text{ cm Hg} \]
+৪. পারদ পাত্রের বাইরের চাপের সাথে অভ্যন্তরীণ বায়ুর চাপের সমতা:
+\[ P_2 = P_0 + h \implies 100 = 76 + h \implies h = 24\text{ cm Hg} \]
+অর্থাৎ, কাচনলের ভেতরে পারদ স্তর পাত্রের মুক্ত তল থেকে $24\text{ cm}$ উঁচুতে অবস্থান করবে।
+\end{tcolorbox}
+
+\vspace{1.5em}
+
+% ------------------------------------------
+% QUESTION SECTION 15 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 10}]
+\noindent
+$27^\circ\text{C}$ তাপমাত্রায় ও $1.013 \times 10^5\text{ Pa}$ চাপে একটি ঘনকীয় পাত্রে নাইট্রোজেন ($\text{N}_2$) গ্যাস আবদ্ধ আছে। ধরে নাও, সকল অণু মূল-গড়-বর্গ বেগে (RMS speed) চলাচল করছে। (i) পাত্রের প্রতি একক ক্ষেত্রফলে ($1\text{ m}^2$) পাত্রের দেয়ালের সাথে ধাক্কার কারণে প্রতি একক সেকেন্ডে কত সংখ্যক অণুর সংঘর্ষ ঘটে? [নাইট্রোজেনের আণবিক ভর $M = 28 \times 10^{-3}\text{ kg mol}^{-1}$]
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+Nitrogen ($\text{N}_2$) gas is contained in a cubic vessel at $27^\circ\text{C}$ and $1.013 \times 10^5\text{ Pa}$ pressure. Assume all molecules travel at the root-mean-square (RMS) speed. Determine (i) the number of molecular collisions per second occurring per unit area ($1\text{ m}^2$) of the container wall [Molar mass of Nitrogen $M = 28 \times 10^{-3}\text{ kg mol}^{-1}$].
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 15
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. নাইট্রোজেনের RMS বেগ ($c_{\text{rms}}$):
+\[ c_{\text{rms}} = \sqrt{\frac{3 R T}{M}} = \sqrt{\frac{3 \times 8.314 \times 300}{28 \times 10^{-3}}} \approx 516.95\text{ m s}^{-1} \]
+২. একটি অণুর ভর $m = \frac{28 \times 10^{-3}}{6.023 \times 10^{23}} \approx 4.649 \times 10^{-26}\text{ kg}$। \\
+৩. ত্রিমাত্রিক স্থানে দেয়ালে লম্বভাবে বেগের উপাংশ $c_x = \frac{c_{\text{rms}}}{\sqrt{3}} = \frac{516.95}{\sqrt{3}} \approx 298.46\text{ m s}^{-1}$। \\
+৪. প্রতি ধাক্কায় অণুর ভরবেগের পরিবর্তন:
+\[ \Delta p = 2 m c_x = 2 \times (4.649 \times 10^{-26}) \times 298.46 \approx 2.775 \times 10^{-23}\text{ kg m s}^{-1} \]
+৫. একক ক্ষেত্রফলে প্রযুক্ত বলই চাপ ($P = N_{\text{coll}} \times \Delta p$)। সুতরাং প্রতি সেকেন্ডে প্রতি বর্গমিটারে মোট সংঘর্ষের সংখ্যা ($N_{\text{coll}}$):
+\[ N_{\text{coll}} = \frac{P}{\Delta p} = \frac{1.013 \times 10^5}{2.775 \times 10^{-23}} \approx 3.65 \times 10^{27}\text{ m}^{-2}\text{ s}^{-1} \]
+\end{tcolorbox}
+\end{document}

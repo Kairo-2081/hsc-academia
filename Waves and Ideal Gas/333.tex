@@ -1,0 +1,402 @@
+\documentclass[12pt, a4paper]{article}
+
+% ==========================================
+% 1. COMPILER, LANGUAGE & FONT SETUP
+% ==========================================
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{bengali}
+\setotherlanguage{english}
+\newfontfamily\bengalifont[Script=Bengali, AutoFakeBold=2.5, AutoFakeSlant=0.2]{Kalpurush}
+
+% ==========================================
+% 2. MATHEMATICS, UNITS & FORMATTING
+% ==========================================
+\usepackage{amsmath, amssymb, siunitx}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{microtype} % For better typography
+\onehalfspacing % Better line spacing for readability
+
+% ==========================================
+% 3. COLORS & BEAUTIFICATION PACKAGES
+% ==========================================
+\usepackage[dvipsnames, table]{xcolor}
+\usepackage[skins, breakable, theorems]{tcolorbox}
+\usepackage{tikz}
+\renewcommand{\labelitemi}{$\bullet$}
+
+% Define custom beautiful colors
+\definecolor{primary}{HTML}{0056b3}
+\definecolor{secondary}{HTML}{e7f1ff}
+\definecolor{success}{HTML}{198754}
+\definecolor{successbg}{HTML}{d1e7dd}
+\definecolor{accent}{HTML}{fd7e14}
+\definecolor{darkgray}{HTML}{343a40}
+
+% Custom Tcolorbox Styles
+\tcbset{
+    questionbox/.style={
+        enhanced, colback=secondary, colframe=primary, arc=2mm, boxrule=1pt,
+        fonttitle=\bfseries\Large, title=#1,
+        drop fuzzy shadow=black!10,
+        attach boxed title to top left={xshift=5mm, yshift=-3mm},
+        boxed title style={colback=primary, arc=1mm}
+    },
+    answerbox/.style={
+        enhanced, colback=successbg, colframe=success, arc=1.5mm, boxrule=1pt,
+        left=2mm, right=2mm, top=2mm, bottom=2mm,
+        drop fuzzy shadow=black!10
+    },
+    solutionbox/.style={
+        enhanced, colback=white, colframe=darkgray, arc=2mm, boxrule=1pt,
+        fonttitle=\bfseries\large, title=#1, breakable,
+        coltitle=white, colbacktitle=darkgray,
+        drop fuzzy shadow=black!10,
+        attach boxed title to top center={yshift=-3mm},
+        boxed title style={arc=1mm}
+    }
+}
+
+\begin{document}
+
+\newpage
+% ------------------------------------------
+% QUESTION SECTION 8 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 1}]
+\noindent
+$0.01\text{ m}^3$ আয়তনের একটি দৃঢ় সিলিন্ডারে $300\text{ K}$ তাপমাত্রায় ও $2.5 \times 10^5\text{ Pa}$ চাপে অক্সিজেন গ্যাস সংরক্ষিত আছে। প্রসংগে কিছু গ্যাস বের করে দেওয়া হলো এবং অবশিষ্ট গ্যাসের তাপমাত্রা বৃদ্ধি পেয়ে $400\text{ K}$ হওয়ায় চাপ পরিবর্তিত হয়ে $1.3 \times 10^5\text{ Pa}$ হলো। (i) সিলিন্ডার থেকে কত ভর অক্সিজেন গ্যাস বের হয়ে গেছে? (ii) সিলিন্ডারে অবশিষ্ট গ্যাসের ঘনত্ব কত? [অক্সিজেনের আণবিক ভর $M = 32 \times 10^{-3}\text{ kg mol}^{-1}$]
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+Oxygen gas is stored in a rigid cylinder of volume $0.01\text{ m}^3$ at a temperature of $300\text{ K}$ and pressure of $2.5 \times 10^5\text{ Pa}$. Some gas is vented out, and the remaining gas temperature increases to $400\text{ K}$, resulting in a pressure of $1.3 \times 10^5\text{ Pa}$. Determine (i) the mass of oxygen gas vented out of the cylinder, and (ii) the density of the remaining gas inside the cylinder [Molar mass of oxygen $M = 32 \times 10^{-3}\text{ kg mol}^{-1}$]
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 8
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. প্রাথমিক অবস্থায় অক্সিজেনের ভর ($m_1 = \frac{P_1 V M}{R T_1}$):
+\[ m_1 = \frac{2.5 \times 10^5 \times 0.01 \times 32 \times 10^{-3}}{8.314 \times 300} = \frac{80}{2494.2} \approx 0.03207\text{ kg} = 32.07\text{ g} \]
+২. চূড়ান্ত অবস্থায় অক্সিজেনের ভর ($m_2 = \frac{P_2 V M}{R T_2}$):
+\[ m_2 = \frac{1.3 \times 10^5 \times 0.01 \times 32 \times 10^{-3}}{8.314 \times 400} = \frac{41.6}{3325.6} \approx 0.01251\text{ kg} = 12.51\text{ g} \]
+৩. অপসারিত অক্সিজেনের ভর ($\Delta m$):
+\[ \Delta m = m_1 - m_2 = 32.07 - 12.51 = 19.56\text{ g} \]
+৪. সিলিন্ডারে অবশিষ্ট অক্সিজেনের ঘনত্ব ($\rho_2$):
+\[ \rho_2 = \frac{m_2}{V} = \frac{0.01251\text{ kg}}{0.01\text{ m}^3} = 1.251\text{ kg m}^{-3} \]
+\end{tcolorbox}
+
+\vspace{1.5em}
+
+% ------------------------------------------
+% QUESTION SECTION 30 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 2}]
+\noindent
+একটি দৃঢ় আবদ্ধ পাত্রে $27^\circ\text{C}$ তাপমাত্রায় $2\text{ mol}$ হিলিয়াম ($\text{He}$), $3\text{ mol}$ অক্সিজেন ($\text{O}_2$), এবং $1\text{ mol}$ মিথেন ($\text{CH}_4$, অ-রৈখিক বহু-পারমাণবিক, $f=6$) গ্যাসের মিশ্রণ বিদ্যমান। (i) গ্যাস মিশ্রণটির মোট অভ্যন্তরীণ গতিশক্তি কত? (ii) এই মিশ্রণে অণুগুলোর মোট ঘূর্ণন গতিশক্তির মান কত?
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+A rigid closed vessel contains a mixture of $2\text{ mol}$ Helium ($\text{He}$), $3\text{ mol}$ Oxygen ($\text{O}_2$), and $1\text{ mol}$ Methane ($\text{CH}_4$, non-linear polyatomic, $f=6$) at $27^\circ\text{C}$. (i) What is the total internal kinetic energy of the gas mixture? (ii) Calculate the total rotational kinetic energy of the molecules in this mixture.
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 30
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. উপাদানসমূহের স্বাধীনতার মাত্রার বিভাজন ($T = 27 + 273 = 300\text{ K}$): \\
+- হিলিয়াম (এক-পারমাণবিক, $f_1 = 3$): স্থানান্তরণ = $3$, ঘূর্ণন = $0$। \\
+- অক্সিজেন (দ্বি-পারমাণবিক, $f_2 = 5$): স্থানান্তরণ = $3$, ঘূর্ণন = $2$। \\
+- মিথেন (অ-রৈখিক বহু-পারমাণবিক, $f_3 = 6$): স্থানান্তরণ = $3$, ঘূর্ণন = $3$। \\
+২. মোট অভ্যন্তরীণ গতিশক্তি ($E_{\text{total}} = \sum \frac{f_i}{2} n_i R T$):
+\[ E_{\text{total}} = \left[\frac{3}{2}(2) + \frac{5}{2}(3) + \frac{6}{2}(1)\right] R T = (3 + 7.5 + 3) \times 8.314 \times 300 \]
+\[ E_{\text{total}} = 13.5 \times 2494.2 = 33671.7\text{ J} \approx 33.67\text{ kJ} \]
+৩. মোট ঘূর্ণন গতিশক্তি ($E_{\text{rot}} = \sum \frac{f_{\text{rot}, i}}{2} n_i R T$):
+\[ E_{\text{rot}} = \left[\frac{0}{2}(2) + \frac{2}{2}(3) + \frac{3}{2}(1)\right] R T = (0 + 3 + 1.5) \times 8.314 \times 300 \]
+\[ E_{\text{rot}} = 4.5 \times 2494.2 = 11223.9\text{ J} \approx 11.22\text{ kJ} \]
+\end{tcolorbox}
+
+% ------------------------------------------
+% QUESTION SECTION 20 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 3}]
+\noindent
+একটি তাপনিরোধক পাত্রে $60^\circ\text{C}$ তাপমাত্রার $48\text{ g}$ অক্সিজেন ($\text{O}_2$, $f=5$) গ্যাস এবং $20^\circ\text{C}$ তাপমাত্রার $8\text{ g}$ হিলিয়াম ($\text{He}$, $f=3$) গ্যাস মিশানো হলো। তাপীয় সাম্যাবস্থায় পৌঁছালে মিশ্রণের সাম্য তাপমাত্রা কত হবে? [অক্সিজেনের $M_1 = 32\text{ g mol}^{-1}$, হিলিয়ামের $M_2 = 4\text{ g mol}^{-1}$]
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+In a thermally insulated container, $48\text{ g}$ of Oxygen ($\text{O}_2$, $f=5$) gas at $60^\circ\text{C}$ is mixed with $8\text{ g}$ of Helium ($\text{He}$, $f=3$) gas at $20^\circ\text{C}$. What will be the final equilibrium temperature of the mixture? [Molar mass of Oxygen $M_1 = 32\text{ g mol}^{-1}$, Helium $M_2 = 4\text{ g mol}^{-1}$]
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 20
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. মোল সংখ্যা নির্ণয়: \\
+- অক্সিজেনের মোল সংখ্যা $n_1 = \frac{48}{32} = 1.5\text{ mol}$, পরম তাপমাত্রা $T_1 = 60 + 273 = 333\text{ K}$। \\
+- হিলিয়ামের মোল সংখ্যা $n_2 = \frac{8}{4} = 2.0\text{ mol}$, পরম তাপমাত্রা $T_2 = 20 + 273 = 293\text{ K}$। \\
+২. মোট অভ্যন্তরীণ শক্তির সংরক্ষণশীলতা নীতি প্রয়োগ করে:
+\[ E_{\text{initial}} = E_{\text{final}} \]
+\[ \frac{f_1}{2} n_1 R T_1 + \frac{f_2}{2} n_2 R T_2 = \left(\frac{f_1}{2} n_1 + \frac{f_2}{2} n_2\right) R T_f \]
+\[ \frac{5}{2}(1.5)(333) + \frac{3}{2}(2.0)(293) = \left[\frac{5}{2}(1.5) + \frac{3}{2}(2.0)\right] T_f \]
+\[ 1248.75 + 879 = (3.75 + 3.0) T_f \implies 2127.75 = 6.75 T_f \]
+\[ T_f = \frac{2127.75}{6.75} \approx 315.22\text{ K} = 42.22^\circ\text{C} \]
+\end{tcolorbox}
+
+\vspace{1.5em}
+
+% ------------------------------------------
+% QUESTION SECTION 21 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 4}]
+\noindent
+একটি সরলরৈখিক ত্রি-পারমাণবিক গ্যাসের (যেমন $\text{CO}_2$, $\gamma = 1.40$) অণুসমূহের ক্ষেত্রে $27^\circ\text{C}$ তাপমাত্রায় (i) সর্বাধিক সম্ভাব্য বেগ ($c_p$), গড় বেগ ($c_{\text{avg}}$), এবং মূল-গড়-বর্গ বেগের ($c_{\text{rms}}$) অনুপাত নির্ণয় করো। (ii) যদি উক্ত তাপমাত্রায় গ্যাসটিতে অণুসমূহের মূল-গড়-বর্গ বেগ $380\text{ m s}^{-1}$ হয়, তবে গ্যাসে শব্দের বেগ নির্ণয় করো।
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+For a linear triatomic gas (such as $\text{CO}_2$, $\gamma = 1.40$) at $27^\circ\text{C}$, (i) calculate the ratio of the most probable speed ($c_p$), average speed ($c_{\text{avg}}$), and root-mean-square speed ($c_{\text{rms}}$). (ii) If the RMS speed of the molecules at this temperature is $380\text{ m s}^{-1}$, determine the speed of sound in this gas.
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 21
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. বেগত্রয়ের অনুপাতের সমীকরণ:
+\[ c_p : c_{\text{avg}} : c_{\text{rms}} = \sqrt{\frac{2RT}{M}} : \sqrt{\frac{8RT}{\pi M}} : \sqrt{\frac{3RT}{M}} = \sqrt{2} : \sqrt{\frac{8}{\pi}} : \sqrt{3} \]
+\[ c_p : c_{\text{avg}} : c_{\text{rms}} \approx 1.414 : 1.596 : 1.732 = 1 : 1.128 : 1.225 \]
+২. আদর্শ গ্যাসে শব্দের বেগ $v_s = \sqrt{\frac{\gamma R T}{M}}$ এবং RMS বেগ $c_{\text{rms}} = \sqrt{\frac{3 R T}{M}}$। \\
+৩. দুটি বেগের সম্পর্ক:
+\[ v_s = c_{\text{rms}} \sqrt{\frac{\gamma}{3}} \]
+৪. মান বসিয়ে পাই:
+\[ v_s = 380 \times \sqrt{\frac{1.40}{3}} = 380 \times \sqrt{0.4667} \approx 380 \times 0.6831 = 259.58\text{ m s}^{-1} \]
+\end{tcolorbox}
+% ------------------------------------------
+% QUESTION SECTION 19 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 5}]
+\noindent
+$\gamma = 1.4$ বিশিষ্ট একটি দ্বি-পারমাণবিক আদর্শ গ্যাসকে রুদ্ধতাপীয় উপায়ে সংকুচিত করে এর আয়তন প্রাথমিক আয়তনের অর্ধেক ($V_2 = \frac{V_1}{2}$) করা হলো। (i) গ্যাস অণুসমূহের প্রাথমিক ও চূড়ান্ত গড় মুক্ত পথের অনুপাত কত? (ii) অণুসমূহের প্রাথমিক ও চূড়ান্ত সংঘর্ষ কম্পাঙ্কের (Collision frequency) অনুপাত নির্ণয় করো।
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+A diatomic ideal gas with adiabatic index $\gamma = 1.4$ is compressed adiabatically such that its volume becomes half of its initial volume ($V_2 = \frac{V_1}{2}$). (i) What is the ratio of the initial to final mean free path of the gas molecules? (ii) Determine the ratio of the initial to final collision frequency of the molecules.
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 19
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. গড় মুক্ত পথের সমীকরণ $\lambda = \frac{1}{\sqrt{2} \pi \sigma^2 n} = \frac{V}{\sqrt{2} \pi \sigma^2 N}$। বন্ধ পাত্রে অণুর সংখ্যা $N$ স্থির থাকায় $\lambda \propto V$।
+\[ \frac{\lambda_1}{\lambda_2} = \frac{V_1}{V_2} = \frac{V_1}{0.5 V_1} = 2 : 1 \]
+২. রুদ্ধতাপীয় প্রক্রিয়ায় $T V^{\gamma-1} = \text{constant}$:
+\[ \frac{T_2}{T_1} = \left(\frac{V_1}{V_2}\right)^{\gamma-1} = (2)^{1.4 - 1} = 2^{0.4} \approx 1.3195 \]
+৩. অণুর RMS বেগ $c_{\text{rms}} \propto \sqrt{T}$:
+\[ \frac{c_{\text{rms2}}}{c_{\text{rms1}}} = \sqrt{\frac{T_2}{T_1}} = \sqrt{1.3195} \approx 1.1487 \]
+৪. সংঘর্ষ কম্পাঙ্ক $f_c = \frac{c_{\text{rms}}}{\lambda}$:
+\[ \frac{f_{c1}}{f_{c2}} = \left(\frac{c_{\text{rms1}}}{c_{\text{rms2}}}\right) \times \left(\frac{\lambda_2}{\lambda_1}\right) = \left(\frac{1}{1.1487}\right) \times \left(\frac{1}{2}\right) \approx 0.435 : 1 \]
+অর্থাৎ, চূড়ান্ত ও প্রাথমিক সংঘর্ষ কম্পাঙ্কের অনুপাত $f_{c2} : f_{c1} \approx 2.297 : 1$।
+\end{tcolorbox}
+% ------------------------------------------
+% QUESTION SECTION 32 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 6}]
+\noindent
+একটি ক্রুটিপূর্ণ বায়ুমাপকের (Barometer) কাচনলের মোট দৈর্ঘ্য পারদের মুক্ত তল থেকে $100\text{ cm}$। $27^\circ\text{C}$ তাপমাত্রায় এবং প্রকৃত বায়ুমণ্ডলীয় চাপ $76\text{ cm Hg}$ থাকা অবস্থায় নলে আটকা পড়া বায়ুর জন্য পারদ স্তম্ভের পাঠ পাওয়া যায় $70\text{ cm Hg}$। যদি ঘরের তাপমাত্রা বেড়ে $47^\circ\text{C}$ হয় এবং বায়ুমাপকের পারদ স্তম্ভের পাঠ কমে $68\text{ cm Hg}$ হয়, তবে নতুন বায়ুমণ্ডলীয় চাপ কত?
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+The total length of a faulty barometer tube above the mercury trough is $100\text{ cm}$. At $27^\circ\text{C}$ and actual atmospheric pressure of $76\text{ cm Hg}$, the mercury column inside reads $70\text{ cm Hg}$ due to trapped air. If the room temperature increases to $47^\circ\text{C}$ and the mercury column reading drops to $68\text{ cm Hg}$, what is the new actual atmospheric pressure?
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 32
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. প্রথম ক্ষেত্রে ($T_1 = 27 + 273 = 300\text{ K}$): \\
+- পারদ স্তম্ভের উচ্চতা $h_1 = 70\text{ cm Hg}$। \\
+- আবদ্ধ বায়ুস্তম্ভের দৈর্ঘ্য $L_1 = 100 - 70 = 30\text{ cm}$। \\
+- আবদ্ধ বায়ুর চাপ $P_1 = P_{\text{atm1}} - h_1 = 76 - 70 = 6\text{ cm Hg}$। \\
+২. দ্বিতীয় ক্ষেত্রে ($T_2 = 47 + 273 = 320\text{ K}$): \\
+- পারদ স্তম্ভের নতুন উচ্চতা $h_2 = 68\text{ cm Hg}$। \\
+- আবদ্ধ বায়ুর নতুন দৈর্ঘ্য $L_2 = 100 - 68 = 32\text{ cm}$। \\
+- ধরি, নতুন বায়ুমণ্ডলীয় চাপ $= P_{\text{atm2}}$। \\
+- আবদ্ধ বায়ুর নতুন চাপ $P_2 = P_{\text{atm2}} - h_2 = P_{\text{atm2}} - 68$। \\
+৩. আদর্শ গ্যাস সমীকরণ প্রয়োগ করে ($\frac{P_1 L_1}{T_1} = \frac{P_2 L_2}{T_2}$):
+\[ \frac{6 \times 30}{300} = \frac{(P_{\text{atm2}} - 68) \times 32}{320} \]
+\[ 0.6 = (P_{\text{atm2}} - 68) \times 0.1 \implies P_{\text{atm2}} - 68 = 6 \]
+\[ P_{\text{atm2}} = 68 + 6 = 74\text{ cm Hg} \]
+\end{tcolorbox}
+
+\vspace{1.5em}
+
+% ------------------------------------------
+% QUESTION SECTION 33 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 7}]
+\noindent
+প্রমাণ তাপমাত্রা ও চাপে (STP) নাইট্রোজেন গ্যাসের অণুসমূহের কার্যকর ব্যাস $2.0 \times 10^{-10}\text{ m}$ এবং গড় মুক্ত পথ $8.0 \times 10^{-8}\text{ m}$। গ্যাসটিকে স্থির আয়তনে রেখে উত্তপ্ত করার ফলে এর চাপ প্রাথমিক চাপের ৪ গুণ ($P_2 = 4 P_1$) হলো। (i) নতুন অবস্থায় অণুসমূহের গড় মুক্ত পথ কত হবে? (ii) নতুন সংঘর্ষ কম্পাঙ্কের সাথে প্রাথমিক সংঘর্ষ কম্পাঙ্কের অনুপাত নির্ণয় করো।
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+At STP, the effective diameter of Nitrogen gas molecules is $2.0 \times 10^{-10}\text{ m}$ and their mean free path is $8.0 \times 10^{-8}\text{ m}$. The gas is heated at constant volume until its pressure quadruples ($P_2 = 4 P_1$). (i) What will be the new mean free path of the molecules? (ii) Calculate the ratio of the new collision frequency to the initial collision frequency.
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em>
+
+% ------------------------------------------
+% SOLUTION SECTION 33
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. ম্যাক্সওয়েলের গড় মুক্ত পথের সমীকরণ: $\lambda = \frac{1}{\sqrt{2}\pi \sigma^2 n} = \frac{V}{\sqrt{2}\pi \sigma^2 N}$। স্থির আয়তন ($V = \text{constant}$) এবং নির্দিষ্ট ভরের গ্যাসের ক্ষেত্রে একক আয়তনে অণুর সংখ্যা $n = N/V$ স্থির থাকে। অতএব, গড় মুক্ত পথ চাপের ওপর নির্ভর করে না:
+\[ \lambda_2 = \lambda_1 = 8.0 \times 10^{-8}\text{ m} \]
+২. গ্যালুস্যাকের চাপ সূত্রানুসারে স্থির আয়তনে $P \propto T$। চাপ ৪ গুণ হলে পরম তাপমাত্রা ৪ গুণ হয় ($T_2 = 4 T_1$)। \\
+৩. অণুর RMS বেগ $c_{\text{rms}} \propto \sqrt{T}$:
+\[ \frac{c_{\text{rms2}}}{c_{\text{rms1}}} = \sqrt{\frac{T_2}{T_1}} = \sqrt{4} = 2 \]
+৪. সংঘর্ষ কম্পাঙ্ক $f_c = \frac{c_{\text{rms}}}{\lambda}$:
+\[ \frac{f_{c2}}{f_{c1}} = \left(\frac{c_{\text{rms2}}}{c_{\text{rms1}}}\right) \times \left(\frac{\lambda_1}{\lambda_2}\right) = 2 \times 1 = 2 : 1 \]
+\end{tcolorbox}
+
+\vspace{1.5em}
+
+% ------------------------------------------
+% QUESTION SECTION 34 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 8}]
+\noindent
+$T_1$ তাপমাত্রায় অক্সিজেন ($\text{O}_2$) গ্যাসের অণুসমূহের মূল-গড়-বর্গ বেগ (RMS speed) $27^\circ\text{C}$ তাপমাত্রায় হাইড্রোজেন ($\text{H}_2$) গ্যাসের অণুসমূহের সর্বাধিক সম্ভাব্য বেগের (Most probable speed, $c_p$) সমান। (i) অক্সিজেনের তাপমাত্রা $T_1$ নির্ণয় করো। (ii) $T_1$ তাপমাত্রায় অক্সিজেনের গড় বেগ এবং $27^\circ\text{C}$-এ হাইড্রোজেনের গড় বেগের অনুপাত কত? [অক্সিজেনের $M_1 = 32\text{ g mol}^{-1}$, হাইড্রোজেনের $M_2 = 2\text{ g mol}^{-1}$]
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+The root-mean-square (RMS) speed of Oxygen ($\text{O}_2$) molecules at temperature $T_1$ equals the most probable speed ($c_p$) of Hydrogen ($\text{H}_2$) molecules at $27^\circ\text{C}$. (i) Calculate the temperature $T_1$ of Oxygen. (ii) What is the ratio of the average speed of Oxygen at $T_1$ to that of Hydrogen at $27^\circ\text{C}$? [Molar mass of Oxygen $M_1 = 32\text{ g mol}^{-1}$, Hydrogen $M_2 = 2\text{ g mol}^{-1}$]
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 34
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. হাইড্রোজেনের পরম তাপমাত্রা $T_2 = 27 + 273 = 300\text{ K}$। \\
+২. শর্তানুসারে, $c_{\text{rms}}(\text{O}_2, T_1) = c_p(\text{H}_2, T_2)$:
+\[ \sqrt{\frac{3 R T_1}{M_1}} = \sqrt{\frac{2 R T_2}{M_2}} \]
+বর্গ করে মান বসিয়ে:
+\[ \frac{3 T_1}{32 \times 10^{-3}} = \frac{2 \times 300}{2 \times 10^{-3}} \implies \frac{3 T_1}{32} = 300 \]
+\[ 3 T_1 = 9600 \implies T_1 = 3200\text{ K} = 2927^\circ\text{C} \]
+৩. গড় বেগ $c_{\text{avg}} = \sqrt{\frac{8 R T}{\pi M}} \propto \sqrt{\frac{T}{M}}$:
+\[ \frac{c_{\text{avg}}(\text{O}_2)}{c_{\text{avg}}(\text{H}_2)} = \sqrt{\frac{T_1 / M_1}{T_2 / M_2}} = \sqrt{\frac{3200 / 32}{300 / 2}} = \sqrt{\frac{100}{150}} = \sqrt{\frac{2}{3}} \approx 0.8165 \]
+\end{tcolorbox}
+
+\vspace{1.5em}
+
+% ------------------------------------------
+% QUESTION SECTION 35 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 9}]
+\noindent
+একটি $2.0\text{ L}$ আয়তনের বন্ধ পাত্রে $300\text{ K}$ তাপমাত্রায় $1.0\text{ mol}$ সালফার ট্রাইঅক্সাইড ($\text{SO}_3$) গ্যাস আবদ্ধ আছে। পাত্রটিকে উত্তপ্ত করে তাপমাত্রা $600\text{ K}$ করা হলে $50\%$ $\text{SO}_3$ গ্যাস বিয়োজিত হয়ে সালফার ডাইঅক্সাইড ($\text{SO}_2$) ও অক্সিজেন ($\text{O}_2$) গ্যাসে পরিণত হয় ($2\text{SO}_3 \to 2\text{SO}_2 + \text{O}_2$)। (i) পাত্রের চূড়ান্ত অভ্যন্তরীণ চাপ কত হবে? (ii) $600\text{ K}$ তাপমাত্রায় ব্যবস্থার মোট অভ্যন্তরীণ শক্তি কত? [$\text{SO}_3$ ও $\text{SO}_2$ অ-রৈখিক বহু-পারমাণবিক ($f=6$) এবং $\text{O}_2$ দ্বি-পারমাণবিক ($f=5$)]
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+A rigid container of volume $2.0\text{ L}$ contains $1.0\text{ mol}$ of $\text{SO}_3$ gas at $300\text{ K}$. When heated to $600\text{ K}$, $50\%$ of the $\text{SO}_3$ gas dissociates into $\text{SO}_2$ and $\text{O}_2$ ($2\text{SO}_3 \to 2\text{SO}_2 + \text{O}_2$). Calculate (i) the final internal pressure of the vessel, and (ii) the total internal energy of the system at $600\text{ K}$. [Assume $\text{SO}_3$ and $\text{SO}_2$ are non-linear polyatomic ($f=6$) and $\text{O}_2$ is diatomic ($f=5$)]
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 35
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. বিয়োজনের পর মোলার হিসাব: \\
+- প্রাথমিক $\text{SO}_3 = 1.0\text{ mol}$। \\
+- বিয়োজিত $\text{SO}_3 = 0.50 \times 1.0 = 0.50\text{ mol}$। \\
+- অবশিষ্ট $\text{SO}_3 = 0.50\text{ mol}$। \\
+- সৃষ্ট $\text{SO}_2 = 0.50\text{ mol}$। \\
+- সৃষ্ট $\text{O}_2 = \frac{1}{2} \times 0.50 = 0.25\text{ mol}$। \\
+- মোট মোল সংখ্যা $n_{\text{total}} = 0.50 + 0.50 + 0.25 = 1.25\text{ mol}$। \\
+২. পাত্রের চূড়ান্ত চাপ ($V = 2 \times 10^{-3}\text{ m}^3$, $T = 600\text{ K}$):
+\[ P_f = \frac{n_{\text{total}} R T}{V} = \frac{1.25 \times 8.314 \times 600}{2 \times 10^{-3}} = 3.11775 \times 10^6\text{ Pa} \approx 30.77\text{ atm} \]
+৩. $600\text{ K}$-এ মোট অভ্যন্তরীণ শক্তি ($E = \sum \frac{f_i}{2} n_i R T$):
+\[ E = \left[\frac{6}{2}(0.50) + \frac{6}{2}(0.50) + \frac{5}{2}(0.25)\right] R T = (1.5 + 1.5 + 0.625) \times 8.314 \times 600 \]
+\[ E = 3.625 \times 4988.4 = 18082.95\text{ J} \approx 18.08\text{ kJ} \]
+\end{tcolorbox}
+% ------------------------------------------
+% QUESTION SECTION 54 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 10}]
+\noindent
+(i) গ্যাসের গড় মুক্ত পথের ক্ষেত্রে ম্যাক্সওয়েল ও ক্লসিয়াসের সূত্রের পূর্বাভিপ্রেত গড় মুক্ত পথের মানদ্বয়ের শতকরা পার্থক্য কত? (ii) STP-তে অক্সিজেন গ্যাসের অণুর ব্যাস $\sigma = 3.0 \times 10^{-10}\text{ m}$ এবং অণু সংখ্যা ঘনত্ব $n = 2.687 \times 10^{25}\text{ m}^{-3}$ হলে, ম্যাক্সওয়েলের সূত্রানুসারে গড় মুক্ত পথ এবং অণুর RMS বেগ $461\text{ m s}^{-1}$ ধরে প্রতি সেকেন্ডে সংঘর্ষের সংখ্যা নির্ণয় করো।
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+(i) What is the percentage difference between the mean free path predictions of Maxwell's and Clausius' formulas? (ii) For Oxygen gas at STP with molecular diameter $\sigma = 3.0 \times 10^{-10}\text{ m}$ and number density $n = 2.687 \times 10^{25}\text{ m}^{-3}$, calculate Maxwell's mean free path and the collision rate per second assuming an RMS speed of $461\text{ m s}^{-1}$.
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 54
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. দুই সূত্রের গড় মুক্ত পথের অনুপাত ($\lambda_M = \frac{1}{\sqrt{2}\pi \sigma^2 n}$ এবং $\lambda_C = \frac{3}{4\pi \sigma^2 n}$): \\
+\[ \frac{\lambda_M}{\lambda_C} = \frac{1/\sqrt{2}}{3/4} = \frac{4}{3\sqrt{2}} = \frac{2\sqrt{2}}{3} \approx \frac{2.8284}{3} \approx 0.9428 \]
+\[ \text{শতকরা পার্থক্য} = (1 - 0.9428) \times 100\% \approx 5.72\% \]
+২. ম্যাক্সওয়েলের সূত্রানুসারে গড় মুক্ত পথ ($\lambda_M$): \\
+\[ \lambda_M = \frac{1}{\sqrt{2} \pi (3.0 \times 10^{-10})^2 (2.687 \times 10^{25})} = \frac{1}{1.0744 \times 10^7} \approx 9.308 \times 10^{-8}\text{ m} = 93.08\text{ nm} \]
+৩. প্রতি সেকেন্ডে সংঘর্ষ সংখ্যা (সংঘর্ষ কম্পাঙ্ক, $f_c$): \\
+\[ f_c = \frac{c_{\text{rms}}}{\lambda_M} = \frac{461}{9.308 \times 10^{-8}} \approx 4.953 \times 10^9\text{ s}^{-1} \]
+\end{tcolorbox}
+\end{document}

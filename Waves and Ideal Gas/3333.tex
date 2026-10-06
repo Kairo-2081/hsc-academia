@@ -1,0 +1,566 @@
+\documentclass[12pt, a4paper]{article}
+
+% ==========================================
+% 1. COMPILER, LANGUAGE & FONT SETUP
+% ==========================================
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{bengali}
+\setotherlanguage{english}
+\newfontfamily\bengalifont[Script=Bengali, AutoFakeBold=2.5, AutoFakeSlant=0.2]{Kalpurush}
+
+% ==========================================
+% 2. MATHEMATICS, UNITS & FORMATTING
+% ==========================================
+\usepackage{amsmath, amssymb, siunitx}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{microtype} % For better typography
+\onehalfspacing % Better line spacing for readability
+
+% ==========================================
+% 3. COLORS & BEAUTIFICATION PACKAGES
+% ==========================================
+\usepackage[dvipsnames, table]{xcolor}
+\usepackage[skins, breakable, theorems]{tcolorbox}
+\usepackage{tikz}
+\renewcommand{\labelitemi}{$\bullet$}
+
+% Define custom beautiful colors
+\definecolor{primary}{HTML}{0056b3}
+\definecolor{secondary}{HTML}{e7f1ff}
+\definecolor{success}{HTML}{198754}
+\definecolor{successbg}{HTML}{d1e7dd}
+\definecolor{accent}{HTML}{fd7e14}
+\definecolor{darkgray}{HTML}{343a40}
+
+% Custom Tcolorbox Styles
+\tcbset{
+    questionbox/.style={
+        enhanced, colback=secondary, colframe=primary, arc=2mm, boxrule=1pt,
+        fonttitle=\bfseries\Large, title=#1,
+        drop fuzzy shadow=black!10,
+        attach boxed title to top left={xshift=5mm, yshift=-3mm},
+        boxed title style={colback=primary, arc=1mm}
+    },
+    answerbox/.style={
+        enhanced, colback=successbg, colframe=success, arc=1.5mm, boxrule=1pt,
+        left=2mm, right=2mm, top=2mm, bottom=2mm,
+        drop fuzzy shadow=black!10
+    },
+    solutionbox/.style={
+        enhanced, colback=white, colframe=darkgray, arc=2mm, boxrule=1pt,
+        fonttitle=\bfseries\large, title=#1, breakable,
+        coltitle=white, colbacktitle=darkgray,
+        drop fuzzy shadow=black!10,
+        attach boxed title to top center={yshift=-3mm},
+        boxed title style={arc=1mm}
+    }
+}
+
+\begin{document}
+
+\newpage
+% ------------------------------------------
+% QUESTION SECTION 20 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 1}]
+\noindent
+একটি সোনোমিটারের তার $350\text{ Hz}$ কম্পাঙ্কের একটি টিউনিং ফর্কের সাথে ঐকতানে (Resonance) কাঁপছে। তারের টান অপরিবর্তিত রেখে তারের দৈর্ঘ্য $1.5\%$ বৃদ্ধি করা হলে, সোনোমিটারের তার ও টিউনিং ফর্কটি একত্রে বাজালে প্রতি সেকেন্ডে কতটি বিট শোনা যাবে?
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+A sonometer wire is in resonance with a tuning fork of frequency $350\text{ Hz}$. Keeping the tension constant, if the length of the sonometer wire is increased by $1.5\%$, how many beats per second will be heard when the sonometer wire and tuning fork are sounded together?
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 20
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+টান ও রৈখিক ভর ঘনত্ব ধ্রুবক থাকলে, $f \propto \frac{1}{l} \implies f_1 l_1 = f_2 l_2$। প্রাথমিক কম্পাঙ্ক, $f_1 = 350\text{ Hz}$। নতুন দৈর্ঘ্য, $l_2 = l_1 + 0.015 l_1 = 1.015 l_1$। \\
+তারের নতুন কম্পাঙ্ক ($f_2$):
+\[ f_2 = f_1 \times \frac{l_1}{l_2} = 350 \times \frac{l_1}{1.015 l_1} = \frac{350}{1.015} \approx 344.83\text{ Hz} \]
+বিট সংখ্যা:
+\[ N = |f_1 - f_2| = |350 - 344.83| = 5.17 \approx 5\text{ টি/সেকেন্ড} \]
+অতএব, প্রতি সেকেন্ডে ৫টি বিট শোনা যাবে।
+\end{tcolorbox}
+
+\vspace{1.5em}
+
+% ------------------------------------------
+% QUESTION SECTION 43 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 2}]
+\noindent
+একটি নলের দৈর্ঘ্য $100\text{ cm}$। নলটিতে পানি পূর্ণ করে নিচে একটি কল দিয়ে পানি প্রতি সেকেন্ডে $0.5\text{ cm}$ হারে কমানো হচ্ছে। উপরে $512\text{ Hz}$ কম্পাঙ্কের সুরশলাকা ধরে কাঁপানো হচ্ছে। ২য় অনুনাদটি তৈরি হতে ১ম অনুনাদের পর কত সময় লাগবে? (বায়ুতে শব্দের বেগ $330\text{ m s}^{-1}$)
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+A tube of length $100\text{ cm}$ is filled with water and drained from the bottom at a rate of $0.5\text{ cm s}^{-1}$. A tuning fork of frequency $512\text{ Hz}$ is vibrated at the open top. How much time elapses between the occurrence of the 1st resonance and the 2nd resonance? (Speed of sound in air is $330\text{ m s}^{-1}$)
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 43
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. ১ম ও ২য় অনুনাদের বায়ুখণ্ডের দৈর্ঘ্য নির্ণয়: \\
+তরঙ্গদৈর্ঘ্য, $\lambda = \frac{v}{f} = \frac{330}{512} = 0.6445\text{ m} = 64.45\text{ cm}$ \\
+- ১ম অনুনাদের দৈর্ঘ্য, $L_1 = \frac{\lambda}{4} = \frac{64.45}{4} = 16.11\text{ cm}$ \\
+- ২য় অনুনাদের দৈর্ঘ্য, $L_2 = \frac{3\lambda}{4} = 3 \times 16.11 = 48.34\text{ cm}$
+
+\noindent
+২. প্রয়োজনীয় সময় ($\Delta t$) নির্ণয়: \\
+পানি তলের অতিক্রান্ত দূরত্ব: $\Delta L = L_2 - L_1 = 48.34 - 16.11 = 32.23\text{ cm}$ \\
+পানি কমার হার, $r = 0.5\text{ cm s}^{-1}$
+\[ \Delta t = \frac{\Delta L}{r} = \frac{32.23\text{ cm}}{0.5\text{ cm s}^{-1}} = 64.46\text{ s} \]
+
+\vspace{0.5em}
+\noindent
+অতএব, ১ম ও ২য় অনুনাদের মধ্যবর্তী সময় ব্যবধান হবে $64.46\text{ s}$।
+\end{tcolorbox}
+
+\vspace{1.5em}
+
+% ------------------------------------------
+% QUESTION SECTION 44 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 3}]
+\noindent
+$20$ টি সুরশলাকাকে তাদের কম্পাঙ্কের নিম্নক্রম অনুসারে সাজানো হয়েছে। প্রতিটি শলাকা তার পূর্ববর্তী শলাকার সাথে প্রতি সেকেন্ডে $4$ টি বিট দেয়। শেষ শলাকাটির কম্পাঙ্ক ১ম শলাকাটির কম্পাঙ্কের অর্ধেক (১ম শলাকা শেষটির অষ্টক) হলে ১ম, ১০ম এবং শেষ শলাকাটির কম্পাঙ্ক নির্ণয় করো।
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+$20$ tuning forks are arranged in descending order of frequency. Each fork produces $4$ beats per second with the preceding one. If the frequency of the last fork is half that of the first, calculate the frequencies of the 1st, 10th, and last tuning forks.
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 44
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. সমীকরণ গঠন: \\
+ধরি, ১ম সুরশলাকার কম্পাঙ্ক = $f_1$। কম্পাঙ্কের নিম্নক্রমে সাধারণ অন্তর, $d = 4\text{ Hz}$। \\
+$n$-তম শলাকার কম্পাঙ্ক: $f_n = f_1 - (n - 1) d$ \\
+২০তম শলাকার কম্পাঙ্ক:
+\[ f_{20} = f_1 - 4(20 - 1) = f_1 - 76 \]
+
+\noindent
+২. ১ম শলাকার কম্পাঙ্ক ($f_1$) নির্ণয়: \\
+প্রশ্নমতে, $f_{20} = \frac{1}{2} f_1$:
+\[ \frac{1}{2} f_1 = f_1 - 76 \implies \frac{1}{2} f_1 = 76 \implies f_1 = 152\text{ Hz} \]
+
+\noindent
+৩. অন্যান্য শলাকার কম্পাঙ্ক: \\
+- ১ম শলাকা ($f_1$): $152\text{ Hz}$ \\
+- ১০ম শলাকা ($f_{10}$): $f_{10} = 152 - 4(10 - 1) = 152 - 36 = 116\text{ Hz}$ \\
+- ২০তম শলাকা ($f_{20}$): $f_{20} = \frac{152}{2} = 76\text{ Hz}$
+
+\vspace{0.5em}
+\noindent
+অতএব, ১ম, ১০ম এবং শেষ শলাকাটির কম্পাঙ্ক যথাক্রমে $152\text{ Hz}$, $116\text{ Hz}$ এবং $76\text{ Hz}$।
+\end{tcolorbox}
+
+\vspace{1.5em}
+
+% ------------------------------------------
+% QUESTION SECTION 45 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 4}]
+\noindent
+দুটি অগ্রগামী শব্দ তরঙ্গ একই মাধ্যমে বিপরীত দিকে পরিচালিত হয়ে লব্ধি স্থির তরঙ্গ গঠন করল: $y = 10 \cos(0.05\pi x) \sin(100\pi t)$ (সকল একক SI)। (ক) স্থির তরঙ্গ গঠনকারী প্রতিটি তরঙ্গের বিস্তার, বেগ ও তরঙ্গদৈর্ঘ্য কত? (খ) $x = 10\text{ m}$ এবং $x = 20\text{ m}$ বিন্দু দুটি কিসের অবস্থান (সুস্পন্দ না নিস্পন্দ বিন্দু) গাণিতিকভাবে তা প্রমাণ করো।
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+Two progressive sound waves traveling in opposite directions in the same medium form a standing wave: $y = 10 \cos(0.05\pi x) \sin(100\pi t)$ (all SI units). (a) What are the amplitude, velocity, and wavelength of each component wave? (b) Mathematically prove whether the points $x = 10\text{ m}$ and $x = 20\text{ m}$ are nodes or antinodes.
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 45
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. উপাদান তরঙ্গের বৈশিষ্ট্য নির্ণয়: \\
+প্রদত্ত সমীকরণকে স্থির তরঙ্গের আদর্শ সমীকরণ $y = 2A \cos(kx) \sin(\omega t)$-এর সাথে তুলনা করে পাই:
+\[ A = \frac{10}{2} = 5\text{ m} \]
+\[ k = 0.05\pi \implies \frac{2\pi}{\lambda} = 0.05\pi \implies \lambda = \frac{2}{0.05} = 40\text{ m} \]
+\[ \omega = 100\pi \implies 2\pi f = 100\pi \implies f = 50\text{ Hz} \]
+তরঙ্গের বেগ:
+\[ v = f \times \lambda = 50 \times 40 = 2000\text{ m s}^{-1} \]
+
+\noindent
+২. বিন্দুর ধরণ (Node / Antinode) প্রমাণ: \\
+- $x = 10\text{ m}$ অবস্থানে: \\
+বিস্তার রাশি, $A(10) = |10 \cos(0.05\pi \times 10)| = |10 \cos(0.5\pi)| = |10 \cos 90^\circ| = 0$। \\
+যেহেতু বিস্তার শূন্য, তাই $x = 10\text{ m}$ একটি **নিস্পন্দ বিন্দু (Node)**।
+
+\vspace{0.3em}
+\noindent
+- $x = 20\text{ m}$ অবস্থানে: \\
+বিস্তার রাশি, $A(20) = |10 \cos(0.05\pi \times 20)| = |10 \cos(\pi)| = |10 \times (-1)| = 10\text{ m}$ (সর্বোচ্চ)। \\
+যেহেতু বিস্তার সর্বোচ্চ, তাই $x = 20\text{ m}$ একটি **সুস্পন্দ বিন্দু (Antinode)**।
+\end{tcolorbox}
+% ------------------------------------------
+% QUESTION SECTION 9 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 5}]
+\noindent
+$30$ টি সুরশলাকা ক্রমবর্ধমান কম্পাঙ্কে পর পর সাজানো আছে। যেকোনো সুরশলাকা তার পরবর্তী শলাকার সাথে প্রতি সেকেন্ডে $5$ টি বিট উৎপন্ন করে। শেষ সুরশলাকাটির কম্পাঙ্ক প্রথম শলাকাটির কম্পাঙ্কের অষ্টক (Octave) হলে, ১ম, ২০তম এবং ৩০তম সুরশলাকার কম্পাঙ্ক নির্ণয় করো।
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+$30$ tuning forks are arranged in order of increasing frequencies. Any tuning fork produces $5$ beats per second with the next one. If the frequency of the last tuning fork is an octave of the first, calculate the frequencies of the 1st, 20th, and 30th tuning forks.
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 9
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. বীজগাণিতিক সমীকরণ গঠন: ধরি, ১ম সুরশলাকার কম্পাঙ্ক = $f_1$। সাধারণ অন্তর (প্রতি দুটি শলাকার বিট সংখ্যা), $d = 5\text{ Hz}$। \\
+সমান্তর প্রগমন অনুযায়ী, $n$-তম শলাকার কম্পাঙ্ক:
+\[ f_n = f_1 + (n - 1)d \]
+৩০-তম শলাকার কম্পাঙ্ক:
+\[ f_{30} = f_1 + (30 - 1) \times 5 = f_1 + 145 \]
+২. শর্তানুসারে মূল কম্পাঙ্ক নির্ণয়: প্রশ্নমতে, ৩০-তম শলাকার কম্পাঙ্ক ১ম শলাকার অষ্টক (দ্বিগুণ), অর্থাৎ $f_{30} = 2 f_1$।
+\[ 2 f_1 = f_1 + 145 \implies f_1 = 145\text{ Hz} \]
+৩. অন্যান্য শলাকার কম্পাঙ্ক নির্ণয়: \\
+- ১ম শলাকা ($f_1$): $145\text{ Hz}$ \\
+- ২০তম শলাকা ($f_{20}$):
+\[ f_{20} = f_1 + (20 - 1) \times 5 = 145 + 19 \times 5 = 145 + 95 = 240\text{ Hz} \]
+- ৩০তম শলাকা ($f_{30}$):
+\[ f_{30} = 2 \times 145 = 290\text{ Hz} \]
+অতএব, ১ম, ২০তম এবং ৩০তম সুরশলাকার কম্পাঙ্ক যথাক্রমে $145\text{ Hz}$, $240\text{ Hz}$ এবং $290\text{ Hz}$।
+\end{tcolorbox}
+
+\vspace{1.5em}
+
+% ------------------------------------------
+% QUESTION SECTION 19 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 6}]
+\noindent
+আড় কম্পনে কম্পনরত দুটি তারের দৈর্ঘ্যের অনুপাত $2:3$, ব্যাসের অনুপাত $6:5$, উপাদানের ঘনত্বের অনুপাত $5:3$ এবং তার দুটিতে প্রযুক্ত টানের অনুপাত $6:10$। তার দুটির মূলসুরের কম্পাঙ্কের অনুপাত ($f_1 : f_2$) নির্ণয় করো।
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+Two vibrating stretched wires under transverse vibration have a length ratio of $2:3$, diameter ratio of $6:5$, density ratio of $5:3$, and tension ratio of $6:10$. Calculate the ratio of their fundamental frequencies ($f_1 : f_2$).
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 19
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+টানা তারের আড় কম্পনের সূত্র:
+\[ f = \frac{1}{2l}\sqrt{\frac{T}{\mu}} = \frac{1}{2l}\sqrt{\frac{T}{\rho A}} = \frac{1}{2l}\sqrt{\frac{T}{\rho \cdot \pi (d/2)^2}} = \frac{1}{\pi d l}\sqrt{\frac{T}{\rho}} \]
+সূত্রানুসারে: $f \propto \frac{1}{d l}\sqrt{\frac{T}{\rho}}$। অতএব, অনুপাতের সমীকরণ:
+\[ \frac{f_1}{f_2} = \left(\frac{d_2}{d_1}\right) \left(\frac{l_2}{l_1}\right) \sqrt{\left(\frac{T_1}{T_2}\right) \left(\frac{\rho_2}{\rho_1}\right)} \]
+মান বসিয়ে পাই: \\
+- $\frac{l_1}{l_2} = \frac{2}{3} \implies \frac{l_2}{l_1} = \frac{3}{2}$ \\
+- $\frac{d_1}{d_2} = \frac{6}{5} \implies \frac{d_2}{d_1} = \frac{5}{6}$ \\
+- $\frac{\rho_1}{\rho_2} = \frac{5}{3} \implies \frac{\rho_2}{\rho_1} = \frac{3}{5}$ \\
+- $\frac{T_1}{T_2} = \frac{6}{10} = \frac{3}{5}$
+\[ \frac{f_1}{f_2} = \left(\frac{5}{6}\right) \times \left(\frac{3}{2}\right) \times \sqrt{\left(\frac{3}{5}\right) \times \left(\frac{3}{5}\right)} = \frac{15}{12} \times \frac{3}{5} = \frac{5}{4} \times \frac{3}{5} = \frac{3}{4} \]
+অতএব, তার দুটির মূলসুরের কম্পাঙ্কের অনুপাত $f_1 : f_2 = 3 : 4$।
+\end{tcolorbox}
+
+\vspace{1.5em}
+
+% ------------------------------------------
+% QUESTION SECTION 21 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 7}]
+\noindent
+$1.50\text{ m}$ দীর্ঘ একটি এক মুখ বন্ধ অর্গান নল থেকে ১ম উপসুরটি (First overtone) নিঃসৃত হচ্ছে। বায়ুতে শব্দের বেগ $330\text{ m s}^{-1}$। (ক) ১ম উপসুরের কম্পাঙ্ক কত? (খ) উক্ত অর্গান নলটির বন্ধ মুখ খুলে দিয়ে দুই মুখ খোলা নলে পরিণত করলে ১ম উপসুরের কম্পাঙ্ক কত হবে?
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+The first overtone is emitted from a closed organ pipe of length $1.50\text{ m}$. The speed of sound in air is $330\text{ m s}^{-1}$. (a) What is the frequency of the first overtone? (b) What will be the frequency of the first overtone if the closed end of the pipe is opened to convert it into an open organ pipe?
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 21
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. এক মুখ বন্ধ নলের ক্ষেত্রে ১ম উপসুর: \\
+বন্ধ নলের মূলসুর: $f_1 = \frac{v}{4L} = \frac{330}{4 \times 1.5} = \frac{330}{6} = 55\text{ Hz}$ \\
+বন্ধ নলের ১ম উপসুর = ৩য় হারমোনিক ($f_{\text{closed, 1st overtone}}$):
+\[ f_{\text{closed, 1st overtone}} = 3 f_1 = 3 \times 55 = 165\text{ Hz} \]
+২. দুই মুখ খোলা নলের ক্ষেত্রে ১ম উপসুর: \\
+খোলা নলের মূলসুর: $f_1' = \frac{v}{2L} = \frac{330}{2 \times 1.5} = 110\text{ Hz}$ \\
+খোলা নলের ১ম উপসুর = ২য় হারমোনিক ($f_{\text{open, 1st overtone}}$):
+\[ f_{\text{open, 1st overtone}} = 2 f_1' = 2 \times 110 = 220\text{ Hz} \]
+অতএব, এক মুখ বন্ধ অবস্থায় ১ম উপসুর $165\text{ Hz}$ এবং দুই মুখ খোলা অবস্থায় ১ম উপসুর $220\text{ Hz}$।
+\end{tcolorbox}
+
+\vspace{1.5em}
+% ==========================================
+% QUESTION SECTION 49
+% ==========================================
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 8}]
+    \noindent
+    $\mu = 0.02\text{ kg m}^{-1}$ রৈখিক ভরের একটি টানা তারের এক প্রান্ত $x = L = 1.5\text{ m}$ অবস্থানে আবদ্ধ রাখা হয়েছে। তারটিতে প্রারম্ভিক অগ্রগামী তরঙ্গ $y_1 = 0.08 \sin(100\pi t - 2\pi x)$ পরিচালিত হয়ে আবদ্ধ প্রান্ত হতে প্রতিফলিত হলো (সকল রাশি SI এককে)। 
+    (ক) লব্ধি স্থির তরঙ্গের সমীকরণ $y_{\text{net}}(x,t)$ গঠন করো। 
+    (খ) এই স্থির তরঙ্গের একটি পূর্ণ তরঙ্গদৈর্ঘ্যে ($\lambda$) সঞ্চিত মোট যান্ত্রিক শক্তি নির্ণয় করো এবং একটি সুস্পন্দ বিন্দু (Antinode) ও একটি নিস্পন্দ বিন্দুতে (Node) অবস্থিত $\Delta x = 0.01\text{ m}$ দৈর্ঘ্যের তারের অংশের সর্বোচ্চ গতিশক্তি কত হবে তা হিসাব করো।
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    A stretched string of linear mass density $\mu = 0.02\text{ kg m}^{-1}$ is fixed at $x = L = 1.5\text{ m}$. An incident progressive wave $y_1 = 0.08 \sin(100\pi t - 2\pi x)$ travels along the string and reflects off the fixed boundary (all units in SI). (a) Form the equation of the resulting standing wave $y_{\text{net}}(x,t)$. (b) Calculate the total mechanical energy stored in one full wavelength ($\lambda$) of this standing wave, and determine the maximum kinetic energy of a string segment of length $\Delta x = 0.01\text{ m}$ situated at an antinode compared to at a node.
+    }
+    \end{english}
+\end{tcolorbox}
+
+% ------------------------------------------
+% SOLUTION SECTION 49
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+\textbf{১. প্রতিফলিত তরঙ্গ ও লব্ধি স্থির তরঙ্গের সমীকরণ গঠন:}
+
+\vspace{0.3em}
+\noindent
+দৃঢ়/স্থির প্রান্ত ($x = 1.5\text{ m}$) থেকে প্রতিফলিত হওয়ায় প্রতিফলিত তরঙ্গের সাথে $\pi$ দশাপার্থক্য যুক্ত হবে এবং গতির দিক বিপরীত হবে:
+\[ y_2 = 0.08 \sin(100\pi t + 2\pi x + \pi) = -0.08 \sin(100\pi t + 2\pi x) \]
+
+\noindent
+উপরোপাতন নীতি অনুসারে লব্ধি স্থির তরঙ্গ:
+\[ y_{\text{net}} = y_1 + y_2 = 0.08 \left[\sin(100\pi t - 2\pi x) - \sin(100\pi t + 2\pi x)\right] \]
+\[ y_{\text{net}}(x,t) = -0.16 \sin(2\pi x) \cos(100\pi t)\text{ m} \]
+
+\vspace{1em}
+\noindent
+\textbf{২. এক তরঙ্গদৈর্ঘ্যে সঞ্চিত মোট যান্ত্রিক শক্তি ($E_\lambda$) নির্ণয়:}
+
+\vspace{0.3em}
+\noindent
+স্থির তরঙ্গের বিস্তার, $A_0 = 0.16\text{ m}$, কৌণিক কম্পাঙ্ক, $\omega = 100\pi\text{ rad s}^{-1}$।
+\par\noindent
+তরঙ্গসংখ্যা, $k = 2\pi \implies \lambda = \frac{2\pi}{2\pi} = 1.0\text{ m}$।
+\[ E_\lambda = \frac{1}{2} \mu \omega^2 A_0^2 \lambda \]
+\[ E_\lambda = \frac{1}{2} \times 0.02 \times (100\pi)^2 \times (0.16)^2 \times 1.0 = 2.56\pi^2 \approx 25.27\text{ J} \]
+
+\vspace{1em}
+\noindent
+\textbf{৩. $\Delta x = 0.01\text{ m}$ অংশের সর্বোচ্চ গতিশক্তি নির্ণয়:}
+
+\vspace{0.3em}
+\noindent
+তারের ক্ষুদ্র অংশের ভর: $\Delta m = \mu \Delta x = 0.02 \times 0.01 = 2 \times 10^{-4}\text{ kg}$।
+\begin{itemize}[leftmargin=2em, itemsep=0.3em]
+    \item \textbf{সুস্পন্দ বিন্দুতে (Antinode, $\sin(2\pi x) = 1$):} কণার সর্বোচ্চ বেগ $v_{\max} = \omega A_0 = 100\pi \times 0.16 = 16\pi\text{ m s}^{-1}$।
+    \[ E_{k, \text{max}} = \frac{1}{2} \Delta m v_{\max}^2 = \frac{1}{2} \times (2 \times 10^{-4}) \times (16\pi)^2 = 0.0256\pi^2 \approx 0.2527\text{ J} \]
+    \item \textbf{নিস্পন্দ বিন্দুতে (Node, $\sin(2\pi x) = 0$):} কণার বেগ সর্বদা শূন্য ($v = 0$), সুতরাং সর্বোচ্চ গতিশক্তি = $0\text{ J}$।
+\end{itemize}
+
+\vspace{1.2em}
+\begin{center}
+\begin{tikzpicture}[scale=1.1, >=stealth]
+    % Fixed Supports
+    \fill[gray!40] (-0.2,-0.8) rectangle (0,0.8);
+    \draw[thick] (0,-0.8) -- (0,0.8);
+    \fill[gray!40] (4.5,-0.8) rectangle (4.7,0.8);
+    \draw[thick] (4.5,-0.8) -- (4.5,0.8);
+
+    % Axis
+    \draw[->, gray] (0,0) -- (4.8,0) node[right, black, font=\small] {$x\text{ (m)}$};
+
+    % Standing Wave Loops
+    \draw[thick, blue!80!black, domain=0:4.5, samples=200] plot (\x, {0.6*sin(240*\x)});
+    \draw[thick, blue!80!black, dashed, domain=0:4.5, samples=200] plot (\x, {-0.6*sin(240*\x)});
+
+    % Highlighted dx segment at Antinode
+    \fill[red!80!black] (0.7,0.56) rectangle (0.8,0.64);
+    \draw[<-, thick, red!80!black] (0.75,0.65) -- (0.75,1.1) node[above, font=\small\bfseries] {$\Delta x = 0.01\text{ m}$ (Antinode)};
+
+    % Nodes & Labels
+    \fill[black] (0,0) circle (2pt);
+    \fill[black] (1.5,0) circle (2pt);
+    \fill[black] (3.0,0) circle (2pt);
+    \fill[black] (4.5,0) circle (2pt) node[above right, font=\small] {$x = L = 1.5\text{ m}$};
+
+    % Wavelength Indicator
+    \draw[<->, thick, darkgray] (0,-0.9) -- (3.0,-0.9) node[midway, fill=white, font=\small] {$\lambda = 1.0\text{ m}$};
+\end{tikzpicture}
+\end{center}
+\end{tcolorbox}
+
+\vspace{1.5em}
+
+% ==========================================
+% QUESTION SECTION 50
+% ==========================================
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 9}]
+    \noindent
+    $0.6\text{ m}$ দৈর্ঘ্যের একটি খোলা অর্গান নল এবং $L_2$ দৈর্ঘ্যের একটি এক মুখ বন্ধ অর্গান নল $0^\circ\text{C}$ তাপমাত্রায় বায়ুতে তাদের মূলসুরে কাঁপলে প্রতি সেকেন্ডে $4$ টি বিট সৃষ্টি করে, যেখানে খোলা নলের কম্পাঙ্ক বন্ধ নলের চেয়ে বেশি। যদি বায়ুর তাপমাত্রা বৃদ্ধি পেয়ে $27^\circ\text{C}$ হয়, তবে প্রতি সেকেন্ডে বিট সংখ্যা কত হবে? (প্রান্তীয় ত্রুটি উপেক্ষা করো; $0^\circ\text{C}$-এ বায়ুতে শব্দের বেগ $v_0 = 332\text{ m s}^{-1}$)
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    An open organ pipe of length $0.6\text{ m}$ and a closed organ pipe of length $L_2$ vibrate in their fundamental modes in air at $0^\circ\text{C}$ producing $4$ beats per second, with the open pipe having a higher frequency. If the air temperature rises to $27^\circ\text{C}$, what will be the new beat frequency per second? (Neglect end correction; speed of sound at $0^\circ\text{C}$ is $v_0 = 332\text{ m s}^{-1}$)
+    }
+    \end{english}
+\end{tcolorbox}
+
+% ------------------------------------------
+% SOLUTION SECTION 50
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+\textbf{১. $0^\circ\text{C}$-এ উভয় নলের কম্পাঙ্ক ও বন্ধ নলের দৈর্ঘ্য ($L_2$) নির্ণয়:}
+
+\vspace{0.3em}
+\noindent
+$0^\circ\text{C}$-এ শব্দের বেগ $v_1 = 332\text{ m s}^{-1}$। খোলা নলের মূলসুর ($f_{\text{open}, 0^\circ\text{C}}$):
+\[ f_{\text{open}, 0^\circ\text{C}} = \frac{v_1}{2 L_1} = \frac{332}{2 \times 0.6} = 276.67\text{ Hz} \]
+
+\noindent
+প্রশ্নমতে, $0^\circ\text{C}$-এ বিট সংখ্যা = $4 \implies f_{\text{open}} - f_{\text{closed}} = 4$:
+\[ f_{\text{closed}, 0^\circ\text{C}} = 276.67 - 4 = 272.67\text{ Hz} \]
+
+\noindent
+বন্ধ নলের দৈর্ঘ্য $L_2$:
+\[ f_{\text{closed}, 0^\circ\text{C}} = \frac{v_1}{4 L_2} \implies 272.67 = \frac{332}{4 L_2} \implies L_2 = \frac{332}{4 \times 272.67} \approx 0.3044\text{ m} = 30.44\text{ cm} \]
+
+\vspace{1em}
+\noindent
+\textbf{২. $27^\circ\text{C}$-এ শব্দের বেগ ($v_2$) নির্ণয়:}
+
+\vspace{0.3em}
+\noindent
+তাপমাত্রা $T_1 = 273\text{ K}$ এবং $T_2 = 273 + 27 = 300\text{ K}$।
+\[ v_2 = v_1 \sqrt{\frac{T_2}{T_1}} = 332 \times \sqrt{\frac{300}{273}} = 332 \times 1.04828 \approx 348.03\text{ m s}^{-1} \]
+
+\vspace{1em}
+\noindent
+\textbf{৩. $27^\circ\text{C}$-এ নতুন বিট সংখ্যা ($N'$) নির্ণয়:}
+
+\begin{itemize}[leftmargin=2em, itemsep=0.3em]
+    \item খোলা নলের নতুন কম্পাঙ্ক: $f_{\text{open}, 27^\circ\text{C}} = \frac{348.03}{2 \times 0.6} = 290.03\text{ Hz}$
+    \item বন্ধ নলের নতুন কম্পাঙ্ক: $f_{\text{closed}, 27^\circ\text{C}} = \frac{348.03}{4 \times 0.3044} = 285.83\text{ Hz}$
+\end{itemize}
+
+\vspace{0.3em}
+\noindent
+নতুন বিট সংখ্যা:
+\[ N' = f_{\text{open}, 27^\circ\text{C}} - f_{\text{closed}, 27^\circ\text{C}} = 290.03 - 285.83 = 4.20\text{ Hz} \approx 4.2\text{ টি/সেকেন্ড} \]
+\end{tcolorbox}
+
+\vspace{1.5em}
+
+% ==========================================
+% QUESTION SECTION 51
+% ==========================================
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 10}]
+    \noindent
+    দুটি ভিন্ন পদার্থের তার জোড়া লাগিয়ে একটি যৌথ তার (Composite wire) তৈরি করা হলো। ১ম অংশের দৈর্ঘ্য $L_A = 0.5\text{ m}$ এবং রৈখিক ভর ঘনত্ব সচিব $\mu_A = 0.01\text{ kg m}^{-1}$ সচিব; ২য় অংশের দৈর্ঘ্য $L_B = 0.4\text{ m}$ এবং রৈখিক ভর ঘনত্ব $\mu_B = 0.04\text{ kg m}^{-1}$। যৌথ তারটিকে দুটি দৃঢ় অবলম্বনের মাঝে সচিব $T = 100\text{ N}$ টানে রাখা হয়েছে। (ক) তারের উভয় অংশে আড় তরঙ্গের বেগ ($v_A, v_B$) কত? (খ) সর্বনিম্ন কত কম্পাঙ্কে ($f$) যৌথ তারটিতে স্থির তরঙ্গ সৃষ্টি হলে দুই অংশের সংযোগস্থলটি একটি নিস্পন্দ বিন্দু (Node) হবে?
+    
+    \vspace{0.8em}
+    \begin{english}
+    \noindent\textit{\color{darkgray}
+    A composite stretched wire is formed by joining two wire segments. Segment A has length $L_A = 0.5\text{ m}$ and linear mass density $\mu_A = 0.01\text{ kg m}^{-1}$; Segment B has length $L_B = 0.4\text{ m}$ and linear mass density $\mu_B = 0.04\text{ kg m}^{-1}$. The composite wire is held under a tension $T = 100\text{ N}$ between two rigid supports. (a) Calculate the speed of transverse waves in both segments ($v_A, v_B$). (b) Determine the minimum frequency ($f$) at which a standing wave can be set up in the composite wire such that the junction of the two segments is a node.
+    }
+    \end{english}
+\end{tcolorbox}
+% ------------------------------------------
+% SOLUTION SECTION 51
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+\textbf{(ক) উভয় অংশে তরঙ্গের বেগ ($v_A, v_B$) নির্ণয়:}
+
+\begin{itemize}[leftmargin=2em, itemsep=0.3em]
+    \item Segment A-তে বেগ: $v_A = \sqrt{\frac{T}{\mu_A}} = \sqrt{\frac{100}{0.01}} = 100\text{ m s}^{-1}$
+    \item Segment B-তে বেগ: $v_B = \sqrt{\frac{T}{\mu_B}} = \sqrt{\frac{100}{0.04}} = 50\text{ m s}^{-1}$
+\end{itemize}
+
+\vspace{1em}
+\noindent
+\textbf{(খ) সংযোগস্থলে নিস্পন্দ বিন্দু হওয়ার শর্ত ও সর্বনিম্ন কম্পাঙ্ক ($f$) নির্ণয়:}
+
+\vspace{0.3em}
+\noindent
+ধরি, স্থির তরঙ্গের সাধারণ কম্পাঙ্ক = $f$। যেহেতু উভয় প্রান্ত আবদ্ধ এবং সংযোগস্থলটিও একটি নিস্পন্দ বিন্দু, তাই প্রতিটি অংশে পূর্ণসংখ্যার লুপ (Loops) গঠিত হতে হবে।
+\begin{itemize}[leftmargin=2em, itemsep=0.3em]
+    \item Segment A-এর জন্য: $L_A = n_A \frac{\lambda_A}{2} = n_A \frac{v_A}{2f} \implies f = n_A \frac{100}{2 \times 0.5} = 100 n_A\text{ Hz}$
+    \item Segment B-এর জন্য: $L_B = n_B \frac{\lambda_B}{2} = n_B \frac{v_B}{2f} \implies f = n_B \frac{50}{2 \times 0.4} = 62.5 n_B\text{ Hz}$
+\end{itemize}
+
+\vspace{0.3em}
+\noindent
+উভয় সমীকরণ সমীকৃত করে পাই:
+\[ 100 n_A = 62.5 n_B \implies \frac{n_A}{n_B} = \frac{62.5}{100} = \frac{5}{8} \]
+
+\noindent
+যেহেতু $n_A$ ও $n_B$ ধনাত্মক পূর্ণসংখ্যা হতে হবে, তাই সর্বনিম্ন মানগুলো হলো $n_A = 5$ এবং $n_B = 8$।
+\par\noindent
+সর্বনিম্ন কম্পাঙ্ক ($f_{\min}$):
+\[ f_{\min} = 100 \times 5 = 500\text{ Hz} \quad (\text{অথবা } 62.5 \times 8 = 500\text{ Hz}) \]
+
+\vspace{1.2em}
+\begin{center}
+\begin{tikzpicture}[scale=1.1, >=stealth]
+    % Supports
+    \fill[gray!40] (-0.2,-0.8) rectangle (0,0.8);
+    \draw[thick] (0,-0.8) -- (0,0.8);
+    \fill[gray!40] (5.4,-0.8) rectangle (5.6,0.8);
+    \draw[thick] (5.4,-0.8) -- (5.4,0.8);
+
+    % Segment A (5 loops)
+    \draw[thick, blue!80!black, domain=0:3, samples=150] plot (\x, {0.5*sin(300*\x)});
+    \draw[thick, blue!80!black, dashed, domain=0:3, samples=150] plot (\x, {-0.5*sin(300*\x)});
+
+    % Segment B (8 loops)
+    \draw[thick, red!80!black, domain=3:5.4, samples=200] plot (\x, {0.5*sin(600*(\x-3))});
+    \draw[thick, red!80!black, dashed, domain=3:5.4, samples=200] plot (\x, {-0.5*sin(600*(\x-3))});
+
+    % Junction Node
+    \fill[teal!80!black] (3,0) circle (2.5pt);
+    \draw[<-, thick, teal!80!black] (3,0.1) -- (3,1.0) node[above, font=\small\bfseries] {সংযোগস্থল (Junction Node)};
+
+    % Labels
+    \draw[<->, thick] (0,-0.9) -- (3,-0.9) node[midway, fill=white, font=\small] {Segment A ($L_A = 0.5\text{ m}$, $n_A = 5$)};
+    \draw[<->, thick] (3,-0.9) -- (5.4,-0.9) node[midway, fill=white, font=\small] {Segment B ($L_B = 0.4\text{ m}$, $n_B = 8$)};
+\end{tikzpicture}
+\end{center}
+\end{tcolorbox}
+\end{document}

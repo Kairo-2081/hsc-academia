@@ -1,0 +1,587 @@
+\documentclass[12pt, a4paper]{article}
+
+% ==========================================
+% 1. COMPILER, LANGUAGE & FONT SETUP
+% ==========================================
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{bengali}
+\setotherlanguage{english}
+\newfontfamily\bengalifont[Script=Bengali, AutoFakeBold=2.5, AutoFakeSlant=0.2]{Kalpurush}
+
+% ==========================================
+% 2. MATHEMATICS, UNITS & FORMATTING
+% ==========================================
+\usepackage{amsmath, amssymb, siunitx}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{microtype} % For better typography
+\onehalfspacing % Better line spacing for readability
+
+% ==========================================
+% 3. COLORS & BEAUTIFICATION PACKAGES
+% ==========================================
+\usepackage[dvipsnames, table]{xcolor}
+\usepackage[skins, breakable, theorems]{tcolorbox}
+\usepackage{tikz}
+\renewcommand{\labelitemi}{$\bullet$}
+
+% Define custom beautiful colors
+\definecolor{primary}{HTML}{0056b3}
+\definecolor{secondary}{HTML}{e7f1ff}
+\definecolor{success}{HTML}{198754}
+\definecolor{successbg}{HTML}{d1e7dd}
+\definecolor{accent}{HTML}{fd7e14}
+\definecolor{darkgray}{HTML}{343a40}
+
+% Custom Tcolorbox Styles
+\tcbset{
+    questionbox/.style={
+        enhanced, colback=secondary, colframe=primary, arc=2mm, boxrule=1pt,
+        fonttitle=\bfseries\Large, title=#1,
+        drop fuzzy shadow=black!10,
+        attach boxed title to top left={xshift=5mm, yshift=-3mm},
+        boxed title style={colback=primary, arc=1mm}
+    },
+    answerbox/.style={
+        enhanced, colback=successbg, colframe=success, arc=1.5mm, boxrule=1pt,
+        left=2mm, right=2mm, top=2mm, bottom=2mm,
+        drop fuzzy shadow=black!10
+    },
+    solutionbox/.style={
+        enhanced, colback=white, colframe=darkgray, arc=2mm, boxrule=1pt,
+        fonttitle=\bfseries\large, title=#1, breakable,
+        coltitle=white, colbacktitle=darkgray,
+        drop fuzzy shadow=black!10,
+        attach boxed title to top center={yshift=-3mm},
+        boxed title style={arc=1mm}
+    }
+}
+
+\begin{document}
+
+\newpage
+% ------------------------------------------
+% QUESTION SECTION 1 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 1}]
+\noindent
+একটি অগ্রগামী শব্দ তরঙ্গের সমীকরণ $y = 0.16 \sin(0.2\pi t + \delta)\text{ m}$, যেখানে সকল রাশি SI এককে প্রকাশিত। $t = 0$ সময়ে কণার সরণ $y = 0.08\text{ m}$ এবং কণাটি ধনাত্মক দিকের দিকে গতিশীল। তরঙ্গের পর্যায়কাল $T = 10\text{ s}$। $t = 2\text{ s}$ সময়ে কণাটির সরণ, কণার বেগ, ত্বরণ এবং কণাটির গতিশক্তি ও স্থিতিশক্তির অনুপাত ($E_k / E_p$) নির্ণয় করো।
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+The equation of a progressive sound wave is $y = 0.16 \sin(0.2\pi t + \delta)\text{ m}$, where all quantities are in SI units. At $t = 0$, the particle displacement is $y = 0.08\text{ m}$ and moving in the positive direction. The period of the wave is $T = 10\text{ s}$. Calculate the particle displacement, particle velocity, acceleration, and the ratio of kinetic energy to potential energy ($E_k / E_p$) of the particle at time $t = 2\text{ s}$.
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 1
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. আদি দশা ($\delta$) নির্ণয়: $t = 0$ সময়ে, $y(0) = 0.16 \sin(\delta) = 0.08\text{ m}$
+\[ \sin\delta = \frac{0.08}{0.16} = 0.5 \implies \delta = \frac{\pi}{6}\text{ rad } (30^\circ) \]
+(যেহেতু $t=0$-তে বেগ $v = \omega A \cos\delta > 0$, তাই আদি দশা $\delta = \frac{\pi}{6}$ ধনাত্মক হবে।) \\
+২. $t = 2\text{ s}$ সময়ে কণার সরণ ($y$): কৌণিক কম্পাঙ্ক $\omega = 0.2\pi\text{ rad s}^{-1}$।
+\[ y(2) = 0.16 \sin\left(0.2\pi \times 2 + \frac{\pi}{6}\right) = 0.16 \sin\left(0.4\pi + \frac{\pi}{6}\right) \]
+\[ y(2) = 0.16 \sin(72^\circ + 30^\circ) = 0.16 \sin(102^\circ) \approx 0.16 \times 0.97815 = 0.1565\text{ m} \]
+৩. $t = 2\text{ s}$ সময়ে কণার বেগ ($v$):
+\[ v = \frac{dy}{dt} = \omega A \cos(\omega t + \delta) \]
+\[ v = (0.2\pi) \times 0.16 \cos(102^\circ) = 0.10053 \times (-0.20791) \approx -0.0209\text{ m s}^{-1} \]
+৪. $t = 2\text{ s}$ সময়ে কণার ত্বরণ ($a$):
+\[ a = -\omega^2 y = -(0.2\pi)^2 \times 0.1565 = -0.3948 \times 0.1565 \approx -0.0618\text{ m s}^{-2} \]
+৫. গতিশক্তি ও স্থিতিশক্তির অনুপাত ($E_k / E_p$): আমরা জানি, স্থিতিশক্তি $E_p = \frac{1}{2} k y^2$ এবং গতিশক্তি $E_k = \frac{1}{2} k (A^2 - y^2)$।
+\[ \frac{E_k}{E_p} = \frac{A^2 - y^2}{y^2} = \frac{0.16^2 - 0.1565^2}{0.1565^2} = \frac{0.0256 - 0.02449}{0.02449} = \frac{0.00111}{0.02449} \approx 0.0453 \]
+অতএব, $t = 2\text{ s}$-এ সরণ $0.1565\text{ m}$, বেগ $-0.0209\text{ m s}^{-1}$, ত্বরণ $-0.0618\text{ m s}^{-2}$ এবং গতিশক্তি ও স্থিতিশক্তির অনুপাত $0.0453$।
+\end{tcolorbox}
+
+\vspace{1.5em}
+
+% ------------------------------------------
+% QUESTION SECTION 2 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 2}]
+\noindent
+$100\text{ cm}$ দীর্ঘ এবং $8\text{ g}$ ভরের একটি টানা তারে $4\text{ kg-wt}$ বল প্রয়োগ করা হলে তারটি $35\text{ Hz}$ কম্পাঙ্কের মূল সুর তৈরি করে। তারটির প্রস্থচ্ছেদের ক্ষেত্রফল $1\text{ mm}^2$ হলে, তারের উপাদানের ঘনত্ব এবং তারে সৃষ্ট আড় তরঙ্গের বেগ নির্ণয় করো। (ধরো, $g = 9.8\text{ m s}^{-2}$)
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+A stretched wire of length $100\text{ cm}$ and mass $8\text{ g}$ under a tension of $4\text{ kg-wt}$ vibrates in its fundamental mode with a frequency of $35\text{ Hz}$. If the cross-sectional area of the wire is $1\text{ mm}^2$, calculate the density of the material of the wire and the speed of transverse waves in the wire. Take $g = 9.8\text{ m s}^{-2}$.
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 2
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. প্রদত্ত উপাত্ত: \\
+- তারের দৈর্ঘ্য, $L = 100\text{ cm} = 1.0\text{ m}$ \\
+- ভর, $M = 8\text{ g} = 8 \times 10^{-3}\text{ kg}$ \\
+- টান, $T = 4\text{ kg-wt} = 4 \times 9.8 = 39.2\text{ N}$ \\
+- প্রস্থচ্ছেদের ক্ষেত্রফল, $A = 1\text{ mm}^2 = 10^{-6}\text{ m}^2$ \\
+- মূলসুরের কম্পাঙ্ক, $f = 35\text{ Hz}$ \\
+২. একক দৈর্ঘ্যের ভর ($\mu$) নির্ণয়:
+\[ \mu = \frac{M}{L} = \frac{8 \times 10^{-3}\text{ kg}}{1.0\text{ m}} = 0.008\text{ kg m}^{-1} \]
+৩. আড় তরঙ্গের বেগ ($v$) নির্ণয়:
+\[ v = \sqrt{\frac{T}{\mu}} = \sqrt{\frac{39.2}{0.008}} = \sqrt{4900} = 70\text{ m s}^{-1} \]
+৪. তারের উপাদানের ঘনত্ব ($\rho$) নির্ণয়: আমরা জানি, $\mu = \rho \times A$
+\[ \rho = \frac{\mu}{A} = \frac{0.008\text{ kg m}^{-1}}{10^{-6}\text{ m}^2} = 8000\text{ kg m}^{-3} \]
+অতএব, তারে সৃষ্ট আড় তরঙ্গের বেগ $70\text{ m s}^{-1}$ এবং তারের উপাদানের ঘনত্ব $8000\text{ kg m}^{-3}$।
+\end{tcolorbox}
+
+\vspace{1.5em}
+
+% ------------------------------------------
+% QUESTION SECTION 3 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 3}]
+\noindent
+একটি দুই মুখ খোলা অর্গান নলের দৈর্ঘ্য $46\text{ cm}$। বাতাসে শব্দের বেগ $320\text{ m s}^{-1}$। প্রান্তীয় ত্রুটি বিবেচনা করে দেখা গেল নলটির মূলসুরের কম্পাঙ্ক $320\text{ Hz}$। নলটির অভ্যন্তরীণ ব্যাস $D$ নির্ণয় করো এবং নলটির এক মুখ বন্ধ করা হলে নতুন মূলসুরের কম্পাঙ্ক কত হবে তা হিসাব করো।
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+The length of an open organ pipe is $46\text{ cm}$. The speed of sound in air is $320\text{ m s}^{-1}$. Taking end correction into account, the fundamental frequency of the pipe is found to be $320\text{ Hz}$. Calculate the internal diameter $D$ of the pipe and find the new fundamental frequency if one end of the pipe is closed.
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 3
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. প্রদত্ত উপাত্ত: \\
+- প্রকৃত দৈর্ঘ্য, $L = 46\text{ cm} = 0.46\text{ m}$ \\
+- শব্দের বেগ, $v = 320\text{ m s}^{-1}$ \\
+- খোলা নলের মূলসুর, $f_{\text{open}} = 320\text{ Hz}$ \\
+২. খোলা নলের ক্ষেত্রে প্রান্তীয় ত্রুটিসহ কার্যকরী দৈর্ঘ্য ও ব্যাস নির্ণয়: দুই মুখ খোলা নলের ক্ষেত্রে উভয় প্রান্তে প্রান্তীয় ত্রুটি $e = 0.3D$ যুক্ত হয়। কার্যকারী দৈর্ঘ্য, $L_{\text{open}}' = L + 2e = L + 0.6D$ \\
+আমরা জানি,
+\[ f_{\text{open}} = \frac{v}{2 L_{\text{open}}'} \implies 320 = \frac{320}{2(0.46 + 0.6D)} \]
+\[ 2(0.46 + 0.6D) = 1 \implies 0.46 + 0.6D = 0.5 \]
+\[ 0.6D = 0.04 \implies D = \frac{0.04}{0.6} = 0.0667\text{ m} = 6.67\text{ cm} \]
+৩. এক মুখ বন্ধ নলের মূলসুরের কম্পাঙ্ক নির্ণয়: এক মুখ বন্ধ নলের ক্ষেত্রে প্রান্তীয় ত্রুটি কেবল খোলা প্রান্তে কাজ করে, তাই কার্যকরী দৈর্ঘ্য:
+\[ L_{\text{closed}}' = L + 0.3D = 0.46 + 0.3(0.0667) = 0.46 + 0.02 = 0.48\text{ m} \]
+বন্ধ নলের মূলসুরের কম্পাঙ্ক ($f_{\text{closed}}$):
+\[ f_{\text{closed}} = \frac{v}{4 L_{\text{closed}}'} = \frac{320}{4 \times 0.48} = \frac{320}{1.92} \approx 166.67\text{ Hz} \]
+অতএব, নলের অভ্যন্তরীণ ব্যাস $6.67\text{ cm}$ এবং এক মুখ বন্ধ করলে মূলসুরের কম্পাঙ্ক হবে $166.67\text{ Hz}$।
+\end{tcolorbox}
+
+\vspace{1.5em}
+
+% ------------------------------------------
+% QUESTION SECTION 4 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 4}]
+\noindent
+$A$ ও $B$ দুটি সুরশলাকা প্রতি সেকেন্ডে $5$ টি বিট সৃষ্টি করে। $A$ সুরশলাকা থেকে উৎপন্ন শব্দের তীব্রতা $1.01 \times 10^5\text{ W m}^{-2}$ এবং বিস্তার $0.02\text{ m}$। মাধ্যমের ঘনত্ব $1.25\text{ kg m}^{-3}$, শব্দের বেগ $350\text{ m s}^{-1}$ এবং $B$ সুরশলাকার কম্পাঙ্ক $161\text{ Hz}$। $A$ সুরশলাকাটিতে মোম লাগিয়ে এর ভর কত শতাংশ বৃদ্ধি করলে এটি পুনরায় $B$-এর সাথে প্রতি সেকেন্ডে $5$ টি বিট সৃষ্টি করবে?
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+Two tuning forks $A$ and $B$ produce $5$ beats per second. The sound intensity produced by $A$ is $1.01 \times 10^5\text{ W m}^{-2}$ and amplitude is $0.02\text{ m}$. The density of the medium is $1.25\text{ kg m}^{-3}$, sound velocity is $350\text{ m s}^{-1}$, and frequency of $B$ is $161\text{ Hz}$. By what percentage must the mass of tuning fork $A$ be increased by attaching wax so that it again produces $5$ beats per second with $B$?
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 4
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. $A$ সুরশলাকার প্রাথমিক কম্পাঙ্ক ($f_A$) নির্ণয়: শব্দ তীব্রতার সূত্র: $I = 2\pi^2 f_A^2 a^2 \rho v$
+\[ 1.01 \times 10^5 = 2 \times \pi^2 \times f_A^2 \times (0.02)^2 \times 1.25 \times 350 \]
+\[ 1.01 \times 10^5 = 3.4544 \times \pi^2 \times f_A^2 = 34.093 \times f_A^2 \]
+\[ f_A^2 = \frac{1.01 \times 10^5}{34.093} \approx 29624.8 \implies f_A \approx 171\text{ Hz} \]
+২. বিট বিশ্লেষণ ও মোম লাগানোর পর নতুন কম্পাঙ্ক নির্ধারণ: বর্তমানে $f_A = 171\text{ Hz}$ এবং $f_B = 161\text{ Hz}$। সুরশলাকা $A$-তে মোম লাগালে এর ভর বৃদ্ধি পায় এবং কম্পাঙ্ক হ্রাস পায়। পুনরায় $B$ ($161\text{ Hz}$)-এর সাথে $5$ টি বিট দিতে হলে, $A$-এর পরিবর্তিত নতুন কম্পাঙ্ক হতে হবে:
+\[ f_A' = f_B + 5 = 161 + 5 = 166\text{ Hz} \]
+৩. ভরের শতকরা পরিবর্তন নির্ণয়: আমরা জানি, সুরশলাকার কম্পাঙ্ক ভরের বর্গমূলের ব্যস্তানুপাতিক ($f \propto \frac{1}{\sqrt{m}}$)।
+\[ \frac{f_A}{f_A'} = \sqrt{\frac{m'}{m}} \implies \frac{171}{166} = \sqrt{\frac{m'}{m}} \]
+\[ \frac{m'}{m} = \left(\frac{171}{166}\right)^2 = (1.03012)^2 \approx 1.0611 \]
+\[ m' = 1.0611 m \]
+ভরের বৃদ্ধি, $\Delta m = m' - m = 0.0611 m$। শতকরা ভর বৃদ্ধি = $0.0611 \times 100\% = 6.11\% \approx 6\%$। \\
+অতএব, $A$ সুরশলাকায় মোম লাগিয়ে এর ভর $6\%$ বৃদ্ধি করতে হবে।
+\end{tcolorbox}
+
+\vspace{1.5em}
+
+% ------------------------------------------
+% QUESTION SECTION 5 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 5}]
+\noindent
+$100\text{ cm}$ দীর্ঘ একটি খাড়া নল সম্পূর্ণ পানিপূর্ণ করে এর খোলা মুখে $512\text{ Hz}$ কম্পাঙ্কের একটি সুরশলাকা ধরে নিচের মুখ দিয়ে পানি ধীরে ধীরে বের করা হচ্ছে। বাতাসে শব্দের বেগ $330\text{ m s}^{-1}$। প্রান্তীয় ত্রুটি উপেক্ষা করে, নলটির পানি খালি হওয়ার সময় কতবার অনুনাদ সৃষ্টি হবে এবং প্রথম দুটি অনুনাদের ক্ষেত্রে বায়ুপৃষ্ঠ হতে পানি তলের গভীরতা কত হবে নির্ণয় করো।
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+A vertical pipe of length $100\text{ cm}$ is completely filled with water, and a tuning fork of frequency $512\text{ Hz}$ is held over its open top while water is slowly drained from the bottom. Speed of sound in air is $330\text{ m s}^{-1}$. Neglecting end correction, determine how many resonances will be observed as the water empties, and find the depth of the water surface from the top for the first two resonances.
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 5
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. প্রদত্ত উপাত্ত: \\
+- তরঙ্গদৈর্ঘ্য, $\lambda = \frac{v}{f} = \frac{330\text{ m s}^{-1}}{512\text{ Hz}} = 0.6445\text{ m} = 64.45\text{ cm}$ \\
+২. এক মুখ বন্ধ নলের অনুনাদের শর্ত: বায়ুস্তম্ভের দৈর্ঘ্য $L_n = (2n - 1)\frac{\lambda}{4}$, যেখানে $n = 1, 2, 3, \dots$ \\
+- ১ম অনুনাদ ($n=1$):
+\[ L_1 = \frac{\lambda}{4} = \frac{64.45}{4} = 16.11\text{ cm} \]
+প্রথম অনুনাদে পানি তলের গভীরতা (উপরের মুখ হতে) = $16.11\text{ cm}$। \\
+- ২য় অনুনাদ ($n=2$):
+\[ L_2 = \frac{3\lambda}{4} = 3 \times 16.11 = 48.34\text{ cm} \]
+দ্বিতীয় অনুনাদে পানি তলের গভীরতা = $48.34\text{ cm}$। \\
+- ৩য় অনুনাদ ($n=3$):
+\[ L_3 = \frac{5\lambda}{4} = 5 \times 16.11 = 80.57\text{ cm} \]
+যেহেতু $80.57\text{ cm} \le 100\text{ cm}$, এটি নলের ভেতরেই ঘটবে। \\
+- ৪র্থ অনুনাদ ($n=4$):
+\[ L_4 = \frac{7\lambda}{4} = 7 \times 16.11 = 112.79\text{ cm} \]
+যেহেতু $112.79\text{ cm} > 100\text{ cm}$, এটি নলের দৈর্ঘ্যকে অতিক্রম করে, তাই এটি পর্যবেক্ষণ করা যাবে না। \\
+অতএব, পানি খালি হওয়ার সময় মোট ৩ বার অনুনাদ সৃষ্টি হবে এবং ১ম ও ২য় অনুনাদে পানির তলের গভীরতা হবে যথাক্রমে $16.11\text{ cm}$ ও $48.34\text{ cm}$।
+\end{tcolorbox}
+
+\vspace{1.5em}
+
+% ------------------------------------------
+% QUESTION SECTION 6 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 6}]
+\noindent
+একটি অগ্রগামী তরঙ্গ $y_1 = 100 \sin \pi(100t - 5x)\text{ m}$ (যেখানে সকল রাশি SI এককে) একটি স্থির দৃঢ় প্রতিফলকে আপতিত হয়ে একই পথে বিপরীত দিকে প্রতিফলিত হলো। প্রতিফলনের ফলে সৃষ্ট লব্ধি স্থির তরঙ্গের সমীকরণ নির্ণয় করো এবং $x \ge 0$ অঞ্চলে সর্বোচ্চ বিস্তারের (সুস্পন্দ বিন্দু) অবস্থানগুলোর গাণিতিক সমীকরণ বের করো।
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+A progressive wave $y_1 = 100 \sin \pi(100t - 5x)\text{ m}$ (all quantities in SI units) is incident on a fixed rigid reflector and reflects back along the same path in the opposite direction. Determine the equation of the resulting standing wave and find the mathematical position formula for maximum amplitude (antinodes) for $x \ge 0$.
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 6
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. আপতিত ও প্রতিফলিত তরঙ্গের সমীকরণ: \\
+আপতিত তরঙ্গ: $y_1 = 100 \sin(100\pi t - 5\pi x)$ \\
+যেহেতু স্থির/দৃঢ় মাধ্যম থেকে প্রতিফলন ঘটেছে, তাই প্রতিফলিত তরঙ্গের সাথে $\pi$ দশাপার্থক্য যুক্ত হবে এবং দিক বিপরীত হবে:
+\[ y_2 = 100 \sin(100\pi t + 5\pi x + \pi) = -100 \sin(100\pi t + 5\pi x) \]
+২. উপরিপাতনের ফলে সৃষ্ট লব্ধি স্থির তরঙ্গের সমীকরণ:
+\[ y_{\text{net}} = y_1 + y_2 = 100 [\sin(100\pi t - 5\pi x) - \sin(100\pi t + 5\pi x)] \]
+আমরা জানি, $\sin(A-B) - \sin(A+B) = -2\cos A \sin B$।
+\[ y_{\text{net}} = -200 \sin(5\pi x) \cos(100\pi t)\text{ m} \]
+৩. সর্বোচ্চ বিস্তারের অবস্থান (সুস্পন্দ বিন্দু / Anti-Nodes) নির্ণয়: \\
+স্থির তরঙ্গের বিস্তার, $A(x) = |-200 \sin(5\pi x)|$। সর্বোচ্চ বিস্তারের জন্য:
+\[ |\sin(5\pi x)| = 1 \implies 5\pi x = (2n + 1)\frac{\pi}{2}, \quad [n = 0, 1, 2, 3, \dots] \]
+\[ x = \frac{2n + 1}{10}\text{ m} \]
+অর্থাৎ, $x = 0.1\text{ m}, 0.3\text{ m}, 0.5\text{ m}, 0.7\text{ m}, \dots$ অবস্থানে সুস্পন্দ বিন্দু গঠিত হবে।
+\end{tcolorbox}
+
+\vspace{1.5em}
+
+% ------------------------------------------
+% QUESTION SECTION 7 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 7}]
+\noindent
+একটি টিভিতে খেলা দেখার সময় টিভির শব্দের তীব্রতা ছিল $1 \times 10^{-6}\text{ W m}^{-2}$। পাশে থাকা একটি ব্লেন্ডার চালু করা হলো যার শব্দ তীব্রতা স্তর $85\text{ dB}$। এরপর টিভির শব্দ বাড়িয়ে তীব্রতা স্তর $78\text{ dB}$-এ উন্নীত করা হলো। ব্লেন্ডার এবং পরিবর্তিত টিভি উভয়ই একসাথে চললে কক্ষে মোট সম্মিলিত শব্দ তীব্রতা স্তর (dB এককে) কত হবে? (প্রমাণ তীব্রতা $I_0 = 10^{-12}\text{ W m}^{-2}$)
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+While watching a match, the sound intensity of a TV was $1 \times 10^{-6}\text{ W m}^{-2}$. A nearby blender was turned on with a sound intensity level of $85\text{ dB}$. The TV volume was then increased to a sound intensity level of $78\text{ dB}$. What will be the total combined sound intensity level (in dB) in the room when both the blender and the modified TV run simultaneously? Reference intensity $I_0 = 10^{-12}\text{ W m}^{-2}$.
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 7
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. ব্লেন্ডারের শব্দ তীব্রতা ($I_B$) নির্ণয়:
+\[ \beta_B = 10 \log_{10} \left(\frac{I_B}{I_0}\right) \implies 85 = 10 \log_{10} \left(\frac{I_B}{10^{-12}}\right) \]
+\[ \log_{10} \left(\frac{I_B}{10^{-12}}\right) = 8.5 \implies \frac{I_B}{10^{-12}} = 10^{8.5} = 3.162 \times 10^8 \]
+\[ I_B = 3.162 \times 10^8 \times 10^{-12} = 3.162 \times 10^{-4}\text{ W m}^{-2} \]
+২. পরিবর্তিত টিভির শব্দ তীব্রতা ($I_{TV}'$) নির্ণয়:
+\[ \beta_{TV}' = 10 \log_{10} \left(\frac{I_{TV}'}{10^{-12}}\right) \implies 78 = 10 \log_{10} \left(\frac{I_{TV}'}{10^{-12}}\right) \]
+\[ \frac{I_{TV}'}{10^{-12}} = 10^{7.8} = 6.310 \times 10^7 \implies I_{TV}' = 6.310 \times 10^{-5}\text{ W m}^{-2} \]
+৩. মোট শব্দ তীব্রতা ($I_{\text{total}}$) ও সম্মিলিত তীব্রতা স্তর ($\beta_{\text{total}}$) নির্ণয়:
+\[ I_{\text{total}} = I_B + I_{TV}' = 3.162 \times 10^{-4} + 0.631 \times 10^{-4} = 3.793 \times 10^{-4}\text{ W m}^{-2} \]
+\[ \beta_{\text{total}} = 10 \log_{10} \left(\frac{3.793 \times 10^{-4}}{10^{-12}}\right) = 10 \log_{10}(3.793 \times 10^8) \]
+\[ \beta_{\text{total}} = 10 \times (8 + \log_{10} 3.793) = 10 \times (8 + 0.579) = 85.79\text{ dB} \]
+অতএব, মোট সম্মিলিত শব্দ তীব্রতা স্তর হবে $85.79\text{ dB}$।
+\end{tcolorbox}
+
+\vspace{1.5em}
+
+% ------------------------------------------
+% QUESTION SECTION 8 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 8}]
+\noindent
+বায়ু ও পানিতে $300\text{ Hz}$ কম্পাঙ্কের একটি শব্দ তরঙ্গের তরঙ্গদৈর্ঘ্যের পার্থক্য $4.16\text{ m}$। বায়ুতে শব্দের বেগ $352\text{ m s}^{-1}$ হলে পানিতে শব্দের বেগ নির্ণয় করো এবং উভয় মাধ্যমে $1\text{ km}$ দূরত্ব অতিক্রম করতে শব্দের সময়ের পার্থক্য কত হবে তা হিসাব করো।
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+The wavelength difference of a sound wave of frequency $300\text{ Hz}$ in air and water is $4.16\text{ m}$. If the speed of sound in air is $352\text{ m s}^{-1}$, calculate the speed of sound in water, and find the time difference for sound to travel a distance of $1\text{ km}$ in both media.
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 8
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. বায়ুতে তরঙ্গদৈর্ঘ্য ($\lambda_{\text{air}}$) নির্ণয়:
+\[ \lambda_{\text{air}} = \frac{v_{\text{air}}}{f} = \frac{352\text{ m s}^{-1}}{300\text{ Hz}} = 1.1733\text{ m} \]
+২. পানিতে তরঙ্গদৈর্ঘ্য ($\lambda_{\text{water}}$) ও শব্দের বেগ ($v_{\text{water}}$) নির্ণয়: দেওয়া আছে, $\lambda_{\text{water}} - \lambda_{\text{air}} = 4.16\text{ m}$।
+\[ \lambda_{\text{water}} = 1.1733 + 4.16 = 5.3333\text{ m} \]
+পানিতে শব্দের বেগ:
+\[ v_{\text{water}} = f \times \lambda_{\text{water}} = 300 \times 5.3333 = 1600\text{ m s}^{-1} \]
+৩. $1\text{ km} = 1000\text{ m}$ দূরত্বে সময়ের পার্থক্য ($\Delta t$) নির্ণয়: \\
+বায়ুতে প্রয়োজনীয় সময়: $t_{\text{air}} = \frac{1000}{352} \approx 2.8409\text{ s}$ \\
+পানিতে প্রয়োজনীয় সময়: $t_{\text{water}} = \frac{1000}{1600} = 0.6250\text{ s}$ \\
+সময়ের পার্থক্য:
+\[ \Delta t = t_{\text{air}} - t_{\text{water}} = 2.8409 - 0.6250 = 2.2159\text{ s} \approx 2.22\text{ s} \]
+অতএব, পানিতে শব্দের বেগ $1600\text{ m s}^{-1}$ এবং সময়ের পার্থক্য $2.22\text{ s}$।
+\end{tcolorbox}
+
+\vspace{1.5em}
+
+% ------------------------------------------
+% QUESTION SECTION 46 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 9}]
+\noindent
+একটি দুটি প্রান্তে আবদ্ধ টানা তারে সৃষ্ট স্থির তরঙ্গের সমীকরণ $y(x,t) = 0.04 \cos(5\pi x) \sin(100\pi t)$ (সকল রাশি SI এককে)। তারের একক দৈর্ঘ্যের ভর $\mu = 0.01\text{ kg m}^{-1}$।
+
+\vspace{0.5em}
+\noindent
+(ক) $t = \frac{T}{4} = 0.005\text{ s}$ মুহূর্তে $0 \le x \le 0.8\text{ m}$ ব্যবধানে সরণ-দূরত্ব ($y-x$) লেখচিত্র অঙ্কন ও পর্যবেক্ষণ বর্ণনা করো।
+
+\vspace{0.3em}
+\noindent
+(খ) $t = 0$ মুহূর্তে তারের প্রতিটি কণার গতিশক্তি ঘনত্বের (Kinetic Energy Density, $\frac{dE_k}{dx}$) গাণিতিক সমীকরণ বের করো এবং $x$-এর সাপেক্ষে $\frac{dE_k}{dx}$-এর লেখচিত্র অঙ্কনপূর্বক কোন বিন্দুগুলোতে গতিশক্তি ঘনত্ব সর্বোচ্চ ও সর্বনিম্ন হবে তা দেখাও।
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+The equation of a standing wave in a stretched wire fixed at both ends is given by $y(x,t) = 0.04 \cos(5\pi x) \sin(100\pi t)$ (all quantities in SI units). The linear mass density of the wire is $\mu = 0.01\text{ kg m}^{-1}$. 
+
+\vspace{0.3em}
+\noindent
+(a) Plot and describe the displacement-distance ($y-x$) graph in the region $0 \le x \le 0.8\text{ m}$ at time $t = \frac{T}{4} = 0.005\text{ s}$. 
+
+\vspace{0.3em}
+\noindent
+(b) Derive the mathematical expression for the kinetic energy density ($\frac{dE_k}{dx}$) of the particles along the wire at $t = 0$, and plot $\frac{dE_k}{dx}$ versus $x$ to identify the points of maximum and minimum kinetic energy density.
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1.2em}
+
+% ------------------------------------------
+% SOLUTION SECTION 46
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+\textbf{(ক) $t = 0.005\text{ s}$ মুহূর্তে সরণ-দূরত্ব ($y-x$) লেখচিত্র বিশ্লেষণ:}
+
+\vspace{0.5em}
+\noindent
+স্থির তরঙ্গের পর্যায়কাল, $T = \frac{2\pi}{\omega} = \frac{2\pi}{100\pi} = 0.02\text{ s}$ \\
+তরঙ্গদৈর্ঘ্য, $\lambda = \frac{2\pi}{k} = \frac{2\pi}{5\pi} = 0.4\text{ m}$
+
+\vspace{0.5em}
+\noindent
+$t = 0.005\text{ s} = \frac{T}{4}$ বসিয়ে পাই:
+\[ \sin(100\pi \times 0.005) = \sin\left(\frac{\pi}{2}\right) = 1 \]
+
+\noindent
+অতএব, সরণের সমীকরণ দাঁড়ায়:
+\[ y(x) = 0.04 \cos(5\pi x)\text{ m} \]
+
+\vspace{0.3em}
+\noindent
+$0 \le x \le 0.8\text{ m}$ (যা $2\lambda$-এর সমান) সীমার মধ্যে মূল বিন্দুগুলোর সরণ:
+\begin{itemize}[leftmargin=2em, itemsep=0.2em]
+    \item $x = 0\text{ m}$: $y = +0.04\text{ m}$ \quad (\textbf{সুস্পন্দ বিন্দু / Antinode})
+    \item $x = 0.1\text{ m}$: $y = 0.04 \cos(\pi/2) = 0\text{ m}$ \quad (\textbf{নিস্পন্দ বিন্দু / Node})
+    \item $x = 0.2\text{ m}$: $y = 0.04 \cos(\pi) = -0.04\text{ m}$ \quad (\textbf{সুস্পন্দ বিন্দু / Antinode})
+    \item $x = 0.3\text{ m}$: $y = 0\text{ m}$ \quad (\textbf{নিস্পন্দ বিন্দু / Node})
+    \item $x = 0.4\text{ m}$: $y = +0.04\text{ m}$ \quad (\textbf{সুস্পন্দ বিন্দু / Antinode})
+    \item $x = 0.5\text{ m}$: $y = 0\text{ m}$ \quad (\textbf{নিস্পন্দ বিন্দু / Node})
+    \item $x = 0.6\text{ m}$: $y = -0.04\text{ m}$ \quad (\textbf{সুস্পন্দ বিন্দু / Antinode})
+    \item $x = 0.7\text{ m}$: $y = 0\text{ m}$ \quad (\textbf{নিস্পন্দ বিন্দু / Node})
+    \item $x = 0.8\text{ m}$: $y = +0.04\text{ m}$ \quad (\textbf{সুস্পন্দ বিন্দু / Antinode})
+\end{itemize}
+
+\vspace{1em}
+\noindent
+\textbf{(খ) $t = 0$ মুহূর্তে গতিশক্তি ঘনত্ব ($\frac{dE_k}{dx}$) ও এর লেখচিত্র:}
+
+\vspace{0.5em}
+\noindent
+কণার বেগ:
+\[ v_p(x,t) = \frac{\partial y}{\partial t} = 0.04 \times (100\pi) \cos(5\pi x) \cos(100\pi t) = 4\pi \cos(5\pi x) \cos(100\pi t)\text{ m s}^{-1} \]
+
+\noindent
+$t = 0$ মুহূর্তে, $\cos(0) = 1$ হওয়ায় কণার বেগ:
+\[ v_p(x,0) = 4\pi \cos(5\pi x)\text{ m s}^{-1} \]
+
+\noindent
+প্রতি একক দৈর্ঘ্যে গতিশক্তি (Kinetic Energy Density):
+\[ \frac{dE_k}{dx} = \frac{1}{2} \mu v_p^2 = \frac{1}{2} (0.01) \left[4\pi \cos(5\pi x)\right]^2 = 0.08\pi^2 \cos^2(5\pi x) \approx 0.7896 \cos^2(5\pi x)\text{ J m}^{-1} \]
+
+\vspace{0.5em}
+\noindent
+\textbf{গতিশক্তি ঘনত্বের পর্যবেক্ষণসমূহ:}
+\begin{itemize}[leftmargin=2em, itemsep=0.3em]
+    \item $\frac{dE_k}{dx}$-এর মান সর্বদা অঋণাত্মক (Non-negative) এবং $0$ থেকে $0.7896\text{ J m}^{-1}$-এর মধ্যে পরিবর্তিত হয়।
+    \item \textbf{সর্বোচ্চ গতিশক্তি ঘনত্ব ($0.7896\text{ J m}^{-1}$):} $\cos^2(5\pi x) = 1$ হলে অর্জিত হয়, অর্থাৎ \textbf{সুস্পন্দ বিন্দুগুলোতে} ($x = 0, 0.2\text{ m}, 0.4\text{ m}, 0.6\text{ m}, 0.8\text{ m}$)।
+    \item \textbf{সর্বনিম্ন গতিশক্তি ঘনত্ব ($0\text{ J m}^{-1}$):} $\cos^2(5\pi x) = 0$ হলে অর্জিত হয়, অর্থাৎ \textbf{নিস্পন্দ বিন্দুগুলোতে} ($x = 0.1\text{ m}, 0.3\text{ m}, 0.5\text{ m}, 0.7\text{ m}$)।
+\end{itemize}
+
+\vspace{1.2em}
+\begin{center}
+\begin{tikzpicture}[scale=1.05, >=stealth]
+    % ==========================================
+    % GRAPH 1: Displacement vs Distance (y vs x)
+    % ==========================================
+    \begin{scope}[shift={(0,0)}]
+        % Grid
+        \draw[gray!20, thin] (-0.5,-1.8) grid (6.2,1.8);
+
+        % Axes
+        \draw[->, thick] (-0.5,0) -- (6.5,0) node[right] {$x\text{ (m)}$};
+        \draw[->, thick] (0,-1.8) -- (0,2.1) node[above] {$y\text{ (m)}$};
+
+        % Y-Axis Ticks & Labels
+        \draw (0.1, 1.2) -- (-0.1, 1.2) node[left, font=\small] {$+0.04$};
+        \draw (0.1, -1.2) -- (-0.1, -1.2) node[left, font=\small] {$-0.04$};
+        \node[below left, font=\small] at (0,0) {$0$};
+
+        % X-Axis Ticks & Labels
+        \foreach \xval/\xtext in {0.7/0.1, 1.4/0.2, 2.1/0.3, 2.8/0.4, 3.5/0.5, 4.2/0.6, 4.9/0.7, 5.6/0.8} {
+            \draw (\xval, 0.1) -- (\xval, -0.1) node[below=2pt, font=\small] {$\xtext$};
+        }
+
+        % Curve
+        \draw[ultra thick, blue!80!black, domain=0:5.6, samples=150] 
+            plot (\x, {1.2*cos(900*\x/7)});
+
+        % Antinodes & Nodes Points
+        \foreach \xval in {0, 1.4, 2.8, 4.2, 5.6} {
+            \fill[red!80!black] (\xval, {1.2*cos(900*\xval/7)}) circle (2.2pt);
+        }
+        \foreach \xval in {0.7, 2.1, 3.5, 4.9} {
+            \fill[teal!80!black] (\xval, 0) circle (2.2pt);
+        }
+
+        % Title
+        \node[above, blue!80!black, font=\small\bfseries] at (3.8, 2.1) {সরণ-দূরত্ব লেখচিত্র ($y\text{ vs }x$) $\left[t = \frac{T}{4}\right]$};
+    \end{scope}
+
+    % ==========================================
+    % GRAPH 2: Kinetic Energy Density vs Distance
+    % ==========================================
+    \begin{scope}[shift={(0,-5.2)}]
+        % Grid
+        \draw[gray!20, thin] (-0.5,-0.5) grid (6.2,2.2);
+
+        % Axes
+        \draw[->, thick] (-0.5,0) -- (6.5,0) node[right] {$x\text{ (m)}$};
+        \draw[->, thick] (0,-0.5) -- (0,2.6) node[above] {$\frac{dE_k}{dx}\text{ (J m}^{-1})$};
+
+        % Y-Axis Ticks & Labels
+        \draw (0.1, 1.6) -- (-0.1, 1.6) node[left, font=\small] {$0.79$};
+        \node[below left, font=\small] at (0,0) {$0$};
+
+        % X-Axis Ticks & Labels
+        \foreach \xval/\xtext in {0.7/0.1, 1.4/0.2, 2.1/0.3, 2.8/0.4, 3.5/0.5, 4.2/0.6, 4.9/0.7, 5.6/0.8} {
+            \draw (\xval, 0.1) -- (\xval, -0.1) node[below=2pt, font=\small] {$\xtext$};
+        }
+
+        % Curve
+        \draw[ultra thick, purple!80!black, domain=0:5.6, samples=150] 
+            plot (\x, {1.6*(cos(900*\x/7))^2});
+
+        % Max & Min Points
+        \foreach \xval in {0, 1.4, 2.8, 4.2, 5.6} {
+            \fill[red!80!black] (\xval, 1.6) circle (2.2pt);
+        }
+        \foreach \xval in {0.7, 2.1, 3.5, 4.9} {
+            \fill[teal!80!black] (\xval, 0) circle (2.2pt);
+        }
+
+        % Title
+        \node[above, purple!80!black, font=\small\bfseries] at (4.3, 2.3) {গতিশক্তি ঘনত্ব-দূরত্ব লেখচিত্র $\left(\frac{dE_k}{dx}\text{ vs }x\right)$ $[t = 0]$};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+\end{tcolorbox}
+
+% ------------------------------------------
+% QUESTION SECTION 10 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 10}]
+\noindent
+একটি $4\text{ m}$ দীর্ঘ স্টেজ-এর দুই প্রান্তে দুটি স্পিকার $A$ ও $B$ স্থাপন করা হলো, যার প্রতিটির ক্ষমতা $1\text{ mW}$। স্টেজের মধ্যবিন্দু $P$ হতে সোজাসুজি $3\text{ m}$ দূরে $O$ বিন্দুতে একজন শ্রোতা দাঁড়িয়ে আছেন। (ক) শুধুমাত্র স্পিকার $A$ চালু থাকলে $O$ বিন্দুতে শব্দ তীব্রতা ও তীব্রতা স্তর কত হবে? (খ) উভয় স্পিকার চালুর পর তীব্রতা স্তর প্রারম্ভিক তীব্রতা স্তরের দ্বিগুণ হবে কি না গাণিতিকভাবে যাচাই করো। (প্রমাণ তীব্রতা $I_0 = 10^{-12}\text{ W m}^{-2}$)
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+Two speakers $A$ and $B$, each of power $1\text{ mW}$, are placed at the two ends of a $4\text{ m}$ long stage. A listener is standing at point $O$, which is $3\text{ m}$ perpendicularly opposite to the midpoint $P$ of the stage. (a) What will be the sound intensity and intensity level at $O$ when only speaker $A$ is ON? (b) Mathematically verify whether the sound intensity level doubles when both speakers are turned ON. Reference intensity $I_0 = 10^{-12}\text{ W m}^{-2}$.
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 10
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. স্পিকার $A$ হতে শ্রোতা $O$-এর দূরত্ব ($r$): পিথাগোরাসের উপপাদ্য অনুযায়ী:
+\[ r = \sqrt{AP^2 + PO^2} = \sqrt{2^2 + 3^2} = \sqrt{13}\text{ m} \]
+২. শুধুমাত্র স্পিকার $A$-এর জন্য তীব্রতা ($I_1$) ও তীব্রতা স্তর ($\beta_1$): ক্ষমতা, $P = 1\text{ mW} = 10^{-3}\text{ W}$।
+\[ I_1 = \frac{P}{4\pi r^2} = \frac{10^{-3}}{4\pi \times (\sqrt{13})^2} = \frac{10^{-3}}{52\pi} \approx 6.12 \times 10^{-6}\text{ W m}^{-2} \]
+শব্দ তীব্রতা স্তর:
+\[ \beta_1 = 10 \log_{10} \left(\frac{6.12 \times 10^{-6}}{10^{-12}}\right) = 10 \log_{10}(6.12 \times 10^6) = 67.87\text{ dB} \]
+৩. উভয় স্পিকার চালুর পর তীব্রতা স্তর ($\beta_2$) বিশ্লেষণ: যেহেতু $B$ স্পিকার থেকেও $O$-এর দূরত্ব সমান, তাই $I_2 = I_1 = 6.12 \times 10^{-6}\text{ W m}^{-2}$। মোট তীব্রতা:
+\[ I_{\text{total}} = I_1 + I_2 = 2 \times 6.12 \times 10^{-6} = 1.224 \times 10^{-5}\text{ W m}^{-2} \]
+নতুন তীব্রতা স্তর:
+\[ \beta_2 = 10 \log_{10} \left(\frac{1.224 \times 10^{-5}}{10^{-12}}\right) = 10 \log_{10}(1.224 \times 10^7) = 70.88\text{ dB} \]
+এখানে, $\frac{\beta_2}{\beta_1} = \frac{70.88}{67.87} \approx 1.044 \neq 2$। অতএব, উভয় স্পিকার চালু করলে তীব্রতা স্তর পূর্বাপেক্ষা দ্বিগুণ হবে না (কেবল $3.01\text{ dB}$ বৃদ্ধি পাবে)।
+\end{tcolorbox}
+\end{document}

@@ -1,0 +1,402 @@
+\documentclass[12pt, a4paper]{article}
+
+% ==========================================
+% 1. COMPILER, LANGUAGE & FONT SETUP
+% ==========================================
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{bengali}
+\setotherlanguage{english}
+\newfontfamily\bengalifont[Script=Bengali, AutoFakeBold=2.5, AutoFakeSlant=0.2]{Kalpurush}
+
+% ==========================================
+% 2. MATHEMATICS, UNITS & FORMATTING
+% ==========================================
+\usepackage{amsmath, amssymb, siunitx}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{microtype} % For better typography
+\onehalfspacing % Better line spacing for readability
+
+% ==========================================
+% 3. COLORS & BEAUTIFICATION PACKAGES
+% ==========================================
+\usepackage[dvipsnames, table]{xcolor}
+\usepackage[skins, breakable, theorems]{tcolorbox}
+\usepackage{tikz}
+\renewcommand{\labelitemi}{$\bullet$}
+
+% Define custom beautiful colors
+\definecolor{primary}{HTML}{0056b3}
+\definecolor{secondary}{HTML}{e7f1ff}
+\definecolor{success}{HTML}{198754}
+\definecolor{successbg}{HTML}{d1e7dd}
+\definecolor{accent}{HTML}{fd7e14}
+\definecolor{darkgray}{HTML}{343a40}
+
+% Custom Tcolorbox Styles
+\tcbset{
+    questionbox/.style={
+        enhanced, colback=secondary, colframe=primary, arc=2mm, boxrule=1pt,
+        fonttitle=\bfseries\Large, title=#1,
+        drop fuzzy shadow=black!10,
+        attach boxed title to top left={xshift=5mm, yshift=-3mm},
+        boxed title style={colback=primary, arc=1mm}
+    },
+    answerbox/.style={
+        enhanced, colback=successbg, colframe=success, arc=1.5mm, boxrule=1pt,
+        left=2mm, right=2mm, top=2mm, bottom=2mm,
+        drop fuzzy shadow=black!10
+    },
+    solutionbox/.style={
+        enhanced, colback=white, colframe=darkgray, arc=2mm, boxrule=1pt,
+        fonttitle=\bfseries\large, title=#1, breakable,
+        coltitle=white, colbacktitle=darkgray,
+        drop fuzzy shadow=black!10,
+        attach boxed title to top center={yshift=-3mm},
+        boxed title style={arc=1mm}
+    }
+}
+
+\begin{document}
+
+\newpage
+% ------------------------------------------
+% QUESTION SECTION 9 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 1}]
+\noindent
+একটি $10\text{ m} \times 8\text{ m} \times 4\text{ m}$ আয়তনের শীতাতপ নিয়ন্ত্রিত ঘরের তাপমাত্রা $26^\circ\text{C}$ এবং আপেক্ষিক আর্দ্রতা $70\%$। একটি এয়ার কন্ডিশনারের সাহায্যে ঘরের তাপমাত্রা কমিয়ে $18^\circ\text{C}$ করা হলো। $26^\circ\text{C}$ এবং $18^\circ\text{C}$ তাপমাত্রায় সম্পৃক্ত বাষ্পচাপ যথাক্রমে $25.21\text{ mm Hg}$ এবং $15.48\text{ mm Hg}$ হলে, তাপমাত্রা কমানোর পর ঘরের বায়ু থেকে মোট কত কেজি জলীয় বাষ্প ঘনীভূত হয়ে পানিতে পরিণত হবে?
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+An air-conditioned room of volume $10\text{ m} \times 8\text{ m} \times 4\text{ m}$ is initially at $26^\circ\text{C}$ with a relative humidity of $70\%$. An air conditioner lowers the room temperature to $18^\circ\text{C}$. If the saturated vapor pressures at $26^\circ\text{C}$ and $18^\circ\text{C}$ are $25.21\text{ mm Hg}$ and $15.48\text{ mm Hg}$ respectively, calculate the total mass of water vapor in kilograms that will condense into liquid water after cooling.
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em>
+
+% ------------------------------------------
+% SOLUTION SECTION 9
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. ঘরের মোট আয়তন $V = 10 \times 8 \times 4 = 320\text{ m}^3$। \\
+২. $26^\circ\text{C}$ ($299\text{ K}$) তাপমাত্রায় উপস্থিত জলীয় বাষ্পের চাপ $f_1 = 0.70 \times 25.21 = 17.647\text{ mm Hg} = 2352.7\text{ Pa}$। \\
+৩. প্রাথমিক বাষ্পের ভর $m_1 = \frac{f_1 V M}{R T_1}$:
+\[ m_1 = \frac{2352.7 \times 320 \times 18 \times 10^{-3}}{8.314 \times 299} \approx 5.451\text{ kg} \]
+৪. $18^\circ\text{C}$ ($291\text{ K}$) তাপমাত্রায় বাষ্প সম্পৃক্ত হয়ে বায়ুতে সর্বোচ্চ বাষ্পচাপ থাকবে $f_2 = 15.48\text{ mm Hg} = 2063.8\text{ Pa}$। \\
+৫. বায়ুতে অবশিষ্ট বাষ্পের ভর $m_2 = \frac{f_2 V M}{R T_2}$:
+\[ m_2 = \frac{2063.8 \times 320 \times 18 \times 10^{-3}}{8.314 \times 291} \approx 4.914\text{ kg} \]
+৬. ঘনীভূত পানির ভর:
+\[ \Delta m = m_1 - m_2 = 5.451 - 4.914 = 0.537\text{ kg} = 537\text{ g} \]
+\end{tcolorbox}
+% ------------------------------------------
+% QUESTION SECTION 13 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 2}]
+\noindent
+দুটি প্রোটনের (চার্জ $e = 1.6 \times 10^{-19}\text{ C}$) মধ্যবর্তী দূরত্ব $10^{-15}\text{ m}$। এদের মধ্যে কুলম্বের স্থির-তড়িৎ বিকর্ষণ বল অতিক্রম করে নিউক্লীয় সংযোজন ঘটানোর জন্য প্রোটন দুটির গড় তাপীয় গতিশক্তিকে স্থির-তড়িৎ বিভব শক্তির সমান হতে হবে। এই প্রক্রিয়াটি সম্পন্ন করার জন্য প্লাজমার সর্বনিম্ন তাপমাত্রা কত হতে হবে?
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+Two protons (charge $e = 1.6 \times 10^{-19}\text{ C}$) are separated by a distance of $10^{-15}\text{ m}$. To overcome electrostatic Coulomb repulsion for nuclear fusion, the total average thermal kinetic energy of the two protons must equal the electrostatic potential energy between them. What must be the minimum temperature of the plasma for this process to occur?
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 13
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. দুটি প্রোটনের স্থির-তড়িৎ বিভব শক্তি ($U$):
+\[ U = \frac{1}{4\pi\varepsilon_0} \frac{e^2}{r} = \frac{9 \times 10^9 \times (1.6 \times 10^{-19})^2}{10^{-15}} = 2.304 \times 10^{-13}\text{ J} \]
+২. দুটি প্রোটনের মোট গড় তাপীয় গতিশক্তি $E_k = 2 \times \left(\frac{3}{2} k T\right) = 3 k T$। \\
+৩. শর্তানুসারে, $3 k T = U$:
+\[ T = \frac{U}{3 k} = \frac{2.304 \times 10^{-13}}{3 \times (1.38 \times 10^{-23})} = \frac{2.304 \times 10^{-13}}{4.14 \times 10^{-23}} \approx 5.565 \times 10^9\text{ K} \]
+\end{tcolorbox}
+
+\vspace{1.5em}
+% ------------------------------------------
+% QUESTION SECTION 11 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 3}]
+\noindent
+একটি গ্যাস মিশ্রণে $2\text{ mol}$ হাইড্রোজেন ($\text{H}_2$, $f_1 = 5$, আণবিক ভর $2 \times 10^{-3}\text{ kg mol}^{-1}$) এবং $1\text{ mol}$ আর্গন ($\text{Ar}$, $f_2 = 3$, আণবিক ভর $40 \times 10^{-3}\text{ kg mol}^{-1}$) বিদ্যমান। (i) মিশ্রণটির কার্যকর স্বাধীনতার মাত্রা ($f_{\text{eff}}$) নির্ণয় করো। (ii) এই মিশ্রণে শব্দের বেগ ($v_s$) ও অণুর মূল-গড়-বর্গ বেগের ($c_{\text{rms}}$) অনুপাত বের করো।
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+A gas mixture contains $2\text{ mol}$ of Hydrogen ($\text{H}_2$, $f_1 = 5$, molar mass $2 \times 10^{-3}\text{ kg mol}^{-1}$) and $1\text{ mol}$ of Argon ($\text{Ar}$, $f_2 = 3$, molar mass $40 \times 10^{-3}\text{ kg mol}^{-1}$). (i) Determine the effective degrees of freedom ($f_{\text{eff}}$) of the mixture. (ii) Calculate the ratio of the speed of sound ($v_s$) to the root-mean-square speed ($c_{\text{rms}}$) in this mixture.
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 11
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. শক্তির সমবিভাজন নীতি অনুসারে মিশ্রণের গড় স্বাধীনতার মাত্রা:
+\[ f_{\text{eff}} = \frac{n_1 f_1 + n_2 f_2}{n_1 + n_2} = \frac{(2 \times 5) + (1 \times 3)}{2 + 1} = \frac{13}{3} \approx 4.333 \]
+২. মিশ্রণের রুদ্ধতাপীয় সূচক ($\gamma_{\text{mix}}$):
+\[ \gamma_{\text{mix}} = 1 + \frac{2}{f_{\text{eff}}} = 1 + \frac{2}{13/3} = 1 + \frac{6}{13} = \frac{19}{13} \approx 1.4615 \]
+৩. আদর্শ গ্যাসে শব্দের বেগ $v_s = \sqrt{\frac{\gamma P}{\rho}}$ এবং মূল-গড়-বর্গ বেগ $c_{\text{rms}} = \sqrt{\frac{3 P}{\rho}}$। \\
+৪. বেগদ্বয়ের অনুপাত:
+\[ \frac{v_s}{c_{\text{rms}}} = \sqrt{\frac{\gamma_{\text{mix}}}{3}} = \sqrt{\frac{19/13}{3}} = \sqrt{\frac{19}{39}} = \sqrt{0.48718} \approx 0.698 \]
+\end{tcolorbox}
+
+\vspace{1.5em}
+
+% ------------------------------------------
+% QUESTION SECTION 28 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 4}]
+\noindent
+ভ্যান ডার ওয়ালস সমীকরণ $\left(P + \frac{a n^2}{V^2}\right)(V - n b) = n R T$ মেনে চলে এমন বাস্তব গ্যাস কার্বন ডাই-অক্সাইড ($\text{CO}_2$)-এর জন্য $a = 0.364\text{ Pa m}^6\text{ mol}^{-2}$ এবং $b = 4.27 \times 10^{-5}\text{ m}^3\text{ mol}^{-1}$। (i) $\text{CO}_2$-এর সংকট তাপমাত্রা (Critical Temperature, $T_c = \frac{8a}{27Rb}$) নির্ণয় করো। (ii) $300\text{ K}$ তাপমাত্রায় $1\text{ L}$ পাত্রে $1\text{ mol}$ $\text{CO}_2$ গ্যাস রাখা হলে বাস্তব গ্যাস সমীকরণ এবং আদর্শ গ্যাস সমীকরণ অনুসারে চাপের পার্থক্য কত হবে?
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+Carbon Dioxide ($\text{CO}_2$) is a real gas obeying van der Waals equation $\left(P + \frac{a n^2}{V^2}\right)(V - n b) = n R T$ with constants $a = 0.364\text{ Pa m}^6\text{ mol}^{-2}$ and $b = 4.27 \times 10^{-5}\text{ m}^3\text{ mol}^{-1}$. Calculate (i) the critical temperature ($T_c = \frac{8a}{27Rb}$) of $\text{CO}_2$, and (ii) the difference in pressure predicted by the van der Waals equation versus the ideal gas equation for $1\text{ mol}$ of $\text{CO}_2$ in a $1\text{ L}$ container at $300\text{ K}$.
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 28
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. সংকট তাপমাত্রা নির্ণয়:
+\[ T_c = \frac{8 a}{27 R b} = \frac{8 \times 0.364}{27 \times 8.314 \times (4.27 \times 10^{-5})} = \frac{2.912}{0.009585} \approx 303.8\text{ K} = 30.8^\circ\text{C} \]
+২. আদর্শ গ্যাস সূত্রানুসারে চাপ ($n = 1\text{ mol}$, $V = 10^{-3}\text{ m}^3$, $T = 300\text{ K}$):
+\[ P_{\text{ideal}} = \frac{n R T}{V} = \frac{1 \times 8.314 \times 300}{10^{-3}} = 2.4942 \times 10^6\text{ Pa} \]
+৩. ভ্যান ডার ওয়ালস সূত্রানুসারে চাপ:
+\[ P_{\text{real}} = \frac{R T}{V - b} - \frac{a}{V^2} = \frac{8.314 \times 300}{10^{-3} - 4.27 \times 10^{-5}} - \frac{0.364}{(10^{-3})^2} \]
+\[ P_{\text{real}} = \frac{2494.2}{0.0009573} - 3.64 \times 10^5 = 2.60546 \times 10^6 - 3.64 \times 10^5 = 2.24146 \times 10^6\text{ Pa} \]
+৪. চাপের পার্থক্য:
+\[ \Delta P = P_{\text{ideal}} - P_{\text{real}} = 2.4942 \times 10^6 - 2.24146 \times 10^6 = 2.5274 \times 10^5\text{ Pa} \approx 2.53\text{ atm} \]
+\end{tcolorbox}
+% ------------------------------------------
+% QUESTION SECTION 16 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 5}]
+\noindent
+একটি $5.0\text{ L}$ আয়তনের বন্ধ পাত্রে $1800\text{ K}$ তাপমাত্রায় $1.4\text{ g}$ নাইট্রোজেন ($\text{N}_2$) গ্যাস রাখা আছে। এই উচ্চ তাপমাত্রায় যদি $30\%$ নাইট্রোজেন অণু বিয়োজিত হয়ে পারমাণবিক নাইট্রোজেনে ($\text{N}$) পরিণত হয়, তবে পাত্রের অভ্যন্তরে চূড়ান্ত চাপ কত হবে? [নাইট্রোজেনের পারমাণবিক ভর = $14\text{ g mol}^{-1}$]
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+A closed vessel of volume $5.0\text{ L}$ contains $1.4\text{ g}$ of Nitrogen ($\text{N}_2$) gas at $1800\text{ K}$. If $30\%$ of the Nitrogen molecules dissociate into atomic Nitrogen ($\text{N}$) at this high temperature, what will be the final pressure inside the vessel? [Atomic mass of Nitrogen = $14\text{ g mol}^{-1}$]
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 16
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. প্রাথমিক অবস্থা: \\
+- নাইট্রোজেন গ্যাসের ভর $m = 1.4\text{ g}$, আণবিক ভর $M_{\text{N}_2} = 28\text{ g mol}^{-1}$। \\
+- প্রাথমিক মোল সংখ্যা $n_0 = \frac{1.4}{28} = 0.05\text{ mol}$। \\
+২. বিয়োজনের হিসাব: \\
+- অবিয়োজিত $\text{N}_2$ অণুর মোল সংখ্যা $= 0.05 \times (1 - 0.30) = 0.035\text{ mol}$। \\
+- বিয়োজিত $\text{N}_2$ অণু থেকে সৃষ্ট $\text{N}$ পরমাণুর মোল সংখ্যা $= 2 \times (0.05 \times 0.30) = 0.030\text{ mol}$। \\
+- পাত্রে মোট চূড়ান্ত মোল সংখ্যা $n_{\text{total}} = 0.035 + 0.030 = 0.065\text{ mol}$। \\
+৩. আদর্শ গ্যাস সমীকরণ প্রয়োগ করে ($V = 5.0\text{ L} = 5 \times 10^{-3}\text{ m}^3$, $T = 1800\text{ K}$):
+\[ P = \frac{n_{\text{total}} R T}{V} = \frac{0.065 \times 8.314 \times 1800}{5 \times 10^{-3}} \]
+\[ P = \frac{972.738}{0.005} = 1.945 \times 10^5\text{ Pa} \]
+\end{tcolorbox}
+
+\vspace{1.5em}
+
+% ------------------------------------------
+% QUESTION SECTION 17 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 6}]
+\noindent
+একটি বন্ধ পাত্রে $27^\circ\text{C}$ তাপমাত্রায় আর্দ্র বায়ু আবদ্ধ আছে এবং পাত্রের মোট চাপ $1.07 \times 10^5\text{ Pa}$। ওই তাপমাত্রায় বায়ুটি জলীয় বাষ্প দ্বারা সম্পৃক্ত এবং সম্পৃক্ত বাষ্পচাপ $3.7 \times 10^3\text{ Pa}$। কোনো বাষ্প ঘনীভূত না রেখে পাত্রের তাপমাত্রা বাড়িয়ে $40^\circ\text{C}$ করা হলে পাত্রের অভ্যন্তরীণ নতুন মোট চাপ কত হবে?
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+A closed vessel contains moist air at $27^\circ\text{C}$ under a total pressure of $1.07 \times 10^5\text{ Pa}$. At this temperature, the air is saturated with water vapor, and the saturated vapor pressure is $3.7 \times 10^3\text{ Pa}$. If the vessel is heated to $40^\circ\text{C}$ without any condensation, what will be the new total pressure inside the vessel?
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 17
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. $27^\circ\text{C}$ ($300\text{ K}$) তাপমাত্রায় আংশিক চাপসমূহ: \\
+- জলীয় বাষ্পের আংশিক চাপ $P_{v1} = 3.7 \times 10^3\text{ Pa} = 0.037 \times 10^5\text{ Pa}$। \\
+- শুষ্ক বায়ুর আংশিক চাপ $P_{a1} = P_{\text{total},1} - P_{v1} = 1.07 \times 10^5 - 0.037 \times 10^5 = 1.033 \times 10^5\text{ Pa}$। \\
+২. $40^\circ\text{C}$ ($313\text{ K}$) তাপমাত্রায় আয়তন স্থির থাকায় গ্যালুস্যাকের চাপ সূত্র প্রয়োগ করে: \\
+- শুষ্ক বায়ুর নতুন চাপ $P_{a2} = P_{a1} \times \frac{T_2}{T_1} = 1.033 \times 10^5 \times \frac{313}{300} \approx 1.0778 \times 10^5\text{ Pa}$। \\
+- বাষ্পের নতুন চাপ $P_{v2} = P_{v1} \times \frac{T_2}{T_1} = 0.037 \times 10^5 \times \frac{313}{300} \approx 0.0386 \times 10^5\text{ Pa}$। \\
+৩. পাত্রের মোট চূড়ান্ত চাপ:
+\[ P_{\text{total},2} = P_{a2} + P_{v2} = 1.0778 \times 10^5 + 0.0386 \times 10^5 = 1.1164 \times 10^5\text{ Pa} \]
+\end{tcolorbox}
+
+\vspace{1.5em}
+
+% ------------------------------------------
+% QUESTION SECTION 18 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 7}]
+\noindent
+পারদ পাত্রে উলম্বভাবে বসানো একটি বায়ুমাপক (Barometer) নলে বায়ুপ্রবেশের কারণে প্রকৃত বায়ুমণ্ডলীয় চাপ $76\text{ cm Hg}$ থাকা সত্ত্বেও নলের পাঠ দেখা যায় $70\text{ cm Hg}$। বায়ুমাপক নলের মোট দৈর্ঘ্য পারদের মুক্ত তল থেকে $100\text{ cm}$। যদি প্রকৃত বায়ুমণ্ডলীয় চাপ কমে $74\text{ cm Hg}$ হয়, তবে তাপমাত্রা অপরিবর্তিত থাকলে নলে পারদের নতুন উচ্চতা কত হবে?
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+Due to air leakage into a vertical barometer tube, it reads $70\text{ cm Hg}$ when the true atmospheric pressure is $76\text{ cm Hg}$. The total length of the barometer tube above the mercury trough is $100\text{ cm}$. If the actual atmospheric pressure drops to $74\text{ cm Hg}$, what will be the new height of the mercury column inside the tube, assuming constant temperature?
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 18
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. প্রথম ক্ষেত্রে: \\
+- পারদ স্তম্ভের উচ্চতা $h_1 = 70\text{ cm Hg}$। \\
+- আবদ্ধ বায়ুস্তম্ভের দৈর্ঘ্য $L_1 = 100 - 70 = 30\text{ cm}$। \\
+- আবদ্ধ বায়ুর চাপ $P_1 = P_{\text{atm1}} - h_1 = 76 - 70 = 6\text{ cm Hg}$। \\
+২. দ্বিতীয় ক্ষেত্রে: \\
+- ধরি, পারদের নতুন উচ্চতা $= h_2$। \\
+- আবদ্ধ বায়ুর নতুন দৈর্ঘ্য $L_2 = 100 - h_2$। \\
+- আবদ্ধ বায়ুর নতুন চাপ $P_2 = P_{\text{atm2}} - h_2 = 74 - h_2$। \\
+৩. বয়েলের সূত্র প্রয়োগ করে ($P_1 L_1 = P_2 L_2$):
+\[ 6 \times 30 = (74 - h_2)(100 - h_2) \]
+\[ 180 = 7400 - 174 h_2 + h_2^2 \implies h_2^2 - 174 h_2 + 7220 = 0 \]
+৪. দ্বিঘাত সমীকরণ সমাধান করে:
+\[ h_2 = \frac{174 - \sqrt{(-174)^2 - 4(1)(7220)}}{2} = \frac{174 - \sqrt{30276 - 28880}}{2} \]
+\[ h_2 = \frac{174 - \sqrt{1396}}{2} \approx \frac{174 - 37.36}{2} = 68.32\text{ cm Hg} \]
+\end{tcolorbox}
+% ------------------------------------------
+% QUESTION SECTION 22 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 8}]
+\noindent
+একটি $360\text{ cm}^3$ আয়তনের উন্মুক্ত কাচ ফ্লাস্ককে সকালবেলা $25^\circ\text{C}$ তাপমাত্রা থেকে উত্তপ্ত করা হলে প্রসংগে আবদ্ধ বায়ুর $15\%$ ভর বাইরে বের হয়ে গেল। বায়ুমণ্ডলীয় চাপ অপরিবর্তিত থাকলে (i) ফ্লাস্কের চূড়ান্ত তাপমাত্রা কত ছিল? (ii) বের হয়ে যাওয়া বায়ু বায়ুমণ্ডলীয় চাপ $1.013 \times 10^5\text{ Pa}$-এর বিরুদ্ধে সম্প্রসারিত হলে বায়ুর দ্বারা সম্পাদিত কাজের পরিমাণ কত?
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+An open glass flask of volume $360\text{ cm}^3$ initially at $25^\circ\text{C}$ is heated such that $15\%$ of the initial mass of air escapes from the flask. Assuming atmospheric pressure remains constant, (i) what was the final temperature of the flask? (ii) If the escaped air expands against atmospheric pressure $1.013 \times 10^5\text{ Pa}$, calculate the work done by the expanding air.
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 22
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. উন্মুক্ত পাত্রের ক্ষেত্রে চাপ $P$ এবং ভেতরের আয়তন $V$ স্থির থাকে।
+\[ n_1 T_1 = n_2 T_2 \]
+দেওয়া আছে, অবশিষ্ট মোল $n_2 = (1 - 0.15) n_1 = 0.85 n_1$, এবং $T_1 = 25 + 273 = 298\text{ K}$।
+\[ n_1 (298) = (0.85 n_1) T_2 \implies T_2 = \frac{298}{0.85} \approx 350.59\text{ K} = 77.59^\circ\text{C} \]
+২. বায়ুমণ্ডলীয় চাপে অপসারিত বায়ুর বর্ধিত আয়তন ($V_{\text{escaped}}$):
+\[ V_{\text{escaped}} = \Delta n \frac{R T_2}{P_0} = (0.15 n_1) \frac{R T_2}{P_0} = 0.15 \left(\frac{P_0 V}{R T_1}\right) \frac{R T_2}{P_0} = 0.15 V \left(\frac{T_2}{T_1}\right) \]
+\[ V_{\text{escaped}} = 0.15 \times (360 \times 10^{-6}\text{ m}^3) \times \left(\frac{350.59}{298}\right) \approx 6.35 \times 10^{-5}\text{ m}^3 \]
+৩. সম্পাদিত কাজ ($W = P_0 \Delta V$):
+\[ W = (1.013 \times 10^5\text{ Pa}) \times (6.35 \times 10^{-5}\text{ m}^3) \approx 6.43\text{ J} \]
+\end{tcolorbox}
+
+\vspace{1.5em}
+% ------------------------------------------
+% QUESTION SECTION 26 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 9}]
+\noindent
+সম-আয়তনের ($V_0 = 10\text{ L}$) দুটি পাত্র $A$ ও $B$ একটি সরু নল দ্বারা যুক্ত। নলে আবদ্ধ হাইড্রোজেন গ্যাসের মোট ভর $10\text{ g}$। পাত্র $A$-কে $100\text{ K}$ এবং পাত্র $B$-কে $400\text{ K}$ তাপমাত্রায় রাখা হলে (i) ব্যবস্থার সাম্য চাপ কত হবে? (ii) পাত্র $A$ ও পাত্র $B$-এর দেয়ালে প্রতি সেকেন্ডে অণুসমূহের একক ক্ষেত্রফলে সংঘর্ষের সংখ্যার অনুপাত নির্ণয় করো।
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+Two connected vessels $A$ and $B$ of equal volume ($V_0 = 10\text{ L}$) contain Hydrogen gas of total mass $10\text{ g}$. If vessel $A$ is maintained at $100\text{ K}$ and vessel $B$ at $400\text{ K}$, calculate (i) the equilibrium pressure of the system, and (ii) the ratio of collision frequencies per unit wall area in vessel $A$ to vessel $B$.
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 26
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. মোট মোল সংখ্যা $n_{\text{total}} = \frac{10\text{ g}}{2\text{ g mol}^{-1}} = 5\text{ mol}$। \\
+২. ধরে নিই সাম্য চাপ $P$। \\
+- পাত্র $A$-এর মোল: $n_A = \frac{P V_0}{R T_A}$ \\
+- পাত্র $B$-এর মোল: $n_B = \frac{P V_0}{R T_B}$
+\[ \frac{P V_0}{R} \left(\frac{1}{T_A} + \frac{1}{T_B}\right) = 5 \implies \frac{P \times 10 \times 10^{-3}}{8.314} \left(\frac{1}{100} + \frac{1}{400}\right) = 5 \]
+\[ \frac{P \times 10^{-2}}{8.314} \times \frac{5}{400} = 5 \implies P = \frac{8.314 \times 400}{10^{-2}} = 3.3256 \times 10^5\text{ Pa} \]
+(সংশোধিত গণনা: $P = 3.3256 \times 10^5\text{ Pa}$)। \\
+৩. প্রতি একক ক্ষেত্রফলে অণুর ধাক্কার সংখ্যা ($N_{\text{coll}} \propto n \cdot c_{\text{rms}}$): \\
+একক আয়তনে অণুর সংখ্যা $n \propto \frac{P}{T}$ এবং RMS বেগ $c_{\text{rms}} \propto \sqrt{T}$।
+\[ N_{\text{coll}} \propto \frac{P}{T} \sqrt{T} = \frac{P}{\sqrt{T}} \]
+চাপ $P$ উভয় পাত্রে সমান হওয়ায়:
+\[ \frac{N_{\text{coll}, A}}{N_{\text{coll}, B}} = \sqrt{\frac{T_B}{T_A}} = \sqrt{\frac{400}{100}} = 2 : 1 \]
+\end{tcolorbox}
+
+% ------------------------------------------
+% QUESTION SECTION 25 - DETAILED & CLASSY
+% ------------------------------------------
+\begin{tcolorbox}[questionbox={প্রশ্ন (Question) 10}]
+\noindent
+একটি হ্রদের তলদেশ থেকে নির্গত বায়ুর বুদবুদ পৃষ্ঠে পৌঁছালে এর ব্যাসার্ধ দ্বিগুণ হয়। হ্রদের তলদেশের তাপমাত্রা $7^\circ\text{C}$ এবং পৃষ্ঠের তাপমাত্রা $27^\circ\text{C}$ হলে হ্রদের গভীরতা কত? [বায়ুমণ্ডলের চাপ $P_0 = 1.013 \times 10^5\text{ Pa}$, পানির ঘনত্ব $\rho = 1000\text{ kg m}^{-3}$, এবং $g = 9.8\text{ m s}^{-2}$]
+
+\vspace{0.8em}
+\begin{english}
+\noindent\textit{\color{darkgray}
+A gas bubble released from the bottom of a lake doubles its radius upon reaching the surface. If the bottom temperature is $7^\circ\text{C}$ and the surface temperature is $27^\circ\text{C}$, determine the depth of the lake. [Atmospheric pressure $P_0 = 1.013 \times 10^5\text{ Pa}$, density of water $\rho = 1000\text{ kg m}^{-3}$, and $g = 9.8\text{ m s}^{-2}$]
+}
+\end{english}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% ------------------------------------------
+% SOLUTION SECTION 25
+% ------------------------------------------
+\begin{tcolorbox}[solutionbox={সমাধান (Solution)}]
+\noindent
+১. ব্যাসার্ধ দ্বিগুণ হওয়া মানে আয়তন $V_2 = 2^3 V_1 = 8 V_1$। \\
+২. প্রাথমিক পরম তাপমাত্রা $T_1 = 7 + 273 = 280\text{ K}$ এবং পৃষ্ঠের তাপমাত্রা $T_2 = 27 + 273 = 300\text{ K}$। \\
+৩. চাপের হিসাব: \\
+- পৃষ্ঠের চাপ $P_2 = P_0 = 1.013 \times 10^5\text{ Pa}$। \\
+- তলদেশের চাপ $P_1 = P_0 + \rho g h = 1.013 \times 10^5 + (1000 \times 9.8 \times h) = 1.013 \times 10^5 + 9800 h$। \\
+৪. সমন্বিত গ্যাস সূত্র প্রয়োগ করে:
+\[ \frac{P_1 V_1}{T_1} = \frac{P_2 V_2}{T_2} \implies \frac{(1.013 \times 10^5 + 9800 h) V_1}{280} = \frac{1.013 \times 10^5 \times 8 V_1}{300} \]
+\[ 1.013 \times 10^5 + 9800 h = 1.013 \times 10^5 \times 8 \times \left(\frac{280}{300}\right) = 7.56373 \times 10^5\text{ Pa} \]
+\[ 9800 h = 7.56373 \times 10^5 - 1.013 \times 10^5 = 6.55073 \times 10^5 \]
+\[ h = \frac{6.55073 \times 10^5}{9800} \approx 66.84\text{ m} \]
+\end{tcolorbox}
+\end{document}
